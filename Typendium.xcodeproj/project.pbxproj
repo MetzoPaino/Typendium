@@ -21,6 +21,9 @@
 		43BF126118E74BB9009A1C84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF124318E74BB9009A1C84 /* UIKit.framework */; };
 		43BF126918E74BB9009A1C84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43BF126718E74BB9009A1C84 /* InfoPlist.strings */; };
 		43BF126B18E74BBA009A1C84 /* TypendiumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF126A18E74BBA009A1C84 /* TypendiumTests.m */; };
+		43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127518E74F46009A1C84 /* IntroViewController.m */; };
+		43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127818E754AB009A1C84 /* MenuViewController.m */; };
+		43BF127C18E76DF3009A1C84 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127B18E76DF3009A1C84 /* HistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		43BF126618E74BB9009A1C84 /* TypendiumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TypendiumTests-Info.plist"; sourceTree = "<group>"; };
 		43BF126818E74BB9009A1C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43BF126A18E74BBA009A1C84 /* TypendiumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypendiumTests.m; sourceTree = "<group>"; };
+		43BF127418E74F46009A1C84 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = Intro/IntroViewController.h; sourceTree = "<group>"; };
+		43BF127518E74F46009A1C84 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = Intro/IntroViewController.m; sourceTree = "<group>"; };
+		43BF127718E754AB009A1C84 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Menu/MenuViewController.h; sourceTree = "<group>"; };
+		43BF127818E754AB009A1C84 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Menu/MenuViewController.m; sourceTree = "<group>"; };
+		43BF127A18E76DF3009A1C84 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = History/HistoryViewController.h; sourceTree = "<group>"; };
+		43BF127B18E76DF3009A1C84 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = History/HistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +124,14 @@
 				43BF124E18E74BB9009A1C84 /* AppDelegate.h */,
 				43BF124F18E74BB9009A1C84 /* AppDelegate.m */,
 				43BF125118E74BB9009A1C84 /* Main.storyboard */,
+				43BF127418E74F46009A1C84 /* IntroViewController.h */,
+				43BF127518E74F46009A1C84 /* IntroViewController.m */,
 				43BF125418E74BB9009A1C84 /* ViewController.h */,
 				43BF125518E74BB9009A1C84 /* ViewController.m */,
+				43BF127718E754AB009A1C84 /* MenuViewController.h */,
+				43BF127818E754AB009A1C84 /* MenuViewController.m */,
+				43BF127A18E76DF3009A1C84 /* HistoryViewController.h */,
+				43BF127B18E76DF3009A1C84 /* HistoryViewController.m */,
 				43BF125718E74BB9009A1C84 /* Images.xcassets */,
 				43BF124618E74BB9009A1C84 /* Supporting Files */,
 			);
@@ -252,6 +267,9 @@
 				43BF125618E74BB9009A1C84 /* ViewController.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
+				43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */,
+				43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */,
+				43BF127C18E76DF3009A1C84 /* HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
