@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43BF124018E74BB9009A1C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF123F18E74BB9009A1C84 /* Foundation.framework */; };
+		43BF124218E74BB9009A1C84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF124118E74BB9009A1C84 /* CoreGraphics.framework */; };
+		43BF124418E74BB9009A1C84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF124318E74BB9009A1C84 /* UIKit.framework */; };
+		43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43BF124818E74BB9009A1C84 /* InfoPlist.strings */; };
+		43BF124C18E74BB9009A1C84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF124B18E74BB9009A1C84 /* main.m */; };
+		43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF124F18E74BB9009A1C84 /* AppDelegate.m */; };
+		43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BF125118E74BB9009A1C84 /* Main.storyboard */; };
+		43BF125618E74BB9009A1C84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF125518E74BB9009A1C84 /* ViewController.m */; };
+		43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BF125718E74BB9009A1C84 /* Images.xcassets */; };
+		43BF125F18E74BB9009A1C84 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF125E18E74BB9009A1C84 /* XCTest.framework */; };
+		43BF126018E74BB9009A1C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF123F18E74BB9009A1C84 /* Foundation.framework */; };
+		43BF126118E74BB9009A1C84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF124318E74BB9009A1C84 /* UIKit.framework */; };
+		43BF126918E74BB9009A1C84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43BF126718E74BB9009A1C84 /* InfoPlist.strings */; };
+		43BF126B18E74BBA009A1C84 /* TypendiumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF126A18E74BBA009A1C84 /* TypendiumTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43BF126218E74BB9009A1C84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43BF123418E74BB9009A1C84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43BF123B18E74BB9009A1C84;
+			remoteInfo = Typendium;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43BF123C18E74BB9009A1C84 /* Typendium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typendium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BF123F18E74BB9009A1C84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43BF124118E74BB9009A1C84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		43BF124318E74BB9009A1C84 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		43BF124718E74BB9009A1C84 /* Typendium-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Typendium-Info.plist"; sourceTree = "<group>"; };
+		43BF124918E74BB9009A1C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43BF124B18E74BB9009A1C84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		43BF124D18E74BB9009A1C84 /* Typendium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Typendium-Prefix.pch"; sourceTree = "<group>"; };
+		43BF124E18E74BB9009A1C84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		43BF124F18E74BB9009A1C84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		43BF125218E74BB9009A1C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43BF125418E74BB9009A1C84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		43BF125518E74BB9009A1C84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		43BF125718E74BB9009A1C84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43BF125D18E74BB9009A1C84 /* TypendiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypendiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BF125E18E74BB9009A1C84 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		43BF126618E74BB9009A1C84 /* TypendiumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TypendiumTests-Info.plist"; sourceTree = "<group>"; };
+		43BF126818E74BB9009A1C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43BF126A18E74BBA009A1C84 /* TypendiumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypendiumTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43BF123918E74BB9009A1C84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF124218E74BB9009A1C84 /* CoreGraphics.framework in Frameworks */,
+				43BF124418E74BB9009A1C84 /* UIKit.framework in Frameworks */,
+				43BF124018E74BB9009A1C84 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BF125A18E74BB9009A1C84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF125F18E74BB9009A1C84 /* XCTest.framework in Frameworks */,
+				43BF126118E74BB9009A1C84 /* UIKit.framework in Frameworks */,
+				43BF126018E74BB9009A1C84 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43BF123318E74BB9009A1C84 = {
+			isa = PBXGroup;
+			children = (
+				43BF124518E74BB9009A1C84 /* Typendium */,
+				43BF126418E74BB9009A1C84 /* TypendiumTests */,
+				43BF123E18E74BB9009A1C84 /* Frameworks */,
+				43BF123D18E74BB9009A1C84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43BF123D18E74BB9009A1C84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43BF123C18E74BB9009A1C84 /* Typendium.app */,
+				43BF125D18E74BB9009A1C84 /* TypendiumTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43BF123E18E74BB9009A1C84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43BF123F18E74BB9009A1C84 /* Foundation.framework */,
+				43BF124118E74BB9009A1C84 /* CoreGraphics.framework */,
+				43BF124318E74BB9009A1C84 /* UIKit.framework */,
+				43BF125E18E74BB9009A1C84 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43BF124518E74BB9009A1C84 /* Typendium */ = {
+			isa = PBXGroup;
+			children = (
+				43BF124E18E74BB9009A1C84 /* AppDelegate.h */,
+				43BF124F18E74BB9009A1C84 /* AppDelegate.m */,
+				43BF125118E74BB9009A1C84 /* Main.storyboard */,
+				43BF125418E74BB9009A1C84 /* ViewController.h */,
+				43BF125518E74BB9009A1C84 /* ViewController.m */,
+				43BF125718E74BB9009A1C84 /* Images.xcassets */,
+				43BF124618E74BB9009A1C84 /* Supporting Files */,
+			);
+			path = Typendium;
+			sourceTree = "<group>";
+		};
+		43BF124618E74BB9009A1C84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43BF124718E74BB9009A1C84 /* Typendium-Info.plist */,
+				43BF124818E74BB9009A1C84 /* InfoPlist.strings */,
+				43BF124B18E74BB9009A1C84 /* main.m */,
+				43BF124D18E74BB9009A1C84 /* Typendium-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43BF126418E74BB9009A1C84 /* TypendiumTests */ = {
+			isa = PBXGroup;
+			children = (
+				43BF126A18E74BBA009A1C84 /* TypendiumTests.m */,
+				43BF126518E74BB9009A1C84 /* Supporting Files */,
+			);
+			path = TypendiumTests;
+			sourceTree = "<group>";
+		};
+		43BF126518E74BB9009A1C84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43BF126618E74BB9009A1C84 /* TypendiumTests-Info.plist */,
+				43BF126718E74BB9009A1C84 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43BF123B18E74BB9009A1C84 /* Typendium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BF126E18E74BBA009A1C84 /* Build configuration list for PBXNativeTarget "Typendium" */;
+			buildPhases = (
+				43BF123818E74BB9009A1C84 /* Sources */,
+				43BF123918E74BB9009A1C84 /* Frameworks */,
+				43BF123A18E74BB9009A1C84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Typendium;
+			productName = Typendium;
+			productReference = 43BF123C18E74BB9009A1C84 /* Typendium.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43BF125C18E74BB9009A1C84 /* TypendiumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BF127118E74BBA009A1C84 /* Build configuration list for PBXNativeTarget "TypendiumTests" */;
+			buildPhases = (
+				43BF125918E74BB9009A1C84 /* Sources */,
+				43BF125A18E74BB9009A1C84 /* Frameworks */,
+				43BF125B18E74BB9009A1C84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43BF126318E74BB9009A1C84 /* PBXTargetDependency */,
+			);
+			name = TypendiumTests;
+			productName = TypendiumTests;
+			productReference = 43BF125D18E74BB9009A1C84 /* TypendiumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43BF123418E74BB9009A1C84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "William Robinson";
+				TargetAttributes = {
+					43BF125C18E74BB9009A1C84 = {
+						TestTargetID = 43BF123B18E74BB9009A1C84;
+					};
+				};
+			};
+			buildConfigurationList = 43BF123718E74BB9009A1C84 /* Build configuration list for PBXProject "Typendium" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43BF123318E74BB9009A1C84;
+			productRefGroup = 43BF123D18E74BB9009A1C84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43BF123B18E74BB9009A1C84 /* Typendium */,
+				43BF125C18E74BB9009A1C84 /* TypendiumTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43BF123A18E74BB9009A1C84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
+				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
+				43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BF125B18E74BB9009A1C84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF126918E74BB9009A1C84 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43BF123818E74BB9009A1C84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF125618E74BB9009A1C84 /* ViewController.m in Sources */,
+				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
+				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BF125918E74BB9009A1C84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF126B18E74BBA009A1C84 /* TypendiumTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43BF126318E74BB9009A1C84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43BF123B18E74BB9009A1C84 /* Typendium */;
+			targetProxy = 43BF126218E74BB9009A1C84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		43BF124818E74BB9009A1C84 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BF124918E74BB9009A1C84 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		43BF125118E74BB9009A1C84 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BF125218E74BB9009A1C84 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43BF126718E74BB9009A1C84 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BF126818E74BB9009A1C84 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43BF126C18E74BBA009A1C84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		43BF126D18E74BBA009A1C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43BF126F18E74BBA009A1C84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
+				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		43BF127018E74BBA009A1C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
+				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		43BF127218E74BBA009A1C84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Typendium.app/Typendium";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TypendiumTests/TypendiumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		43BF127318E74BBA009A1C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Typendium.app/Typendium";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
+				INFOPLIST_FILE = "TypendiumTests/TypendiumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43BF123718E74BB9009A1C84 /* Build configuration list for PBXProject "Typendium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BF126C18E74BBA009A1C84 /* Debug */,
+				43BF126D18E74BBA009A1C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43BF126E18E74BBA009A1C84 /* Build configuration list for PBXNativeTarget "Typendium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BF126F18E74BBA009A1C84 /* Debug */,
+				43BF127018E74BBA009A1C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		43BF127118E74BBA009A1C84 /* Build configuration list for PBXNativeTarget "TypendiumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BF127218E74BBA009A1C84 /* Debug */,
+				43BF127318E74BBA009A1C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43BF123418E74BB9009A1C84 /* Project object */;
+}
