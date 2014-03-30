@@ -24,6 +24,15 @@
 		43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127518E74F46009A1C84 /* IntroViewController.m */; };
 		43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127818E754AB009A1C84 /* MenuViewController.m */; };
 		43BF127C18E76DF3009A1C84 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127B18E76DF3009A1C84 /* HistoryViewController.m */; };
+		43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A4118E82A0600B43DE3 /* TextViewController.m */; };
+		43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A4318E82B2000B43DE3 /* Paragraph.xib */; };
+		43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A4518E82EBD00B43DE3 /* Image.xib */; };
+		43DD1A4918E8304700B43DE3 /* Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A4818E8304700B43DE3 /* Paragraph.m */; };
+		43DD1A4C18E834AC00B43DE3 /* Title.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A4B18E834AC00B43DE3 /* Title.m */; };
+		43DD1A4F18E836EF00B43DE3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A4E18E836EF00B43DE3 /* Image.m */; };
+		43DD1A5118E8375700B43DE3 /* Title.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5018E8375700B43DE3 /* Title.xib */; };
+		43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5218E8472D00B43DE3 /* Quote.xib */; };
+		43DD1A5618E8485C00B43DE3 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A5518E8485C00B43DE3 /* Quote.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +71,20 @@
 		43BF127818E754AB009A1C84 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Menu/MenuViewController.m; sourceTree = "<group>"; };
 		43BF127A18E76DF3009A1C84 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = History/HistoryViewController.h; sourceTree = "<group>"; };
 		43BF127B18E76DF3009A1C84 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = History/HistoryViewController.m; sourceTree = "<group>"; };
+		43DD1A4018E82A0600B43DE3 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextViewController.h; path = Text/TextViewController.h; sourceTree = "<group>"; };
+		43DD1A4118E82A0600B43DE3 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextViewController.m; path = Text/TextViewController.m; sourceTree = "<group>"; };
+		43DD1A4318E82B2000B43DE3 /* Paragraph.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Paragraph.xib; path = XIBs/Paragraph.xib; sourceTree = "<group>"; };
+		43DD1A4518E82EBD00B43DE3 /* Image.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Image.xib; sourceTree = "<group>"; };
+		43DD1A4718E8304700B43DE3 /* Paragraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paragraph.h; sourceTree = "<group>"; };
+		43DD1A4818E8304700B43DE3 /* Paragraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paragraph.m; sourceTree = "<group>"; };
+		43DD1A4A18E834AC00B43DE3 /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
+		43DD1A4B18E834AC00B43DE3 /* Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Title.m; sourceTree = "<group>"; };
+		43DD1A4D18E836EF00B43DE3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		43DD1A4E18E836EF00B43DE3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		43DD1A5018E8375700B43DE3 /* Title.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Title.xib; sourceTree = "<group>"; };
+		43DD1A5218E8472D00B43DE3 /* Quote.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Quote.xib; sourceTree = "<group>"; };
+		43DD1A5418E8485C00B43DE3 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
+		43DD1A5518E8485C00B43DE3 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +155,20 @@
 				43BF127818E754AB009A1C84 /* MenuViewController.m */,
 				43BF127A18E76DF3009A1C84 /* HistoryViewController.h */,
 				43BF127B18E76DF3009A1C84 /* HistoryViewController.m */,
+				43DD1A4018E82A0600B43DE3 /* TextViewController.h */,
+				43DD1A4118E82A0600B43DE3 /* TextViewController.m */,
+				43DD1A4D18E836EF00B43DE3 /* Image.h */,
+				43DD1A4E18E836EF00B43DE3 /* Image.m */,
+				43DD1A4A18E834AC00B43DE3 /* Title.h */,
+				43DD1A4B18E834AC00B43DE3 /* Title.m */,
+				43DD1A4718E8304700B43DE3 /* Paragraph.h */,
+				43DD1A4818E8304700B43DE3 /* Paragraph.m */,
+				43DD1A5018E8375700B43DE3 /* Title.xib */,
+				43DD1A4318E82B2000B43DE3 /* Paragraph.xib */,
+				43DD1A4518E82EBD00B43DE3 /* Image.xib */,
+				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
+				43DD1A5418E8485C00B43DE3 /* Quote.h */,
+				43DD1A5518E8485C00B43DE3 /* Quote.m */,
 				43BF125718E74BB9009A1C84 /* Images.xcassets */,
 				43BF124618E74BB9009A1C84 /* Supporting Files */,
 			);
@@ -243,7 +280,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */,
+				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
+				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
+				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
 				43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */,
 			);
@@ -266,10 +307,15 @@
 			files = (
 				43BF125618E74BB9009A1C84 /* ViewController.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
+				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,
+				43DD1A4C18E834AC00B43DE3 /* Title.m in Sources */,
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
+				43DD1A4918E8304700B43DE3 /* Paragraph.m in Sources */,
 				43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */,
 				43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */,
+				43DD1A5618E8485C00B43DE3 /* Quote.m in Sources */,
 				43BF127C18E76DF3009A1C84 /* HistoryViewController.m in Sources */,
+				43DD1A4F18E836EF00B43DE3 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +520,7 @@
 				43BF127018E74BBA009A1C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43BF127118E74BBA009A1C84 /* Build configuration list for PBXNativeTarget "TypendiumTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +529,7 @@
 				43BF127318E74BBA009A1C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

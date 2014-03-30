@@ -24,6 +24,14 @@
                                     <segue destination="iCE-Yh-opQ" kind="embed" id="K6K-Hh-YmO"/>
                                 </connections>
                             </containerView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpj-vf-ca5" userLabel="container_history">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="tgI-QH-4bS" kind="embed" id="6Yu-c5-WDH"/>
+                                </connections>
+                            </containerView>
                             <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-HR-b8j" userLabel="view_menu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -32,12 +40,12 @@
                                     <segue destination="cy1-VL-Z8p" kind="embed" id="jVl-ZH-bQr"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpj-vf-ca5">
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acM-XM-oxq" userLabel="container_text">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="tgI-QH-4bS" kind="embed" id="6Yu-c5-WDH"/>
+                                    <segue destination="1ct-Va-GG7" kind="embed" id="v9I-8q-oFt"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -47,6 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-14" y="288"/>
         </scene>
         <!--Intro-->
         <scene sceneID="dsB-y2-BEP">
@@ -183,6 +192,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfp-Gc-9K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="679" y="952"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="5oJ-8z-WMn">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1ct-Va-GG7" customClass="TextViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MzQ-YV-NAS"/>
+                        <viewControllerLayoutGuide type="bottom" id="VQb-v2-rSI"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ixn-UK-km7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M49-Y3-xSI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="scrollView" destination="M49-Y3-xSI" id="ABX-EW-wXl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqE-cB-eZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679" y="1611"/>
         </scene>
     </scenes>
     <resources>

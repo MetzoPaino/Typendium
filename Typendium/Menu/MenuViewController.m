@@ -14,11 +14,16 @@
 
 @property (strong, nonatomic) NSArray *menuPageNames;
 
+
+
 @end
 
 @implementation MenuViewController {
     
+   
 }
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,9 +37,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 2,
+
+}
+
+- (void)viewDidLayoutSubviews {
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.menuPageNames.count,
                                              self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
     
     int i = 0;
     
@@ -49,23 +60,23 @@
         UIImageView *background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.menuPageNames objectAtIndex:i]]];
         [menuPage addSubview:background];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.center.y, 320, 50)];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height / 1.5);
         title.text = [self.menuPageNames objectAtIndex:i];
         title.textAlignment = NSTextAlignmentCenter;
         [menuPage addSubview:title];
         
-        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(menuPage.frame.size.width / 2, 400, 44, 15)];
+        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
+        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 0.8);
+        
         [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Black"] forState:UIControlStateNormal];
         [menuPage addSubview:upArrow];
+        
         
         [self.scrollView addSubview:menuPage];
         
         i++;
     }
-}
-
-- (void)viewDidLayoutSubviews {
-    
 
 }
                                                                     

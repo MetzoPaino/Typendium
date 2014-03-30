@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 2,
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.historyPageNames.count,
                                              self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
     
