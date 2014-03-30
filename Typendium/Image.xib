@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view alpha="0.74999999999999978" contentMode="scaleToFill" restorationIdentifier="Image" id="iN0-l3-epB" customClass="Image">
+        <view contentMode="scaleToFill" restorationIdentifier="Image" id="iN0-l3-epB" customClass="Image">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>

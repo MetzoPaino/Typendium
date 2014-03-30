@@ -88,6 +88,7 @@
                                                                }];
                                           }];
                      }];
+    NSLog(@"%f", self.btn_upArrow.center.y);
     
     [UIView animateWithDuration:0.5
                           delay:1.5

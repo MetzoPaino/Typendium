@@ -27,44 +27,46 @@
     return self;
 }
 
+#pragma mark - View Controller Configuration
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.historyPageNames.count,
                                              self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
     
     int i = 0;
     
     while (i < self.historyPageNames.count) {
         
-        UIView *menuPage = [[UIView alloc]
+        UIView *historyPage = [[UIView alloc]
                             initWithFrame:CGRectMake(((self.scrollView.frame.size.width)*i), 0,
                                                      (self.scrollView.frame.size.width), self.scrollView.frame.size.height)];
         
-        [menuPage setTag:i];
+        [historyPage setTag:i];
         
         UIImageView *background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.historyPageNames objectAtIndex:i]]];
-        [menuPage addSubview:background];
+        background.center = CGPointMake(self.view.center.x, self.view.center.y);
+        [historyPage addSubview:background];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.center.y, 320, 50)];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
         title.text = [self.historyPageNames objectAtIndex:i];
         title.textAlignment = NSTextAlignmentCenter;
-        [menuPage addSubview:title];
+        title.font = [UIFont systemFontOfSize:28];
+        [historyPage addSubview:title];
         
-        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(menuPage.frame.size.width / 2, 400, 44, 15)];
+        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
+        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
         [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Black"] forState:UIControlStateNormal];
-        [menuPage addSubview:upArrow];
+        [historyPage addSubview:upArrow];
         
-        [self.scrollView addSubview:menuPage];
+        [self.scrollView addSubview:historyPage];
         
         i++;
     }
-}
-
-- (void)viewDidLayoutSubviews {
-    
-    
 }
 
 - (NSArray *)historyPageNames {
@@ -76,22 +78,5 @@
     return _historyPageNames;
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

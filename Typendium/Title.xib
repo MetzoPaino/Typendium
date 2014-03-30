@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view alpha="0.74999999999999978" contentMode="scaleToFill" restorationIdentifier="Title" id="ltj-Aj-hW2" customClass="Title">
+        <view contentMode="scaleToFill" restorationIdentifier="Title" id="ltj-Aj-hW2" customClass="Title">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -20,6 +20,9 @@
             </subviews>
             <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lbl_title" destination="woW-Xx-kJV" id="tcn-sR-iUY"/>
+            </connections>
         </view>
     </objects>
 </document>

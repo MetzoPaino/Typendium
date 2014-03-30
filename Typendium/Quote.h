@@ -10,4 +10,6 @@
 
 @interface Quote : UIView
 
+@property (strong, nonatomic) IBOutlet UILabel *lbl_quote;
+
 @end

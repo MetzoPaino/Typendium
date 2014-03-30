@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TypendiumText</key>
+	<dict>
+		<key>TimesNewRoman</key>
+		<dict>
+			<key>Title</key>
+			<string>Times New Roman</string>
+			<key>Paragraph1</key>
+			<string>Stanley Morison was a titan of the typographic world, hired by Monotype as a typographical consultant in 1923, his most famous creation is so well known it is almost invisible, Times New Roman. Morison was given the opportunity to redesign the design of The Times Newspaper after he had published the scathing article ‘Newspaper Types: A Study of The Times’ which criticised how badly printed and out of date The Times of London newspaper was.</string>
+			<key>Paragraph2</key>
+			<string>Morison set out to bring The Times to “the standard obtaining in the average book as brought out by London publishers”. Legibility and clarity were paramount due to the compact columns of a broadsheet newspaper. Morison looked to types such as Ionic by the Mergenthaler Linotype Company for inspiration, which having been cut in 1926 specifically for the harsh conditions of newspaper printing was an immediate success.</string>
+			<key>Paragraph3</key>
+			<string>Despite Morison’s fervent opinion that The Times’ 19th century typeface was badly outdated and in need of a total overhaul, he based Times New Roman on the 16th century Robert Granjon typeface Plantin. Morison was also not an artist, so Victor Lardent from The Times was employed to adapt Plantin into Times New Roman, revising his drawings until it met Morison’s strict requirements.</string>
+			<key>Paragraph4</key>
+			<string>Times New Roman is a tight serif design, with short ascenders &amp; descenders, and capitals that are contained and unobtrusive. The Times first published with its new typeface on October 3rd, 1932, achieving a remarkably high degree of contrast with the newspapers famously high quality white paper that could hold more ink on the page than its cheaper rivals. However these aspects which brought so much success to The Times faired poorly once Times New Roman was made available to other newspapers. Thankfully this workhorse typeface did not die out, and instead flourished for some time in book and magazine printing.</string>
+			<key>Paragraph5</key>
+			<string>Now Times New Roman has been adapted to Greek and Cryillic, and expanded with variations, weights and extra characters for work across the globe. The Times newspaper however long since discard Times New Roman. After 40 years of use the venerable typeface was replaced in 1972 with Times Europa, a sturdier design that can withstand faster presses on cheaper paper. Regardless, Times New Roman lives on, having become the de facto standard of desktop publishing and office documents with it’s calm authority and practicality.</string>
+			<key>Quote1</key>
+			<string>“For a new font to be successful, it has to be so good that only very few recognise its novelty”</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437CD7E118E8C37E00AAD7F6 /* Caption.xib */; };
+		437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 437CD7E418E8C38A00AAD7F6 /* Caption.m */; };
 		43BF124018E74BB9009A1C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF123F18E74BB9009A1C84 /* Foundation.framework */; };
 		43BF124218E74BB9009A1C84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF124118E74BB9009A1C84 /* CoreGraphics.framework */; };
 		43BF124418E74BB9009A1C84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF124318E74BB9009A1C84 /* UIKit.framework */; };
@@ -33,6 +35,7 @@
 		43DD1A5118E8375700B43DE3 /* Title.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5018E8375700B43DE3 /* Title.xib */; };
 		43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5218E8472D00B43DE3 /* Quote.xib */; };
 		43DD1A5618E8485C00B43DE3 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A5518E8485C00B43DE3 /* Quote.m */; };
+		43DD1A5818E852C800B43DE3 /* Typendium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5718E852C800B43DE3 /* Typendium.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		437CD7E118E8C37E00AAD7F6 /* Caption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption.xib; path = XIBs/Caption.xib; sourceTree = "<group>"; };
+		437CD7E318E8C38A00AAD7F6 /* Caption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caption.h; sourceTree = "<group>"; };
+		437CD7E418E8C38A00AAD7F6 /* Caption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caption.m; sourceTree = "<group>"; };
 		43BF123C18E74BB9009A1C84 /* Typendium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typendium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BF123F18E74BB9009A1C84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43BF124118E74BB9009A1C84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +91,7 @@
 		43DD1A5218E8472D00B43DE3 /* Quote.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Quote.xib; sourceTree = "<group>"; };
 		43DD1A5418E8485C00B43DE3 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
 		43DD1A5518E8485C00B43DE3 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
+		43DD1A5718E852C800B43DE3 /* Typendium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Typendium.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,10 +172,14 @@
 				43DD1A4818E8304700B43DE3 /* Paragraph.m */,
 				43DD1A5018E8375700B43DE3 /* Title.xib */,
 				43DD1A4318E82B2000B43DE3 /* Paragraph.xib */,
+				437CD7E118E8C37E00AAD7F6 /* Caption.xib */,
+				437CD7E318E8C38A00AAD7F6 /* Caption.h */,
+				437CD7E418E8C38A00AAD7F6 /* Caption.m */,
 				43DD1A4518E82EBD00B43DE3 /* Image.xib */,
 				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
 				43DD1A5418E8485C00B43DE3 /* Quote.h */,
 				43DD1A5518E8485C00B43DE3 /* Quote.m */,
+				43DD1A5718E852C800B43DE3 /* Typendium.plist */,
 				43BF125718E74BB9009A1C84 /* Images.xcassets */,
 				43BF124618E74BB9009A1C84 /* Supporting Files */,
 			);
@@ -280,11 +291,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43DD1A5818E852C800B43DE3 /* Typendium.plist in Resources */,
 				43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */,
 				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
 				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,
+				437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */,
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
 				43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */,
 			);
@@ -307,6 +320,7 @@
 			files = (
 				43BF125618E74BB9009A1C84 /* ViewController.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
+				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
 				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,
 				43DD1A4C18E834AC00B43DE3 /* Title.m in Sources */,
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
