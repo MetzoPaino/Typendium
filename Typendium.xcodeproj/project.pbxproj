@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434DB2DA18E9F31200DC8E42 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DB2D918E9F31200DC8E42 /* AboutUsViewController.m */; };
 		437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437CD7E118E8C37E00AAD7F6 /* Caption.xib */; };
 		437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 437CD7E418E8C38A00AAD7F6 /* Caption.m */; };
 		43BF124018E74BB9009A1C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF123F18E74BB9009A1C84 /* Foundation.framework */; };
@@ -16,7 +17,7 @@
 		43BF124C18E74BB9009A1C84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF124B18E74BB9009A1C84 /* main.m */; };
 		43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF124F18E74BB9009A1C84 /* AppDelegate.m */; };
 		43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BF125118E74BB9009A1C84 /* Main.storyboard */; };
-		43BF125618E74BB9009A1C84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF125518E74BB9009A1C84 /* ViewController.m */; };
+		43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF125518E74BB9009A1C84 /* MainViewController.m */; };
 		43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BF125718E74BB9009A1C84 /* Images.xcassets */; };
 		43BF125F18E74BB9009A1C84 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF125E18E74BB9009A1C84 /* XCTest.framework */; };
 		43BF126018E74BB9009A1C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF123F18E74BB9009A1C84 /* Foundation.framework */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		434DB2D818E9F31200DC8E42 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		434DB2D918E9F31200DC8E42 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		437CD7E118E8C37E00AAD7F6 /* Caption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption.xib; path = XIBs/Caption.xib; sourceTree = "<group>"; };
 		437CD7E318E8C38A00AAD7F6 /* Caption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caption.h; sourceTree = "<group>"; };
 		437CD7E418E8C38A00AAD7F6 /* Caption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caption.m; sourceTree = "<group>"; };
@@ -63,8 +66,8 @@
 		43BF124E18E74BB9009A1C84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43BF124F18E74BB9009A1C84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		43BF125218E74BB9009A1C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43BF125418E74BB9009A1C84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		43BF125518E74BB9009A1C84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		43BF125418E74BB9009A1C84 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		43BF125518E74BB9009A1C84 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		43BF125718E74BB9009A1C84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43BF125D18E74BB9009A1C84 /* TypendiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypendiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BF125E18E74BB9009A1C84 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,6 +121,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434DB2D718E9F23300DC8E42 /* Page Maker */ = {
+			isa = PBXGroup;
+			children = (
+				43DD1A4D18E836EF00B43DE3 /* Image.h */,
+				43DD1A4E18E836EF00B43DE3 /* Image.m */,
+				43DD1A4A18E834AC00B43DE3 /* Title.h */,
+				43DD1A4B18E834AC00B43DE3 /* Title.m */,
+				43DD1A4718E8304700B43DE3 /* Paragraph.h */,
+				43DD1A4818E8304700B43DE3 /* Paragraph.m */,
+				43DD1A5018E8375700B43DE3 /* Title.xib */,
+				43DD1A4318E82B2000B43DE3 /* Paragraph.xib */,
+				437CD7E118E8C37E00AAD7F6 /* Caption.xib */,
+				437CD7E318E8C38A00AAD7F6 /* Caption.h */,
+				437CD7E418E8C38A00AAD7F6 /* Caption.m */,
+				43DD1A4518E82EBD00B43DE3 /* Image.xib */,
+				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
+				43DD1A5418E8485C00B43DE3 /* Quote.h */,
+				43DD1A5518E8485C00B43DE3 /* Quote.m */,
+			);
+			name = "Page Maker";
+			sourceTree = "<group>";
+		};
 		43BF123318E74BB9009A1C84 = {
 			isa = PBXGroup;
 			children = (
@@ -156,29 +181,17 @@
 				43BF125118E74BB9009A1C84 /* Main.storyboard */,
 				43BF127418E74F46009A1C84 /* IntroViewController.h */,
 				43BF127518E74F46009A1C84 /* IntroViewController.m */,
-				43BF125418E74BB9009A1C84 /* ViewController.h */,
-				43BF125518E74BB9009A1C84 /* ViewController.m */,
+				43BF125418E74BB9009A1C84 /* MainViewController.h */,
+				43BF125518E74BB9009A1C84 /* MainViewController.m */,
 				43BF127718E754AB009A1C84 /* MenuViewController.h */,
 				43BF127818E754AB009A1C84 /* MenuViewController.m */,
 				43BF127A18E76DF3009A1C84 /* HistoryViewController.h */,
 				43BF127B18E76DF3009A1C84 /* HistoryViewController.m */,
 				43DD1A4018E82A0600B43DE3 /* TextViewController.h */,
 				43DD1A4118E82A0600B43DE3 /* TextViewController.m */,
-				43DD1A4D18E836EF00B43DE3 /* Image.h */,
-				43DD1A4E18E836EF00B43DE3 /* Image.m */,
-				43DD1A4A18E834AC00B43DE3 /* Title.h */,
-				43DD1A4B18E834AC00B43DE3 /* Title.m */,
-				43DD1A4718E8304700B43DE3 /* Paragraph.h */,
-				43DD1A4818E8304700B43DE3 /* Paragraph.m */,
-				43DD1A5018E8375700B43DE3 /* Title.xib */,
-				43DD1A4318E82B2000B43DE3 /* Paragraph.xib */,
-				437CD7E118E8C37E00AAD7F6 /* Caption.xib */,
-				437CD7E318E8C38A00AAD7F6 /* Caption.h */,
-				437CD7E418E8C38A00AAD7F6 /* Caption.m */,
-				43DD1A4518E82EBD00B43DE3 /* Image.xib */,
-				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
-				43DD1A5418E8485C00B43DE3 /* Quote.h */,
-				43DD1A5518E8485C00B43DE3 /* Quote.m */,
+				434DB2D818E9F31200DC8E42 /* AboutUsViewController.h */,
+				434DB2D918E9F31200DC8E42 /* AboutUsViewController.m */,
+				434DB2D718E9F23300DC8E42 /* Page Maker */,
 				43DD1A5718E852C800B43DE3 /* Typendium.plist */,
 				43BF125718E74BB9009A1C84 /* Images.xcassets */,
 				43BF124618E74BB9009A1C84 /* Supporting Files */,
@@ -318,7 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43BF125618E74BB9009A1C84 /* ViewController.m in Sources */,
+				43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */,
+				434DB2DA18E9F31200DC8E42 /* AboutUsViewController.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
 				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
 				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,

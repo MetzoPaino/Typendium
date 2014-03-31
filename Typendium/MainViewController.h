@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IntroViewController.h"
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController <UpArrowActionDelegate>
+
+//- (void)animateContainerUpwards:(NSString *)viewName;
 
 @end

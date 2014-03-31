@@ -7,7 +7,7 @@
         <!--Main-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" userLabel="Main" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" userLabel="Main" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -16,15 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DzJ-TH-SWy" userLabel="view_intro">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="iCE-Yh-opQ" kind="embed" id="K6K-Hh-YmO"/>
-                                </connections>
-                            </containerView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-HR-b8j" userLabel="view_menu">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-HR-b8j" userLabel="view_menu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -32,7 +24,7 @@
                                     <segue destination="cy1-VL-Z8p" kind="embed" id="jVl-ZH-bQr"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpj-vf-ca5" userLabel="container_history">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpj-vf-ca5" userLabel="container_history">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -40,7 +32,7 @@
                                     <segue destination="tgI-QH-4bS" kind="embed" id="6Yu-c5-WDH"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acM-XM-oxq" userLabel="container_text">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acM-XM-oxq" userLabel="container_text">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -48,14 +40,56 @@
                                     <segue destination="1ct-Va-GG7" kind="embed" id="v9I-8q-oFt"/>
                                 </connections>
                             </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nId-Tk-7Np">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="IgG-mp-jwP" kind="embed" id="HFE-28-Vjx"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DzJ-TH-SWy" userLabel="container_intro">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="iCE-Yh-opQ" kind="embed" id="K6K-Hh-YmO"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="trailing" secondItem="Hhe-HR-b8j" secondAttribute="trailing" id="2NG-sx-w9C"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="bottom" secondItem="vpj-vf-ca5" secondAttribute="bottom" id="4S1-2W-bMC"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="leading" secondItem="acM-XM-oxq" secondAttribute="leading" id="8dm-tc-9AD"/>
+                            <constraint firstItem="Hhe-HR-b8j" firstAttribute="leading" secondItem="acM-XM-oxq" secondAttribute="leading" id="8im-ui-FRw"/>
+                            <constraint firstItem="Hhe-HR-b8j" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="FWi-Kb-4Gh"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="bottom" secondItem="acM-XM-oxq" secondAttribute="bottom" id="Fei-K9-a8o"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="top" secondItem="Hhe-HR-b8j" secondAttribute="top" id="Orj-AK-fug"/>
+                            <constraint firstItem="Hhe-HR-b8j" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Tb0-Nt-2BA"/>
+                            <constraint firstAttribute="bottom" secondItem="Hhe-HR-b8j" secondAttribute="bottom" id="bFV-El-tq5"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="top" secondItem="nId-Tk-7Np" secondAttribute="top" id="di6-qj-Io2"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="bottom" secondItem="Hhe-HR-b8j" secondAttribute="bottom" id="f6U-SS-wuy"/>
+                            <constraint firstItem="Hhe-HR-b8j" firstAttribute="top" secondItem="vpj-vf-ca5" secondAttribute="top" id="gNl-kc-71Q"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="leading" secondItem="vpj-vf-ca5" secondAttribute="leading" id="lue-Tz-Jpi"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="trailing" secondItem="nId-Tk-7Np" secondAttribute="trailing" id="qnb-Ko-YGy"/>
+                            <constraint firstAttribute="trailing" secondItem="Hhe-HR-b8j" secondAttribute="trailing" id="tyM-zg-Oe4"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="trailing" secondItem="vpj-vf-ca5" secondAttribute="trailing" id="vFy-Zm-DYn"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="bottom" secondItem="nId-Tk-7Np" secondAttribute="bottom" id="xaB-Hv-2qQ"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="top" secondItem="acM-XM-oxq" secondAttribute="top" id="xgY-UE-lpm"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="leading" secondItem="nId-Tk-7Np" secondAttribute="leading" id="yBk-mH-koT"/>
+                            <constraint firstItem="DzJ-TH-SWy" firstAttribute="trailing" secondItem="acM-XM-oxq" secondAttribute="trailing" id="yOF-XT-MHU"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="con_intro" destination="DzJ-TH-SWy" id="5ZC-aJ-hsU"/>
+                        <outlet property="con_menu" destination="Hhe-HR-b8j" id="9ap-L3-N4U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="288"/>
+            <point key="canvasLocation" x="-186" y="309"/>
         </scene>
         <!--Intro-->
         <scene sceneID="dsB-y2-BEP">
@@ -80,6 +114,9 @@
                                 <rect key="frame" x="138" y="534" width="44" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="UpArrow-Black"/>
+                                <connections>
+                                    <action selector="upArrow:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="7ie-la-4pf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" fixedFrame="YES" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-Iw-AyN" userLabel="lbl_swipe">
                                 <rect key="frame" x="20" y="92" width="280" height="21"/>
@@ -128,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjb-nA-H6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="-483"/>
+            <point key="canvasLocation" x="170" y="-656"/>
         </scene>
         <!--Menu-->
         <scene sceneID="APJ-2E-6dL">
@@ -156,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDD-At-zkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="288"/>
+            <point key="canvasLocation" x="583" y="-336"/>
         </scene>
         <!--History-->
         <scene sceneID="El5-3X-fCf">
@@ -184,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfp-Gc-9K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="952"/>
+            <point key="canvasLocation" x="583" y="309"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="5oJ-8z-WMn">
@@ -213,6 +250,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqE-cB-eZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="679" y="1611"/>
+        </scene>
+        <!--About Us View Controller-->
+        <scene sceneID="wOa-a5-Jvt">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="IgG-mp-jwP" customClass="AboutUsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V0A-s8-sKf"/>
+                        <viewControllerLayoutGuide type="bottom" id="knz-To-4M3"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fzb-pW-l08">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biA-vM-5Be">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckt-sQ-jZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="1232"/>
         </scene>
     </scenes>
     <resources>

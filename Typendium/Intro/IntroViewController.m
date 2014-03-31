@@ -7,6 +7,7 @@
 //
 
 #import "IntroViewController.h"
+#import "MainViewController.h"
 
 @interface IntroViewController ()
 
@@ -37,11 +38,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
+        [self.delegate animateContainerUpwards:@"Intro"];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     
+    //self.delegate = self;
     [self introAnimation];
 }
 
@@ -156,27 +163,20 @@
 
 - (IBAction)upArrow:(id)sender {
     
-    [self buttonPressAnimation:sender];
+    //[self buttonPressAnimation:sender];
+    MainViewController *main = [[MainViewController alloc]init];
     
-    //typendiumMenuScrollView.center = CGPointMake(typendiumMenuScrollView.center.x, self.view.frame.size.height);
-    [UIView animateWithDuration:0.2
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         //self.intro.center = CGPointMake(intro.center.x, 0 - self.view.frame.size.height/2); //This isn't quite right and i don't know why
-                         // menu.center = CGPointMake(menu.center.x, self.view.frame.size.height/2);
-                     }
-                     completion:^(BOOL finished){
-                         //   tutorial.userInteractionEnabled = NO;
-                         //                         viewingTypendiumIntroView = NO;
-                         //                         viewingTypendiumMenuScrollView = YES;
-                         //                         currentViewName.string = @"Menu";
-                     }];
+    self.delegate = main;
+    
+    if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
+        [self.delegate animateContainerUpwards:@"Intro"];
+    }
     
     
-    
-    
+   // [self.delegate animateContainerUpwards:@"Intro"];
+
 }
+
 
 - (void)buttonPressAnimation:(UIButton *)button {
     
