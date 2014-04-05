@@ -20,5 +20,4 @@
 
 @property (nonatomic, weak) id <UpArrowActionDelegate> delegate;
 
--(void)check;
 @end

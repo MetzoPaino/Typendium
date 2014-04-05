@@ -72,7 +72,7 @@
 - (NSArray *)historyPageNames {
     
     if (!_historyPageNames) {
-        _historyPageNames = [[NSArray alloc] initWithObjects: @"Baskerville", @"Futura", @"GillSans", @"Helvetica", @"Palatino", @"TimesNewRoman", nil];
+        _historyPageNames = [[NSArray alloc] initWithObjects: @"Baskerville", @"Futura", @"GillSans", @"Palatino", @"TimesNewRoman", @"ComingSoon", nil];
     }
     
     return _historyPageNames;

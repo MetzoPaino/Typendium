@@ -53,10 +53,13 @@
 - (void)animateContainerUpwards:(NSString *)viewName {
     
     NSLog(@"OLD %f", self.con_intro.center.y);
-    
        self.con_intro.alpha = 0.6;
-    self.con_intro.backgroundColor = [UIColor redColor];
+    [self.con_intro removeFromSuperview];
     
+    self.con_intro.backgroundColor = [UIColor redColor];
+    self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
+    [self.con_intro updateConstraintsIfNeeded];
+
     if ([viewName isEqualToString:@"Intro"]) {
         [UIView animateWithDuration:0.25
                               delay:0
@@ -64,15 +67,13 @@
                          animations:^{
                              self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
                              
-                             self.con_intro.frame = CGRectMake(0, 0, 200, 200);
-                             self.con_intro.alpha = 0.6;
-                             
 //                             belowView.center = CGPointMake(belowView.center.x, self.view.frame.size.height/2 + offset);
                          }
                          completion:^(BOOL finished){
-                             self.con_intro.hidden = YES;
-                             [self.con_intro layoutIfNeeded];
-                             [self.view layoutIfNeeded];
+                             [self updateViewConstraints];
+                             [self.con_intro updateConstraintsIfNeeded];
+                             [self.con_intro removeFromSuperview];
+
                              NSLog(@"BANG %f", self.con_intro.center.y);
                          }];
     }

@@ -8,9 +8,12 @@
 
 #import "MenuViewController.h"
 
-@interface MenuViewController ()
+@interface MenuViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *image2;
 
 @property (strong, nonatomic) NSArray *menuPageNames;
 
@@ -81,7 +84,23 @@
     }
 
 }
-                                                                    
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    self.image.alpha = (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
+    
+    self.image2.alpha = 1 - (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
+    
+    if (scrollView.contentOffset.x < 320)
+    {
+        // Load content 1
+    }
+    else if (scrollView.contentOffset.x >= 320)
+    {
+        // Load content 2
+    }
+}
+
 - (NSArray *)menuPageNames {
     
     if (!_menuPageNames) {

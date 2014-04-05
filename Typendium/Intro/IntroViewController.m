@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_upArrow;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_swipe;
 
 @property (weak, nonatomic) IBOutlet UIImageView *image_background;
 
@@ -37,18 +38,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
-        [self.delegate animateContainerUpwards:@"Intro"];
-    }
+
+    self.lbl_title.alpha = 0;
+    self.btn_settings.alpha = 0;
+    self.btn_tutorial.alpha = 0;
+    self.lbl_swipe.alpha = 0;
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     
-    //self.delegate = self;
+    self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height + self.view.frame.size.height / 2);
+    self.lbl_title.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height + self.view.frame.size.height / 2);
+    self.lbl_title.alpha = 1;
+    self.lbl_swipe.alpha = 1;
+    
     [self introAnimation];
 }
 
@@ -101,8 +107,8 @@
                           delay:1.5
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                            self.btn_settings.alpha = 0.25;
-                            self.btn_tutorial.alpha = 0.25;
+                            self.btn_settings.alpha = 1.0;
+                            self.btn_tutorial.alpha = 1.0;
                      }
                      completion:^(BOOL finished){
                          
@@ -163,18 +169,12 @@
 
 - (IBAction)upArrow:(id)sender {
     
-    //[self buttonPressAnimation:sender];
     MainViewController *main = [[MainViewController alloc]init];
-    
     self.delegate = main;
     
     if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
         [self.delegate animateContainerUpwards:@"Intro"];
     }
-    
-    
-   // [self.delegate animateContainerUpwards:@"Intro"];
-
 }
 
 
