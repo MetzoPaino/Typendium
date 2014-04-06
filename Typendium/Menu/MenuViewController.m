@@ -65,16 +65,23 @@
 
         [menuPage addSubview:background];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
-        title.text = [self.menuPageNames objectAtIndex:i];
-        title.textAlignment = NSTextAlignmentCenter;
-        title.font = [UIFont systemFontOfSize:28];
-        [menuPage addSubview:title];
+//        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+//        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
+//        title.text = [self.menuPageNames objectAtIndex:i];
+//        title.textAlignment = NSTextAlignmentCenter;
+//        title.font = [UIFont systemFontOfSize:28];
+//        [menuPage addSubview:title];
         
         UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
         upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
-        [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Black"] forState:UIControlStateNormal];
+        
+        if (i == 0) {
+            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Red"] forState:UIControlStateNormal];
+
+        } else {
+            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Blue"] forState:UIControlStateNormal];
+
+        }
         [menuPage addSubview:upArrow];
         
         

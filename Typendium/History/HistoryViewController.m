@@ -51,16 +51,16 @@
         background.center = CGPointMake(self.view.center.x, self.view.center.y);
         [historyPage addSubview:background];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
-        title.text = [self.historyPageNames objectAtIndex:i];
-        title.textAlignment = NSTextAlignmentCenter;
-        title.font = [UIFont systemFontOfSize:28];
-        [historyPage addSubview:title];
+//        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+//        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
+//        title.text = [self.historyPageNames objectAtIndex:i];
+//        title.textAlignment = NSTextAlignmentCenter;
+//        title.font = [UIFont systemFontOfSize:28];
+//        [historyPage addSubview:title];
         
         UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
         upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
-        [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Black"] forState:UIControlStateNormal];
+        [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-White"] forState:UIControlStateNormal];
         [historyPage addSubview:upArrow];
         
         [self.scrollView addSubview:historyPage];

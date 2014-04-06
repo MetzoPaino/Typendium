@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_tutorial;
 @property (weak, nonatomic) IBOutlet UIButton *btn_upArrow;
 
-@property (weak, nonatomic) IBOutlet UILabel *lbl_title;
+@property (weak, nonatomic) IBOutlet UIImageView *img_title;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_swipe;
 
 @property (weak, nonatomic) IBOutlet UIImageView *image_background;
@@ -40,7 +40,7 @@
     [super viewDidLoad];
     
 
-    self.lbl_title.alpha = 0;
+    self.img_title.alpha = 0;
     self.btn_settings.alpha = 0;
     self.btn_tutorial.alpha = 0;
     self.lbl_swipe.alpha = 0;
@@ -51,8 +51,8 @@
     [super viewDidAppear:YES];
     
     self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height + self.view.frame.size.height / 2);
-    self.lbl_title.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height + self.view.frame.size.height / 2);
-    self.lbl_title.alpha = 1;
+    self.img_title.center = CGPointMake(self.img_title.center.x, self.view.frame.size.height);
+    self.img_title.alpha = 1;
     self.lbl_swipe.alpha = 1;
     
     [self introAnimation];
@@ -66,14 +66,25 @@
 
 -(void)introAnimation {
     
-    self.btn_upArrow.alpha = 0.15;
+    [UIView animateWithDuration:2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         
+                         self.img_title.center = CGPointMake(self.img_title.center.x, self.view.center.y);
+                         //                            self.btn_settings.alpha = 1.0;
+                         //                            self.btn_tutorial.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
     
     [UIView animateWithDuration:0.65
                           delay: 0.5
                         options: UIViewAnimationOptionCurveLinear
                      animations:^{
         
-                         self.lbl_title.center = CGPointMake(self.lbl_title.center.x, self.view.frame.size.height - (self.lbl_title.frame.size.height * 2.1));
+                         
         
                          self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height - (self.btn_upArrow.frame.size.height * 2.5));
                          
@@ -88,7 +99,7 @@
                                           animations:^{
                                               self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 0.8);
                                               self.btn_upArrow.transform = CGAffineTransformMakeScale(1, 1);
-                                              self.lbl_title.center = CGPointMake(self.lbl_title.center.x, self.view.frame.size.height - (self.lbl_title.frame.size.height * 2));
+//                                              self.lbl_title.center = CGPointMake(self.lbl_title.center.x, self.view.frame.size.height - (self.lbl_title.frame.size.height * 2));
                              
                                           }
                                           completion:^(BOOL finished){
@@ -103,16 +114,7 @@
                      }];
     NSLog(@"%f", self.btn_upArrow.center.y);
     
-    [UIView animateWithDuration:0.5
-                          delay:1.5
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                            self.btn_settings.alpha = 1.0;
-                            self.btn_tutorial.alpha = 1.0;
-                     }
-                     completion:^(BOOL finished){
-                         
-                     }];
+
 }
 
 - (IBAction)settingsButton:(id)sender {

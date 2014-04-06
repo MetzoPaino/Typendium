@@ -7,22 +7,25 @@
 //
 
 #import "MainViewController.h"
+@class Quartz;
 
 @interface MainViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *con_intro;
 @property (weak, nonatomic) IBOutlet UIView *con_menu;
+@property (weak, nonatomic) IBOutlet UIView *con_history;
 
-
-@property (weak, nonatomic) IBOutlet UIView *test;
-
-@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
+@property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
 @end
 
 @implementation MainViewController {
     
     BOOL _hasParallaxStarted;
+    NSString *_string_currentView;
+    float _currentViewYPosition;
+    float _higherViewYPosition;
+    float _lowerViewYPosition;
 }
 
 #define ViewOffset 200
@@ -32,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _string_currentView = @"Intro";
+    
     
     
     //self.intro.delegate = self;
@@ -58,9 +64,6 @@
 
 - (void)viewDidLayoutSubviews {
     [self layoutViews];
-    float introViewYStart = self.con_intro.center.y;
-
-    NSLog(@"introViewYStart %f", introViewYStart);
 
 }
 
@@ -68,7 +71,21 @@
     
     self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
     self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
+    self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
+
     
+    
+    self.con_intro.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.con_intro.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
+    self.con_intro.layer.shadowOpacity = .3f;
+    self.con_intro.layer.shadowRadius = 10.0f;
+    self.con_intro.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
+    
+    self.con_menu.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.con_menu.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
+    self.con_menu.layer.shadowOpacity = .3f;
+    self.con_menu.layer.shadowRadius = 10.0f;
+    self.con_menu.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
     
 //    anatomy.center = CGPointMake(anatomy.center.x, self.view.frame.size.height/2 + offset);
 //    specimens.center = CGPointMake(specimens.center.x, self.view.frame.size.height/2 + offset);
@@ -77,9 +94,33 @@
 //    info.center = CGPointMake(info.center.x, self.view.frame.size.height/2 + offset);
 }
 
+#pragma mark - Gesture Recognizer
+
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     
     NSString *gestureContext;
+    UIView *currentView;
+    UIView *higherView;
+    UIView *lowerView;
+
+    
+    if ([_string_currentView isEqualToString:@"Intro"]) {
+        currentView = self.con_intro;
+        higherView = nil;
+        lowerView = self.con_menu;
+        
+    } else if ([_string_currentView isEqualToString:@"Menu"]) {
+        
+        currentView = self.con_menu;
+        higherView = self.con_intro;
+        lowerView = self.con_history;
+        
+    } else if ([_string_currentView isEqualToString:@"History"]) {
+        
+        currentView = self.con_history;
+        higherView = self.con_menu;
+        lowerView = nil;
+    }
     
     CGPoint panGestureTranslation = [panGestureRecognizer translationInView:self.view];
     float parallaxCoefficient = ViewOffset / self.view.frame.size.height;
@@ -87,19 +128,27 @@
     if (_hasParallaxStarted == NO) {
         
         _hasParallaxStarted = YES;
+        _currentViewYPosition = currentView.center.y;
+        _higherViewYPosition = higherView.center.y;
+        _lowerViewYPosition = lowerView.center.y;
+
     }
     
     // NEED THIS INFORMATION AT BEGINING OF MOVEMENT, THEN STATIC UNTIL LET GO
-    float introViewYStart = 284;
-    float menuViewYStart = 484;
+//    float introViewYStart = 284;
+//    float menuViewYStart = 484;
     
     
     if (panGestureTranslation.y <= 0.0) {
         
        gestureContext = @"Moving Current View Up";
         
-        self.con_intro.center = CGPointMake(self.con_intro.center.x, introViewYStart + panGestureTranslation.y);
-        self.con_menu.center = CGPointMake(self.con_menu.center.x, menuViewYStart + (panGestureTranslation.y * parallaxCoefficient ));
+        if (![currentView isEqual: self.con_history]) {
+
+            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+            lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+        }
+
         
         
         if (self.con_intro.center.y + self.con_intro.center.y >= self.view.frame.size.height/2) {
@@ -114,19 +163,26 @@
         
     } else {
         
+        gestureContext = @"Moving Current View Down";
+        
+        if (![currentView isEqual: self.con_intro]) {
+            
+            higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+        }
+        
+        
     }
     
+    //Should have a check because can happen if you gesture on a page that shouldn't move'
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
 
-            [self parallaxToLocation :  self.con_intro : self.con_menu : gestureContext];
+        [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
     }
-
-    
-  
 }
 
-- (void)parallaxToLocation : (UIView*)currentView : (UIView*)otherView : (NSString*)gestureContext {
+- (void)parallaxToLocation : (UIView*)currentView : (UIView*) higherView : (UIView*)lowerView : (NSString*)gestureContext {
     
     if ([gestureContext isEqualToString:@"Moving Current View Up"]) {
         
@@ -138,11 +194,22 @@
                                   delay:0
                                 options:UIViewAnimationOptionCurveLinear
                              animations:^{
-                                 otherView.center = CGPointMake(otherView.center.x, self.view.frame.size.height/2);
+                                 lowerView.center = CGPointMake(lowerView.center.x, self.view.frame.size.height/2);
                                  currentView.center = CGPointMake(currentView.center.x, -self.view.frame.size.height/2);
                              }
                              completion:^(BOOL finished){
-                             }];
+                                 
+                                 if ([_string_currentView isEqualToString:@"Intro"]) {
+                                     
+                                     _string_currentView = @"Menu";
+
+                                 } else if ([_string_currentView isEqualToString:@"Menu"]) {
+                                     
+                                     _string_currentView = @"History";
+                                 }
+                                 _hasParallaxStarted = NO;
+                             }
+             ];
             
         } else {
             
@@ -153,27 +220,43 @@
                                 options:UIViewAnimationOptionCurveLinear
                              animations:^{
                                  currentView.center = CGPointMake(currentView.center.x, self.view.frame.size.height/2);
-                                 otherView.center = CGPointMake(otherView.center.x, self.view.frame.size.height/2 + ViewOffset);
+                                 lowerView.center = CGPointMake(lowerView.center.x, self.view.frame.size.height/2 + ViewOffset);
                              }
                              completion:^(BOOL finished){
+                                 
+                                 _hasParallaxStarted = NO;
+                                 
                              }];
         }
+    } else {
+        
+        if (currentView.center.y + currentView.frame.size.height/2 >= self.view.frame.size.height/4) {
+            
+            // current view was low enough that it will animate off screen & be replaced with a higher view
+            
+            [UIView animateWithDuration:0.25
+                                  delay:0
+                                options:UIViewAnimationOptionCurveLinear
+                             animations:^{
+                                 higherView.center = CGPointMake(higherView.center.x, self.view.frame.size.height/2);
+                                 currentView.center = CGPointMake(currentView.center.x, self.view.frame.size.height/2 + ViewOffset);
+                             }
+                             completion:^(BOOL finished){
+
+                                 if ([_string_currentView isEqualToString:@"Menu"]) {
+                                     
+                                     _string_currentView = @"Intro";
+                                     
+                                 } else if ([_string_currentView isEqualToString:@"History"]) {
+                                     
+                                     _string_currentView = @"Menu";
+                                 }
+
+                                  _hasParallaxStarted = NO;
+                             }
+             ];
+        }
     }
-}
-
-- (IBAction)move:(id)sender {
-    
-    [UIView animateWithDuration:0.25
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         
-                         self.test.center = CGPointMake(self.test.center.x, 200);
-                         
-                }
-                     completion:^(BOOL finished){
-
-                     }];
 }
 
 
@@ -193,7 +276,7 @@
                             options:UIViewAnimationOptionCurveLinear
                          animations:^{
                              
-                             self.test.center = CGPointMake(self.test.center.x, 200);
+                             //self.test.center = CGPointMake(self.test.center.x, 200);
                              
                              
                              self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
