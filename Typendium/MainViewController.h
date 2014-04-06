@@ -11,6 +11,5 @@
 
 @interface MainViewController : UIViewController <UpArrowActionDelegate>
 
-//- (void)animateContainerUpwards:(NSString *)viewName;
 
 @end
