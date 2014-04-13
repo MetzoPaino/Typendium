@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		434DB2DA18E9F31200DC8E42 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DB2D918E9F31200DC8E42 /* AboutUsViewController.m */; };
+		434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DB2D918E9F31200DC8E42 /* InfoViewController.m */; };
 		437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437CD7E118E8C37E00AAD7F6 /* Caption.xib */; };
 		437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 437CD7E418E8C38A00AAD7F6 /* Caption.m */; };
 		439275FB18F09B8D00353437 /* TimesNewRoman.m in Sources */ = {isa = PBXBuildFile; fileRef = 439275FA18F09B8D00353437 /* TimesNewRoman.m */; };
@@ -40,6 +40,7 @@
 		43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5218E8472D00B43DE3 /* Quote.xib */; };
 		43DD1A5618E8485C00B43DE3 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A5518E8485C00B43DE3 /* Quote.m */; };
 		43DD1A5818E852C800B43DE3 /* Typendium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5718E852C800B43DE3 /* Typendium.plist */; };
+		4F64EAD218FAC9CF000B0210 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		434DB2D818E9F31200DC8E42 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
-		434DB2D918E9F31200DC8E42 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		434DB2D818E9F31200DC8E42 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		434DB2D918E9F31200DC8E42 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		437CD7E118E8C37E00AAD7F6 /* Caption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption.xib; path = XIBs/Caption.xib; sourceTree = "<group>"; };
 		437CD7E318E8C38A00AAD7F6 /* Caption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caption.h; sourceTree = "<group>"; };
 		437CD7E418E8C38A00AAD7F6 /* Caption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caption.m; sourceTree = "<group>"; };
@@ -103,6 +104,8 @@
 		43DD1A5418E8485C00B43DE3 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
 		43DD1A5518E8485C00B43DE3 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 		43DD1A5718E852C800B43DE3 /* Typendium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Typendium.plist; sourceTree = "<group>"; };
+		4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,12 +202,14 @@
 				43BF127B18E76DF3009A1C84 /* HistoryViewController.m */,
 				43DD1A4018E82A0600B43DE3 /* TextViewController.h */,
 				43DD1A4118E82A0600B43DE3 /* TextViewController.m */,
-				434DB2D818E9F31200DC8E42 /* AboutUsViewController.h */,
-				434DB2D918E9F31200DC8E42 /* AboutUsViewController.m */,
+				434DB2D818E9F31200DC8E42 /* InfoViewController.h */,
+				434DB2D918E9F31200DC8E42 /* InfoViewController.m */,
 				439275F918F09B8D00353437 /* TimesNewRoman.h */,
 				439275FA18F09B8D00353437 /* TimesNewRoman.m */,
 				439275FC18F09EF600353437 /* Baskerville.h */,
 				439275FD18F09EF600353437 /* Baskerville.m */,
+				4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */,
+				4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */,
 				434DB2D718E9F23300DC8E42 /* Page Maker */,
 				43DD1A5718E852C800B43DE3 /* Typendium.plist */,
 				43BF125718E74BB9009A1C84 /* Images.xcassets */,
@@ -346,11 +351,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */,
-				434DB2DA18E9F31200DC8E42 /* AboutUsViewController.m in Sources */,
+				434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
 				439275FB18F09B8D00353437 /* TimesNewRoman.m in Sources */,
 				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
 				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,
+				4F64EAD218FAC9CF000B0210 /* UIColor+CustomColors.m in Sources */,
 				43DD1A4C18E834AC00B43DE3 /* Title.m in Sources */,
 				439275FE18F09EF600353437 /* Baskerville.m in Sources */,
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,

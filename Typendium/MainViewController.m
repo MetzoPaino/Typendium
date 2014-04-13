@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+
 @class Quartz;
 
 @interface MainViewController () <UIGestureRecognizerDelegate>
@@ -14,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIView *con_intro;
 @property (weak, nonatomic) IBOutlet UIView *con_menu;
 @property (weak, nonatomic) IBOutlet UIView *con_history;
+@property (weak, nonatomic) IBOutlet UIView *con_info;
+
+@property (strong) NSString *string_currentView;
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
@@ -22,7 +26,10 @@
 @implementation MainViewController {
     
     BOOL _hasParallaxStarted;
-    NSString *_string_currentView;
+    
+    NSString *_string_currentSection;
+   // NSString *_string_currentView;
+    
     float _currentViewYPosition;
     float _higherViewYPosition;
     float _lowerViewYPosition;
@@ -36,7 +43,7 @@
 {
     [super viewDidLoad];
     
-    _string_currentView = @"Intro";
+    _string_currentSection = @"Intro";
     
     
     
@@ -102,21 +109,42 @@
     UIView *currentView;
     UIView *higherView;
     UIView *lowerView;
-
     
-    if ([_string_currentView isEqualToString:@"Intro"]) {
+    
+
+   // NSLog(@"CURRENT PAGE %l", );
+    
+    if ([_string_currentSection isEqualToString:@"Intro"]) {
         currentView = self.con_intro;
         higherView = nil;
         lowerView = self.con_menu;
         
-    } else if ([_string_currentView isEqualToString:@"Menu"]) {
+    } else if ([_string_currentSection isEqualToString:@"Menu"]) {
+
+        NSLog(@"%@", _string_currentView);
         
-        currentView = self.con_menu;
-        higherView = self.con_intro;
-        lowerView = self.con_history;
+        if ([_string_currentView isEqualToString:@"History"]) {
+            
+//            self.con_history.hidden = NO;
+//            self.con_info.hidden = YES;
+
+            currentView = self.con_menu;
+            higherView = self.con_intro;
+            lowerView = self.con_history;
+            
+        } else {
+            
+//            self.con_history.hidden = YES;
+//            self.con_info.hidden = NO;
+            
+            currentView = self.con_menu;
+            higherView = self.con_intro;
+            lowerView = self.con_info;
+        }
+ 
         
-    } else if ([_string_currentView isEqualToString:@"History"]) {
-        
+    } else if ([_string_currentSection isEqualToString:@"History"]) {
+
         currentView = self.con_history;
         higherView = self.con_menu;
         lowerView = nil;
@@ -131,6 +159,7 @@
         _currentViewYPosition = currentView.center.y;
         _higherViewYPosition = higherView.center.y;
         _lowerViewYPosition = lowerView.center.y;
+        currentView.layer.shadowOpacity = 0.3f;
 
     }
     
@@ -199,15 +228,16 @@
                              }
                              completion:^(BOOL finished){
                                  
-                                 if ([_string_currentView isEqualToString:@"Intro"]) {
+                                 if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
-                                     _string_currentView = @"Menu";
+                                     _string_currentSection = @"Menu";
 
-                                 } else if ([_string_currentView isEqualToString:@"Menu"]) {
+                                 } else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
-                                     _string_currentView = @"History";
+                                     _string_currentSection = @"History";
                                  }
                                  _hasParallaxStarted = NO;
+                                 currentView.layer.shadowOpacity = 0;
                              }
              ];
             
@@ -243,20 +273,30 @@
                              }
                              completion:^(BOOL finished){
 
-                                 if ([_string_currentView isEqualToString:@"Menu"]) {
+                                 if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
-                                     _string_currentView = @"Intro";
+                                     _string_currentSection = @"Intro";
                                      
-                                 } else if ([_string_currentView isEqualToString:@"History"]) {
+                                 } else if ([_string_currentSection isEqualToString:@"History"]) {
                                      
-                                     _string_currentView = @"Menu";
+                                     _string_currentSection = @"Menu";
                                  }
 
                                   _hasParallaxStarted = NO;
+                                 higherView.layer.shadowOpacity = 0;
                              }
              ];
         }
     }
+}
+
+- (void)setCurrentPage:(NSString *)viewName {
+    
+    if (viewName) {
+        _string_currentView = viewName;
+
+    }
+    NSLog(@"%@", _string_currentView);
 }
 
 
@@ -284,6 +324,7 @@
 //                             belowView.center = CGPointMake(belowView.center.x, self.view.frame.size.height/2 + offset);
                          }
                          completion:^(BOOL finished){
+                             
                              [self updateViewConstraints];
                              [self.con_intro updateConstraintsIfNeeded];
                              [self.con_intro removeFromSuperview];

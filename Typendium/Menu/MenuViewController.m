@@ -7,10 +7,13 @@
 //
 
 #import "MenuViewController.h"
+#import "UIColor+CustomColors.h"
+#import "MainViewController.h"
 
 @interface MenuViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
@@ -40,6 +43,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.pageControl.numberOfPages = self.menuPageNames.count;
+    self.pageControl.pageIndicatorTintColor = [UIColor blackColor];
 
 }
 
@@ -92,7 +98,37 @@
 
 }
 
+- (void)setCurrentPage: (NSString *)pageName {
+    
+    MainViewController *main = [[MainViewController alloc]init];
+    self.delegate = main;
+    
+    if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
+        [self.delegate setCurrentPage:pageName];
+    }
+}
+
+#pragma mark - Scroll View Delegate
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+    //self.currentPage = page;
+    
+    
+    if (page == 0) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+        [self setCurrentPage:@"History"];
+    }
+    
+    if (page == 1) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+        [self setCurrentPage:@"Info"];
+    }
     
     self.image.alpha = (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
     

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "IntroViewController.h"
+#import "MenuViewController.h"
+#import "InfoViewController.h"
 
-@interface MainViewController : UIViewController <UpArrowActionDelegate>
+@interface MainViewController : UIViewController <UpArrowActionDelegate, currentPageDelegate>
 
 
 @end
