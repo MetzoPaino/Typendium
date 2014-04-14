@@ -66,18 +66,30 @@
 
 -(void)introAnimation {
     
-    [UIView animateWithDuration:2
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseOut
+//    [UIView animateWithDuration:2
+//                          delay:0
+//                        options:UIViewAnimationOptionCurveEaseOut
+//                     animations:^{
+//                         
+//                         self.img_title.center = CGPointMake(self.img_title.center.x, self.view.center.y);
+//                         //                            self.btn_settings.alpha = 1.0;
+//                         //                            self.btn_tutorial.alpha = 1.0;
+//                     }
+//                     completion:^(BOOL finished){
+//                         
+//                     }];
+    
+    [UIView animateWithDuration:2.0
+                          delay:0.0
+         usingSpringWithDamping:0.5
+          initialSpringVelocity:0.5
+                        options:0
                      animations:^{
-                         
                          self.img_title.center = CGPointMake(self.img_title.center.x, self.view.center.y);
-                         //                            self.btn_settings.alpha = 1.0;
-                         //                            self.btn_tutorial.alpha = 1.0;
+                         CGRect frame = CGRectMake(40, 70, 240, 30);
+                         self.btn_upArrow.frame = frame;
                      }
-                     completion:^(BOOL finished){
-                         
-                     }];
+                     completion:NULL];
     
     [UIView animateWithDuration:0.65
                           delay: 0.5
@@ -177,6 +189,31 @@
     if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
         [self.delegate animateContainerUpwards:@"Intro"];
     }
+    
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+         usingSpringWithDamping:0.25
+          initialSpringVelocity:0.0
+                        options:0
+                     animations:^{
+                         self.btn_upArrow.transform = CGAffineTransformMakeScale(1.1, 1.1);
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:0.5
+                                               delay:0.0
+                              usingSpringWithDamping:0.25
+                               initialSpringVelocity:0.0
+                                             options:0
+                                          animations:^{
+                                              self.btn_upArrow.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                                          }
+                                          completion:^(BOOL finished){
+
+                                              
+                                              
+                                          }];
+
+                     }];
 }
 
 

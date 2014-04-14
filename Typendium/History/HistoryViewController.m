@@ -11,6 +11,7 @@
 @interface HistoryViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (strong, nonatomic) NSArray *historyPageNames;
 
@@ -39,6 +40,8 @@
                                              self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
+    
+    self.pageControl.numberOfPages = self.historyPageNames.count;
     
     int i = 0;
     
@@ -212,5 +215,12 @@ float lerp(float v0, float v1, float t) {
     return _historyPageNames;
 }
 
+#pragma mark - Scroll View Delegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+}
 @end
