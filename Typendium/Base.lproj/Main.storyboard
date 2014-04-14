@@ -212,6 +212,7 @@
                         <outlet property="btn_upArrow" destination="oCG-Ax-RX1" id="abc-D1-dvI"/>
                         <outlet property="image_background" destination="Xip-2S-z0D" id="chP-9E-KfC"/>
                         <outlet property="img_title" destination="nXJ-Ow-xaQ" id="bTr-Fb-yCv"/>
+                        <outlet property="lbl_swipe" destination="M7F-Iw-AyN" id="2Vz-1L-uUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjb-nA-H6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,7 +313,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="tgI-QH-4bS" id="dl3-mf-nHY"/>
+                                    <outlet property="delegate" destination="tgI-QH-4bS" id="Pgc-gy-yVV"/>
                                 </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fep-Vb-d3D">
@@ -336,12 +337,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="image1" destination="KnW-zf-dxR" id="psH-1f-Cbf"/>
-                        <outlet property="image2" destination="E1o-xW-jb3" id="eHi-DH-y9D"/>
-                        <outlet property="image3" destination="HGX-js-d0i" id="cbU-iZ-udC"/>
-                        <outlet property="image4" destination="HyY-Fp-kky" id="Kx4-8f-hKq"/>
-                        <outlet property="image5" destination="duX-Iw-oFt" id="Wvm-IO-xNf"/>
-                        <outlet property="image6" destination="vYf-zv-wVe" id="doN-RL-glU"/>
+                        <outlet property="pageControl" destination="fep-Vb-d3D" id="gbl-vE-aDB"/>
                         <outlet property="scrollView" destination="P4p-jq-S8L" id="RVe-fO-UZC"/>
                     </connections>
                 </viewController>

@@ -22,16 +22,12 @@
 
 @end
 
-@implementation IntroViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+@implementation IntroViewController {
+    
+    NSTimer *_fadeTimer;
 }
+
+
 
 #pragma mark - View Controller Configuration
 
@@ -39,7 +35,6 @@
 {
     [super viewDidLoad];
     
-
     self.img_title.alpha = 0;
     self.btn_settings.alpha = 0;
     self.btn_tutorial.alpha = 0;
@@ -49,84 +44,69 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    
+
     self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height + self.view.frame.size.height / 2);
     self.img_title.center = CGPointMake(self.img_title.center.x, self.view.frame.size.height);
     self.img_title.alpha = 1;
-    self.lbl_swipe.alpha = 1;
-    
+
     [self introAnimation];
+    
+    _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:NO];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)fade:(NSTimer *)aTimer {
+    
+    // Forget about timer!
+    _fadeTimer = nil;
+    
+    [UIView animateWithDuration:2.0
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         self.lbl_swipe.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+    
+                     }];
+
+    
+//    Upon every user interaction you just call a method that delays the fade. To do this, delete and re-create the timer. Or change it's fire date:
+//        
+//        - (void)delayFade {
+//            [_fadeTimer setFireDate: [NSDate dateWithTimeIntervalSinceNow: 2.0]];
+//        }
+//PS: There is no need to explicitly retain the timer. It's retained by the runloop until it fires. After the callback, it will be released anyways. Just make sure you always reset the variable to nil, otherwise your app may crash on an invalid access. If you need to delete the time beofre it fired, call the invalidate method.
 }
 
 -(void)introAnimation {
     
-//    [UIView animateWithDuration:2
-//                          delay:0
-//                        options:UIViewAnimationOptionCurveEaseOut
-//                     animations:^{
-//                         
-//                         self.img_title.center = CGPointMake(self.img_title.center.x, self.view.center.y);
-//                         //                            self.btn_settings.alpha = 1.0;
-//                         //                            self.btn_tutorial.alpha = 1.0;
-//                     }
-//                     completion:^(BOOL finished){
-//                         
-//                     }];
-    
-    [UIView animateWithDuration:2.0
-                          delay:0.0
-         usingSpringWithDamping:0.5
-          initialSpringVelocity:0.5
-                        options:0
-                     animations:^{
-                         self.img_title.center = CGPointMake(self.img_title.center.x, self.view.center.y);
-                         CGRect frame = CGRectMake(40, 70, 240, 30);
-                         self.btn_upArrow.frame = frame;
-                     }
-                     completion:NULL];
-    
-    [UIView animateWithDuration:0.65
-                          delay: 0.5
-                        options: UIViewAnimationOptionCurveLinear
-                     animations:^{
-        
-                         
-        
-                         self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height - (self.btn_upArrow.frame.size.height * 2.5));
-                         
-                         self.btn_upArrow.transform = CGAffineTransformMakeScale(1.25, 1.25);
-
-                    }
-                     completion:^(BOOL finished){
-        
-                         [UIView animateWithDuration:0.35
-                                               delay: 0
-                                             options:UIViewAnimationOptionCurveEaseOut
-                                          animations:^{
-                                              self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 0.8);
-                                              self.btn_upArrow.transform = CGAffineTransformMakeScale(1, 1);
-//                                              self.lbl_title.center = CGPointMake(self.lbl_title.center.x, self.view.frame.size.height - (self.lbl_title.frame.size.height * 2));
-                             
-                                          }
-                                          completion:^(BOOL finished){
-                                              [UIView animateWithDuration:5
-                                                                    delay: 4
-                                                                  options:UIViewAnimationOptionCurveEaseOut
-                                                               animations:^{
-                                                               }
-                                                               completion:^(BOOL finished){
-                                                               }];
-                                          }];
-                     }];
-    NSLog(@"%f", self.btn_upArrow.center.y);
-    
-
+    [UIView animateKeyframesWithDuration:2.0
+                                   delay:0.0
+                                 options:0
+                              animations:^ {
+                                  
+                                  [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 animations:^{
+                                      
+                                      self.img_title.center = CGPointMake(self.img_title.center.x, self.view.center.y);
+                                      
+                                  }];
+                                  
+                                  [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 animations:^{
+                                     
+                                      [UIView animateWithDuration:1
+                                                            delay:1.75
+                                           usingSpringWithDamping:0.75
+                                            initialSpringVelocity:0
+                                                          options:0
+                                                       animations:^{
+                                                           
+                                                           self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 1.5);
+                                                       }
+                                                       completion:NULL];
+                                  }];
+                                  
+                              } completion:NULL];
 }
 
 - (IBAction)settingsButton:(id)sender {
@@ -219,24 +199,24 @@
 
 - (void)buttonPressAnimation:(UIButton *)button {
     
-    [UIView animateWithDuration:0.125
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         
-                         button.transform = CGAffineTransformMakeScale(1.1, 1.1);
-                     }
-                     completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.125
-                                               delay:0
-                                             options:UIViewAnimationOptionCurveLinear
-                                          animations:^{
-                                              
-                                              button.transform = CGAffineTransformMakeScale(1.0, 1.0);
-                                          }
-                                          completion:^(BOOL finished){
-                                          }];
-                     }];
+//    [UIView animateWithDuration:0.125
+//                          delay:0
+//                        options:UIViewAnimationOptionCurveLinear
+//                     animations:^{
+//                         
+//                         button.transform = CGAffineTransformMakeScale(1.1, 1.1);
+//                     }
+//                     completion:^(BOOL finished){
+//                         [UIView animateWithDuration:0.125
+//                                               delay:0
+//                                             options:UIViewAnimationOptionCurveLinear
+//                                          animations:^{
+//                                              
+//                                              button.transform = CGAffineTransformMakeScale(1.0, 1.0);
+//                                          }
+//                                          completion:^(BOOL finished){
+//                                          }];
+//                     }];
 }
 
 

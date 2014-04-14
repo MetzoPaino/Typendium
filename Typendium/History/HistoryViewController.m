@@ -86,6 +86,10 @@ float lerp(float v0, float v1, float t) {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+    
     UIColor *color_baskerville = [UIColor colorWithRed:232/255 green:202/255 blue:164/255 alpha:1];
     UIColor *color_futura = [UIColor colorWithRed:219/255 green:37/255 blue:58/255 alpha:1];
     UIColor *color_gillSans = [UIColor colorWithRed:240/255 green:167/255 blue:72/255 alpha:1];
@@ -215,12 +219,4 @@ float lerp(float v0, float v1, float t) {
     return _historyPageNames;
 }
 
-#pragma mark - Scroll View Delegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    CGFloat pageWidth = self.scrollView.frame.size.width;
-    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
-}
 @end

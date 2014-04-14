@@ -16,7 +16,7 @@
 + (UIColor *)baskvervilleColor;
 + (UIColor *)futuraColor;
 + (UIColor *)timesNewRomanColor;
-+ (UIColor *)helveticaColor;
++ (UIColor *)gillSansColor;
 + (UIColor *)palatinoColor;
 + (UIColor *)comingSoonColor;
 

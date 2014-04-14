@@ -42,6 +42,12 @@
                                        alpha:1.0];
     });
     
+    
+    
+
+    
+    
+    
     return historyColor;
 }
 
@@ -69,10 +75,10 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        baskvervilleColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
-                                       alpha:1.0];
+        baskvervilleColor = [UIColor colorWithRed:232.0 / 255.0
+                                            green:202.0 / 255.0
+                                             blue:164.0 / 255.0
+                                            alpha:1.0];
     });
     
     return baskvervilleColor;
@@ -84,28 +90,28 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        futuraColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
-                                       alpha:1.0];
+        futuraColor = [UIColor colorWithRed:219.0 / 255.0
+                                      green:37.0 / 255.0
+                                       blue:58.0 / 255.0
+                                      alpha:1.0];
     });
     
     return futuraColor;
 }
 
-+ (UIColor *)helveticaColor {
++ (UIColor *)gillSansColor {
     
-    static UIColor *helveticaColor;
+    static UIColor *gillSansColor;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        helveticaColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
-                                       alpha:1.0];
+        gillSansColor = [UIColor colorWithRed:240.0 / 255.0
+                                        green:167.0 / 255.0
+                                         blue:72.0 / 255.0
+                                        alpha:1.0];
     });
     
-    return helveticaColor;
+    return gillSansColor;
 }
 
 + (UIColor *)timesNewRomanColor {
@@ -114,10 +120,10 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        timesNewRomanColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
-                                       alpha:1.0];
+        timesNewRomanColor = [UIColor colorWithRed:251.0 / 255.0
+                                             green:130.0 / 255.0
+                                              blue:102.0 / 255.0
+                                             alpha:1.0];
     });
     
     return timesNewRomanColor;
@@ -129,10 +135,10 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        palatinoColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
-                                       alpha:1.0];
+        palatinoColor = [UIColor colorWithRed:251.0 / 255.0
+                                        green:130.0 / 255.0
+                                         blue:102.0 / 255.0
+                                        alpha:1.0];
     });
     
     return palatinoColor;
@@ -144,12 +150,12 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        comingSoonColor = [UIColor colorWithRed:241.0 / 255.0
-                                        green:241.0 / 255.0
-                                         blue:241.0 / 255.0
-                                        alpha:1.0];
+        comingSoonColor = [UIColor colorWithRed:131.0 / 255.0
+                                          green:120.0 / 255.0
+                                           blue:120.0 / 255.0
+                                          alpha:1.0];
     });
-    
+
     return comingSoonColor;
 }
 @end
