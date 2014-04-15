@@ -69,6 +69,14 @@
                                     <constraint firstItem="DzJ-TH-SWy" firstAttribute="leading" secondItem="lne-tg-qZL" secondAttribute="leading" id="pjN-t3-Q8P"/>
                                 </constraints>
                             </view>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3w-Zs-OwB" userLabel="con_tutorial">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="gdG-TR-VYk" kind="embed" id="llA-Ll-5ye"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -345,6 +353,30 @@
             </objects>
             <point key="canvasLocation" x="583" y="309"/>
         </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="FVE-Tt-NRe">
+            <objects>
+                <viewController id="gdG-TR-VYk" customClass="TutorialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mgj-La-X0E"/>
+                        <viewControllerLayoutGuide type="bottom" id="ugr-Em-fpI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tzy-OP-Jqa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TutorialFrames-0000" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nW9-rO-deN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="890"/>
+        </scene>
         <!--Text View Controller-->
         <scene sceneID="5oJ-8z-WMn">
             <objects>
@@ -404,6 +436,7 @@
         <image name="Intro-Black" width="320" height="568"/>
         <image name="Settings-Black" width="128" height="128"/>
         <image name="Tutorial-Black" width="128" height="128"/>
+        <image name="TutorialFrames-0000" width="640" height="1136"/>
         <image name="TypendiumTitle" width="320" height="568"/>
         <image name="UpArrow-White" width="44" height="14"/>
     </resources>

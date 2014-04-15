@@ -12,6 +12,7 @@
 		437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 437CD7E418E8C38A00AAD7F6 /* Caption.m */; };
 		439275FB18F09B8D00353437 /* TimesNewRoman.m in Sources */ = {isa = PBXBuildFile; fileRef = 439275FA18F09B8D00353437 /* TimesNewRoman.m */; };
 		439275FE18F09EF600353437 /* Baskerville.m in Sources */ = {isa = PBXBuildFile; fileRef = 439275FD18F09EF600353437 /* Baskerville.m */; };
+		43961CE918FDC269009E399A /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43961CE818FDC269009E399A /* TutorialViewController.m */; };
 		43B2C05018F1F296002BE944 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B2C04F18F1F296002BE944 /* QuartzCore.framework */; };
 		43BF124018E74BB9009A1C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF123F18E74BB9009A1C84 /* Foundation.framework */; };
 		43BF124218E74BB9009A1C84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF124118E74BB9009A1C84 /* CoreGraphics.framework */; };
@@ -63,6 +64,8 @@
 		439275FA18F09B8D00353437 /* TimesNewRoman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimesNewRoman.m; sourceTree = "<group>"; };
 		439275FC18F09EF600353437 /* Baskerville.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Baskerville.h; sourceTree = "<group>"; };
 		439275FD18F09EF600353437 /* Baskerville.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Baskerville.m; sourceTree = "<group>"; };
+		43961CE718FDC269009E399A /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		43961CE818FDC269009E399A /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		43B2C04F18F1F296002BE944 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		43BF123C18E74BB9009A1C84 /* Typendium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typendium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BF123F18E74BB9009A1C84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,6 +195,8 @@
 				43BF124E18E74BB9009A1C84 /* AppDelegate.h */,
 				43BF124F18E74BB9009A1C84 /* AppDelegate.m */,
 				43BF125118E74BB9009A1C84 /* Main.storyboard */,
+				43961CE718FDC269009E399A /* TutorialViewController.h */,
+				43961CE818FDC269009E399A /* TutorialViewController.m */,
 				43BF127418E74F46009A1C84 /* IntroViewController.h */,
 				43BF127518E74F46009A1C84 /* IntroViewController.m */,
 				43BF125418E74BB9009A1C84 /* MainViewController.h */,
@@ -352,6 +357,7 @@
 			files = (
 				43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */,
 				434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */,
+				43961CE918FDC269009E399A /* TutorialViewController.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
 				439275FB18F09B8D00353437 /* TimesNewRoman.m in Sources */,
 				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
