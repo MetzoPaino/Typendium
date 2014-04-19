@@ -53,7 +53,6 @@
     
     if (!_arr_pageLayout) {
         
-        
         TypendiumText *timesNewRoman = [TypendiumText new];
 
         _arr_pageLayout = timesNewRoman.arr_timesNewRoman;

@@ -24,11 +24,9 @@
 {
     [super viewDidLoad];
     
-   // NSMutableString *tutorialFrame = [[NSMutableString alloc] initWithFormat: @"TutorialFrame-"];
-    
     _tutorialFrames = [[NSMutableArray alloc] init];
     
-    for (long l = 0; l < 192; l++) {
+    for (long l = 0; l < 540; l++) {
         
         NSString *frameNumber = [NSMutableString stringWithFormat:@"TutorialFrames-%04ld", l];
         
@@ -36,16 +34,19 @@
         
         [_tutorialFrames addObject:frame];
     }
+    UIImageView *tutorialAnimation = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    tutorialAnimation.animationImages = _tutorialFrames;
+    tutorialAnimation.animationDuration = 14;
+    
+    [self.view addSubview:tutorialAnimation];
+    //[tutorialAnimation startAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     
-    UIImageView *tutorialAnimation = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    tutorialAnimation.animationImages = _tutorialFrames;
-    tutorialAnimation.animationDuration = 3;
+
     
-    [self.view addSubview:tutorialAnimation];
-    [tutorialAnimation startAnimating];
+
 }
 
 @end
