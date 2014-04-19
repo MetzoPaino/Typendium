@@ -11,9 +11,7 @@
 #import "Title.h"
 #import "Image.h"
 #import "Quote.h"
-#import "TimesNewRoman.h"
-
-#import "Baskerville.h"
+#import "TypendiumText.h"
 
 @interface TextViewController ()
 
@@ -123,11 +121,9 @@
     if (!_arr_pageLayout) {
         
         
-        TimesNewRoman *timesNewRoman = [TimesNewRoman new];
-        Baskerville *baskerville = [Baskerville new];
+        TypendiumText *timesNewRoman = [TypendiumText new];
 
-//        _arr_pageLayout = self.arr_timesNewRoman;
-        _arr_pageLayout = baskerville.arr_baskerville;
+        _arr_pageLayout = timesNewRoman.arr_timesNewRoman;
 
     }
     

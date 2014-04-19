@@ -1,5 +1,5 @@
 //
-//  Baskerville.h
+//  TimesNewRoman.h
 //  Typendium
 //
 //  Created by William Robinson on 05/04/2014.
@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Baskerville : NSObject
+@interface TypendiumText : NSObject
+
+@property (strong, nonatomic) NSArray *arr_timesNewRoman;
 
 @property (strong, nonatomic) NSArray *arr_baskerville;
 

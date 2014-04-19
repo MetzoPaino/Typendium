@@ -10,8 +10,7 @@
 		434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DB2D918E9F31200DC8E42 /* InfoViewController.m */; };
 		437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437CD7E118E8C37E00AAD7F6 /* Caption.xib */; };
 		437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 437CD7E418E8C38A00AAD7F6 /* Caption.m */; };
-		439275FB18F09B8D00353437 /* TimesNewRoman.m in Sources */ = {isa = PBXBuildFile; fileRef = 439275FA18F09B8D00353437 /* TimesNewRoman.m */; };
-		439275FE18F09EF600353437 /* Baskerville.m in Sources */ = {isa = PBXBuildFile; fileRef = 439275FD18F09EF600353437 /* Baskerville.m */; };
+		439275FB18F09B8D00353437 /* TypendiumText.m in Sources */ = {isa = PBXBuildFile; fileRef = 439275FA18F09B8D00353437 /* TypendiumText.m */; };
 		43961CE918FDC269009E399A /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43961CE818FDC269009E399A /* TutorialViewController.m */; };
 		43B2C05018F1F296002BE944 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B2C04F18F1F296002BE944 /* QuartzCore.framework */; };
 		43BF124018E74BB9009A1C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF123F18E74BB9009A1C84 /* Foundation.framework */; };
@@ -60,10 +59,8 @@
 		437CD7E118E8C37E00AAD7F6 /* Caption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption.xib; path = XIBs/Caption.xib; sourceTree = "<group>"; };
 		437CD7E318E8C38A00AAD7F6 /* Caption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caption.h; sourceTree = "<group>"; };
 		437CD7E418E8C38A00AAD7F6 /* Caption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caption.m; sourceTree = "<group>"; };
-		439275F918F09B8D00353437 /* TimesNewRoman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimesNewRoman.h; sourceTree = "<group>"; };
-		439275FA18F09B8D00353437 /* TimesNewRoman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimesNewRoman.m; sourceTree = "<group>"; };
-		439275FC18F09EF600353437 /* Baskerville.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Baskerville.h; sourceTree = "<group>"; };
-		439275FD18F09EF600353437 /* Baskerville.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Baskerville.m; sourceTree = "<group>"; };
+		439275F918F09B8D00353437 /* TypendiumText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypendiumText.h; sourceTree = "<group>"; };
+		439275FA18F09B8D00353437 /* TypendiumText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypendiumText.m; sourceTree = "<group>"; };
 		43961CE718FDC269009E399A /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		43961CE818FDC269009E399A /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		43B2C04F18F1F296002BE944 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -209,10 +206,8 @@
 				43DD1A4118E82A0600B43DE3 /* TextViewController.m */,
 				434DB2D818E9F31200DC8E42 /* InfoViewController.h */,
 				434DB2D918E9F31200DC8E42 /* InfoViewController.m */,
-				439275F918F09B8D00353437 /* TimesNewRoman.h */,
-				439275FA18F09B8D00353437 /* TimesNewRoman.m */,
-				439275FC18F09EF600353437 /* Baskerville.h */,
-				439275FD18F09EF600353437 /* Baskerville.m */,
+				439275F918F09B8D00353437 /* TypendiumText.h */,
+				439275FA18F09B8D00353437 /* TypendiumText.m */,
 				4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */,
 				4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */,
 				434DB2D718E9F23300DC8E42 /* Page Maker */,
@@ -359,12 +354,11 @@
 				434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */,
 				43961CE918FDC269009E399A /* TutorialViewController.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
-				439275FB18F09B8D00353437 /* TimesNewRoman.m in Sources */,
+				439275FB18F09B8D00353437 /* TypendiumText.m in Sources */,
 				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
 				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,
 				4F64EAD218FAC9CF000B0210 /* UIColor+CustomColors.m in Sources */,
 				43DD1A4C18E834AC00B43DE3 /* Title.m in Sources */,
-				439275FE18F09EF600353437 /* Baskerville.m in Sources */,
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
 				43DD1A4918E8304700B43DE3 /* Paragraph.m in Sources */,
 				43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */,
