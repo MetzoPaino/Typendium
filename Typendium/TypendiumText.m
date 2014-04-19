@@ -33,7 +33,7 @@
         
         Paragraph *paragraph1 = [xib_paragraph1 objectAtIndex:0];
         paragraph1.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph1"];
-        // [paragraph1.txt_paragraph sizeToFit];
+         [paragraph1 sizeToFit];
         
         NSArray *xib_image1 = [[NSBundle mainBundle] loadNibNamed:@"Image" owner:self options:nil];
         
@@ -68,11 +68,19 @@
         [paragraph5.txt_paragraph.layoutManager ensureLayoutForTextContainer:paragraph5.txt_paragraph.textContainer];
         [paragraph5.txt_paragraph layoutIfNeeded];
         
-        CGRect frame =  paragraph5.txt_paragraph.frame;
+        CGRect frame =  paragraph1.txt_paragraph.frame;
         UIEdgeInsets inset =  paragraph5.txt_paragraph.contentInset;
-        frame.size.height =  paragraph5.txt_paragraph.contentSize.height * 2 + inset.top + inset.bottom;
-        paragraph5.txt_paragraph.frame = frame;
-        paragraph5.frame = frame;
+        [paragraph1.txt_paragraph sizeToFit];
+
+        frame.size.height =  paragraph1.txt_paragraph.contentSize.height;
+        paragraph1.txt_paragraph.frame = frame;
+        paragraph1.frame = frame;
+        paragraph1.txt_paragraph.frame = frame;
+        [paragraph1.txt_paragraph constraintsAffectingLayoutForAxis:YES];
+        paragraph1.txt_paragraph.backgroundColor = [UIColor orangeColor];
+        paragraph1.frame = CGRectMake(0, 0, 320, frame.size.height / 2);
+        
+        NSLog(@"%@", paragraph5.txt_paragraph.text);
         
         [paragraph5 layoutSubviews];
         
