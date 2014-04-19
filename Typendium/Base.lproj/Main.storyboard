@@ -365,7 +365,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TutorialFrames-0000" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -443,7 +443,6 @@
         <image name="Intro-Black" width="320" height="568"/>
         <image name="Settings-Black" width="128" height="128"/>
         <image name="Tutorial-Black" width="128" height="128"/>
-        <image name="TutorialFrames-0000" width="640" height="1136"/>
         <image name="TypendiumTitle" width="320" height="568"/>
         <image name="UpArrow-White" width="44" height="14"/>
     </resources>
