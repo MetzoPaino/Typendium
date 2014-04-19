@@ -10,6 +10,7 @@
 #import "Paragraph.h"
 #import "Title.h"
 #import "Image.h"
+#import "Caption.h"
 #import "Quote.h"
 
 @implementation TypendiumText
@@ -29,7 +30,7 @@
         NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
         
         Title *title = [xib_title objectAtIndex:0];
-        title.lbl_title.text = [dic_timesNewRoman objectForKey:@"Title"];
+        title.img_title.image = [UIImage imageNamed:@"TimesNewRomanHeader"];
         
         NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
         
@@ -43,6 +44,15 @@
         
         Image *image1 = [xib_image1 objectAtIndex:0];
         image1.image.image = [UIImage imageNamed:@"StanleyMorison"];
+        
+        NSArray *xib_caption1 = [[NSBundle mainBundle] loadNibNamed:@"Caption" owner:self options:nil];
+        
+        Caption *caption1 = [xib_caption1 objectAtIndex:0];
+        caption1.lbl_caption.text = [dic_timesNewRoman objectForKey:@"Caption1"];
+        [caption1.lbl_caption sizeToFit];
+        frame =   caption1.lbl_caption.frame;
+        caption1.frame = frame;
+
         
         NSArray *xib_paragraph2 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
         
@@ -84,7 +94,7 @@
         frame =  paragraph5.txt_paragraph.frame;
         paragraph5.frame = frame;
         
-        _arr_timesNewRoman = [[NSArray alloc] initWithObjects: title, paragraph1, image1, paragraph2, paragraph3, paragraph4, quote1, paragraph5, nil];
+        _arr_timesNewRoman = [[NSArray alloc] initWithObjects: title, paragraph1, image1, caption1, paragraph2, paragraph3, paragraph4, quote1, paragraph5, nil];
     }
     
     return _arr_timesNewRoman;
@@ -103,7 +113,7 @@
         NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
         
         Title *title = [xib_title objectAtIndex:0];
-        title.lbl_title.text = [dic_timesNewRoman objectForKey:@"Title"];
+        title.img_title = [dic_timesNewRoman objectForKey:@"Title"];
         
         NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
         

@@ -29,7 +29,14 @@
     
     for (UIView *viewSection in self.arr_pageLayout) {
         
-        yPosition += 20;
+        if (viewSection.tag == 1) {
+            
+        } else {
+            
+            yPosition += 20;
+
+        }
+        
         
         viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);
         

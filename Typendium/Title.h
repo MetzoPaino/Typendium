@@ -10,6 +10,6 @@
 
 @interface Title : UIView
 
-@property (strong, nonatomic) IBOutlet UILabel *lbl_title;
+@property (strong, nonatomic) IBOutlet UIImageView *img_title;
 
 @end
