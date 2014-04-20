@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class MainViewController;
+@class IntroViewController;
 
 @protocol UpArrowActionDelegate <NSObject>
 
-- (void)animateContainerUpwards : (NSString*)viewName;
+- (void)animateContainerUpwards: (IntroViewController *)controller currentPage: (NSString *)currentPage newPage: (NSString *)newPage;
 
 @end
 

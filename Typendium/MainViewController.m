@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *con_menu;
 @property (weak, nonatomic) IBOutlet UIView *con_history;
 @property (weak, nonatomic) IBOutlet UIView *con_info;
+@property (weak, nonatomic) IBOutlet UIView *con_tutorial;
 
 @property (strong) NSString *string_currentView;
 
@@ -28,7 +29,6 @@
     BOOL _hasParallaxStarted;
     
     NSString *_string_currentSection;
-   // NSString *_string_currentView;
     
     float _currentViewYPosition;
     float _higherViewYPosition;
@@ -45,19 +45,6 @@
     
     _string_currentSection = @"Intro";
     
-    
-    
-    //self.intro.delegate = self;
-    
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    //UINavigationController *navigationController = segue.destinationViewController;
-    // 2
-    //IntroViewController *controller = [IntroViewController new];
-//    
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    
-//    TPPolicyMasterViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"WealthPlatformPolicy"];
     
     
     IntroViewController *i = [[IntroViewController alloc]init];
@@ -79,8 +66,7 @@
     self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
     self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
     self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
-
-    
+    self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
     
     self.con_intro.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.con_intro.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
@@ -110,18 +96,15 @@
     UIView *higherView;
     UIView *lowerView;
     
-    
-
    // NSLog(@"CURRENT PAGE %l", );
     
     if ([_string_currentSection isEqualToString:@"Intro"]) {
+        
         currentView = self.con_intro;
         higherView = nil;
         lowerView = self.con_menu;
         
     } else if ([_string_currentSection isEqualToString:@"Menu"]) {
-
-        NSLog(@"%@", _string_currentView);
         
         if ([_string_currentView isEqualToString:@"History"]) {
             
@@ -148,6 +131,13 @@
         currentView = self.con_history;
         higherView = self.con_menu;
         lowerView = nil;
+        
+    } else if  ([_string_currentSection isEqualToString:@"Tutorial"]){
+        
+        currentView = self.con_tutorial;
+        higherView = nil;
+        lowerView = self.con_intro;
+        
     }
     
     CGPoint panGestureTranslation = [panGestureRecognizer translationInView:self.view];
@@ -194,13 +184,15 @@
         
         gestureContext = @"Moving Current View Down";
         
-        if (![currentView isEqual: self.con_intro]) {
+        if (![currentView isEqual: self.con_intro] && ![currentView isEqual: self.con_tutorial]) {
             
             higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
             currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+            
+        } else {
+            
+            gestureContext = @"Don't Move";
         }
-        
-        
     }
     
     //Should have a check because can happen if you gesture on a page that shouldn't move'
@@ -213,9 +205,9 @@
 
 - (void)parallaxToLocation : (UIView*)currentView : (UIView*) higherView : (UIView*)lowerView : (NSString*)gestureContext {
     
-    if ([gestureContext isEqualToString:@"Moving Current View Up"]) {
+    if ([gestureContext isEqualToString:@"Moving Current View Up"] || [gestureContext isEqualToString:@"Up Arrow Pressed"]) {
         
-        if (currentView.center.y <= self.view.frame.size.height/2.5) {
+        if (currentView.center.y <= self.view.frame.size.height/2.5 || [gestureContext isEqualToString:@"Up Arrow Pressed"]) {
             
             // current view was high enough that it will be animated off screen
             
@@ -235,6 +227,10 @@
                                  } else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
                                      _string_currentSection = @"History";
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"Tutorial"]) {
+                                     
+                                     _string_currentSection = @"Intro";
                                  }
                                  _hasParallaxStarted = NO;
                                  currentView.layer.shadowOpacity = 0;
@@ -258,9 +254,9 @@
                                  
                              }];
         }
-    } else {
+    } else if ([gestureContext isEqualToString:@"Moving Current View Down"] || [gestureContext isEqualToString:@"Tutorial Button Pressed"] ) {
         
-        if (currentView.center.y + currentView.frame.size.height/2 >= self.view.frame.size.height/4) {
+        if (currentView.center.y + currentView.frame.size.height/2 >= self.view.frame.size.height/4 || [gestureContext isEqualToString:@"Tutorial Button Pressed"]) {
             
             // current view was low enough that it will animate off screen & be replaced with a higher view
             
@@ -280,8 +276,12 @@
                                  } else if ([_string_currentSection isEqualToString:@"History"]) {
                                      
                                      _string_currentSection = @"Menu";
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"Intro"]) {
+                                     
+                                     _string_currentSection = @"Tutorial";
+                                     
                                  }
-
                                   _hasParallaxStarted = NO;
                                  higherView.layer.shadowOpacity = 0;
                              }
@@ -299,39 +299,81 @@
     NSLog(@"%@", _string_currentView);
 }
 
-
-- (void)animateContainerUpwards:(NSString *)viewName {
+- (void)animateContainerUpwards:(IntroViewController *)controller currentPage:(NSString *)currentPage newPage:(NSString *)newPage {
     
-    NSLog(@"OLD %f", self.con_intro.center.y);
-       self.con_intro.alpha = 0.6;
-    [self.con_intro removeFromSuperview];
+    NSString *gestureContext;
+    UIView *currentView;
+    UIView *higherView;
+    UIView *lowerView;
     
-    self.con_intro.backgroundColor = [UIColor redColor];
-    self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
-    [self.con_intro updateConstraintsIfNeeded];
+    if ([currentPage isEqualToString:@"Intro"] && [newPage isEqualToString:@"Menu"]) {
+        
+        gestureContext = @"Up Arrow Pressed";
+        currentView = self.con_intro;
+        higherView = nil;
+        lowerView = self.con_menu;
+    }
+    
+    if ([currentPage isEqualToString:@"Intro"] && [newPage isEqualToString:@"Tutorial"]) {
+        
+        gestureContext = @"Tutorial Button Pressed";
+        currentView = self.con_intro;
+        higherView = self.con_tutorial;
+        lowerView = nil;
+    }
+    
+    [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
+    
+}
 
-    if ([viewName isEqualToString:@"Intro"]) {
-        [UIView animateWithDuration:0.25
-                              delay:0
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             
-                             //self.test.center = CGPointMake(self.test.center.x, 200);
-                             
-                             
-                             self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
-                             
-//                             belowView.center = CGPointMake(belowView.center.x, self.view.frame.size.height/2 + offset);
-                         }
-                         completion:^(BOOL finished){
-                             
-                             [self updateViewConstraints];
-                             [self.con_intro updateConstraintsIfNeeded];
-                             [self.con_intro removeFromSuperview];
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"Intro"]) {
 
-                             NSLog(@"BANG %f", self.con_intro.center.y);
-                         }];
+        IntroViewController *controller = (IntroViewController *) [segue destinationViewController];
+        controller.delegate = self;
+    }
+    
+    if ([segue.identifier isEqualToString:@"Menu"]) {
+        
+        IntroViewController *controller = (IntroViewController *) [segue destinationViewController];
+        controller.delegate = self;
     }
 }
+
+
+//- (void)animateContainerUpwards:(NSString *)viewName {
+//    
+//    NSLog(@"OLD %f", self.con_intro.center.y);
+//       self.con_intro.alpha = 0.6;
+//    [self.con_intro removeFromSuperview];
+//    
+//    self.con_intro.backgroundColor = [UIColor redColor];
+//    self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
+//    [self.con_intro updateConstraintsIfNeeded];
+//
+//    if ([viewName isEqualToString:@"Intro"]) {
+//        [UIView animateWithDuration:0.25
+//                              delay:0
+//                            options:UIViewAnimationOptionCurveLinear
+//                         animations:^{
+//                             
+//                             //self.test.center = CGPointMake(self.test.center.x, 200);
+//                             
+//                             
+//                             self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
+//                             
+////                             belowView.center = CGPointMake(belowView.center.x, self.view.frame.size.height/2 + offset);
+//                         }
+//                         completion:^(BOOL finished){
+//                             
+//                             [self updateViewConstraints];
+//                             [self.con_intro updateConstraintsIfNeeded];
+//                             [self.con_intro removeFromSuperview];
+//
+//                             NSLog(@"BANG %f", self.con_intro.center.y);
+//                         }];
+//    }
+//}
 
 @end

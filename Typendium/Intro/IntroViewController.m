@@ -67,7 +67,15 @@
                          self.lbl_swipe.alpha = 1.0;
                      }
                      completion:^(BOOL finished){
-    
+                         
+                         [UIView animateWithDuration:2.0
+                                               delay:5
+                                             options:UIViewAnimationOptionCurveEaseIn
+                                          animations:^{
+                                              
+                                              self.lbl_swipe.alpha = 0;
+                                          }
+                                          completion:NULL];
                      }];
 
     
@@ -102,6 +110,7 @@
                                                        animations:^{
                                                            
                                                            self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 1.5);
+                                                           self.btn_tutorial.alpha = 1;
                                                        }
                                                        completion:NULL];
                                   }];
@@ -157,43 +166,18 @@
 
 - (IBAction)tutorialButton:(id)sender {
     
-    [self buttonPressAnimation:sender];
+    [self.delegate animateContainerUpwards:self
+                               currentPage:@"Intro"
+                                   newPage:@"Tutorial"];
 
 }
 
 - (IBAction)upArrow:(id)sender {
     
-    MainViewController *main = [[MainViewController alloc]init];
-    self.delegate = main;
+    [self.delegate animateContainerUpwards:self
+                               currentPage:@"Intro"
+                                   newPage:@"Menu"];
     
-    if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
-        [self.delegate animateContainerUpwards:@"Intro"];
-    }
-    
-    [UIView animateWithDuration:0.5
-                          delay:0.0
-         usingSpringWithDamping:0.25
-          initialSpringVelocity:0.0
-                        options:0
-                     animations:^{
-                         self.btn_upArrow.transform = CGAffineTransformMakeScale(1.1, 1.1);
-                     }
-                     completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.5
-                                               delay:0.0
-                              usingSpringWithDamping:0.25
-                               initialSpringVelocity:0.0
-                                             options:0
-                                          animations:^{
-                                              self.btn_upArrow.transform = CGAffineTransformMakeScale(1.0, 1.0);
-                                          }
-                                          completion:^(BOOL finished){
-
-                                              
-                                              
-                                          }];
-
-                     }];
 }
 
 
