@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "MainViewController.h"
 
 @class IntroViewController;
 
@@ -16,7 +17,7 @@
 
 @end
 
-@interface IntroViewController : UIViewController
+@interface IntroViewController : UIViewController //<PlayTutorialDelegate>
 
 @property (nonatomic, weak) id <UpArrowActionDelegate> delegate;
 

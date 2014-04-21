@@ -366,7 +366,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TutorialFrames-0000" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TutorialFrames-0000" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -376,6 +376,9 @@
                                 <state key="normal" title="Start Tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playTutorial:" destination="gdG-TR-VYk" eventType="touchUpInside" id="ZiJ-dE-21o"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-wk-Wfu" userLabel="btn_upArrow">
                                 <rect key="frame" x="138" y="540" width="44" height="15"/>
@@ -388,6 +391,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_startTutorial" destination="9Zs-4w-Du2" id="nZE-zz-yrV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nW9-rO-deN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

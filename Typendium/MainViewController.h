@@ -11,7 +11,17 @@
 #import "MenuViewController.h"
 #import "InfoViewController.h"
 
+//@class MainViewController;
+//
+//@protocol PlayTutorialDelegate <NSObject>
+//
+//- (void)playTutorialMovie: (MainViewController *)controller;
+//- (void)stopTutorialMovie: (MainViewController *)controller;
+//
+//@end
+
 @interface MainViewController : UIViewController <UpArrowActionDelegate, currentPageDelegate>
 
+//@property (nonatomic, weak) id <PlayTutorialDelegate> delegate;
 
 @end

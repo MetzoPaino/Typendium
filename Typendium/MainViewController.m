@@ -281,6 +281,8 @@
                                      
                                      _string_currentSection = @"Tutorial";
                                      
+                                  //   [self.delegate playTutorialMovie:self];
+                                     
                                  }
                                   _hasParallaxStarted = NO;
                                  higherView.layer.shadowOpacity = 0;
