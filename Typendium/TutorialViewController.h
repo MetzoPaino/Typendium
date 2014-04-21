@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MainViewController.h"
+#import "MoveViewsDelegate.h"
+
+//@class IntroViewController;
+//
+//@protocol UpArrowActionDelegate <NSObject>
+//
+//- (void)animateContainerUpwards: (TutorialViewController *)controller currentPage: (NSString *)currentPage newPage: (NSString *)newPage;
+//
+//@end
 
 @interface TutorialViewController : UIViewController
+
+@property (nonatomic, weak) id <MoveViewsDelegate> delegate;
 
 @end

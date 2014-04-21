@@ -8,22 +8,19 @@
 
 #import "TutorialViewController.h"
 
-@import MediaPlayer;
 @import AVFoundation;
 
 @interface TutorialViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_startTutorial;
+@property (weak, nonatomic) IBOutlet UIButton *btn_upArrow;
 
 @property (weak, nonatomic) AVPlayer *avPlayer;
 @property (weak, nonatomic) AVPlayerLayer *avPlayerLayer;
 
 @end
 
-@implementation TutorialViewController {
-    
-    NSMutableArray *_tutorialFrames;
-}
+@implementation TutorialViewController
 
 #pragma mark - View Controller Configuration
 
@@ -32,6 +29,7 @@
     [super viewDidLoad];
 
     [self avPlayer];
+
 }
 
 - (AVPlayer *)avPlayer {
@@ -46,6 +44,7 @@
         _avPlayerLayer.frame = self.view.layer.bounds;
         [self.view.layer addSublayer: _avPlayerLayer];
         [self.view bringSubviewToFront:self.btn_startTutorial];
+        [self.view bringSubviewToFront:self.btn_upArrow];
 
         _avPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         
@@ -90,6 +89,14 @@
                          [p seekToTime:kCMTimeZero];
                      }];
 
+}
+
+- (IBAction)upArrow:(id)sender {
+    
+    [self.delegate animateContainerUpwards:self
+                               currentPage:@"Tutorial"
+                                   newPage:@"Intro"];
+    
 }
 
 @end

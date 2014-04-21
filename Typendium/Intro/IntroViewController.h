@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class IntroViewController;
-
-@protocol UpArrowActionDelegate <NSObject>
-
-- (void)animateContainerUpwards: (IntroViewController *)controller currentPage: (NSString *)currentPage newPage: (NSString *)newPage;
-
-@end
+#import "MoveViewsDelegate.h"
 
 @interface IntroViewController : UIViewController
 
-@property (nonatomic, weak) id <UpArrowActionDelegate> delegate;
+@property (nonatomic, weak) id <MoveViewsDelegate> delegate;
 
 @end

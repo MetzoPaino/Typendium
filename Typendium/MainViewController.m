@@ -325,6 +325,14 @@
         lowerView = nil;
     }
     
+    if ([currentPage isEqualToString:@"Tutorial"] && [newPage isEqualToString:@"Intro"]) {
+        
+        gestureContext = @"Up Arrow Pressed";
+        currentView = self.con_tutorial;
+        higherView = nil;
+        lowerView = self.con_intro;
+    }
+    
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
     
 }
@@ -345,12 +353,9 @@
     
     if ([segue.identifier isEqualToString:@"Tutorial"]) {
         
+        TutorialViewController *controller = (TutorialViewController *) [segue destinationViewController];
+        controller.delegate = self;
 
-        
-//        TutorialViewController *controller = (TutorialViewController *) [segue destinationViewController];
-//        MainViewController *controller2 = (MainViewController *) [segue destinationViewController];
-//
-//        controller2.delegate = self;
     }
 }
 

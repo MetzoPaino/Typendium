@@ -385,6 +385,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="UpArrow-White"/>
                                 <connections>
+                                    <action selector="upArrow:" destination="gdG-TR-VYk" eventType="touchUpInside" id="1Ec-PC-kFk"/>
                                     <action selector="upArrow:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="X69-Up-Ii4"/>
                                 </connections>
                             </button>
@@ -393,6 +394,7 @@
                     </view>
                     <connections>
                         <outlet property="btn_startTutorial" destination="9Zs-4w-Du2" id="nZE-zz-yrV"/>
+                        <outlet property="btn_upArrow" destination="Q6h-wk-Wfu" id="xQC-nD-anH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nW9-rO-deN" userLabel="First Responder" sceneMemberID="firstResponder"/>

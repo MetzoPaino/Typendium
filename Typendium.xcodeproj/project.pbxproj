@@ -106,6 +106,7 @@
 		43DD1A5518E8485C00B43DE3 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 		43DD1A5718E852C800B43DE3 /* Typendium.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Typendium.plist; sourceTree = "<group>"; };
 		43F1FB1F190510700046A934 /* TypendiumTutorial.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypendiumTutorial.mp4; sourceTree = "<group>"; };
+		43F1FB21190556F80046A934 /* MoveViewsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveViewsDelegate.h; sourceTree = "<group>"; };
 		4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +195,7 @@
 				43BF124E18E74BB9009A1C84 /* AppDelegate.h */,
 				43BF124F18E74BB9009A1C84 /* AppDelegate.m */,
 				43BF125118E74BB9009A1C84 /* Main.storyboard */,
+				43F1FB21190556F80046A934 /* MoveViewsDelegate.h */,
 				43961CE718FDC269009E399A /* TutorialViewController.h */,
 				43961CE818FDC269009E399A /* TutorialViewController.m */,
 				43BF127418E74F46009A1C84 /* IntroViewController.h */,
