@@ -74,7 +74,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="gdG-TR-VYk" kind="embed" id="llA-Ll-5ye"/>
+                                    <segue destination="gdG-TR-VYk" kind="embed" identifier="Tutorial" id="llA-Ll-5ye"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -357,7 +357,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="FVE-Tt-NRe">
             <objects>
-                <viewController id="gdG-TR-VYk" customClass="TutorialViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gdG-TR-VYk" customClass="TutorialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mgj-La-X0E"/>
                         <viewControllerLayoutGuide type="bottom" id="ugr-Em-fpI"/>

@@ -22,6 +22,9 @@
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
+@property (retain, nonatomic) TutorialViewController *leftController;
+
+
 @end
 
 @implementation MainViewController {
@@ -281,8 +284,6 @@
                                      
                                      _string_currentSection = @"Tutorial";
                                      
-                                  //   [self.delegate playTutorialMovie:self];
-                                     
                                  }
                                   _hasParallaxStarted = NO;
                                  higherView.layer.shadowOpacity = 0;
@@ -340,6 +341,16 @@
         
         IntroViewController *controller = (IntroViewController *) [segue destinationViewController];
         controller.delegate = self;
+    }
+    
+    if ([segue.identifier isEqualToString:@"Tutorial"]) {
+        
+
+        
+//        TutorialViewController *controller = (TutorialViewController *) [segue destinationViewController];
+//        MainViewController *controller2 = (MainViewController *) [segue destinationViewController];
+//
+//        controller2.delegate = self;
     }
 }
 
