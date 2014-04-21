@@ -10,6 +10,8 @@
 
 @interface UIColor (CustomColors)
 
++ (UIColor *)typendiumLightGray;
+
 + (UIColor *)historyColor;
 + (UIColor *)infoColor;
 

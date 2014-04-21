@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class MainViewController;
-
-@protocol currentPageDelegate <NSObject>
-
-- (void)setCurrentPage : (NSString*)viewName;
-
-@end
+#import "MoveViewsDelegate.h"
 
 @interface MenuViewController : UIViewController
 
-@property (nonatomic, weak) id <currentPageDelegate> delegate;
+@property (nonatomic, weak) id <MoveViewsDelegate> delegate;
 
 @end

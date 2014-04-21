@@ -36,8 +36,7 @@
     
     if (!_avPlayer) {
         
-        NSURL *url = [[NSBundle mainBundle]
-                        URLForResource: @"TypendiumTutorial" withExtension:@"mp4"];
+        NSURL *url = [[NSBundle mainBundle] URLForResource: @"TypendiumTutorial" withExtension:@"mp4"];
         _avPlayer = [AVPlayer playerWithURL:url];
         _avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:_avPlayer];
         
@@ -58,9 +57,9 @@
 
 - (IBAction)playTutorial:(id)sender {
     
-    [UIView animateWithDuration:0.25
+    [UIView animateWithDuration:1
                           delay:0
-                        options:UIViewAnimationOptionCurveLinear
+                        options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
 
                          self.btn_startTutorial.alpha = 0;

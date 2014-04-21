@@ -24,7 +24,6 @@
 
 @property (retain, nonatomic) TutorialViewController *leftController;
 
-
 @end
 
 @implementation MainViewController {
@@ -47,9 +46,7 @@
     [super viewDidLoad];
     
     _string_currentSection = @"Intro";
-    
-    
-    
+
     IntroViewController *i = [[IntroViewController alloc]init];
     i.delegate=self;
     [i setDelegate:self];
@@ -333,9 +330,20 @@
         lowerView = self.con_intro;
     }
     
+    if ([currentPage isEqualToString:@"MenuHistory"] && [newPage isEqualToString:@"History"]) {
+        
+        gestureContext = @"Up Arrow Pressed";
+        currentView = self.con_menu;
+        higherView = self.con_intro;
+        lowerView = self.con_history;
+    }
+    
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
     
 }
+
+#pragma mark - Segue
+#pragma mark -
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -347,7 +355,7 @@
     
     if ([segue.identifier isEqualToString:@"Menu"]) {
         
-        IntroViewController *controller = (IntroViewController *) [segue destinationViewController];
+        MenuViewController *controller = (MenuViewController *) [segue destinationViewController];
         controller.delegate = self;
     }
     
@@ -358,40 +366,5 @@
 
     }
 }
-
-
-//- (void)animateContainerUpwards:(NSString *)viewName {
-//    
-//    NSLog(@"OLD %f", self.con_intro.center.y);
-//       self.con_intro.alpha = 0.6;
-//    [self.con_intro removeFromSuperview];
-//    
-//    self.con_intro.backgroundColor = [UIColor redColor];
-//    self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
-//    [self.con_intro updateConstraintsIfNeeded];
-//
-//    if ([viewName isEqualToString:@"Intro"]) {
-//        [UIView animateWithDuration:0.25
-//                              delay:0
-//                            options:UIViewAnimationOptionCurveLinear
-//                         animations:^{
-//                             
-//                             //self.test.center = CGPointMake(self.test.center.x, 200);
-//                             
-//                             
-//                             self.con_intro.center = CGPointMake(self.con_intro.center.x, 200);
-//                             
-////                             belowView.center = CGPointMake(belowView.center.x, self.view.frame.size.height/2 + offset);
-//                         }
-//                         completion:^(BOOL finished){
-//                             
-//                             [self updateViewConstraints];
-//                             [self.con_intro updateConstraintsIfNeeded];
-//                             [self.con_intro removeFromSuperview];
-//
-//                             NSLog(@"BANG %f", self.con_intro.center.y);
-//                         }];
-//    }
-//}
 
 @end

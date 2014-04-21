@@ -11,8 +11,6 @@
 @protocol MoveViewsDelegate <NSObject>
 //@class IntroViewController;
 
-//@protocol UpArrowActionDelegate <NSObject>
-
 - (void)animateContainerUpwards: (UIViewController *)controller currentPage: (NSString *)currentPage newPage: (NSString *)newPage;
 
 @end

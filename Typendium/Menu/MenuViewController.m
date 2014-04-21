@@ -24,10 +24,7 @@
 
 @end
 
-@implementation MenuViewController {
-    
-   
-}
+@implementation MenuViewController
 
 
 
@@ -45,7 +42,8 @@
     [super viewDidLoad];
     
     self.pageControl.numberOfPages = self.menuPageNames.count;
-    self.pageControl.pageIndicatorTintColor = [UIColor blackColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+    self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
 
 }
 
@@ -80,6 +78,7 @@
         
         UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
         upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
+        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
         
         if (i == 0) {
             [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Red"] forState:UIControlStateNormal];
@@ -98,16 +97,6 @@
 
 }
 
-- (void)setCurrentPage: (NSString *)pageName {
-    
-    MainViewController *main = [[MainViewController alloc]init];
-    self.delegate = main;
-    
-    if ([self.delegate respondsToSelector:@selector(animateContainerUpwards:)]) {
-        [self.delegate setCurrentPage:pageName];
-    }
-}
-
 #pragma mark - Scroll View Delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -121,13 +110,11 @@
     if (page == 0) {
         
         self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
-        [self setCurrentPage:@"History"];
     }
     
     if (page == 1) {
         
         self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
-        [self setCurrentPage:@"Info"];
     }
     
     self.image.alpha = (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
@@ -153,29 +140,23 @@
     return _menuPageNames;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)upArrow:(id)sender {
+    
+    if (self.pageControl.currentPage == 0) {
+        
+        [self.delegate animateContainerUpwards:self
+                                   currentPage:@"MenuHistory"
+                                       newPage:@"History"];
+        
+    } else {
+        
+        [self.delegate animateContainerUpwards:self
+                                   currentPage:@"MenuInfo"
+                                       newPage:@"Info"];
+    }
+    
+    
+
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-// Adjust scroll view content size, set background colour and turn on paging
-
-
-
-// Generate content for our scroll view using the frame height and width as the reference point
-
-
 
 @end

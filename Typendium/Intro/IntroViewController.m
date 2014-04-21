@@ -27,8 +27,6 @@
     NSTimer *_fadeTimer;
 }
 
-
-
 #pragma mark - View Controller Configuration
 
 - (void)viewDidLoad
@@ -118,58 +116,11 @@
                               } completion:NULL];
 }
 
-- (IBAction)settingsButton:(id)sender {
-    
-    //    settings.hidden = NO;
-    //    settings.userInteractionEnabled = YES;
-    //    [self changeShadowColorOnScrollView:settings :YES];
-    //    [self.view bringSubviewToFront:settings]; ///////////////////////////REMOVE VIEW
-    
-    
-    [UIView animateWithDuration:0.25
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         //                         settings.center = CGPointMake(settings.center.x, self.view.frame.size.height/2);
-                         self.btn_settings.transform = CGAffineTransformRotate(self.btn_settings.transform, M_PI / 2);
-                         [self buttonPressAnimation:sender];
-                     }
-                     completion:^(BOOL finished){
-                         
-                         self.btn_settings.transform = CGAffineTransformRotate(self.btn_settings.transform, M_PI * 2);
-                         
-                         //                         currentViewName.string = @"Settings";
-                         //                         viewingTypendiumIntroView = NO;
-                         //                         viewingTypendiumMenuScrollView = NO;
-                         //                         viewingTypendiumHistoryScrollView = NO;
-                         //                         viewingTypendiumIntroView = NO;
-                         //                         viewingTypendiumHistoryInfoScrollView = NO;
-                         
-                     }];
-    
-    
-    
-    
-    
-}
-
-- (void) buttonPress:(UIButton*)button {
-    button.transform = CGAffineTransformMakeScale(1.1, 1.1);
-    // Do something else
-}
-
-// Scale down on button release
-- (void) buttonRelease:(UIButton*)button {
-    button.transform = CGAffineTransformMakeScale(1.0, 1.0);
-    // Do something else
-}
-
 - (IBAction)tutorialButton:(id)sender {
     
     [self.delegate animateContainerUpwards:self
                                currentPage:@"Intro"
                                    newPage:@"Tutorial"];
-
 }
 
 - (IBAction)upArrow:(id)sender {
@@ -177,30 +128,6 @@
     [self.delegate animateContainerUpwards:self
                                currentPage:@"Intro"
                                    newPage:@"Menu"];
-    
-}
-
-
-- (void)buttonPressAnimation:(UIButton *)button {
-    
-//    [UIView animateWithDuration:0.125
-//                          delay:0
-//                        options:UIViewAnimationOptionCurveLinear
-//                     animations:^{
-//                         
-//                         button.transform = CGAffineTransformMakeScale(1.1, 1.1);
-//                     }
-//                     completion:^(BOOL finished){
-//                         [UIView animateWithDuration:0.125
-//                                               delay:0
-//                                             options:UIViewAnimationOptionCurveLinear
-//                                          animations:^{
-//                                              
-//                                              button.transform = CGAffineTransformMakeScale(1.0, 1.0);
-//                                          }
-//                                          completion:^(BOOL finished){
-//                                          }];
-//                     }];
 }
 
 

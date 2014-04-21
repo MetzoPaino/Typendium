@@ -90,45 +90,45 @@ float lerp(float v0, float v1, float t) {
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = page;
     
-    UIColor *color_baskerville = [UIColor colorWithRed:232/255 green:202/255 blue:164/255 alpha:1];
-    UIColor *color_futura = [UIColor colorWithRed:219/255 green:37/255 blue:58/255 alpha:1];
-    UIColor *color_gillSans = [UIColor colorWithRed:240/255 green:167/255 blue:72/255 alpha:1];
-    UIColor *color_palatino = [UIColor colorWithRed:250/255 green:92/255 blue:90/255 alpha:1];
-    UIColor *color_timesNewRoman = [UIColor colorWithRed:251/255 green:130/255 blue:102/255 alpha:1];
-    UIColor *color_comingSoon = [UIColor colorWithRed:131/255 green:120/255 blue:120/255 alpha:1];
-
-    NSArray *array_color = [[NSArray alloc] initWithObjects:color_baskerville, color_futura, color_gillSans, color_palatino, color_timesNewRoman, color_comingSoon, nil];
-
-    int colorIndex1 = (int)scrollView.contentOffset.x % 320;
-	int colorIndex2 = ((int)scrollView.contentOffset.x % 320) + 1;
-    
-    NSLog(@"index 1 %d / index 2 %d", colorIndex1, colorIndex2);
-    
-    if (colorIndex1 <= array_color.count && colorIndex2 <= array_color.count) {
-        
-        UIColor *color1 = [array_color objectAtIndex:colorIndex1];
-        UIColor *color2 = [array_color objectAtIndex:colorIndex2];
-        
-        CGFloat red1 = 0.0, green1 = 0.0, blue1 = 0.0, alpha1 = 0.0;
-        CGFloat red2 = 0.0, green2 = 0.0, blue2 = 0.0, alpha2 = 0.0;
-        
-       
-        
-        [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
-        [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
-        
-         NSLog(@"red1 %f / green1 %f", red1, green1);
-        
-        float temp = scrollView.contentOffset.x;
-        
-        float t = fmod(temp, 320) / 320;
-        
-        float r = lerp(red1, red2, t);
-        float g = lerp(green1, green2, t);
-        float b = lerp(blue1, blue2, t);
-        
-        self.image1.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-    }
+//    UIColor *color_baskerville = [UIColor colorWithRed:232/255 green:202/255 blue:164/255 alpha:1];
+//    UIColor *color_futura = [UIColor colorWithRed:219/255 green:37/255 blue:58/255 alpha:1];
+//    UIColor *color_gillSans = [UIColor colorWithRed:240/255 green:167/255 blue:72/255 alpha:1];
+//    UIColor *color_palatino = [UIColor colorWithRed:250/255 green:92/255 blue:90/255 alpha:1];
+//    UIColor *color_timesNewRoman = [UIColor colorWithRed:251/255 green:130/255 blue:102/255 alpha:1];
+//    UIColor *color_comingSoon = [UIColor colorWithRed:131/255 green:120/255 blue:120/255 alpha:1];
+//
+//    NSArray *array_color = [[NSArray alloc] initWithObjects:color_baskerville, color_futura, color_gillSans, color_palatino, color_timesNewRoman, color_comingSoon, nil];
+//
+//    int colorIndex1 = (int)scrollView.contentOffset.x % 320;
+//	int colorIndex2 = ((int)scrollView.contentOffset.x % 320) + 1;
+//    
+//    NSLog(@"index 1 %d / index 2 %d", colorIndex1, colorIndex2);
+//    
+//    if (colorIndex1 <= array_color.count && colorIndex2 <= array_color.count) {
+//        
+//        UIColor *color1 = [array_color objectAtIndex:colorIndex1];
+//        UIColor *color2 = [array_color objectAtIndex:colorIndex2];
+//        
+//        CGFloat red1 = 0.0, green1 = 0.0, blue1 = 0.0, alpha1 = 0.0;
+//        CGFloat red2 = 0.0, green2 = 0.0, blue2 = 0.0, alpha2 = 0.0;
+//        
+//       
+//        
+//        [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
+//        [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
+//        
+//         NSLog(@"red1 %f / green1 %f", red1, green1);
+//        
+//        float temp = scrollView.contentOffset.x;
+//        
+//        float t = fmod(temp, 320) / 320;
+//        
+//        float r = lerp(red1, red2, t);
+//        float g = lerp(green1, green2, t);
+//        float b = lerp(blue1, blue2, t);
+//        
+//        self.image1.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
+//    }
 
     
     

@@ -12,19 +12,19 @@
 
 #pragma mark - Generic Colors
 
-+ (UIColor *)textColor {
++ (UIColor *)typendiumLightGray {
     
-    static UIColor *textColor;
+    static UIColor *typendiumLightGray;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        textColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
+        typendiumLightGray = [UIColor colorWithRed:210.0 / 255.0
+                                       green:211.0 / 255.0
+                                        blue:214.0 / 255.0
                                        alpha:1.0];
     });
     
-    return textColor;
+    return typendiumLightGray;
 }
 
 #pragma mark - Menu Colors
@@ -36,9 +36,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        historyColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
+        historyColor = [UIColor colorWithRed:250.0 / 255.0
+                                       green:55.0 / 255.0
+                                        blue:58.0 / 255.0
                                        alpha:1.0];
     });
     
@@ -57,9 +57,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        infoColor = [UIColor colorWithRed:241.0 / 255.0
-                                       green:241.0 / 255.0
-                                        blue:241.0 / 255.0
+        infoColor = [UIColor colorWithRed:24.0 / 255.0
+                                       green:125.0 / 255.0
+                                        blue:202.0 / 255.0
                                        alpha:1.0];
     });
     
