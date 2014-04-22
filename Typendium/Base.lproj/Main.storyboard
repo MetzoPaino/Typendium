@@ -346,7 +346,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="image1" destination="KnW-zf-dxR" id="4dK-uN-fIQ"/>
+                        <outlet property="image_backgroundColor" destination="KnW-zf-dxR" id="FVX-WP-iyC"/>
                         <outlet property="pageControl" destination="fep-Vb-d3D" id="gbl-vE-aDB"/>
                         <outlet property="scrollView" destination="P4p-jq-S8L" id="RVe-fO-UZC"/>
                     </connections>

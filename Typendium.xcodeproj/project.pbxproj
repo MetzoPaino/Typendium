@@ -30,6 +30,7 @@
 		43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127518E74F46009A1C84 /* IntroViewController.m */; };
 		43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127818E754AB009A1C84 /* MenuViewController.m */; };
 		43BF127C18E76DF3009A1C84 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF127B18E76DF3009A1C84 /* HistoryViewController.m */; };
+		43D025421906C6050044BFBF /* UIColor+ScrollColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D025411906C6050044BFBF /* UIColor+ScrollColor.m */; };
 		43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD1A4118E82A0600B43DE3 /* TextViewController.m */; };
 		43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A4318E82B2000B43DE3 /* Paragraph.xib */; };
 		43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A4518E82EBD00B43DE3 /* Image.xib */; };
@@ -90,6 +91,8 @@
 		43BF127818E754AB009A1C84 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Menu/MenuViewController.m; sourceTree = "<group>"; };
 		43BF127A18E76DF3009A1C84 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = History/HistoryViewController.h; sourceTree = "<group>"; };
 		43BF127B18E76DF3009A1C84 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = History/HistoryViewController.m; sourceTree = "<group>"; };
+		43D025401906C6050044BFBF /* UIColor+ScrollColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ScrollColor.h"; sourceTree = "<group>"; };
+		43D025411906C6050044BFBF /* UIColor+ScrollColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ScrollColor.m"; sourceTree = "<group>"; };
 		43DD1A4018E82A0600B43DE3 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextViewController.h; path = Text/TextViewController.h; sourceTree = "<group>"; };
 		43DD1A4118E82A0600B43DE3 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextViewController.m; path = Text/TextViewController.m; sourceTree = "<group>"; };
 		43DD1A4318E82B2000B43DE3 /* Paragraph.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Paragraph.xib; path = XIBs/Paragraph.xib; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 				43DD1A4118E82A0600B43DE3 /* TextViewController.m */,
 				439275F918F09B8D00353437 /* TypendiumText.h */,
 				439275FA18F09B8D00353437 /* TypendiumText.m */,
+				43D025401906C6050044BFBF /* UIColor+ScrollColor.h */,
+				43D025411906C6050044BFBF /* UIColor+ScrollColor.m */,
 				4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */,
 				4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */,
 				43F1FB1F190510700046A934 /* TypendiumTutorial.mp4 */,
@@ -370,6 +375,7 @@
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
 				43DD1A4918E8304700B43DE3 /* Paragraph.m in Sources */,
 				43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */,
+				43D025421906C6050044BFBF /* UIColor+ScrollColor.m in Sources */,
 				43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */,
 				43DD1A5618E8485C00B43DE3 /* Quote.m in Sources */,
 				43BF127C18E76DF3009A1C84 /* HistoryViewController.m in Sources */,

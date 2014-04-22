@@ -7,6 +7,8 @@
 //
 
 #import "HistoryViewController.h"
+#import "UIColor+CustomColors.h"
+#import "UIColor+ScrollColor.h"
 
 @interface HistoryViewController () <UIScrollViewDelegate>
 
@@ -15,12 +17,7 @@
 
 @property (strong, nonatomic) NSArray *historyPageNames;
 
-@property (weak, nonatomic) IBOutlet UIImageView *image1;
-@property (weak, nonatomic) IBOutlet UIImageView *image2;
-@property (weak, nonatomic) IBOutlet UIImageView *image3;
-@property (weak, nonatomic) IBOutlet UIImageView *image4;
-@property (weak, nonatomic) IBOutlet UIImageView *image5;
-@property (weak, nonatomic) IBOutlet UIImageView *image6;
+@property (weak, nonatomic) IBOutlet UIImageView *image_backgroundColor;
 
 @end
 
@@ -42,7 +39,11 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     
     self.pageControl.numberOfPages = self.historyPageNames.count;
-    
+    self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
+    self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
+
+	self.image_backgroundColor.backgroundColor = [UIColor baskvervilleColor];
+	
     int i = 0;
     
     while (i < self.historyPageNames.count) {
@@ -73,156 +74,82 @@
         
         i++;
     }
-    self.image4.hidden = YES;
-    self.image5.hidden = YES;
-    self.image6.hidden = YES;
 }
 
-float lerp(float v0, float v1, float t) {
-    
-	return v0+(v1-v0)*t;
-    
-};
+/**
+ *  This function is creating a value between two different values. Should probably only be used between 0 and 1
+ *
+ *  @param v0 Start value
+ *  @param v1 End value
+ *  @param t  Percentage between the two values
+ *
+ *  @return The given percentage between v1 & v1
+ */
+
+//float lerp(float v0, float v1, float t) {
+//    
+//	return v0+(v1-v0)*t;
+//    
+//};
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = page;
-    
-    UIColor *color_baskerville = [UIColor colorWithRed:232/255.0f green:202/255.0f blue:164/255.0f alpha:1];
-    UIColor *color_futura = [UIColor colorWithRed:219/255.0f green:37/255.0f blue:58/255.0f alpha:1];
-    UIColor *color_gillSans = [UIColor colorWithRed:240/255.0f green:167/255.0f blue:72/255.0f alpha:1];
-    UIColor *color_palatino = [UIColor colorWithRed:250/255.0f green:92/255.0f blue:90/255 alpha:1];
-    UIColor *color_timesNewRoman = [UIColor colorWithRed:251/255.0f green:130/255.0f blue:102/255.0f alpha:1];
-    UIColor *color_comingSoon = [UIColor colorWithRed:131/255.0f green:120/255.0f blue:120/255.0f alpha:1];
-
-    NSArray *array_color = [[NSArray alloc] initWithObjects:color_baskerville, color_futura, color_gillSans, color_palatino, color_timesNewRoman, color_comingSoon, nil];
-
-//	float baskerville[] = {1.0f,0.5f,1.0f,1.0f};
-//	float futura[] = {219/255.f,0.5f,1.0f,1.0f};
-//	float gillSans[] = {1.0f,0.5f,1.0f,1.0f};
-//	float palatino[] = {1.0f,0.5f,1.0f,1.0f};
-//	float timesNewRoman[] = {1.0f,0.5f,1.0f,1.0f};
-//	float comingSoon[] = {1.0f,0.5f,1.0f,1.0f};
-
 	
 	
+	self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 	
-    int colorIndex1 = (int)scrollView.contentOffset.x / 320;
-	int colorIndex2 = ((int)scrollView.contentOffset.x / 320) + 1;
-    
-    NSLog(@"index 1 %d / index 2 %d", colorIndex1, colorIndex2);
+//	NSArray *array_color = @[[UIColor baskvervilleColor],
+//							 [UIColor futuraColor],
+//							 [UIColor gillSansColor],
+//							 [UIColor palatinoColor],
+//							 [UIColor timesNewRomanColor],
+//							 [UIColor comingSoonColor]];
 //
-    if (colorIndex1 <= array_color.count && colorIndex2 <= array_color.count) {
-        
-        UIColor *color1 = [array_color objectAtIndex:colorIndex1];
-        UIColor *color2 = [array_color objectAtIndex:colorIndex2];
-        
-        CGFloat red1 = 0.0, green1 = 0.0, blue1 = 0.0, alpha1 = 0.0;
-        CGFloat red2 = 0.0, green2 = 0.0, blue2 = 0.0, alpha2 = 0.0;
-        
-        [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
-        [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
-		
-		//IF FIRST OR LAST INDEX IN ARRAY AVOIDE DOING THE MATHS
-        
-        
-        float temp = scrollView.contentOffset.x;
-        
-        float t = fmod(temp, 320) / 320;
-        
-		NSLog(@"T %f", t);
-		
-        float r = lerp(red1, red2, t);
-        float g = lerp(green1, green2, t);
-        float b = lerp(blue1, blue2, t);
-        
-		NSLog(@"red1 %f / green1 %f / blue1 %f", r, g, b);
-
-        self.image1.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-		
-		//NSLog("%@", color1.redColor);
-    }
-
-    
-    
-    
-    
-    
-
-
-
-    
-    
-//    if ([color respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
+//	int colorIndex1;
+//	int colorIndex2;
+//	
+//	colorIndex1 = (int)scrollView.contentOffset.x / 320;
+//	colorIndex2 = ((int)scrollView.contentOffset.x / 320) + 1;
+//    
+//    if (colorIndex1 <= array_color.count && colorIndex2 < array_color.count) {
 //        
-//    } else {
-//        // < iOS 5
-//        const CGFloat *components = CGColorGetComponents(color.CGColor);
-//        red = components[0];
-//        green = components[1];
-//        blue = components[2];
-//        alpha = components[3];
-//    }
-//    
-//    // This is a non-RGB color
-//    if(CGColorGetNumberOfComponents(color.CGColor) == 2) {
-//        CGFloat hue;
-//        CGFloat saturation;
-//        CGFloat brightness;
-//        [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+//        UIColor *color1 = [array_color objectAtIndex:colorIndex1];
+//        UIColor *color2 = [array_color objectAtIndex:colorIndex2];
 //        
-//    }
-    
-    
-    
-    //const CGFloat* colors = CGColorGetComponents( curView.backgroundColor.CGColor );
-
-    
-//    
-//    self.image1.alpha = (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
-//    self.image2.alpha = 1 - (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
-//    self.image3.alpha = 2 - (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
-//    
-//    
-//    NSLog(@"Image 1 %f", self.image1.alpha);
-//    NSLog(@"Image 2 %f", self.image2.alpha);
-//    NSLog(@"Image 3 %f", self.image3.alpha);
-//
-//    if (scrollView.contentOffset.x <= 320) {
+//        CGFloat red1 = 0.0, green1 = 0.0, blue1 = 0.0, alpha1 = 0.0;
+//        CGFloat red2 = 0.0, green2 = 0.0, blue2 = 0.0, alpha2 = 0.0;
 //        
-//        self.image2.alpha = (scrollView.contentOffset.x / 320);
-//        self.image1.alpha = 1 - (scrollView.contentOffset.x / 320);
-//        self.image3.alpha = 0;
-//    }
-//    else if (scrollView.contentOffset.x >= 321 && scrollView.contentOffset.x >= 540) {
+//        [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
+//        [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
 //        
-//        self.image2.alpha = (scrollView.contentOffset.x / 540);
-//        self.image3.alpha = 1 - (scrollView.contentOffset.x / 540);
+//        if (self.pageControl.currentPage == 0 && self.scrollView.contentOffset.x > 0) {
+//			
+//			float temp = scrollView.contentOffset.x;
+//			
+//			float t = fmod(temp, 320) / 320;
+//						
+//			float r = lerp(red1, red2, t);
+//			float g = lerp(green1, green2, t);
+//			float b = lerp(blue1, blue2, t);
+//						
+//			self.image_backgroundColor.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
+//			
+//		} else if (self.pageControl.currentPage > 0) {
+//			
+//			float temp = scrollView.contentOffset.x;
+//			
+//			float t = fmod(temp, 320) / 320;
+//						
+//			float r = lerp(red1, red2, t);
+//			float g = lerp(green1, green2, t);
+//			float b = lerp(blue1, blue2, t);
+//						
+//			self.image_backgroundColor.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
+//		}
 //    }
-
-    
-    
-//    NSArray *array = [[NSArray alloc] initWithObjects:[UIColor redColor], [UIColor blueColor], [UIColor yellowColor], nil];
-//    
-//	int colorIndex1 = (int)scrollView.contentOffset.x % 320;
-//	
-//	int colorIndex2 = ((int)scrollView.contentOffset.x % 320) + 1;
-//	
-//	UIColor *color1 = [array objectAtIndex:colorIndex1];
-//	UIColor *color2 = [array objectAtIndex:colorIndex2];
-//    
-//	float temp = scrollView.contentOffset.x;
-//	
-//	float t = fmod(temp, 320) / 320;
-//	
-//	float r = lerp(color1, color2, t);
-//	
-//	NSLog(@"%f", t);
-//	NSLog(@"%i", colorIndex1);
-//	NSLog(@"%i", colorIndex2);
-
 }
 
 - (NSArray *)historyPageNames {
