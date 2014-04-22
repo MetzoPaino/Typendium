@@ -12,6 +12,6 @@
 #import "InfoViewController.h"
 #import "TutorialViewController.h"
 
-@interface MainViewController : UIViewController <MoveViewsDelegate>
+@interface MainViewController : UIViewController <MoveViewsDelegate, DetectCurrentPageDelegate>
 
 @end

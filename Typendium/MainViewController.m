@@ -31,6 +31,7 @@
     BOOL _hasParallaxStarted;
     
     NSString *_string_currentSection;
+	NSString *_string_currentPage;
     
     float _currentViewYPosition;
     float _higherViewYPosition;
@@ -46,6 +47,7 @@
     [super viewDidLoad];
     
     _string_currentSection = @"Intro";
+	_string_currentPage = @"History";
 
     IntroViewController *i = [[IntroViewController alloc]init];
     i.delegate=self;
@@ -330,12 +332,23 @@
         lowerView = self.con_intro;
     }
     
-    if ([currentPage isEqualToString:@"MenuHistory"] && [newPage isEqualToString:@"History"]) {
+    if ([currentPage isEqualToString:@"Menu"]) {
         
         gestureContext = @"Up Arrow Pressed";
-        currentView = self.con_menu;
-        higherView = self.con_intro;
-        lowerView = self.con_history;
+		
+		if ([_string_currentPage isEqualToString:@"History"]) {
+			
+			currentView = self.con_menu;
+			higherView = self.con_intro;
+			lowerView = self.con_history;
+			
+		} else if ([_string_currentPage isEqualToString:@"Info"]) {
+			
+			currentView = self.con_menu;
+			higherView = self.con_intro;
+			lowerView = self.con_info;
+		}
+
     }
     
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
@@ -356,7 +369,8 @@
     if ([segue.identifier isEqualToString:@"Menu"]) {
         
         MenuViewController *controller = (MenuViewController *) [segue destinationViewController];
-        controller.delegate = self;
+        controller.moveViewsDelegate = self;
+		controller.detectCurrentPageDelegate = self;
     }
     
     if ([segue.identifier isEqualToString:@"Tutorial"]) {
@@ -365,6 +379,11 @@
         controller.delegate = self;
 
     }
+}
+
+- (void)assignCurrentPage:(UIViewController *)controller currentSection:(NSString *)currentSection currentPage:(NSString *)currentPage {
+	
+	_string_currentPage = currentPage;
 }
 
 @end

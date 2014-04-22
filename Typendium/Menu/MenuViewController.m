@@ -110,11 +110,18 @@
     if (page == 0) {
         
         self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Menu"
+											  currentPage:@"History"];
+
     }
     
     if (page == 1) {
         
         self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Menu"
+											  currentPage:@"Info"];
     }
     
     self.image.alpha = (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
@@ -144,14 +151,14 @@
     
     if (self.pageControl.currentPage == 0) {
         
-        [self.delegate animateContainerUpwards:self
-                                   currentPage:@"MenuHistory"
+        [self.moveViewsDelegate animateContainerUpwards:self
+                                   currentPage:@"Menu"
                                        newPage:@"History"];
         
     } else {
         
-        [self.delegate animateContainerUpwards:self
-                                   currentPage:@"MenuInfo"
+        [self.moveViewsDelegate animateContainerUpwards:self
+                                   currentPage:@"Menu"
                                        newPage:@"Info"];
     }
     

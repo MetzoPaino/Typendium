@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MoveViewsDelegate.h"
+#import "DetectCurrentPageDelegate.h"
 
 @interface MenuViewController : UIViewController
 
-@property (nonatomic, weak) id <MoveViewsDelegate> delegate;
+@property (nonatomic, weak) id <MoveViewsDelegate> moveViewsDelegate;
+
+@property (nonatomic, weak) id <DetectCurrentPageDelegate> detectCurrentPageDelegate;
 
 @end

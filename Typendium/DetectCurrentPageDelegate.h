@@ -10,6 +10,6 @@
 
 @protocol DetectCurrentPageDelegate <NSObject>
 
-- (void)animateContainerUpwards: (UIViewController *)controller currentSection: (NSString *)currentSection currentPage: (NSString *)currentPage;
+- (void)assignCurrentPage: (UIViewController *)controller currentSection: (NSString *)currentSection currentPage: (NSString *)currentPage;
 
 @end
