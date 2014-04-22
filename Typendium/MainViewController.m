@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIView *con_info;
 @property (weak, nonatomic) IBOutlet UIView *con_tutorial;
 
-@property (strong) NSString *string_currentView;
-
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
 @property (retain, nonatomic) TutorialViewController *leftController;
@@ -68,6 +66,7 @@
     self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
     self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
     self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
+    self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
     self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
     
     self.con_intro.layer.shadowColor = [[UIColor blackColor] CGColor];
@@ -108,10 +107,10 @@
         
     } else if ([_string_currentSection isEqualToString:@"Menu"]) {
         
-        if ([_string_currentView isEqualToString:@"History"]) {
+        if ([_string_currentPage isEqualToString:@"History"]) {
             
-//            self.con_history.hidden = NO;
-//            self.con_info.hidden = YES;
+            self.con_history.hidden = NO;
+            self.con_info.hidden = YES;
 
             currentView = self.con_menu;
             higherView = self.con_intro;
@@ -119,8 +118,8 @@
             
         } else {
             
-//            self.con_history.hidden = YES;
-//            self.con_info.hidden = NO;
+            self.con_history.hidden = YES;
+            self.con_info.hidden = NO;
             
             currentView = self.con_menu;
             higherView = self.con_intro;
@@ -131,6 +130,12 @@
     } else if ([_string_currentSection isEqualToString:@"History"]) {
 
         currentView = self.con_history;
+        higherView = self.con_menu;
+        lowerView = nil;
+        
+    } else if ([_string_currentSection isEqualToString:@"Info"]) {
+        
+        currentView = self.con_info;
         higherView = self.con_menu;
         lowerView = nil;
         
@@ -228,7 +233,14 @@
 
                                  } else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
-                                     _string_currentSection = @"History";
+                                     if ([_string_currentPage isEqualToString:@"History"]) {
+                                         
+                                         _string_currentSection = @"History";
+                                         
+                                     } else if ([_string_currentPage isEqualToString:@"Info"]) {
+                                         
+                                         _string_currentSection = @"Info";
+                                     }
                                      
                                  } else if ([_string_currentSection isEqualToString:@"Tutorial"]) {
                                      
@@ -275,7 +287,7 @@
                                      
                                      _string_currentSection = @"Intro";
                                      
-                                 } else if ([_string_currentSection isEqualToString:@"History"]) {
+                                 } else if ([_string_currentSection isEqualToString:@"History"] || [_string_currentSection isEqualToString:@"Info"]) {
                                      
                                      _string_currentSection = @"Menu";
                                      
@@ -292,14 +304,14 @@
     }
 }
 
-- (void)setCurrentPage:(NSString *)viewName {
-    
-    if (viewName) {
-        _string_currentView = viewName;
-
-    }
-    NSLog(@"%@", _string_currentView);
-}
+//- (void)setCurrentPage:(NSString *)viewName {
+////    
+////    if (viewName) {
+////        _string_currentView = viewName;
+////
+////    }
+////    NSLog(@"%@", _string_currentView);
+//}
 
 - (void)animateContainerUpwards:(IntroViewController *)controller currentPage:(NSString *)currentPage newPage:(NSString *)newPage {
     
@@ -338,12 +350,18 @@
 		
 		if ([_string_currentPage isEqualToString:@"History"]) {
 			
+            self.con_history.hidden = NO;
+            self.con_info.hidden = YES;
+            
 			currentView = self.con_menu;
 			higherView = self.con_intro;
 			lowerView = self.con_history;
 			
 		} else if ([_string_currentPage isEqualToString:@"Info"]) {
 			
+            self.con_history.hidden = YES;
+            self.con_info.hidden = NO;
+            
 			currentView = self.con_menu;
 			higherView = self.con_intro;
 			lowerView = self.con_info;
@@ -383,6 +401,7 @@
 
 - (void)assignCurrentPage:(UIViewController *)controller currentSection:(NSString *)currentSection currentPage:(NSString *)currentPage {
 	
+    _string_currentPage = currentSection;
 	_string_currentPage = currentPage;
 }
 

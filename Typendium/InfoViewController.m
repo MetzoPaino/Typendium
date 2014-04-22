@@ -7,43 +7,86 @@
 //
 
 #import "InfoViewController.h"
+#import "UIColor+CustomColors.h"
 
-@interface InfoViewController ()
+@interface InfoViewController () <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
+@property (strong, nonatomic) NSArray *infoPageNames;
 
 @end
 
 @implementation InfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.pageControl.numberOfPages = self.infoPageNames.count;
+    self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+    self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLayoutSubviews {
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.infoPageNames.count,
+                                             self.scrollView.frame.size.height);
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    
+    int i = 0;
+    
+    while (i < self.infoPageNames.count) {
+        
+        UIView *infoPage = [[UIView alloc]
+                            initWithFrame:CGRectMake(((self.scrollView.frame.size.width)*i), 0,
+                                                     (self.scrollView.frame.size.width), self.scrollView.frame.size.height)];
+        
+        [infoPage setTag:i];
+        
+        UIImageView *background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.infoPageNames objectAtIndex:i]]];
+        background.center = CGPointMake(self.view.center.x, self.view.center.y);
+        
+        [infoPage addSubview:background];
+        
+        //        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        //        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
+        //        title.text = [self.menuPageNames objectAtIndex:i];
+        //        title.textAlignment = NSTextAlignmentCenter;
+        //        title.font = [UIFont systemFontOfSize:28];
+        //        [menuPage addSubview:title];
+        
+        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
+        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
+        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+        
+        if (i == 0) {
+            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Red"] forState:UIControlStateNormal];
+            
+        } else {
+            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Blue"] forState:UIControlStateNormal];
+            
+        }
+        [infoPage addSubview:upArrow];
+        
+        
+        [self.scrollView addSubview:infoPage];
+        
+        i++;
+    }
+    
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Lazy Loading
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSArray *)infoPageNames {
+    
+    if (!_infoPageNames) {
+        _infoPageNames = [[NSArray alloc] initWithObjects: @"History", @"Info", nil];
+    }
+    
+    return _infoPageNames;
 }
-*/
-
 @end

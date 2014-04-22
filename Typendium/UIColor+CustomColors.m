@@ -135,9 +135,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        palatinoColor = [UIColor colorWithRed:251.0 / 255.0
-                                        green:130.0 / 255.0
-                                         blue:102.0 / 255.0
+        palatinoColor = [UIColor colorWithRed:250.0 / 255.0
+                                        green:92.0 / 255.0
+                                         blue:90.0 / 255.0
                                         alpha:1.0];
     });
     
