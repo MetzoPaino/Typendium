@@ -20,8 +20,8 @@
 
 @implementation InfoViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.pageControl.numberOfPages = self.infoPageNames.count;
@@ -84,9 +84,36 @@
 - (NSArray *)infoPageNames {
     
     if (!_infoPageNames) {
-        _infoPageNames = [[NSArray alloc] initWithObjects: @"History", @"Info", nil];
+        _infoPageNames = [[NSArray alloc] initWithObjects: @"AboutUs", @"References", nil];
     }
     
     return _infoPageNames;
 }
+
+#pragma mark - Scroll View Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;    
+    
+    if (page == 0) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Info"
+											  currentPage:[self.infoPageNames objectAtIndex:0]];
+        
+    }
+    
+    if (page == 1) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Info"
+											  currentPage:[self.infoPageNames objectAtIndex:1]];
+    }
+}
+
 @end

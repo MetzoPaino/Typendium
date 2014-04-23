@@ -397,12 +397,30 @@
         controller.delegate = self;
 
     }
+    
+    if ([segue.identifier isEqualToString:@"History"]) {
+        
+        HistoryViewController *controller = (HistoryViewController *) [segue destinationViewController];
+        controller.moveViewsDelegate = self;
+		controller.detectCurrentPageDelegate = self;
+        
+    }
+    
+    if ([segue.identifier isEqualToString:@"Info"]) {
+        
+        InfoViewController *controller = (InfoViewController *) [segue destinationViewController];
+        controller.moveViewsDelegate = self;
+		controller.detectCurrentPageDelegate = self;
+        
+    }
 }
 
 - (void)assignCurrentPage:(UIViewController *)controller currentSection:(NSString *)currentSection currentPage:(NSString *)currentPage {
 	
-    _string_currentPage = currentSection;
+    _string_currentSection = currentSection;
 	_string_currentPage = currentPage;
+    
+    NSLog(@"%@ %@", _string_currentSection, _string_currentPage);
 }
 
 @end

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoveViewsDelegate.h"
+#import "DetectCurrentPageDelegate.h"
 
 @interface InfoViewController : UIViewController
+
+@property (nonatomic, weak) id <MoveViewsDelegate> moveViewsDelegate;
+
+@property (nonatomic, weak) id <DetectCurrentPageDelegate> detectCurrentPageDelegate;
 
 @end

@@ -11,6 +11,7 @@
 #import "MenuViewController.h"
 #import "InfoViewController.h"
 #import "TutorialViewController.h"
+#import "HistoryViewController.h"
 
 @interface MainViewController : UIViewController <MoveViewsDelegate, DetectCurrentPageDelegate>
 

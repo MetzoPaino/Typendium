@@ -23,7 +23,6 @@
 
 @implementation HistoryViewController {
     
-
 }
 
 
@@ -98,6 +97,70 @@
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = page;
 	
+    if (page == 0) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:0]];
+    }
+    
+    if (page == 1) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:1]];
+    }
+    
+    if (page == 2) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:2]];
+    }
+    
+    if (page == 3) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:3]];
+    }
+    
+    if (page == 4) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:4]];
+    }
+    
+    if (page == 5) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:5]];
+    }
+    
+    if (page == 6) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:6]];
+    }
+    
+    if (page == 7) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:7]];
+    }
+    
 	
 	self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 	
