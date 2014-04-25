@@ -67,6 +67,8 @@
         UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
         upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
         [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-White"] forState:UIControlStateNormal];
+        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+
         [historyPage addSubview:upArrow];
         
         [self.scrollView addSubview:historyPage];
@@ -223,5 +225,25 @@
     
     return _historyPageNames;
 }
+
+- (IBAction)upArrow:(id)sender {
+    
+    if (self.pageControl.currentPage == 0) {
+        
+        [self.moveViewsDelegate animateContainerUpwards:self
+                                            currentPage:@"History"
+                                                newPage:@"Baskerville"];
+        
+    } else {
+        
+        [self.moveViewsDelegate animateContainerUpwards:self
+                                            currentPage:@"History"
+                                                newPage:@"Futura"];
+    }
+    
+    
+    
+}
+
 
 @end

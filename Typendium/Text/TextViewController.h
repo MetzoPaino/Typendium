@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewController.h"
+#import "MoveViewsDelegate.h"
 
-@interface TextViewController : UIViewController
+@interface TextViewController : UIViewController //<ConstructPageDelegate>
+
+@property (nonatomic, weak) id <MoveViewsDelegate> moveViewsDelegate;
 
 @end

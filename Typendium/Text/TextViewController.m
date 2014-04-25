@@ -68,4 +68,9 @@
     
     return _arr_pageLayout;
 }
+
+- (void)constructPageDelegate:(UIViewController *)controller currentSection:(NSString *)currentSection currentPage:(NSString *)currentPage {
+    
+    
+}
 @end

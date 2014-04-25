@@ -12,7 +12,12 @@
 #import "InfoViewController.h"
 #import "TutorialViewController.h"
 #import "HistoryViewController.h"
+#import "TextViewController.h"
+
+#import "ConstructPageDelegate.h"
 
 @interface MainViewController : UIViewController <MoveViewsDelegate, DetectCurrentPageDelegate>
+
+@property (nonatomic, weak) id <ConstructPageDelegate> constructPageDelegate;
 
 @end

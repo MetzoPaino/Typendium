@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acM-XM-oxq" userLabel="container_text">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acM-XM-oxq" userLabel="con_text">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -108,6 +108,7 @@
                         <outlet property="con_info" destination="nId-Tk-7Np" id="uRT-6J-V7N"/>
                         <outlet property="con_intro" destination="lne-tg-qZL" id="VnS-x0-FXy"/>
                         <outlet property="con_menu" destination="Hhe-HR-b8j" id="9ap-L3-N4U"/>
+                        <outlet property="con_text" destination="acM-XM-oxq" id="HOD-F3-leu"/>
                         <outlet property="con_tutorial" destination="t3w-Zs-OwB" id="1s6-4L-a90"/>
                     </connections>
                 </viewController>
@@ -406,7 +407,7 @@
         <!--Text View Controller-->
         <scene sceneID="5oJ-8z-WMn">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1ct-Va-GG7" customClass="TextViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Text" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1ct-Va-GG7" customClass="TextViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IbM-Hv-TqN"/>
                         <viewControllerLayoutGuide type="bottom" id="pFc-uK-SiN"/>

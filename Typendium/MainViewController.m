@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *con_history;
 @property (weak, nonatomic) IBOutlet UIView *con_info;
 @property (weak, nonatomic) IBOutlet UIView *con_tutorial;
+@property (weak, nonatomic) IBOutlet UIView *con_text;
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
@@ -67,6 +68,7 @@
     self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
     self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
     self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
+    self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
     self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
     
     self.con_intro.layer.shadowColor = [[UIColor blackColor] CGColor];
@@ -131,7 +133,7 @@
 
         currentView = self.con_history;
         higherView = self.con_menu;
-        lowerView = nil;
+        lowerView = self.con_text;
         
     } else if ([_string_currentSection isEqualToString:@"Info"]) {
         
@@ -369,6 +371,31 @@
 
     }
     
+    if ([currentPage isEqualToString:@"History"]) {
+        
+        gestureContext = @"Up Arrow Pressed";
+		
+		if ([_string_currentPage isEqualToString:@"Baskerville"]) {
+			
+            self.con_history.hidden = NO;
+            self.con_info.hidden = YES;
+            
+			currentView = self.con_menu;
+			higherView = self.con_intro;
+			lowerView = self.con_text;
+			
+		} else if ([_string_currentPage isEqualToString:@"Futura"]) {
+			
+            self.con_history.hidden = YES;
+            self.con_info.hidden = NO;
+            
+			currentView = self.con_menu;
+			higherView = self.con_intro;
+			lowerView = self.con_text;
+		}
+        
+    }
+    
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
     
 }
@@ -411,6 +438,13 @@
         InfoViewController *controller = (InfoViewController *) [segue destinationViewController];
         controller.moveViewsDelegate = self;
 		controller.detectCurrentPageDelegate = self;
+        
+    }
+    
+    if ([segue.identifier isEqualToString:@"Text"]) {
+        
+        TextViewController *controller = (TextViewController *) [segue destinationViewController];
+        controller.moveViewsDelegate = self;
         
     }
 }
