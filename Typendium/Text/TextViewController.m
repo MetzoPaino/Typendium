@@ -33,6 +33,11 @@
 
 - (void) constructPage:(NSNotification *) notification {
     
+    for(UIView *subview in [self.scrollView subviews]) {
+        
+        [subview removeFromSuperview];
+    }
+    
     NSDictionary* userInfo = notification.userInfo;
     
     _string_currentPage = [userInfo objectForKey:@"Page"];
@@ -81,7 +86,7 @@
 
 - (NSArray *)arr_pageLayout {
     
-    if (!_arr_pageLayout) {
+  //  if (!_arr_pageLayout) {
         
         TypendiumText *typendiumText = [TypendiumText new];
 
@@ -106,10 +111,20 @@
             _arr_pageLayout = typendiumText.arr_timesNewRoman;
             
         }
-    }
+   // }
     
     return _arr_pageLayout;
 }
+
+- (IBAction)upArrow:(id)sender {
+        
+    [self.moveViewsDelegate animateContainerUpwards:self
+                                        currentPage:@"Text"
+                                            newPage:@"History"];
+    
+    self.scrollView.contentOffset = CGPointMake(0, 0);
+}
+
 
 
 @end

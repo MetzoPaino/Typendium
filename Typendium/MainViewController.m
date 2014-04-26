@@ -27,6 +27,7 @@
 @implementation MainViewController {
     
     BOOL _hasParallaxStarted;
+    BOOL _hasConstructedText;
     
     NSString *_string_currentSection;
 	NSString *_string_currentPage;
@@ -131,6 +132,11 @@
         
     } else if ([_string_currentSection isEqualToString:@"History"]) {
 
+        if (!_hasConstructedText) {
+            
+            [self postTextToConstruct];
+        }
+
         currentView = self.con_history;
         higherView = self.con_menu;
         lowerView = self.con_text;
@@ -147,7 +153,15 @@
         higherView = nil;
         lowerView = self.con_intro;
         
+    } else if  ([_string_currentSection isEqualToString:@"Text"]){
+        
+        currentView = self.con_tutorial;
+        higherView = self.con_history;
+        lowerView = nil;
+        
     }
+    
+    
     
     CGPoint panGestureTranslation = [panGestureRecognizer translationInView:self.view];
     float parallaxCoefficient = ViewOffset / self.view.frame.size.height;
@@ -171,7 +185,7 @@
         
        gestureContext = @"Moving Current View Up";
         
-        if (![currentView isEqual: self.con_history]) {
+        if (![currentView isEqual: self.con_text]) {
 
             currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
             lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
@@ -247,7 +261,15 @@
                                  } else if ([_string_currentSection isEqualToString:@"Tutorial"]) {
                                      
                                      _string_currentSection = @"Intro";
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"History"]) {
+                                     
+                                     _string_currentSection = @"Text";
+                                     
+                                     _hasConstructedText = NO;
                                  }
+                                 
+                                 
                                  _hasParallaxStarted = NO;
                                  currentView.layer.shadowOpacity = 0;
                              }
@@ -270,7 +292,7 @@
                                  
                              }];
         }
-    } else if ([gestureContext isEqualToString:@"Moving Current View Down"] || [gestureContext isEqualToString:@"Tutorial Button Pressed"] ) {
+    } else if ([gestureContext isEqualToString:@"Moving Current View Down"] || [gestureContext isEqualToString:@"Tutorial Button Pressed"] || [gestureContext isEqualToString:@"Text Arrow Pressed"]) {
         
         if (currentView.center.y + currentView.frame.size.height/2 >= self.view.frame.size.height/4 || [gestureContext isEqualToString:@"Tutorial Button Pressed"]) {
             
@@ -296,6 +318,10 @@
                                  } else if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
                                      _string_currentSection = @"Tutorial";
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"Text"]) {
+                                     
+                                     _string_currentSection = @"History";
                                      
                                  }
                                   _hasParallaxStarted = NO;
@@ -380,53 +406,73 @@
         currentView = self.con_history;
         higherView = self.con_menu;
         lowerView = self.con_text;
+
+        if (!_hasConstructedText) {
+            
+            [self postTextToConstruct];
+        }
+    }
+    
+    if ([currentPage isEqualToString:@"Text"] && [newPage isEqualToString:@"History"]) {
         
-        NSDictionary *dictionary;
-		
-		if ([_string_currentPage isEqualToString:@"Baskerville"]) {
-            
-            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                        @"History", @"Section",
-                                        @"Baskerville", @"Page",
-                                        nil];
-            
-		} else if ([_string_currentPage isEqualToString:@"Futura"]) {
-			
-            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"History", @"Section",
-                          @"Futura", @"Page",
-                          nil];
-            
-		} else if ([_string_currentPage isEqualToString:@"GillSans"]) {
-			
-            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"History", @"Section",
-                          @"GillSans", @"Page",
-                          nil];
-            
-		} else if ([_string_currentPage isEqualToString:@"Palatino"]) {
-			
-            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"History", @"Section",
-                          @"Palatino", @"Page",
-                          nil];
-            
-		} else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-			
-            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"History", @"Section",
-                          @"TimesNewRoman", @"Page",
-                          nil];
-            
-		}
-        
-        [[NSNotificationCenter defaultCenter]
-         postNotificationName:@"ConstructPage"
-         object:self userInfo:dictionary];
+        gestureContext = @"Text Arrow Pressed";
+        currentView = self.con_text;
+        higherView = self.con_history;
+        lowerView = nil;
     }
     
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
     
+
+}
+
+#pragma mark - Post Text To Construct
+
+- (void) postTextToConstruct {
+    
+    NSDictionary *dictionary;
+        
+    if ([_string_currentPage isEqualToString:@"Baskerville"]) {
+        
+        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                      @"History", @"Section",
+                      @"Baskerville", @"Page",
+                      nil];
+        
+    } else if ([_string_currentPage isEqualToString:@"Futura"]) {
+        
+        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                      @"History", @"Section",
+                      @"Futura", @"Page",
+                      nil];
+        
+    } else if ([_string_currentPage isEqualToString:@"GillSans"]) {
+        
+        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                      @"History", @"Section",
+                      @"GillSans", @"Page",
+                      nil];
+        
+    } else if ([_string_currentPage isEqualToString:@"Palatino"]) {
+        
+        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                      @"History", @"Section",
+                      @"Palatino", @"Page",
+                      nil];
+        
+    } else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
+        
+        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                      @"History", @"Section",
+                      @"TimesNewRoman", @"Page",
+                      nil];
+    }
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"ConstructPage"
+     object:self userInfo:dictionary];
+    
+    _hasConstructedText = YES;
 }
 
 #pragma mark - Segue
@@ -477,6 +523,8 @@
         
     }
 }
+
+#pragma mark - Assign Current Page Delegate
 
 - (void)assignCurrentPage:(UIViewController *)controller currentSection:(NSString *)currentSection currentPage:(NSString *)currentPage {
 	
