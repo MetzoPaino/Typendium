@@ -61,6 +61,15 @@
         itterator++;
     }
     
+    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
+    upArrow.backgroundColor = [UIColor orangeColor];
+    upArrow.center = CGPointMake(self.view.center.x, yPosition + upArrow.frame.size.height * 2.5);
+    [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-White"] forState:UIControlStateNormal];
+    [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+    
+    yPosition += upArrow.frame.size.height * 6;
+    
+    [self.scrollView addSubview:upArrow];
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width,
                                              yPosition);
