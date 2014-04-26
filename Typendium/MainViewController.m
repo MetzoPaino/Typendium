@@ -267,8 +267,8 @@
                                      _string_currentSection = @"Text";
                                      
                                      _hasConstructedText = NO;
+                                     
                                  }
-                                 
                                  
                                  _hasParallaxStarted = NO;
                                  currentView.layer.shadowOpacity = 0;
@@ -330,16 +330,8 @@
              ];
         }
     }
+    NSLog(@"Current Section: %@ / Current Page: %@", _string_currentSection, _string_currentPage);
 }
-
-//- (void)setCurrentPage:(NSString *)viewName {
-////    
-////    if (viewName) {
-////        _string_currentView = viewName;
-////
-////    }
-////    NSLog(@"%@", _string_currentView);
-//}
 
 #pragma mark - Animate Container Delegate
 
