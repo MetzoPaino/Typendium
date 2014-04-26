@@ -57,41 +57,21 @@
         background.center = CGPointMake(self.view.center.x, self.view.center.y);
         [historyPage addSubview:background];
         
-//        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-//        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
-//        title.text = [self.historyPageNames objectAtIndex:i];
-//        title.textAlignment = NSTextAlignmentCenter;
-//        title.font = [UIFont systemFontOfSize:28];
-//        [historyPage addSubview:title];
-        
-        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
-        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
-        [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-White"] forState:UIControlStateNormal];
-        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+        if (i < self.historyPageNames.count - 1) {
+            
+            UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
+            upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
+            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-White"] forState:UIControlStateNormal];
+            [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [historyPage addSubview:upArrow];
+        }
 
-        [historyPage addSubview:upArrow];
-        
         [self.scrollView addSubview:historyPage];
         
         i++;
     }
 }
-
-/**
- *  This function is creating a value between two different values. Should probably only be used between 0 and 1
- *
- *  @param v0 Start value
- *  @param v1 End value
- *  @param t  Percentage between the two values
- *
- *  @return The given percentage between v1 & v1
- */
-
-//float lerp(float v0, float v1, float t) {
-//    
-//	return v0+(v1-v0)*t;
-//    
-//};
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -229,6 +209,10 @@
 - (IBAction)upArrow:(id)sender {
     
     if (self.pageControl.currentPage == 0) {
+        
+        [self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"History"
+											  currentPage:[self.historyPageNames objectAtIndex:0]];
         
         [self.moveViewsDelegate animateContainerUpwards:self
                                             currentPage:@"History"

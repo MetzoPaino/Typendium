@@ -21,7 +21,6 @@
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
-@property (retain, nonatomic) TutorialViewController *leftController;
 
 @end
 
@@ -55,6 +54,7 @@
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     [self.view addGestureRecognizer:self.panGesture];
     self.panGesture.delegate = self;
+
 }
 
 - (void)viewDidLayoutSubviews {
@@ -315,6 +315,8 @@
 ////    NSLog(@"%@", _string_currentView);
 //}
 
+#pragma mark - Animate Container Delegate
+
 - (void)animateContainerUpwards:(IntroViewController *)controller currentPage:(NSString *)currentPage newPage:(NSString *)newPage {
     
     NSString *gestureContext;
@@ -374,26 +376,53 @@
     if ([currentPage isEqualToString:@"History"]) {
         
         gestureContext = @"Up Arrow Pressed";
+        
+        currentView = self.con_history;
+        higherView = self.con_menu;
+        lowerView = self.con_text;
+        
+        NSDictionary *dictionary;
 		
 		if ([_string_currentPage isEqualToString:@"Baskerville"]) {
-			
-            self.con_history.hidden = NO;
-            self.con_info.hidden = YES;
             
-			currentView = self.con_menu;
-			higherView = self.con_intro;
-			lowerView = self.con_text;
-			
+            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        @"History", @"Section",
+                                        @"Baskerville", @"Page",
+                                        nil];
+            
 		} else if ([_string_currentPage isEqualToString:@"Futura"]) {
 			
-            self.con_history.hidden = YES;
-            self.con_info.hidden = NO;
+            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"History", @"Section",
+                          @"Futura", @"Page",
+                          nil];
             
-			currentView = self.con_menu;
-			higherView = self.con_intro;
-			lowerView = self.con_text;
+		} else if ([_string_currentPage isEqualToString:@"GillSans"]) {
+			
+            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"History", @"Section",
+                          @"GillSans", @"Page",
+                          nil];
+            
+		} else if ([_string_currentPage isEqualToString:@"Palatino"]) {
+			
+            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"History", @"Section",
+                          @"Palatino", @"Page",
+                          nil];
+            
+		} else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
+			
+            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"History", @"Section",
+                          @"TimesNewRoman", @"Page",
+                          nil];
+            
 		}
         
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"ConstructPage"
+         object:self userInfo:dictionary];
     }
     
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
