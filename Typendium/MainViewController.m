@@ -134,7 +134,7 @@
  
         
     } else if ([_string_currentSection isEqualToString:@"History"]) {
-
+        
         if (!_hasConstructedText) {
             
             [self postTextToConstruct];
@@ -292,7 +292,7 @@
                                  }
                                  
                                  _hasParallaxStarted = NO;
-                                 currentView.layer.shadowOpacity = 0;
+                                // currentView.layer.shadowOpacity = 0;
                              }
              ];
             
@@ -336,6 +336,8 @@
                                      
                                      _string_currentSection = @"Menu";
                                      
+                                     _hasConstructedText = NO;
+                                     
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
                                                                                          object:self];
                                      
@@ -346,6 +348,8 @@
                                  } else if ([_string_currentSection isEqualToString:@"Text"]) {
                                      
                                      _string_currentSection = @"History";
+                                     
+                                     _hasConstructedText = NO;
                                      
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatHistoryPageIsThis"
                                                                                          object:self];
@@ -438,6 +442,8 @@
         currentView = self.con_text;
         higherView = self.con_history;
         lowerView = nil;
+        
+        _hasConstructedText = NO;
     }
     
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
@@ -449,8 +455,10 @@
 
 - (void) postTextToConstruct {
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatHistoryPageIsThis"
+                                                        object:self];
     NSDictionary *dictionary;
-        
+    
     if ([_string_currentPage isEqualToString:@"Baskerville"]) {
         
         dictionary = [NSDictionary dictionaryWithObjectsAndKeys:

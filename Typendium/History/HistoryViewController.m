@@ -115,10 +115,13 @@
         default:
             break;
     }
+    
     return currentPage;
 }
 
 - (void)whatPageIsThis {
+    
+    _string_currentPage = [self assignCurrentPage];
     
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                   @"History", @"Section",
@@ -139,6 +142,10 @@
     [self.detectCurrentPageDelegate assignCurrentPage:self
                                        currentSection:@"History"
                                           currentPage:[self assignCurrentPage]];
+    
+   // _string_currentPage = [self assignCurrentPage];
+    
+    [self whatPageIsThis];
     
     self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 

@@ -30,7 +30,7 @@
         NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
         
         Title *title = [xib_title objectAtIndex:0];
-        title.img_title = [dic_timesNewRoman objectForKey:@"Title"];
+        title.img_title.image = [UIImage imageNamed:@"BaskervilleHeader"];
         
         NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
         
@@ -100,7 +100,7 @@
         NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
         
         Title *title = [xib_title objectAtIndex:0];
-        title.img_title = [dic_timesNewRoman objectForKey:@"Title"];
+        title.img_title.image = [UIImage imageNamed:@"FuturaHeader"];
         
         NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
         
@@ -170,7 +170,7 @@
         NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
         
         Title *title = [xib_title objectAtIndex:0];
-        title.img_title = [dic_timesNewRoman objectForKey:@"Title"];
+        title.img_title.image = [UIImage imageNamed:@"GillSansHeader"];
         
         NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
         
@@ -240,7 +240,7 @@
         NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
         
         Title *title = [xib_title objectAtIndex:0];
-        title.img_title = [dic_timesNewRoman objectForKey:@"Title"];
+        title.img_title.image = [UIImage imageNamed:@"PalatinoHeader"];
         
         NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
         
