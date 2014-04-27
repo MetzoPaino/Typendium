@@ -8,6 +8,7 @@
 
 #import "TextViewController.h"
 #import "TypendiumText.h"
+#import "NSString+ShareText.h"
 
 @interface TextViewController ()
 
@@ -15,11 +16,14 @@
 
 @property (strong, nonatomic) NSArray *arr_pageLayout;
 
+@property (nonatomic, strong) NSArray *objectsToShare;
+
 @end
 
 @implementation TextViewController {
     
     NSString *_string_currentPage;
+    NSString *_string_shareText;
 }
 
 - (void)viewDidLoad
@@ -28,9 +32,21 @@
     
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(constructPage:) name:@"ConstructPage" object:nil];
+    [notificationCenter addObserver:self selector:@selector(displayUIActivity:) name:@"DisplayUIActivity" object:nil];
+
+
+    
+    }
+
+- (void) displayUIActivity:(NSNotification *) notification {
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc]
+                                            initWithActivityItems:@[_string_shareText]
+                                            applicationActivities:nil];
+    
+    [self presentViewController:controller animated:YES completion:nil];
     
 }
-
 - (void) constructPage:(NSNotification *) notification {
     
     for(UIView *subview in [self.scrollView subviews]) {
@@ -66,10 +82,9 @@
         itterator++;
     }
     
-    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
-    upArrow.backgroundColor = [UIColor orangeColor];
+    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 62)];
     upArrow.center = CGPointMake(self.view.center.x, yPosition + upArrow.frame.size.height * 2.5);
-    [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-White"] forState:UIControlStateNormal];
+    [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-History"] forState:UIControlStateNormal];
     [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
     
     yPosition += upArrow.frame.size.height * 6;
@@ -93,22 +108,27 @@
         if ([_string_currentPage isEqualToString:@"Baskerville"]) {
             
             _arr_pageLayout = typendiumText.arr_baskerville;
+            _string_shareText = [NSString baskervilleShareText];
             
         } else if ([_string_currentPage isEqualToString:@"Futura"]) {
             
             _arr_pageLayout = typendiumText.arr_futura;
+            _string_shareText = [NSString futuraShareText];
 
         } else if ([_string_currentPage isEqualToString:@"GillSans"]) {
             
             _arr_pageLayout = typendiumText.arr_gillSans;
+            _string_shareText = [NSString gillSansShareText];
             
         } else if ([_string_currentPage isEqualToString:@"Palatino"]) {
             
             _arr_pageLayout = typendiumText.arr_palatino;
+            _string_shareText = [NSString palatinoShareText];
             
         } else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
             
             _arr_pageLayout = typendiumText.arr_timesNewRoman;
+            _string_shareText = [NSString timesNewRomanShareText];
             
         }
    // }
@@ -118,11 +138,21 @@
 
 - (IBAction)upArrow:(id)sender {
         
-    [self.moveViewsDelegate animateContainerUpwards:self
-                                        currentPage:@"Text"
-                                            newPage:@"History"];
+//    [self.moveViewsDelegate animateContainerUpwards:self
+//                                        currentPage:@"Text"
+//                                            newPage:@"History"];
     
+    [UIView animateWithDuration:0.5
+                                   delay:0.0
+                                 options:UIViewAnimationOptionCurveEaseIn
+                              animations:^ {
+
     self.scrollView.contentOffset = CGPointMake(0, 0);
+                              } completion:^(BOOL finished) {
+                                 [self.moveViewsDelegate animateContainerUpwards:self
+                                        currentPage:@"Text"
+                                                                              newPage:@"History"];
+                              }];
 }
 
 

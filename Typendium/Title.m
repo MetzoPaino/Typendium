@@ -8,7 +8,14 @@
 
 #import "Title.h"
 
-@implementation Title
+//@property (nonatomic, strong) NSArray *objectsToShare;
+
+@implementation Title {
+    
+    NSArray *objectsToShare;
+}
+
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,9 +35,9 @@
 }
 */
 - (IBAction)share:(id)sender {
-    
-    
-    
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DisplayUIActivity" object:self];
+
 }
 
 @end

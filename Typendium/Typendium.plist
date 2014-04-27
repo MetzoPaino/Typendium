@@ -4,6 +4,90 @@
 <dict>
 	<key>TypendiumText</key>
 	<dict>
+		<key>Baskerville</key>
+		<dict>
+			<key>Title</key>
+			<string>Baskerville</string>
+			<key>Paragraph1</key>
+			<string>Few designs stand the test of time, but Baskerville is an exception, a typeface so well balanced and tasteful that it has been in almost continuous use since it&apos;s creation over 250 years ago.</string>
+			<key>Paragraph2</key>
+			<string>John Baskerville entered the printing world some time in his mid-forties after a successful career as a japanner and gravestone engraver, which taught him valuable skills in the craft of letterform. He drafted the services of the punchcutter John Handy in 1750, and set about establishing a press that focussed on quality. Baskerville’s first print would be the Bucolics and Georgics of Virgil in 1757.</string>
+			<key>Paragraph3</key>
+			<string>Through innovations lead by Baskerville he found a way to leave shallower impressions on the page, and created inks which dried quicker, and were blacker than existing inks, Baskerville’s typeface was a marvel, its slender vertical lines giving off an air of delicacy previously unachievable. At the time there was no set Baskerville typeface as there is now, each cutting was done to fit a need. However certain traits defined the Baskerville style, for instance it’s uppercase Q, with its long tail, varied in thickness, extending beyond its body with, a calligraphy styled flourish. There is also the beautiful lowercase g, with its curled ear and lower bowl left unclosed.</string>
+			<key>Paragraph4</key>
+			<string>Baskerville’s skill was remarkable, which coupled with him being an amateur brought him much ire from the professional British printers of the day. Baskerville’s attention to detail also caused his  prices to as much as three times higher than competitors. Commercial success eluded him, and in the latter years of his life, Baskerville was forced to try and sell off his printing equipment. Even his printing of The Holy Bible in 1763, which is now considered a masterpiece, was met with indifference.</string>
+			<key>Paragraph5</key>
+			<string>Abroad however, Baskerville’s name was given much admiration. The typography historian Daniel Berkeley Updike wrote that Baskerville’s first book ‘went forth to astonish all the librarians of Europe’, and Pierre Simon Fournier, inventor of the typographical point mentioned that Baskerville and his types “spared neither pains nor expense to bring them to the utmost pitch of perfection.’ Baskerville’s work also inspired a young Italian named Giambattista Bodoni, and Benjamin Franklin lobbied for the United States Declaration of Independence to be set in Baskerville.</string>
+			<key>Paragraph6</key>
+			<string>The turn of the 20th century revitalised the Baskerville typeface thanks to the private press movement and champions of the type such as American typographer Bruce Rogers. Now Baskerville continues to be favoured for book printing, and the original punches rest at the Cambridge University Press.</string>
+			<key>Quote1</key>
+			<string>‘Had I no other dependence than typefounding and printing, I must starve’</string>
+			<key>Caption1</key>
+			<string>John Baskerville</string>
+		</dict>
+		<key>Futura</key>
+		<dict>
+			<key>Title</key>
+			<string>Futura</string>
+			<key>Paragraph1</key>
+			<string>Though not the first, Futura has come to define geometric sans-serif typefaces. Inspired by the Bauhaus ideals of efficiency and functionality, Futura’s creator Paul Renner wished to create “a typography that could be returned to its true function of being read rather than written by the careful balance of functional and formal aspects of typography”.</string>
+			<key>Paragraph2</key>
+			<string>Geometric sans-serifs were created as a reaction to the serifless grotesque designs that were dominating the typographic world at the turn of the 20th century. Compared to the lumbering shapes of types such as Cooper Black, the geometric typefaces were clean and functional, with a drive towards the future. Jakob Erbar initially sparked interest, starting a movement to discard the conventional typographic thinking of the time. However it wasn’t until after the First World War that the rise of Bauhaus school brought these new ideas to the mainstream.</string>
+			<key>Paragraph3</key>
+			<string>Considering the 18th century style of modern type design to be degenerate, Paul Renner’s initial designs for Futura strictly adhered to the laws of compass and rule, resulting in forms that are more architectural and abstract than readable. Once Renner lessened his grip on geometric purity and form over function Futura became the typeface that we know today, with a subtly not often found in other geometric sans serifs. The uppercase Q is notable for having a tail that is longer in the counter space, and all of the uppercase letters are shorter than the towering ascenders of the lowercase due to the heavy use of capitals in the German language.</string>
+			<key>Paragraph4</key>
+			<string>Futura was so successful upon it’s release in 1927 that it overshadowed all the geometric sans serifs that came before it, appearing to most observers ‘to be superior in every way’. Though some criticised these ‘block letters for block-heads’, with other fine typefaces such as Kabal and Gill Sans following soon after Futura’s release, typographic design was changed forever and ‘New Typography’ was born.</string>
+			<key>Paragraph5</key>
+			<string>By 1930 all major type foundries had created their own geometric typefaces, some building upon the innovations of Futura, such as Metro and Berhnhard Gothic, and others simply copying it, like Spartan and Twentieth Century.</string>
+			<key>Paragraph6</key>
+			<string>Despite fierce competition, no other geometric typeface has been as successful as Futura. It was the typeface of choice for Stanley Kubrick, the face of the Volkswagen Beetle, and chosen for the commemorative plaque left by the astronauts of Apollo 11. Futura is crisp and easy to read, with a timelessness that means it is still widely used despite its age.</string>
+			<key>Quote1</key>
+			<string>&apos;Die neue Typographie&apos;</string>
+			<key>Caption1</key>
+			<string>Paul Renner</string>
+		</dict>
+		<key>Gill Sans</key>
+		<dict>
+			<key>Title</key>
+			<string>Baskerville</string>
+			<key>Paragraph1</key>
+			<string>Few designs stand the test of time, but Baskerville is an exception, a typeface so well balanced and tasteful that it has been in almost continuous use since it&apos;s creation over 250 years ago.</string>
+			<key>Paragraph2</key>
+			<string>John Baskerville entered the printing world some time in his mid-forties after a successful career as a japanner and gravestone engraver, which taught him valuable skills in the craft of letterform. He drafted the services of the punchcutter John Handy in 1750, and set about establishing a press that focussed on quality. Baskerville’s first print would be the Bucolics and Georgics of Virgil in 1757.</string>
+			<key>Paragraph3</key>
+			<string>Through innovations lead by Baskerville he found a way to leave shallower impressions on the page, and created inks which dried quicker, and were blacker than existing inks, Baskerville’s typeface was a marvel, its slender vertical lines giving off an air of delicacy previously unachievable. At the time there was no set Baskerville typeface as there is now, each cutting was done to fit a need. However certain traits defined the Baskerville style, for instance it’s uppercase Q, with its long tail, varied in thickness, extending beyond its body with, a calligraphy styled flourish. There is also the beautiful lowercase g, with its curled ear and lower bowl left unclosed.</string>
+			<key>Paragraph4</key>
+			<string>Baskerville’s skill was remarkable, which coupled with him being an amateur brought him much ire from the professional British printers of the day. Baskerville’s attention to detail also caused his  prices to as much as three times higher than competitors. Commercial success eluded him, and in the latter years of his life, Baskerville was forced to try and sell off his printing equipment. Even his printing of The Holy Bible in 1763, which is now considered a masterpiece, was met with indifference.</string>
+			<key>Paragraph5</key>
+			<string>Abroad however, Baskerville’s name was given much admiration. The typography historian Daniel Berkeley Updike wrote that Baskerville’s first book ‘went forth to astonish all the librarians of Europe’, and Pierre Simon Fournier, inventor of the typographical point mentioned that Baskerville and his types “spared neither pains nor expense to bring them to the utmost pitch of perfection.’ Baskerville’s work also inspired a young Italian named Giambattista Bodoni, and Benjamin Franklin lobbied for the United States Declaration of Independence to be set in Baskerville.</string>
+			<key>Paragraph6</key>
+			<string>The turn of the 20th century revitalised the Baskerville typeface thanks to the private press movement and champions of the type such as American typographer Bruce Rogers. Now Baskerville continues to be favoured for book printing, and the original punches rest at the Cambridge University Press.</string>
+			<key>Quote1</key>
+			<string>‘Had I no other dependence than typefounding and printing, I must starve’</string>
+			<key>Caption1</key>
+			<string>John Baskerville</string>
+		</dict>
+		<key>Palatino</key>
+		<dict>
+			<key>Title</key>
+			<string>Baskerville</string>
+			<key>Paragraph1</key>
+			<string>Few designs stand the test of time, but Baskerville is an exception, a typeface so well balanced and tasteful that it has been in almost continuous use since it&apos;s creation over 250 years ago.</string>
+			<key>Paragraph2</key>
+			<string>John Baskerville entered the printing world some time in his mid-forties after a successful career as a japanner and gravestone engraver, which taught him valuable skills in the craft of letterform. He drafted the services of the punchcutter John Handy in 1750, and set about establishing a press that focussed on quality. Baskerville’s first print would be the Bucolics and Georgics of Virgil in 1757.</string>
+			<key>Paragraph3</key>
+			<string>Through innovations lead by Baskerville he found a way to leave shallower impressions on the page, and created inks which dried quicker, and were blacker than existing inks, Baskerville’s typeface was a marvel, its slender vertical lines giving off an air of delicacy previously unachievable. At the time there was no set Baskerville typeface as there is now, each cutting was done to fit a need. However certain traits defined the Baskerville style, for instance it’s uppercase Q, with its long tail, varied in thickness, extending beyond its body with, a calligraphy styled flourish. There is also the beautiful lowercase g, with its curled ear and lower bowl left unclosed.</string>
+			<key>Paragraph4</key>
+			<string>Baskerville’s skill was remarkable, which coupled with him being an amateur brought him much ire from the professional British printers of the day. Baskerville’s attention to detail also caused his  prices to as much as three times higher than competitors. Commercial success eluded him, and in the latter years of his life, Baskerville was forced to try and sell off his printing equipment. Even his printing of The Holy Bible in 1763, which is now considered a masterpiece, was met with indifference.</string>
+			<key>Paragraph5</key>
+			<string>Abroad however, Baskerville’s name was given much admiration. The typography historian Daniel Berkeley Updike wrote that Baskerville’s first book ‘went forth to astonish all the librarians of Europe’, and Pierre Simon Fournier, inventor of the typographical point mentioned that Baskerville and his types “spared neither pains nor expense to bring them to the utmost pitch of perfection.’ Baskerville’s work also inspired a young Italian named Giambattista Bodoni, and Benjamin Franklin lobbied for the United States Declaration of Independence to be set in Baskerville.</string>
+			<key>Paragraph6</key>
+			<string>The turn of the 20th century revitalised the Baskerville typeface thanks to the private press movement and champions of the type such as American typographer Bruce Rogers. Now Baskerville continues to be favoured for book printing, and the original punches rest at the Cambridge University Press.</string>
+			<key>Quote1</key>
+			<string>‘Had I no other dependence than typefounding and printing, I must starve’</string>
+			<key>Caption1</key>
+			<string>John Baskerville</string>
+		</dict>
 		<key>TimesNewRoman</key>
 		<dict>
 			<key>Title</key>
