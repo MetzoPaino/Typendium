@@ -41,7 +41,6 @@
 + (NSString *)timesNewRomanShareText {
     
     NSString *shareText = @"";
-    
     return shareText;
 }
 @end
