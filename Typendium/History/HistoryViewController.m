@@ -39,7 +39,6 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     
     self.pageControl.numberOfPages = self.historyPageNames.count;
-    self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
     self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
 
 	self.image_backgroundColor.backgroundColor = [UIColor baskvervilleColor];
@@ -79,6 +78,9 @@
         i++;
     }
     _string_currentPage = [self assignCurrentPage];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatHistoryPageIsThis" object:nil];
 }
 
 - (NSString *)assignCurrentPage {
@@ -87,29 +89,28 @@
     
     switch (self.pageControl.currentPage) {
         case 0:
-        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+            self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
            currentPage = [self.historyPageNames objectAtIndex:0];
             break;
         case 1:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor futuraColor];
             currentPage = [self.historyPageNames objectAtIndex:1];
             break;
         case 2:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor gillSansColor];
             currentPage = [self.historyPageNames objectAtIndex:2];
             break;
         case 3:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor palatinoColor];
             currentPage = [self.historyPageNames objectAtIndex:3];
             break;
         case 4:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor timesNewRomanColor];
             currentPage = [self.historyPageNames objectAtIndex:4];
             break;
         case 5:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor comingSoonColor];
             currentPage = [self.historyPageNames objectAtIndex:5];
-            break;
-        case 6:
-            currentPage = [self.historyPageNames objectAtIndex:6];
-            break;
-        case 7:
-            currentPage = [self.historyPageNames objectAtIndex:7];
             break;
         default:
             break;
@@ -117,78 +118,96 @@
     return currentPage;
 }
 
+- (void)whatPageIsThis {
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                  @"History", @"Section",
+                  _string_currentPage, @"Page",
+                  nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"ThisPage"
+     object:self userInfo:dictionary];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = page;
+    
+    [self.detectCurrentPageDelegate assignCurrentPage:self
+                                       currentSection:@"History"
+                                          currentPage:[self assignCurrentPage]];
+    
+    self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
+
+    
+//    if (page == 0) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:0]];
+//    }
+//    
+//    if (page == 1) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor futuraColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:1]];
+//    }
+//    
+//    if (page == 2) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor gillSansColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:2]];
+//    }
+//    
+//    if (page == 3) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor palatinoColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:3]];
+//    }
+//    
+//    if (page == 4) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor timesNewRomanColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:4]];
+//    }
+//    
+//    if (page == 5) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor comingSoonColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:5]];
+//    }
+//    
+//    if (page == 6) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:6]];
+//    }
+//    
+//    if (page == 7) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"History"
+//											  currentPage:[self.historyPageNames objectAtIndex:7]];
+//    }
+//    
 	
-    if (page == 0) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:0]];
-    }
-    
-    if (page == 1) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor futuraColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:1]];
-    }
-    
-    if (page == 2) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor gillSansColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:2]];
-    }
-    
-    if (page == 3) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor palatinoColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:3]];
-    }
-    
-    if (page == 4) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor timesNewRomanColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:4]];
-    }
-    
-    if (page == 5) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor comingSoonColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:5]];
-    }
-    
-    if (page == 6) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:6]];
-    }
-    
-    if (page == 7) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:7]];
-    }
-    
-	
-	self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 	
 //	NSArray *array_color = @[[UIColor baskvervilleColor],
 //							 [UIColor futuraColor],

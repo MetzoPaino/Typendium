@@ -52,6 +52,8 @@
     [self.view addGestureRecognizer:self.panGesture];
     self.panGesture.delegate = self;
 
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -82,6 +84,15 @@
     self.con_menu.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
     
 }
+
+- (void) assignThisPage:(NSNotification *) notification {
+    
+    NSDictionary* userInfo = notification.userInfo;
+    
+    _string_currentPage = [userInfo objectForKey:@"Page"];
+    
+}
+
 
 #pragma mark - Gesture Recognizer
 
@@ -250,6 +261,8 @@
                                      
                                      _string_currentSection = @"Menu";
                                      
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
+                                                                                         object:self];
                                      
 
                                  } else if ([_string_currentSection isEqualToString:@"Menu"]) {
@@ -257,6 +270,9 @@
                                      if ([_string_currentPage isEqualToString:@"History"]) {
                                          
                                          _string_currentSection = @"History";
+                                         
+                                         [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatHistoryPageIsThis"
+                                                                                             object:self];
                                          
                                      } else if ([_string_currentPage isEqualToString:@"Info"]) {
                                          
@@ -320,6 +336,9 @@
                                      
                                      _string_currentSection = @"Menu";
                                      
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
+                                                                                         object:self];
+                                     
                                  } else if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
                                      _string_currentSection = @"Tutorial";
@@ -327,6 +346,9 @@
                                  } else if ([_string_currentSection isEqualToString:@"Text"]) {
                                      
                                      _string_currentSection = @"History";
+                                     
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatHistoryPageIsThis"
+                                                                                         object:self];
                                      
                                  }
                                   _hasParallaxStarted = NO;

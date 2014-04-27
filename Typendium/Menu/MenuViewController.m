@@ -24,7 +24,11 @@
 
 @end
 
-@implementation MenuViewController
+@implementation MenuViewController {
+    
+    NSString *_string_currentPage;
+
+}
 
 - (void)viewDidLoad
 {
@@ -34,6 +38,29 @@
     self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
     self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
 
+    _string_currentPage = [self assignCurrentPage];
+
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatMenuPageIsThis" object:nil];
+}
+
+- (NSString *)assignCurrentPage {
+    
+    NSString *currentPage;
+    
+    switch (self.pageControl.currentPage) {
+        case 0:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+            currentPage = [self.menuPageNames objectAtIndex:0];
+            break;
+        case 1:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+            currentPage = [self.menuPageNames objectAtIndex:1];
+            break;
+        default:
+            break;
+    }
+    return currentPage;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -83,7 +110,18 @@
         
         i++;
     }
+}
 
+- (void)whatPageIsThis {
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"Menu", @"Section",
+                                _string_currentPage, @"Page",
+                                nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"ThisPage"
+     object:self userInfo:dictionary];
 }
 
 #pragma mark - Scroll View Delegate
@@ -93,38 +131,31 @@
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = page;
-    //self.currentPage = page;
     
+    [self.detectCurrentPageDelegate assignCurrentPage:self
+                                       currentSection:@"Menu"
+                                          currentPage:[self assignCurrentPage]];
     
-    if (page == 0) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"Menu"
-											  currentPage:@"History"];
-
-    }
-    
-    if (page == 1) {
-        
-        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
-		[self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"Menu"
-											  currentPage:@"Info"];
-    }
+//    if (page == 0) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"Menu"
+//											  currentPage:@"History"];
+//
+//    }
+//    
+//    if (page == 1) {
+//        
+//        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+//		[self.detectCurrentPageDelegate assignCurrentPage:self
+//										   currentSection:@"Menu"
+//											  currentPage:@"Info"];
+//    }
     
     self.image.alpha = (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
     
     self.image2.alpha = 1 - (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
-    
-    if (scrollView.contentOffset.x < 320)
-    {
-        // Load content 1
-    }
-    else if (scrollView.contentOffset.x >= 320)
-    {
-        // Load content 2
-    }
 }
 
 - (NSArray *)menuPageNames {
