@@ -46,6 +46,12 @@
 	
     int i = 0;
     
+    NSArray *upArrowsArray = @[@"UpArrow-Baskerville",
+                               @"UpArrow-Futura",
+                               @"UpArrow-GillSans",
+                               @"UpArrow-Palatino",
+                               @"UpArrow-TimesNewRoman"];
+    
     while (i < self.historyPageNames.count) {
         
         UIView *historyPage = [[UIView alloc]
@@ -62,7 +68,7 @@
             
             UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
             upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
-            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-White"] forState:UIControlStateNormal];
+            [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
             
             [historyPage addSubview:upArrow];
@@ -119,7 +125,7 @@
 	
     if (page == 0) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"History"
 											  currentPage:[self.historyPageNames objectAtIndex:0]];
@@ -127,7 +133,7 @@
     
     if (page == 1) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor futuraColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"History"
 											  currentPage:[self.historyPageNames objectAtIndex:1]];
@@ -135,7 +141,7 @@
     
     if (page == 2) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor gillSansColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"History"
 											  currentPage:[self.historyPageNames objectAtIndex:2]];
@@ -143,7 +149,7 @@
     
     if (page == 3) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor palatinoColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"History"
 											  currentPage:[self.historyPageNames objectAtIndex:3]];
@@ -151,7 +157,7 @@
     
     if (page == 4) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor timesNewRomanColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"History"
 											  currentPage:[self.historyPageNames objectAtIndex:4]];
@@ -159,7 +165,7 @@
     
     if (page == 5) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor comingSoonColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"History"
 											  currentPage:[self.historyPageNames objectAtIndex:5]];

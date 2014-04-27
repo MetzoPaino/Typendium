@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -289,33 +289,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HyY-Fp-kky" userLabel="blockColorPalatino">
-                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98039215686274506" green="0.36078431372549019" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="duX-Iw-oFt" userLabel="blockColorTimesNewRoman">
-                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.50980392156862742" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYf-zv-wVe" userLabel="blockColorComingSoon">
-                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.51372549019607838" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGX-js-d0i" userLabel="blockColorGillSans">
-                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94117647058823528" green="0.65490196078431373" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1o-xW-jb3" userLabel="blockColorFutura">
-                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.85882352941176465" green="0.14509803921568626" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-zf-dxR" userLabel="blockColorBaskerville">
-                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.792156862745098" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -335,13 +310,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KnW-zf-dxR" firstAttribute="bottom" secondItem="P4p-jq-S8L" secondAttribute="bottom" id="0xz-o8-GRK"/>
+                            <constraint firstItem="KnW-zf-dxR" firstAttribute="bottom" secondItem="P4p-jq-S8L" secondAttribute="bottom" constant="-284" id="0xz-o8-GRK"/>
                             <constraint firstItem="P4p-jq-S8L" firstAttribute="top" secondItem="ArR-uK-UX7" secondAttribute="top" id="Bqs-iK-RB4"/>
                             <constraint firstAttribute="trailing" secondItem="KnW-zf-dxR" secondAttribute="trailing" id="CmZ-M3-NxB"/>
                             <constraint firstItem="KnW-zf-dxR" firstAttribute="trailing" secondItem="P4p-jq-S8L" secondAttribute="trailing" id="Ts3-C0-nRJ"/>
                             <constraint firstAttribute="bottom" secondItem="P4p-jq-S8L" secondAttribute="bottom" id="XQs-lX-0EF"/>
                             <constraint firstItem="KnW-zf-dxR" firstAttribute="leading" secondItem="P4p-jq-S8L" secondAttribute="leading" id="pLp-72-Zlc"/>
-                            <constraint firstItem="KnW-zf-dxR" firstAttribute="top" secondItem="x30-IE-pNO" secondAttribute="bottom" constant="282" id="r9O-Xd-7WL"/>
+                            <constraint firstItem="KnW-zf-dxR" firstAttribute="top" secondItem="x30-IE-pNO" secondAttribute="bottom" id="r9O-Xd-7WL"/>
                             <constraint firstItem="P4p-jq-S8L" firstAttribute="leading" secondItem="ArR-uK-UX7" secondAttribute="leading" id="vpY-CT-uOx"/>
                         </constraints>
                     </view>
