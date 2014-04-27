@@ -58,7 +58,6 @@
 /* Begin PBXFileReference section */
 		434DB2D818E9F31200DC8E42 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		434DB2D918E9F31200DC8E42 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
-		4359BD2F190A8CF0007BFF55 /* ConstructPageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstructPageDelegate.h; sourceTree = "<group>"; };
 		437CD7E118E8C37E00AAD7F6 /* Caption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption.xib; path = XIBs/Caption.xib; sourceTree = "<group>"; };
 		437CD7E318E8C38A00AAD7F6 /* Caption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caption.h; sourceTree = "<group>"; };
 		437CD7E418E8C38A00AAD7F6 /* Caption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caption.m; sourceTree = "<group>"; };
@@ -202,7 +201,6 @@
 				43BF125118E74BB9009A1C84 /* Main.storyboard */,
 				43F1FB21190556F80046A934 /* MoveViewsDelegate.h */,
 				43F1FB221905634C0046A934 /* DetectCurrentPageDelegate.h */,
-				4359BD2F190A8CF0007BFF55 /* ConstructPageDelegate.h */,
 				43961CE718FDC269009E399A /* TutorialViewController.h */,
 				43961CE818FDC269009E399A /* TutorialViewController.m */,
 				43BF127418E74F46009A1C84 /* IntroViewController.h */,

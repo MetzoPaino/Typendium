@@ -46,11 +46,7 @@
     [super viewDidLoad];
     
     _string_currentSection = @"Intro";
-	_string_currentPage = @"History";
-
-    IntroViewController *i = [[IntroViewController alloc]init];
-    i.delegate=self;
-    [i setDelegate:self];
+	_string_currentPage = @"Intro";
     
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     [self.view addGestureRecognizer:self.panGesture];
@@ -59,6 +55,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    
     [self layoutViews];
 
 }
@@ -84,11 +81,6 @@
     self.con_menu.layer.shadowRadius = 10.0f;
     self.con_menu.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
     
-//    anatomy.center = CGPointMake(anatomy.center.x, self.view.frame.size.height/2 + offset);
-//    specimens.center = CGPointMake(specimens.center.x, self.view.frame.size.height/2 + offset);
-//    history.center = CGPointMake(history.center.x, self.view.frame.size.height/2 + offset);
-//    menu.center = CGPointMake(menu.center.x, self.view.frame.size.height/2 + offset);
-//    info.center = CGPointMake(info.center.x, self.view.frame.size.height/2 + offset);
 }
 
 #pragma mark - Gesture Recognizer
@@ -226,6 +218,17 @@
     }
 }
 
+#pragma mark - Parallax To Location
+
+/**
+ *  Parallax To Location
+ *
+ *  @param currentView    <#currentView description#>
+ *  @param higherView     <#higherView description#>
+ *  @param lowerView      <#lowerView description#>
+ *  @param gestureContext <#gestureContext description#>
+ */
+
 - (void)parallaxToLocation : (UIView*)currentView : (UIView*) higherView : (UIView*)lowerView : (NSString*)gestureContext {
     
     if ([gestureContext isEqualToString:@"Moving Current View Up"] || [gestureContext isEqualToString:@"Up Arrow Pressed"]) {
@@ -246,6 +249,8 @@
                                  if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
                                      _string_currentSection = @"Menu";
+                                     
+                                     
 
                                  } else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      

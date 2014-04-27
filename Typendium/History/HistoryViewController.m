@@ -23,6 +23,7 @@
 
 @implementation HistoryViewController {
     
+    NSString *_string_currentPage;
 }
 
 
@@ -71,6 +72,43 @@
         
         i++;
     }
+    _string_currentPage = [self assignCurrentPage];
+}
+
+- (NSString *)assignCurrentPage {
+    
+    NSString *currentPage;
+    
+    switch (self.pageControl.currentPage) {
+        case 0:
+        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+           currentPage = [self.historyPageNames objectAtIndex:0];
+            break;
+        case 1:
+            currentPage = [self.historyPageNames objectAtIndex:1];
+            break;
+        case 2:
+            currentPage = [self.historyPageNames objectAtIndex:2];
+            break;
+        case 3:
+            currentPage = [self.historyPageNames objectAtIndex:3];
+            break;
+        case 4:
+            currentPage = [self.historyPageNames objectAtIndex:4];
+            break;
+        case 5:
+            currentPage = [self.historyPageNames objectAtIndex:5];
+            break;
+        case 6:
+            currentPage = [self.historyPageNames objectAtIndex:6];
+            break;
+        case 7:
+            currentPage = [self.historyPageNames objectAtIndex:7];
+            break;
+        default:
+            break;
+    }
+    return currentPage;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
