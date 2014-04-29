@@ -130,9 +130,8 @@
             higherView = self.con_intro;
             lowerView = self.con_info;
         }
- 
         
-    } else if ([_string_currentSection isEqualToString:@"History"] && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+    } else if ([_string_currentSection isEqualToString:@"History"]) {
         
         if (!_hasConstructedText) {
             
@@ -187,13 +186,11 @@
         
        gestureContext = @"Moving Current View Up";
         
-        if (![currentView isEqual: self.con_text]) {
+        if (![currentView isEqual: self.con_text] && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
 
             currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
             lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
         }
-
-        
         
         if (self.con_intro.center.y + self.con_intro.center.y >= self.view.frame.size.height/2) {
             [UIView animateWithDuration:1 delay: 0 options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -458,42 +455,11 @@
                                                         object:self];
     NSDictionary *dictionary;
     
-    if ([_string_currentPage isEqualToString:@"Baskerville"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+    dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                       @"History", @"Section",
-                      @"Baskerville", @"Page",
+                      _string_currentPage, @"Page",
                       nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"Futura"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"Futura", @"Page",
-                      nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"GillSans"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"GillSans", @"Page",
-                      nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"Palatino"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"Palatino", @"Page",
-                      nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"TimesNewRoman", @"Page",
-                      nil];
-    }
-    
+            
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"ConstructPage"
      object:self userInfo:dictionary];
