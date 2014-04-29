@@ -21,7 +21,6 @@
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
-
 @end
 
 @implementation MainViewController {
@@ -133,7 +132,7 @@
         }
  
         
-    } else if ([_string_currentSection isEqualToString:@"History"]) {
+    } else if ([_string_currentSection isEqualToString:@"History"] && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
         
         if (!_hasConstructedText) {
             
