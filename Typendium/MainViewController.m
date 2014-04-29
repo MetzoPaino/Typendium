@@ -133,7 +133,7 @@
         
     } else if ([_string_currentSection isEqualToString:@"History"]) {
         
-        if (!_hasConstructedText) {
+        if (!_hasConstructedText && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
             
             [self postTextToConstruct];
         }
@@ -459,7 +459,7 @@
                       @"History", @"Section",
                       _string_currentPage, @"Page",
                       nil];
-            
+    
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"ConstructPage"
      object:self userInfo:dictionary];
