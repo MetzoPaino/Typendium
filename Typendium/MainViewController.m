@@ -21,7 +21,6 @@
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
-
 @end
 
 @implementation MainViewController {
@@ -164,11 +163,10 @@
             higherView = self.con_intro;
             lowerView = self.con_info;
         }
- 
         
     } else if ([_string_currentSection isEqualToString:@"History"]) {
         
-        if (!_hasConstructedText) {
+        if (!_hasConstructedText && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
             
             [self postTextToConstruct];
         }
@@ -221,7 +219,7 @@
         
        gestureContext = @"Moving Current View Up";
         
-        if (![currentView isEqual: self.con_text]) {
+        if (![currentView isEqual: self.con_text] && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
 
             currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
             lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
@@ -546,41 +544,10 @@
                                                         object:self];
     NSDictionary *dictionary;
     
-    if ([_string_currentPage isEqualToString:@"Baskerville"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+    dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                       @"History", @"Section",
-                      @"Baskerville", @"Page",
+                      _string_currentPage, @"Page",
                       nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"Futura"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"Futura", @"Page",
-                      nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"GillSans"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"GillSans", @"Page",
-                      nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"Palatino"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"Palatino", @"Page",
-                      nil];
-        
-    } else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @"History", @"Section",
-                      @"TimesNewRoman", @"Page",
-                      nil];
-    }
     
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"ConstructPage"
