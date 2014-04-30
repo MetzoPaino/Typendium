@@ -28,6 +28,7 @@
     
     BOOL _hasParallaxStarted;
     BOOL _hasConstructedText;
+    BOOL _isTextContainerAtTop;
     
     NSString *_string_currentSection;
 	NSString *_string_currentPage;
@@ -54,6 +55,9 @@
 
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
+    [notificationCenter addObserver:self selector:@selector(notAtTopOfText:) name:@"NotAtTopOfText" object:nil];
+
 }
 
 - (void)viewDidLayoutSubviews {
@@ -93,8 +97,37 @@
     
 }
 
+- (void) atTopOfText:(NSNotification *) notification {
+    
+    _isTextContainerAtTop = YES;
+    NSLog(@"AT TOP");
+    
+}
+
+- (void) notAtTopOfText:(NSNotification *) notification {
+    
+
+    _isTextContainerAtTop = NO;
+    NSLog(@"NOT AT TOP");
+    
+}
+
 
 #pragma mark - Gesture Recognizer
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    
+    if ([_string_currentSection isEqualToString:@"Text"]) {
+        
+        NSLog(@"HELLO HELLO ");
+        return YES;
+
+        return _isTextContainerAtTop;
+
+    }
+    
+    return NO;
+}
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     
@@ -158,7 +191,7 @@
         
     } else if  ([_string_currentSection isEqualToString:@"Text"]){
         
-        currentView = self.con_tutorial;
+        currentView = self.con_text;
         higherView = self.con_history;
         lowerView = nil;
         
@@ -182,7 +215,7 @@
     // NEED THIS INFORMATION AT BEGINING OF MOVEMENT, THEN STATIC UNTIL LET GO
 //    float introViewYStart = 284;
 //    float menuViewYStart = 484;
-    
+    NSLog(@"%f", panGestureTranslation.y);
     
     if (panGestureTranslation.y <= 0.0) {
         
@@ -210,10 +243,37 @@
         
         gestureContext = @"Moving Current View Down";
         
+        if ([currentView isEqual:self.con_intro]) {
+             NSLog(@"Intro");
+        }
+        
+        if ([currentView isEqual:self.con_tutorial]) {
+            NSLog(@"Tutorial");
+        }
+        
         if (![currentView isEqual: self.con_intro] && ![currentView isEqual: self.con_tutorial]) {
             
-            higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
-            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+            NSLog(@"INSIDE");
+            
+            if ([currentView isEqual: self.con_text]) {
+                
+                if (_isTextContainerAtTop) {
+                    
+                    higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+                    currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                }
+                
+
+                
+            } else {
+                
+                
+                higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+                currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                
+            }
+            
+
             
         } else {
             
@@ -287,6 +347,8 @@
                                      
                                      _string_currentSection = @"Text";
                                      
+                                     
+                                     
                                      _hasConstructedText = NO;
                                      
                                  }
@@ -346,6 +408,8 @@
                                      _string_currentSection = @"Tutorial";
                                      
                                  } else if ([_string_currentSection isEqualToString:@"Text"]) {
+                                     
+                                     NSLog(@"HERE!!!!!");
                                      
                                      _string_currentSection = @"History";
                                      
