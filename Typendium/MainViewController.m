@@ -239,6 +239,9 @@
 //            
 //        }
         
+        
+        // Check the text view, when moving up and down fast the history page can get stuck
+        
     } else {
         
         gestureContext = @"Moving Current View Down";
