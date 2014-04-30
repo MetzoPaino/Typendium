@@ -225,19 +225,19 @@
 
             currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
             lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-        }
-
-        
-        
-        if (self.con_intro.center.y + self.con_intro.center.y >= self.view.frame.size.height/2) {
-            [UIView animateWithDuration:1 delay: 0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                [self.view layoutIfNeeded];
-                
-            }
-                             completion:^(BOOL finished){
-                             }];
             
         }
+        
+        higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition);
+//        if (self.con_intro.center.y + self.con_intro.center.y >= self.view.frame.size.height/2) {
+//            [UIView animateWithDuration:1 delay: 0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//                [self.view layoutIfNeeded];
+//                
+//            }
+//                             completion:^(BOOL finished){
+//                             }];
+//            
+//        }
         
     } else {
         
@@ -251,6 +251,12 @@
             NSLog(@"Tutorial");
         }
         
+        if ([currentView isEqual: self.con_intro] ||  [currentView isEqual: self.con_tutorial]) {
+            
+            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition);
+
+        }
+        
         if (![currentView isEqual: self.con_intro] && ![currentView isEqual: self.con_tutorial]) {
             
             NSLog(@"INSIDE");
@@ -261,6 +267,7 @@
                     
                     higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
                     currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                    lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition);
                 }
                 
 
@@ -270,7 +277,7 @@
                 
                 higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
                 currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                
+                lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition);
             }
             
 
@@ -284,8 +291,20 @@
     //Should have a check because can happen if you gesture on a page that shouldn't move'
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        
+        if ([currentView isEqual:self.con_text]) {
+            
+            if (_isTextContainerAtTop) {
+                [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
 
-        [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
+            }
+            
+        } else {
+            
+            [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
+
+        }
+
     }
 }
 
@@ -419,6 +438,7 @@
                                                                                          object:self];
                                      
                                  }
+                                 
                                   _hasParallaxStarted = NO;
                                  higherView.layer.shadowOpacity = 0;
                              }

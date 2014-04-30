@@ -198,4 +198,10 @@
     }
 }
 
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+//    
+//    NSLog(@"DECELERATING");
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"NotAtTopOfText" object:self];
+//}
+
 @end
