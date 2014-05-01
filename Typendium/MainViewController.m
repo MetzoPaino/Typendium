@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIView *con_info;
 @property (weak, nonatomic) IBOutlet UIView *con_tutorial;
 @property (weak, nonatomic) IBOutlet UIView *con_text;
+@property (weak, nonatomic) IBOutlet UIView *con_aboutUs;
+
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
@@ -72,6 +74,7 @@
     self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
     self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
     self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
+    self.con_aboutUs.center = CGPointMake(self.con_aboutUs.center.x, self.view.center.y + ViewOffset);
     self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
     
     self.con_intro.layer.shadowColor = [[UIColor blackColor] CGColor];
@@ -84,7 +87,13 @@
     self.con_menu.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
     self.con_menu.layer.shadowOpacity = .3f;
     self.con_menu.layer.shadowRadius = 10.0f;
-    self.con_menu.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
+    self.con_menu.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_menu.bounds].CGPath;
+    
+    self.con_history.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.con_history.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
+    self.con_history.layer.shadowOpacity = .3f;
+    self.con_history.layer.shadowRadius = 10.0f;
+    self.con_history.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_history.bounds].CGPath;
     
 }
 
@@ -124,7 +133,6 @@
         return _isTextContainerAtTop;
 
     }
-    
     return NO;
 }
 
@@ -177,9 +185,22 @@
         
     } else if ([_string_currentSection isEqualToString:@"Info"]) {
         
-        currentView = self.con_info;
-        higherView = self.con_menu;
-        lowerView = nil;
+        self.con_history.hidden = YES;
+        self.con_info.hidden = NO;
+        
+        if ([_string_currentPage isEqualToString:@"AboutUs"]) {
+            
+            currentView = self.con_menu;
+            higherView = self.con_intro;
+            lowerView = self.con_aboutUs;
+            
+        } else {
+            
+            currentView = self.con_menu;
+            higherView = self.con_intro;
+            lowerView = nil;
+        }
+
         
     } else if  ([_string_currentSection isEqualToString:@"Tutorial"]){
         
@@ -241,6 +262,8 @@
         // Check the text view, when moving up and down fast the history page can get stuck
         
     } else {
+        
+        higherView.layer.shadowOpacity = 0.3f;
         
         gestureContext = @"Moving Current View Down";
         
@@ -374,7 +397,7 @@
                                  }
                                  
                                  _hasParallaxStarted = NO;
-                                // currentView.layer.shadowOpacity = 0;
+                                 currentView.layer.shadowOpacity = 0;
                              }
              ];
             

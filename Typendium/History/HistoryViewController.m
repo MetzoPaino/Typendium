@@ -294,9 +294,6 @@
                                             currentPage:@"History"
                                                 newPage:@"Futura"];
     }
-    
-    
-    
 }
 
 
