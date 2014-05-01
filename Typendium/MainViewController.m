@@ -27,6 +27,7 @@
     
     BOOL _hasParallaxStarted;
     BOOL _hasConstructedText;
+    BOOL _isTextContainerAtTop;
     
     NSString *_string_currentSection;
 	NSString *_string_currentPage;
@@ -53,6 +54,9 @@
 
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
+    [notificationCenter addObserver:self selector:@selector(notAtTopOfText:) name:@"NotAtTopOfText" object:nil];
+
 }
 
 - (void)viewDidLayoutSubviews {
@@ -92,8 +96,37 @@
     
 }
 
+- (void) atTopOfText:(NSNotification *) notification {
+    
+    _isTextContainerAtTop = YES;
+    NSLog(@"AT TOP");
+    
+}
+
+- (void) notAtTopOfText:(NSNotification *) notification {
+    
+
+    _isTextContainerAtTop = NO;
+    NSLog(@"NOT AT TOP");
+    
+}
+
 
 #pragma mark - Gesture Recognizer
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    
+    if ([_string_currentSection isEqualToString:@"Text"]) {
+        
+        NSLog(@"HELLO HELLO ");
+        return YES;
+
+        return _isTextContainerAtTop;
+
+    }
+    
+    return NO;
+}
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     
@@ -156,7 +189,7 @@
         
     } else if  ([_string_currentSection isEqualToString:@"Text"]){
         
-        currentView = self.con_tutorial;
+        currentView = self.con_text;
         higherView = self.con_history;
         lowerView = nil;
         
@@ -180,7 +213,7 @@
     // NEED THIS INFORMATION AT BEGINING OF MOVEMENT, THEN STATIC UNTIL LET GO
 //    float introViewYStart = 284;
 //    float menuViewYStart = 484;
-    
+    NSLog(@"%f", panGestureTranslation.y);
     
     if (panGestureTranslation.y <= 0.0) {
         
@@ -190,26 +223,65 @@
 
             currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
             lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-        }
-        
-        if (self.con_intro.center.y + self.con_intro.center.y >= self.view.frame.size.height/2) {
-            [UIView animateWithDuration:1 delay: 0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                [self.view layoutIfNeeded];
-                
-            }
-                             completion:^(BOOL finished){
-                             }];
             
         }
+        
+        higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition);
+//        if (self.con_intro.center.y + self.con_intro.center.y >= self.view.frame.size.height/2) {
+//            [UIView animateWithDuration:1 delay: 0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//                [self.view layoutIfNeeded];
+//                
+//            }
+//                             completion:^(BOOL finished){
+//                             }];
+//            
+//        }
+        
+        
+        // Check the text view, when moving up and down fast the history page can get stuck
         
     } else {
         
         gestureContext = @"Moving Current View Down";
         
+        if ([currentView isEqual:self.con_intro]) {
+             NSLog(@"Intro");
+        }
+        
+        if ([currentView isEqual:self.con_tutorial]) {
+            NSLog(@"Tutorial");
+        }
+        
+        if ([currentView isEqual: self.con_intro] ||  [currentView isEqual: self.con_tutorial]) {
+            
+            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition);
+
+        }
+        
         if (![currentView isEqual: self.con_intro] && ![currentView isEqual: self.con_tutorial]) {
             
-            higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
-            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+            NSLog(@"INSIDE");
+            
+            if ([currentView isEqual: self.con_text]) {
+                
+                if (_isTextContainerAtTop) {
+                    
+                    higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+                    currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                    lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition);
+                }
+                
+
+                
+            } else {
+                
+                
+                higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+                currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition);
+            }
+            
+
             
         } else {
             
@@ -220,8 +292,20 @@
     //Should have a check because can happen if you gesture on a page that shouldn't move'
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        
+        if ([currentView isEqual:self.con_text]) {
+            
+            if (_isTextContainerAtTop) {
+                [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
 
-        [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
+            }
+            
+        } else {
+            
+            [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
+
+        }
+
     }
 }
 
@@ -283,6 +367,8 @@
                                      
                                      _string_currentSection = @"Text";
                                      
+                                     
+                                     
                                      _hasConstructedText = NO;
                                      
                                  }
@@ -343,6 +429,8 @@
                                      
                                  } else if ([_string_currentSection isEqualToString:@"Text"]) {
                                      
+                                     NSLog(@"HERE!!!!!");
+                                     
                                      _string_currentSection = @"History";
                                      
                                      _hasConstructedText = NO;
@@ -351,6 +439,7 @@
                                                                                          object:self];
                                      
                                  }
+                                 
                                   _hasParallaxStarted = NO;
                                  higherView.layer.shadowOpacity = 0;
                              }

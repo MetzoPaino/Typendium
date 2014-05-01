@@ -10,7 +10,7 @@
 #import "TypendiumText.h"
 #import "NSString+ShareText.h"
 
-@interface TextViewController ()
+@interface TextViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -33,9 +33,22 @@
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(constructPage:) name:@"ConstructPage" object:nil];
     [notificationCenter addObserver:self selector:@selector(displayUIActivity:) name:@"DisplayUIActivity" object:nil];
-
-
+    self.scrollView.bounces = NO;
+//
+//    NSTimer *elapsedTimeTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
+//                                                                 target:self
+//                                                               selector:@selector(updateElapsedTimeLabel)
+//                                                               userInfo:nil
+//                                                                repeats:YES];
+//
+    NSTimer *timer = [NSTimer timerWithTimeInterval:0.05
+                                             target:self
+                                           selector:@selector(updateElapsedTimeLabel)
+                                           userInfo:nil
+                                            repeats:YES];
     
+    [[NSRunLoop currentRunLoop] addTimer:timer
+                                 forMode:NSRunLoopCommonModes];
     }
 
 - (void) displayUIActivity:(NSNotification *) notification {
@@ -45,6 +58,23 @@
                                             applicationActivities:nil];
     
     [self presentViewController:controller animated:YES completion:nil];
+    
+}
+
+- (void)updateElapsedTimeLabel {
+    
+    NSLog(@"Y : %f", self.scrollView.contentOffset.y);
+    
+    if (self.scrollView.contentOffset.y <= 0) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"AtTopOfText" object:self];
+        
+    } else {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotAtTopOfText" object:self];
+        
+    }
+    
     
 }
 - (void) constructPage:(NSNotification *) notification {
@@ -155,6 +185,23 @@
                               }];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (scrollView.contentOffset.y == 0) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"AtTopOfText" object:self];
+        
+    } else {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotAtTopOfText" object:self];
 
+    }
+}
+
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+//    
+//    NSLog(@"DECELERATING");
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"NotAtTopOfText" object:self];
+//}
 
 @end
