@@ -443,8 +443,6 @@
     }
     
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
-    
-
 }
 
 #pragma mark - Post Text To Construct
