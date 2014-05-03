@@ -10,9 +10,7 @@
 
 @class Quartz;
 
-#import <MessageUI/MFMailComposeViewController.h>
-
-@interface MainViewController () <UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate>
+@interface MainViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *con_intro;
 @property (weak, nonatomic) IBOutlet UIView *con_menu;
@@ -60,7 +58,6 @@
     [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
     [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
     [notificationCenter addObserver:self selector:@selector(notAtTopOfText:) name:@"NotAtTopOfText" object:nil];
-    [notificationCenter addObserver:self selector:@selector(emailTypendium:) name:@"SuggestATypeface" object:nil];
 
 }
 
@@ -124,29 +121,6 @@
     NSLog(@"NOT AT TOP");
     
 }
-
-- (void)emailTypendium:(NSNotification *) notification {
-    
-    if([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
-        mailCont.mailComposeDelegate = self;        // Required to invoke mailComposeController when send
-        
-        [mailCont setSubject:@"Email subject"];
-        [mailCont setToRecipients:[NSArray arrayWithObject:@"myFriends@email.com"]];
-        [mailCont setMessageBody:@"Email message" isHTML:NO];
-        
-        mailCont.modalPresentationStyle = UIModalPresentationCurrentContext;
-        
-        [self presentViewController:mailCont animated:YES completion:nil];
-    }
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-    
-    [controller dismissViewControllerAnimated:YES completion:nil];
-    [controller popViewControllerAnimated:YES];
-}
-
 
 #pragma mark - Gesture Recognizer
 
@@ -413,6 +387,9 @@
                                      
                                      _string_currentSection = @"Intro";
                                      
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"StopTutorial"
+                                                                                         object:self];
+                                     
                                  } else if ([_string_currentSection isEqualToString:@"History"]) {
                                      
                                      _string_currentSection = @"Text";
@@ -476,6 +453,9 @@
                                  } else if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
                                      _string_currentSection = @"Tutorial";
+                                     
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"StartTutorial"
+                                                                                         object:self];
                                      
                                  } else if ([_string_currentSection isEqualToString:@"Text"]) {
                                      

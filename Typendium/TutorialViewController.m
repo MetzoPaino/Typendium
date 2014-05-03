@@ -29,6 +29,22 @@
     [super viewDidLoad];
 
     [self avPlayer];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(startTutorial:) name:@"StartTutorial" object:nil];
+    [notificationCenter addObserver:self selector:@selector(stopTutorial:) name:@"StopTutorial" object:nil];
+
+}
+
+- (void) startTutorial:(NSNotification *) notification {
+    
+    [self.avPlayer play];
+}
+
+- (void) stopTutorial:(NSNotification *) notification {
+    
+    [self.avPlayer pause];
+    [self.avPlayer seekToTime:kCMTimeZero];
 
 }
 
