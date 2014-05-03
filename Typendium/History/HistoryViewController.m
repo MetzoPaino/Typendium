@@ -10,6 +10,8 @@
 #import "UIColor+CustomColors.h"
 #import "UIColor+ScrollColor.h"
 
+@import QuartzCore;
+
 @interface HistoryViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -71,6 +73,26 @@
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
             
             [historyPage addSubview:upArrow];
+            
+        } else {
+            
+            float y =  self.pageControl.center.y - self.view.center.y;
+            
+            
+            UIButton *suggestATypeface = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            suggestATypeface.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
+            
+            [suggestATypeface setTitle:@"Suggest a typeface" forState:UIControlStateNormal];
+            [suggestATypeface setTitleColor:[UIColor comingSoonColor] forState:UIControlStateNormal];
+            
+            suggestATypeface.layer.borderWidth = 1.0f;
+            suggestATypeface.layer.borderColor = [UIColor comingSoonColor].CGColor;
+            suggestATypeface.layer.cornerRadius = 18.0f;
+            
+            [suggestATypeface addTarget:self action:@selector(suggestATypeface:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [historyPage addSubview:suggestATypeface];
+
         }
 
         [self.scrollView addSubview:historyPage];
@@ -128,9 +150,8 @@
                   _string_currentPage, @"Page",
                   nil];
     
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"ThisPage"
-     object:self userInfo:dictionary];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ThisPage"
+                                                        object:self userInfo:dictionary];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -149,122 +170,6 @@
     
     self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 
-    
-//    if (page == 0) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:0]];
-//    }
-//    
-//    if (page == 1) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor futuraColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:1]];
-//    }
-//    
-//    if (page == 2) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor gillSansColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:2]];
-//    }
-//    
-//    if (page == 3) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor palatinoColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:3]];
-//    }
-//    
-//    if (page == 4) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor timesNewRomanColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:4]];
-//    }
-//    
-//    if (page == 5) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor comingSoonColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:5]];
-//    }
-//    
-//    if (page == 6) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:6]];
-//    }
-//    
-//    if (page == 7) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"History"
-//											  currentPage:[self.historyPageNames objectAtIndex:7]];
-//    }
-//    
-	
-	
-//	NSArray *array_color = @[[UIColor baskvervilleColor],
-//							 [UIColor futuraColor],
-//							 [UIColor gillSansColor],
-//							 [UIColor palatinoColor],
-//							 [UIColor timesNewRomanColor],
-//							 [UIColor comingSoonColor]];
-//
-//	int colorIndex1;
-//	int colorIndex2;
-//	
-//	colorIndex1 = (int)scrollView.contentOffset.x / 320;
-//	colorIndex2 = ((int)scrollView.contentOffset.x / 320) + 1;
-//    
-//    if (colorIndex1 <= array_color.count && colorIndex2 < array_color.count) {
-//        
-//        UIColor *color1 = [array_color objectAtIndex:colorIndex1];
-//        UIColor *color2 = [array_color objectAtIndex:colorIndex2];
-//        
-//        CGFloat red1 = 0.0, green1 = 0.0, blue1 = 0.0, alpha1 = 0.0;
-//        CGFloat red2 = 0.0, green2 = 0.0, blue2 = 0.0, alpha2 = 0.0;
-//        
-//        [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
-//        [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
-//        
-//        if (self.pageControl.currentPage == 0 && self.scrollView.contentOffset.x > 0) {
-//			
-//			float temp = scrollView.contentOffset.x;
-//			
-//			float t = fmod(temp, 320) / 320;
-//						
-//			float r = lerp(red1, red2, t);
-//			float g = lerp(green1, green2, t);
-//			float b = lerp(blue1, blue2, t);
-//						
-//			self.image_backgroundColor.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-//			
-//		} else if (self.pageControl.currentPage > 0) {
-//			
-//			float temp = scrollView.contentOffset.x;
-//			
-//			float t = fmod(temp, 320) / 320;
-//						
-//			float r = lerp(red1, red2, t);
-//			float g = lerp(green1, green2, t);
-//			float b = lerp(blue1, blue2, t);
-//						
-//			self.image_backgroundColor.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1.0];
-//		}
-//    }
 }
 
 - (NSArray *)historyPageNames {
@@ -295,6 +200,19 @@
                                                 newPage:@"Futura"];
     }
 }
+
+- (IBAction)suggestATypeface:(id)sender {
+    
+    NSString *recipients = @"mailto:MetzoPaino@gmail.com?subject=I Suggest...";
+    NSString *body = @"&body=I think you should add ";
+    
+    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+    
+}
+
 
 
 @end
