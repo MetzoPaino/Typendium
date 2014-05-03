@@ -16,12 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-SO-tLe" userLabel="con_aboutUs">
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-SO-tLe" userLabel="con_infoText">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Ib1-ro-2QB" kind="embed" identifier="AboutUs" id="fHP-7V-FbW"/>
+                                    <segue destination="Ib1-ro-2QB" kind="embed" identifier="InfoText" id="fHP-7V-FbW"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acM-XM-oxq" userLabel="con_text">
@@ -112,9 +112,9 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="con_aboutUs" destination="Awx-SO-tLe" id="YtY-Mc-pOx"/>
                         <outlet property="con_history" destination="vpj-vf-ca5" id="wX7-ry-jsf"/>
                         <outlet property="con_info" destination="nId-Tk-7Np" id="uRT-6J-V7N"/>
+                        <outlet property="con_infoText" destination="Awx-SO-tLe" id="PSQ-Nz-2ky"/>
                         <outlet property="con_intro" destination="lne-tg-qZL" id="VnS-x0-FXy"/>
                         <outlet property="con_menu" destination="Hhe-HR-b8j" id="9ap-L3-N4U"/>
                         <outlet property="con_text" destination="acM-XM-oxq" id="HOD-F3-leu"/>
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-186" y="309"/>
+            <point key="canvasLocation" x="-977" y="328"/>
         </scene>
         <!--Intro-->
         <scene sceneID="dsB-y2-BEP">
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjb-nA-H6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="170" y="-656"/>
+            <point key="canvasLocation" x="-90" y="-1165"/>
         </scene>
         <!--Menu-->
         <scene sceneID="APJ-2E-6dL">
@@ -284,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDD-At-zkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="-336"/>
+            <point key="canvasLocation" x="131" y="-400"/>
         </scene>
         <!--History-->
         <scene sceneID="El5-3X-fCf">
@@ -338,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfp-Gc-9K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="309"/>
+            <point key="canvasLocation" x="983" y="49"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="FVE-Tt-NRe">
@@ -386,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nW9-rO-deN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-295" y="-724"/>
+            <point key="canvasLocation" x="-579" y="-1155"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="5oJ-8z-WMn">
@@ -417,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqE-cB-eZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="1178"/>
+            <point key="canvasLocation" x="995" y="722"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="wOa-a5-Jvt">
@@ -472,12 +472,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckt-sQ-jZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-49" y="1232"/>
+            <point key="canvasLocation" x="-253" y="1212"/>
         </scene>
-        <!--About Us View Controller-->
+        <!--Info Text View Controller-->
         <scene sceneID="iDR-r0-xpl">
             <objects>
-                <viewController storyboardIdentifier="AboutUs" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ib1-ro-2QB" customClass="AboutUsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoText" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ib1-ro-2QB" customClass="InfoTextViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="raf-jf-76C"/>
                         <viewControllerLayoutGuide type="bottom" id="YoT-g1-tbg"/>
@@ -501,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0Q-VO-jei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-544" y="1261"/>
+            <point key="canvasLocation" x="-456" y="2008"/>
         </scene>
     </scenes>
     <resources>

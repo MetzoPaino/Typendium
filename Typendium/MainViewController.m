@@ -13,12 +13,15 @@
 @interface MainViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *con_intro;
-@property (weak, nonatomic) IBOutlet UIView *con_menu;
-@property (weak, nonatomic) IBOutlet UIView *con_history;
-@property (weak, nonatomic) IBOutlet UIView *con_info;
 @property (weak, nonatomic) IBOutlet UIView *con_tutorial;
+
+@property (weak, nonatomic) IBOutlet UIView *con_menu;
+
+@property (weak, nonatomic) IBOutlet UIView *con_history;
 @property (weak, nonatomic) IBOutlet UIView *con_text;
-@property (weak, nonatomic) IBOutlet UIView *con_aboutUs;
+
+@property (weak, nonatomic) IBOutlet UIView *con_info;
+@property (weak, nonatomic) IBOutlet UIView *con_infoText;
 
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
@@ -37,6 +40,10 @@
     float _currentViewYPosition;
     float _higherViewYPosition;
     float _lowerViewYPosition;
+    
+    UIView *_currentView;
+    UIView *_higherView;
+    UIView *_lowerView;
 }
 
 #define ViewOffset 200
@@ -69,32 +76,36 @@
 
 - (void)layoutViews {
     
+    // Place views
+    
     self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
-    self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
-    self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
-    self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
-    self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
-    self.con_aboutUs.center = CGPointMake(self.con_aboutUs.center.x, self.view.center.y + ViewOffset);
     self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
     
-    self.con_intro.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.con_intro.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
-    self.con_intro.layer.shadowOpacity = .3f;
-    self.con_intro.layer.shadowRadius = 10.0f;
-    self.con_intro.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
+    self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
     
-    self.con_menu.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.con_menu.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
-    self.con_menu.layer.shadowOpacity = .3f;
-    self.con_menu.layer.shadowRadius = 10.0f;
-    self.con_menu.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_menu.bounds].CGPath;
+    self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
+    self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
+
+    self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
+    self.con_infoText.center = CGPointMake(self.con_infoText.center.x, self.view.center.y + ViewOffset);
+
     
-    self.con_history.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.con_history.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
-    self.con_history.layer.shadowOpacity = .3f;
-    self.con_history.layer.shadowRadius = 10.0f;
-    self.con_history.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_history.bounds].CGPath;
+    // Add shadows to views that need them
     
+    NSArray *shadowsArray = @[self.con_tutorial,
+                              self.con_intro,
+                              self.con_menu,
+                              self.con_history,
+                              self.con_info];
+    
+    for (UIView *view in shadowsArray) {
+        
+        view.layer.shadowColor = [[UIColor blackColor] CGColor];
+        view.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
+        view.layer.shadowOpacity = 0.0f;
+        view.layer.shadowRadius = 10.0f;
+        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
+    }
 }
 
 #pragma mark - Observer Messages
@@ -110,7 +121,7 @@
 - (void) atTopOfText:(NSNotification *) notification {
     
     _isTextContainerAtTop = YES;
-    NSLog(@"AT TOP");
+  //  NSLog(@"AT TOP");
     
 }
 
@@ -118,20 +129,17 @@
     
 
     _isTextContainerAtTop = NO;
-    NSLog(@"NOT AT TOP");
+  //  NSLog(@"NOT AT TOP");
     
 }
 
-#pragma mark - Gesture Recognizer
+#pragma mark - Gesture Recognizer Delegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     
     if ([_string_currentSection isEqualToString:@"Text"]) {
         
-        NSLog(@"HELLO HELLO ");
         return YES;
-
-        return _isTextContainerAtTop;
 
     }
     return NO;
@@ -140,84 +148,89 @@
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     
     NSString *gestureContext;
-    UIView *currentView;
-    UIView *higherView;
-    UIView *lowerView;
-    
-   // NSLog(@"CURRENT PAGE %l", );
-    
-    if ([_string_currentSection isEqualToString:@"Intro"]) {
-        
-        currentView = self.con_intro;
-        higherView = nil;
-        lowerView = self.con_menu;
-        
-    } else if ([_string_currentSection isEqualToString:@"Menu"]) {
-        
-        if ([_string_currentPage isEqualToString:@"History"]) {
-            
-            self.con_history.hidden = NO;
-            self.con_info.hidden = YES;
 
-            currentView = self.con_menu;
-            higherView = self.con_intro;
-            lowerView = self.con_history;
+    if (!_hasParallaxStarted) {
+        
+        if ([_string_currentSection isEqualToString:@"Intro"]) {
             
-        } else {
-            
-            self.con_history.hidden = YES;
-            self.con_info.hidden = NO;
-            
-            currentView = self.con_menu;
-            higherView = self.con_intro;
-            lowerView = self.con_info;
+            _currentView = self.con_intro;
+            _higherView = nil;
+            _lowerView = self.con_menu;
         }
         
-    } else if ([_string_currentSection isEqualToString:@"History"]) {
-        
-        if (!_hasConstructedText && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+        if ([_string_currentSection isEqualToString:@"Menu"]) {
             
-            [self postTextToConstruct];
+            _currentView = self.con_menu;
+            _higherView = self.con_intro;
+            
+            if ([_string_currentPage isEqualToString:@"History"]) {
+                
+                self.con_history.hidden = NO;
+                self.con_text.hidden = NO;
+                
+                self.con_info.hidden = YES;
+                self.con_infoText.hidden = YES;
+                
+                _lowerView = self.con_history;
+                
+            } else {
+                
+                self.con_history.hidden = YES;
+                self.con_text.hidden = YES;
+                
+                self.con_info.hidden = NO;
+                self.con_infoText.hidden = NO;
+                
+                _lowerView = self.con_info;
+            }
         }
-
-        currentView = self.con_history;
-        higherView = self.con_menu;
-        lowerView = self.con_text;
         
-    } else if ([_string_currentSection isEqualToString:@"Info"]) {
-        
-        self.con_history.hidden = YES;
-        self.con_info.hidden = NO;
-        
-        if ([_string_currentPage isEqualToString:@"AboutUs"]) {
+        if ([_string_currentSection isEqualToString:@"History"]) {
             
-            currentView = self.con_menu;
-            higherView = self.con_intro;
-            lowerView = self.con_aboutUs;
+            if (!_hasConstructedText && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+                
+                [self postTextToConstruct];
+            }
             
-        } else {
+            _currentView = self.con_history;
+            _higherView = self.con_menu;
+            _lowerView = self.con_text;
             
-            currentView = self.con_menu;
-            higherView = self.con_intro;
-            lowerView = nil;
         }
-
         
-    } else if  ([_string_currentSection isEqualToString:@"Tutorial"]){
+        if  ([_string_currentSection isEqualToString:@"Text"]){
+            
+            _currentView = self.con_text;
+            _higherView = self.con_history;
+            _lowerView = nil;
+            
+        }
         
-        currentView = self.con_tutorial;
-        higherView = nil;
-        lowerView = self.con_intro;
+        if ([_string_currentSection isEqualToString:@"Info"]) {
+            
+            _currentView = self.con_info;
+            _higherView = self.con_menu;
+            _lowerView = self.con_infoText;
+            
+            
+        }
         
-    } else if  ([_string_currentSection isEqualToString:@"Text"]){
-        
-        currentView = self.con_text;
-        higherView = self.con_history;
-        lowerView = nil;
-        
+        if  ([_string_currentSection isEqualToString:@"InfoText"]){
+            
+            _currentView = self.con_infoText;
+            _higherView = self.con_info;
+            _lowerView = nil;
+            
+        }
+       
+        if  ([_string_currentSection isEqualToString:@"Tutorial"]){
+            
+            _currentView = self.con_tutorial;
+            _higherView = nil;
+            _lowerView = self.con_intro;
+            
+        }
     }
-    
-    
     
     CGPoint panGestureTranslation = [panGestureRecognizer translationInView:self.view];
     float parallaxCoefficient = ViewOffset / self.view.frame.size.height;
@@ -225,87 +238,59 @@
     if (_hasParallaxStarted == NO) {
         
         _hasParallaxStarted = YES;
-        _currentViewYPosition = currentView.center.y;
-        _higherViewYPosition = higherView.center.y;
-        _lowerViewYPosition = lowerView.center.y;
-        currentView.layer.shadowOpacity = 0.3f;
+        _currentViewYPosition = _currentView.center.y;
+        _higherViewYPosition = _higherView.center.y;
+        _lowerViewYPosition = _lowerView.center.y;
+        _currentView.layer.shadowOpacity = 0.3f;
 
     }
     
-    // NEED THIS INFORMATION AT BEGINING OF MOVEMENT, THEN STATIC UNTIL LET GO
-//    float introViewYStart = 284;
-//    float menuViewYStart = 484;
-    NSLog(@"%f", panGestureTranslation.y);
-    
     if (panGestureTranslation.y <= 0.0) {
+        
+        _currentView.layer.shadowOpacity = 0.3f;
         
        gestureContext = @"Moving Current View Up";
         
-        if (![currentView isEqual: self.con_text] && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+        if (![_currentView isEqual: self.con_text] && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
 
-            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-            lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+            _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+            _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
             
         }
         
-        higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition);
-//        if (self.con_intro.center.y + self.con_intro.center.y >= self.view.frame.size.height/2) {
-//            [UIView animateWithDuration:1 delay: 0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-//                [self.view layoutIfNeeded];
-//                
-//            }
-//                             completion:^(BOOL finished){
-//                             }];
-//            
-//        }
-        
+        _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition);
         
         // Check the text view, when moving up and down fast the history page can get stuck
         
     } else {
         
-        higherView.layer.shadowOpacity = 0.3f;
+        _higherView.layer.shadowOpacity = 0.3f;
         
         gestureContext = @"Moving Current View Down";
         
-        if ([currentView isEqual:self.con_intro]) {
-             NSLog(@"Intro");
-        }
-        
-        if ([currentView isEqual:self.con_tutorial]) {
-            NSLog(@"Tutorial");
-        }
-        
-        if ([currentView isEqual: self.con_intro] ||  [currentView isEqual: self.con_tutorial]) {
+        if ([_currentView isEqual: self.con_intro] ||  [_currentView isEqual: self.con_tutorial]) {
             
-            currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition);
+            _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition);
 
         }
         
-        if (![currentView isEqual: self.con_intro] && ![currentView isEqual: self.con_tutorial]) {
+        if (![_currentView isEqual: self.con_intro] && ![_currentView isEqual: self.con_tutorial]) {
             
-            NSLog(@"INSIDE");
-            
-            if ([currentView isEqual: self.con_text]) {
+            if ([_currentView isEqual: self.con_text]) {
                 
                 if (_isTextContainerAtTop) {
                     
-                    higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
-                    currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                    lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition);
+                    _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition);
                 }
-                
-
-                
+            
             } else {
                 
-                
-                higherView.center = CGPointMake(higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
-                currentView.center = CGPointMake(currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                lowerView.center = CGPointMake(lowerView.center.x, _lowerViewYPosition);
+                _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition);
             }
-            
-
             
         } else {
             
@@ -317,35 +302,27 @@
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
         
-        if ([currentView isEqual:self.con_text]) {
+        if ([_currentView isEqual:self.con_text]) {
             
             if (_isTextContainerAtTop) {
-                [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
+                [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
 
             }
             
         } else {
             
-            [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
+            [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
 
         }
-
     }
 }
 
 #pragma mark - Parallax To Location
 
-/**
- *  Parallax To Location
- *
- *  @param currentView    <#currentView description#>
- *  @param higherView     <#higherView description#>
- *  @param lowerView      <#lowerView description#>
- *  @param gestureContext <#gestureContext description#>
- */
-
 - (void)parallaxToLocation : (UIView*)currentView : (UIView*) higherView : (UIView*)lowerView : (NSString*)gestureContext {
     
+    NSLog(@"Start Section: %@ / Start Page: %@", _string_currentSection, _string_currentPage);
+
     if ([gestureContext isEqualToString:@"Moving Current View Up"] || [gestureContext isEqualToString:@"Up Arrow Pressed"]) {
         
         if (currentView.center.y <= self.view.frame.size.height/2.5 || [gestureContext isEqualToString:@"Up Arrow Pressed"]) {
@@ -356,53 +333,56 @@
                                   delay:0
                                 options:UIViewAnimationOptionCurveLinear
                              animations:^{
+                                 
                                  lowerView.center = CGPointMake(lowerView.center.x, self.view.frame.size.height/2);
                                  currentView.center = CGPointMake(currentView.center.x, -self.view.frame.size.height/2);
                              }
                              completion:^(BOOL finished){
                                  
-                                 if ([_string_currentSection isEqualToString:@"Intro"]) {
+                                 if ([_string_currentSection isEqualToString:@"Tutorial"]) {
+                                     
+                                     _string_currentSection = @"Intro";
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"StopTutorial"
+                                                                                         object:self];
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
                                      _string_currentSection = @"Menu";
-                                     
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
                                                                                          object:self];
                                      
 
-                                 } else if ([_string_currentSection isEqualToString:@"Menu"]) {
+                                 }   else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
                                      if ([_string_currentPage isEqualToString:@"History"]) {
                                          
                                          _string_currentSection = @"History";
-                                         
                                          [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatHistoryPageIsThis"
                                                                                              object:self];
                                          
                                      } else if ([_string_currentPage isEqualToString:@"Info"]) {
                                          
                                          _string_currentSection = @"Info";
+                                         [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatInfoPageIsThis"
+                                                                                             object:self];
                                      }
-                                     
-                                 } else if ([_string_currentSection isEqualToString:@"Tutorial"]) {
-                                     
-                                     _string_currentSection = @"Intro";
-                                     
-                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"StopTutorial"
-                                                                                         object:self];
                                      
                                  } else if ([_string_currentSection isEqualToString:@"History"]) {
                                      
                                      _string_currentSection = @"Text";
-                                     
-                                     
-                                     
                                      _hasConstructedText = NO;
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"Info"]) {
+                                     
+                                     _string_currentSection = @"InfoText";
                                      
                                  }
                                  
                                  _hasParallaxStarted = NO;
                                  currentView.layer.shadowOpacity = 0;
-                             }
+                                 NSLog(@"Current Section: %@ / Current Page: %@", _string_currentSection, _string_currentPage);
+
+                            }
              ];
             
         } else {
@@ -419,10 +399,15 @@
                              completion:^(BOOL finished){
                                  
                                  _hasParallaxStarted = NO;
-                                 
-                             }];
+                                 NSLog(@"End Section: %@ / End Page: %@", _string_currentSection, _string_currentPage);
+
+                             }
+             ];
         }
-    } else if ([gestureContext isEqualToString:@"Moving Current View Down"] || [gestureContext isEqualToString:@"Tutorial Button Pressed"] || [gestureContext isEqualToString:@"Text Arrow Pressed"]) {
+        
+    } else if ([gestureContext isEqualToString:@"Moving Current View Down"] ||
+               [gestureContext isEqualToString:@"Tutorial Button Pressed"] ||
+               [gestureContext isEqualToString:@"Text Arrow Pressed"]) {
         
         if (currentView.center.y + currentView.frame.size.height/2 >= self.view.frame.size.height/4 || [gestureContext isEqualToString:@"Tutorial Button Pressed"]) {
             
@@ -436,47 +421,64 @@
                                  currentView.center = CGPointMake(currentView.center.x, self.view.frame.size.height/2 + ViewOffset);
                              }
                              completion:^(BOOL finished){
-
-                                 if ([_string_currentSection isEqualToString:@"Menu"]) {
+                                 
+                                 if ([_string_currentSection isEqualToString:@"Intro"]) {
+                                     
+                                     _string_currentSection = @"Tutorial";
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"StartTutorial"
+                                                                                         object:self];
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
                                      _string_currentSection = @"Intro";
+                                     
                                      
                                  } else if ([_string_currentSection isEqualToString:@"History"] || [_string_currentSection isEqualToString:@"Info"]) {
                                      
                                      _string_currentSection = @"Menu";
-                                     
                                      _hasConstructedText = NO;
                                      
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
                                                                                          object:self];
                                      
-                                 } else if ([_string_currentSection isEqualToString:@"Intro"]) {
-                                     
-                                     _string_currentSection = @"Tutorial";
-                                     
-                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"StartTutorial"
-                                                                                         object:self];
-                                     
                                  } else if ([_string_currentSection isEqualToString:@"Text"]) {
-                                     
-                                     NSLog(@"HERE!!!!!");
-                                     
+                                                                          
                                      _string_currentSection = @"History";
-                                     
                                      _hasConstructedText = NO;
                                      
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatHistoryPageIsThis"
+                                                                                         object:self];
+                                     
+                                 } else if ([_string_currentSection isEqualToString:@"InfoText"]) {
+                                     
+                                     _string_currentSection = @"Info";
+                                     
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatInfoPageIsThis"
                                                                                          object:self];
                                      
                                  }
                                  
                                   _hasParallaxStarted = NO;
                                  higherView.layer.shadowOpacity = 0;
+                                 NSLog(@"End Section: %@ / End Page: %@", _string_currentSection, _string_currentPage);
+
                              }
+             
              ];
         }
     }
-    NSLog(@"Current Section: %@ / Current Page: %@", _string_currentSection, _string_currentPage);
+    
+}
+
+#pragma mark - Assign Views
+
+- (NSArray *)assignViews:(UIView *)currentView higherView:(UIView *)higherView lowerView:(UIView *)lowerView {
+    
+    NSArray *viewsArray;
+    
+
+    
+    return viewsArray;
 }
 
 #pragma mark - Animate Container Delegate

@@ -64,7 +64,7 @@
 
 - (void)updateElapsedTimeLabel {
     
-    NSLog(@"Y : %f", self.scrollView.contentOffset.y);
+   // NSLog(@"Y : %f", self.scrollView.contentOffset.y);
     
     if (self.scrollView.contentOffset.y <= 0) {
         

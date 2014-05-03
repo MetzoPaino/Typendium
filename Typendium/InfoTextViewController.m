@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 William Robinson. All rights reserved.
 //
 
-#import "AboutUsViewController.h"
+#import "InfoTextViewController.h"
 
-@interface AboutUsViewController ()
+@interface InfoTextViewController ()
 
 @end
 
-@implementation AboutUsViewController
+@implementation InfoTextViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

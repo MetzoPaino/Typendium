@@ -114,14 +114,15 @@
 
 - (void)whatPageIsThis {
     
+    _string_currentPage = [self assignCurrentPage];
+    
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @"Menu", @"Section",
                                 _string_currentPage, @"Page",
                                 nil];
     
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"ThisPage"
-     object:self userInfo:dictionary];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ThisPage"
+                                                        object:self userInfo:dictionary];
 }
 
 #pragma mark - Scroll View Delegate

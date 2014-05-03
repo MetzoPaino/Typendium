@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutUsViewController : UIViewController
+@interface InfoTextViewController : UIViewController
 
 @end
