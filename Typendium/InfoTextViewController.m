@@ -8,7 +8,10 @@
 
 #import "InfoTextViewController.h"
 
-@interface InfoTextViewController ()
+@interface InfoTextViewController () <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 
 @end
 

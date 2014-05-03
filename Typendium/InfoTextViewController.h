@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MoveViewsDelegate.h"
 
 @interface InfoTextViewController : UIViewController
+
+@property (nonatomic, weak) id <MoveViewsDelegate> moveViewsDelegate;
 
 @end

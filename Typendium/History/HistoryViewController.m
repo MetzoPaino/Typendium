@@ -21,6 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *image_backgroundColor;
 
+
+
 @end
 
 @implementation HistoryViewController {
@@ -138,6 +140,16 @@
             break;
     }
     
+    NSDictionary *dictionary;
+    
+    dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                  @"History", @"Section",
+                  _string_currentPage, @"Page",
+                  nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructPageGCD"
+                                                        object:self];
+    
     return currentPage;
 }
 
@@ -182,23 +194,15 @@
 }
 
 - (IBAction)upArrow:(id)sender {
-    
-    if (self.pageControl.currentPage == 0) {
         
-        [self.detectCurrentPageDelegate assignCurrentPage:self
+    [self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"History"
 											  currentPage:[self.historyPageNames objectAtIndex:0]];
         
-        [self.moveViewsDelegate animateContainerUpwards:self
+    [self.moveViewsDelegate animateContainerUpwards:self
                                             currentPage:@"History"
-                                                newPage:@"Baskerville"];
-        
-    } else {
-        
-        [self.moveViewsDelegate animateContainerUpwards:self
-                                            currentPage:@"History"
-                                                newPage:@"Futura"];
-    }
+                                                newPage:@"Text"];
+    
 }
 
 - (IBAction)suggestATypeface:(id)sender {

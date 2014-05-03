@@ -158,4 +158,36 @@
 
     return comingSoonColor;
 }
+
+#pragma mark - Info Section
+
++ (UIColor *)aboutUsColor {
+    
+    static UIColor *aboutUsColor;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        aboutUsColor = [UIColor colorWithRed:254.0 / 255.0
+                                        green:114.0 / 255.0
+                                         blue:104.0 / 255.0
+                                        alpha:1.0];
+    });
+    
+    return aboutUsColor;
+}
+
++ (UIColor *)referencesColor {
+    
+    static UIColor *referencesColor;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        referencesColor = [UIColor colorWithRed:202.0 / 255.0
+                                          green:193.0 / 255.0
+                                           blue:190.0 / 255.0
+                                          alpha:1.0];
+    });
+    
+    return referencesColor;
+}
 @end

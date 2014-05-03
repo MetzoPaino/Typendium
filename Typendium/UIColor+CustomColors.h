@@ -22,4 +22,7 @@
 + (UIColor *)palatinoColor;
 + (UIColor *)comingSoonColor;
 
++ (UIColor *)aboutUsColor;
++ (UIColor *)referencesColor;
+
 @end

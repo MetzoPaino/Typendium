@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "MainViewController.h"
 #import "MoveViewsDelegate.h"
 
 @interface TextViewController : UIViewController

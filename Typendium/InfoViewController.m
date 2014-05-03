@@ -8,17 +8,23 @@
 
 #import "InfoViewController.h"
 #import "UIColor+CustomColors.h"
+#import "UIColor+ScrollColor.h"
 
 @interface InfoViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
+@property (weak, nonatomic) IBOutlet UIImageView *image_backgroundColor;
+
 @property (strong, nonatomic) NSArray *infoPageNames;
 
 @end
 
-@implementation InfoViewController
+@implementation InfoViewController {
+    
+    NSString *_string_currentPage;
+}
 
 - (void)viewDidLoad {
     
@@ -27,6 +33,9 @@
     self.pageControl.numberOfPages = self.infoPageNames.count;
     self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
     self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatInfoPageIsThis" object:nil];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -76,6 +85,59 @@
         
         i++;
     }
+    
+
+}
+
+- (NSString *)assignCurrentPage {
+    
+    NSString *currentPage;
+    
+    switch (self.pageControl.currentPage) {
+        case 0:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
+            currentPage = [self.infoPageNames objectAtIndex:0];
+            break;
+        case 1:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor futuraColor];
+            currentPage = [self.infoPageNames objectAtIndex:1];
+            break;
+        case 2:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor gillSansColor];
+            currentPage = [self.infoPageNames objectAtIndex:2];
+            break;
+        case 3:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor palatinoColor];
+            currentPage = [self.infoPageNames objectAtIndex:3];
+            break;
+        case 4:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor timesNewRomanColor];
+            currentPage = [self.infoPageNames objectAtIndex:4];
+            break;
+        case 5:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor comingSoonColor];
+            currentPage = [self.infoPageNames objectAtIndex:5];
+            break;
+        default:
+            break;
+    }
+    
+    return currentPage;
+}
+
+#pragma mark - Observer
+
+- (void)whatPageIsThis {
+    
+    _string_currentPage = [self assignCurrentPage];
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"Info", @"Section",
+                                _string_currentPage, @"Page",
+                                nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ThisPage"
+                                                        object:self userInfo:dictionary];
 }
 
 #pragma mark - Lazy Loading
@@ -112,6 +174,25 @@
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"Info"
 											  currentPage:[self.infoPageNames objectAtIndex:1]];
+    }
+    
+     self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
+}
+
+#pragma mark - Action
+
+- (IBAction)upArrow:(id)sender {
+    
+    if (self.pageControl.currentPage == 0) {
+        
+        [self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Info"
+											  currentPage:[self.infoPageNames objectAtIndex:0]];
+        
+        [self.moveViewsDelegate animateContainerUpwards:self
+                                            currentPage:@"Info"
+                                                newPage:@"InfoText"];
+        
     }
 }
 
