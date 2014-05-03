@@ -24,6 +24,7 @@
     
     NSString *_string_currentPage;
     NSString *_string_shareText;
+    NSString *_string_upArrow;
 }
 
 - (void)viewDidLoad
@@ -79,6 +80,8 @@
 }
 - (void) constructPage:(NSNotification *) notification {
     
+
+    
     for(UIView *subview in [self.scrollView subviews]) {
         
         [subview removeFromSuperview];
@@ -105,16 +108,20 @@
         
         viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);
         
+
         [self.scrollView addSubview:viewSection];
         
         yPosition += viewSection.frame.size.height;
         
         itterator++;
+        
+        
     }
     
-    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 62)];
+    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     upArrow.center = CGPointMake(self.view.center.x, yPosition + upArrow.frame.size.height * 2.5);
-    [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-History"] forState:UIControlStateNormal];
+    
+    [upArrow setBackgroundImage:[UIImage imageNamed:_string_upArrow] forState:UIControlStateNormal];
     [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
     
     yPosition += upArrow.frame.size.height * 6;
@@ -139,26 +146,31 @@
             
             _arr_pageLayout = typendiumText.arr_baskerville;
             _string_shareText = [NSString baskervilleShareText];
+            _string_upArrow = @"UpArrow-BaskervilleText";
             
         } else if ([_string_currentPage isEqualToString:@"Futura"]) {
             
             _arr_pageLayout = typendiumText.arr_futura;
             _string_shareText = [NSString futuraShareText];
+            _string_upArrow = @"UpArrow-FuturaText";
 
         } else if ([_string_currentPage isEqualToString:@"GillSans"]) {
             
             _arr_pageLayout = typendiumText.arr_gillSans;
             _string_shareText = [NSString gillSansShareText];
+            _string_upArrow = @"UpArrow-GillSansText";
             
         } else if ([_string_currentPage isEqualToString:@"Palatino"]) {
             
             _arr_pageLayout = typendiumText.arr_palatino;
             _string_shareText = [NSString palatinoShareText];
+            _string_upArrow = @"UpArrow-PalatinoText";
             
         } else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
             
             _arr_pageLayout = typendiumText.arr_timesNewRoman;
             _string_shareText = [NSString timesNewRomanShareText];
+            _string_upArrow = @"UpArrow-TimesNewRomanText";
             
         }
    // }
