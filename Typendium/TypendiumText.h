@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) NSArray *arr_baskerville;
 
-
 @property (strong, nonatomic) NSArray *arr_futura;
 
 @property (strong, nonatomic) NSArray *arr_gillSans;
