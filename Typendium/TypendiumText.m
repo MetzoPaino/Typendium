@@ -33,6 +33,16 @@
 
 #pragma mark - Configure Page Sections
 
+- (Title *)configureTitle :(Title *)title : (NSString *)name {
+    
+    NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+    
+    title = [xib_title objectAtIndex:0];
+    title.img_title.image = [UIImage imageNamed:name];
+    
+    return title;
+}
+
 - (Paragraph *)configureParagraph :(Paragraph *)paragraph :(NSString *)key {
     
     CGRect frame;
@@ -76,6 +86,15 @@
     return quote;
 }
 
+- (Image *)configureImage :(Image *)image : (NSString *)name{
+    
+    NSArray *xib_image = [[NSBundle mainBundle] loadNibNamed:@"Image" owner:self options:nil];
+    image = [xib_image objectAtIndex:0];
+    image.image.image = [UIImage imageNamed:name];
+    
+    return image;
+}
+
 #pragma mark - Baskerville
 
 - (NSArray *)arr_baskerville {
@@ -84,36 +103,32 @@
         
         [self typendiumText:@"Baskerville"];
         
-        NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
-        
-        Title *title = [xib_title objectAtIndex:0];
-        title.img_title.image = [UIImage imageNamed:@"BaskervilleHeader"];
+        Title *title;
+        title = [self configureTitle:title :@"BaskervilleHeader"];
         
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        NSArray *xib_image1 = [[NSBundle mainBundle] loadNibNamed:@"Image" owner:self options:nil];
-        
-        Image *image1 = [xib_image1 objectAtIndex:0];
-        image1.image.image = [UIImage imageNamed:@"JohnBaskerville"];
+        Image *image1;
+        image1 = [self configureImage:image1 :@"JohnBaskerville"];
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
         
         Paragraph *paragraph2;
-        paragraph2 = [self configureParagraph:paragraph1 :@"Paragraph2"];
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
         Paragraph *paragraph3;
-        paragraph3 = [self configureParagraph:paragraph1 :@"Paragraph3"];
+        paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
         Paragraph *paragraph4;
-        paragraph4 = [self configureParagraph:paragraph1 :@"Paragraph4"];
+        paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
         Quote *quote1;
         quote1 = [self configureQuote:quote1 :@"Quote1"];
         
         Paragraph *paragraph5;
-        paragraph5 = [self configureParagraph:paragraph1 :@"Paragraph5"];
+        paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
         _arr_baskerville = @[title,
                              paragraph1,
@@ -135,65 +150,48 @@
     
     if (!_arr_futura) {
         
-        NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *finalPath = [path stringByAppendingPathComponent:@"Typendium.plist"];
-        NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-        NSDictionary *dic_typendiumText = [NSDictionary dictionaryWithDictionary:[plistData objectForKey:@"TypendiumText"]];
-        NSDictionary *dic_timesNewRoman = [NSDictionary dictionaryWithDictionary:[dic_typendiumText objectForKey:@"TimesNewRoman"]];
+        [self typendiumText:@"Futura"];
         
-        NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+        Title *title;
+        title = [self configureTitle:title :@"FuturaHeader"];
+
+        Paragraph *paragraph1;
+        paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Title *title = [xib_title objectAtIndex:0];
-        title.img_title.image = [UIImage imageNamed:@"FuturaHeader"];
+        Quote *quote1;
+        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
-        NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Paragraph *paragraph2;
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph1"];
         
-        Paragraph *paragraph1 = [xib_paragraph1 objectAtIndex:0];
-        paragraph1.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph1"];
-        // [paragraph1.txt_paragraph sizeToFit];
+        Paragraph *paragraph3;
+        paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        NSArray *xib_image1 = [[NSBundle mainBundle] loadNibNamed:@"Image" owner:self options:nil];
+        Image *image1;
+        image1 = [self configureImage:image1 :@"PaulRenner"];
         
-        Image *image1 = [xib_image1 objectAtIndex:0];
-        image1.image.image = [UIImage imageNamed:@"StanleyMorison"];
+        Caption *caption1;
+        caption1 = [self configureCaption:caption1 :@"Caption1"];
         
-        NSArray *xib_paragraph2 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Paragraph *paragraph4;
+        paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        Paragraph *paragraph2 = [xib_paragraph2 objectAtIndex:0];
-        paragraph2.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph2"];
+        Paragraph *paragraph5;
+        paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
-        NSArray *xib_paragraph3 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Paragraph *paragraph6;
+        paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
-        Paragraph *paragraph3 = [xib_paragraph3 objectAtIndex:0];
-        paragraph3.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph3"];
-        
-        NSArray *xib_paragraph4 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph4 = [xib_paragraph4 objectAtIndex:0];
-        paragraph4.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph4"];
-        
-        NSArray *xib_quote1 = [[NSBundle mainBundle] loadNibNamed:@"Quote" owner:self options:nil];
-        
-        Quote *quote1 = [xib_quote1 objectAtIndex:0];
-        quote1.lbl_quote.text = [dic_timesNewRoman objectForKey:@"Quote1"];
-        
-        NSArray *xib_paragraph5 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph5 = [xib_paragraph5 objectAtIndex:0];
-        paragraph5.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph5"];
-        
-        [paragraph5.txt_paragraph.layoutManager ensureLayoutForTextContainer:paragraph5.txt_paragraph.textContainer];
-        [paragraph5.txt_paragraph layoutIfNeeded];
-        
-        CGRect frame =  paragraph5.txt_paragraph.frame;
-        UIEdgeInsets inset =  paragraph5.txt_paragraph.contentInset;
-        frame.size.height =  paragraph5.txt_paragraph.contentSize.height * 2 + inset.top + inset.bottom;
-        paragraph5.txt_paragraph.frame = frame;
-        paragraph5.frame = frame;
-        
-        [paragraph5 layoutSubviews];
-        
-        _arr_futura = [[NSArray alloc] initWithObjects: title, nil];
+        _arr_futura = @[title,
+                        paragraph1,
+                        quote1,
+                        paragraph2,
+                        paragraph3,
+                        image1,
+                        caption1,
+                        paragraph4,
+                        paragraph5,
+                        paragraph6];
     }
     
     return _arr_futura;
