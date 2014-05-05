@@ -145,7 +145,7 @@
 - (NSArray *)infoPageNames {
     
     if (!_infoPageNames) {
-        _infoPageNames = [[NSArray alloc] initWithObjects: @"AboutUs", @"References", nil];
+        _infoPageNames = [[NSArray alloc] initWithObjects: @"References", @"AboutUs", nil];
     }
     
     return _infoPageNames;

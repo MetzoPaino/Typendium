@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		430BA1CD1915449200DCF3C4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430BA1CC1915449200DCF3C4 /* MessageUI.framework */; };
+		432C3FD21917EA6C00C18287 /* TypendiumInfoText.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */; };
 		434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DB2D918E9F31200DC8E42 /* InfoViewController.m */; };
 		437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437CD7E118E8C37E00AAD7F6 /* Caption.xib */; };
 		437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 437CD7E418E8C38A00AAD7F6 /* Caption.m */; };
@@ -60,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		430BA1CC1915449200DCF3C4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		432C3FD01917EA6C00C18287 /* TypendiumInfoText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypendiumInfoText.h; sourceTree = "<group>"; };
+		432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypendiumInfoText.m; sourceTree = "<group>"; };
 		434DB2D818E9F31200DC8E42 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		434DB2D918E9F31200DC8E42 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		437CD7E118E8C37E00AAD7F6 /* Caption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption.xib; path = XIBs/Caption.xib; sourceTree = "<group>"; };
@@ -149,6 +152,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432C3FCE1917DEDA00C18287 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				43D025401906C6050044BFBF /* UIColor+ScrollColor.h */,
+				43D025411906C6050044BFBF /* UIColor+ScrollColor.m */,
+				4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */,
+				4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */,
+				43CF7E7A190D64DA0059EFA0 /* NSString+ShareText.h */,
+				43CF7E7B190D64DA0059EFA0 /* NSString+ShareText.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		432C3FCF1917DEE800C18287 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				43F1FB1F190510700046A934 /* TypendiumTutorial.mp4 */,
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
 		434DB2D718E9F23300DC8E42 /* Page Maker */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +202,8 @@
 				434DB2D918E9F31200DC8E42 /* InfoViewController.m */,
 				43FB18F5191279FC00E5DDF8 /* InfoTextViewController.h */,
 				43FB18F6191279FC00E5DDF8 /* InfoTextViewController.m */,
+				432C3FD01917EA6C00C18287 /* TypendiumInfoText.h */,
+				432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */,
 			);
 			name = Info;
 			sourceTree = "<group>";
@@ -189,6 +215,8 @@
 				43BF127B18E76DF3009A1C84 /* HistoryViewController.m */,
 				43DD1A4018E82A0600B43DE3 /* TextViewController.h */,
 				43DD1A4118E82A0600B43DE3 /* TextViewController.m */,
+				439275F918F09B8D00353437 /* TypendiumText.h */,
+				439275FA18F09B8D00353437 /* TypendiumText.m */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -243,15 +271,8 @@
 				43BF127818E754AB009A1C84 /* MenuViewController.m */,
 				439580B81912D6510066C44D /* History */,
 				439580B71912D6440066C44D /* Info */,
-				439275F918F09B8D00353437 /* TypendiumText.h */,
-				439275FA18F09B8D00353437 /* TypendiumText.m */,
-				43D025401906C6050044BFBF /* UIColor+ScrollColor.h */,
-				43D025411906C6050044BFBF /* UIColor+ScrollColor.m */,
-				4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */,
-				4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */,
-				43CF7E7A190D64DA0059EFA0 /* NSString+ShareText.h */,
-				43CF7E7B190D64DA0059EFA0 /* NSString+ShareText.m */,
-				43F1FB1F190510700046A934 /* TypendiumTutorial.mp4 */,
+				432C3FCE1917DEDA00C18287 /* Categories */,
+				432C3FCF1917DEE800C18287 /* Videos */,
 				434DB2D718E9F23300DC8E42 /* Page Maker */,
 				43DD1A5718E852C800B43DE3 /* Typendium.plist */,
 				43BF125718E74BB9009A1C84 /* Images.xcassets */,
@@ -407,6 +428,7 @@
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
 				43DD1A4918E8304700B43DE3 /* Paragraph.m in Sources */,
 				43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */,
+				432C3FD21917EA6C00C18287 /* TypendiumInfoText.m in Sources */,
 				43D025421906C6050044BFBF /* UIColor+ScrollColor.m in Sources */,
 				43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */,
 				43DD1A5618E8485C00B43DE3 /* Quote.m in Sources */,

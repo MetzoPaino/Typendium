@@ -162,7 +162,7 @@
         quote1 = [self configureQuote:quote1 :@"Quote1"];
         
         Paragraph *paragraph2;
-        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph1"];
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
@@ -203,63 +203,10 @@
     
     if (!_arr_gillSans) {
         
-        NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *finalPath = [path stringByAppendingPathComponent:@"Typendium.plist"];
-        NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-        NSDictionary *dic_typendiumText = [NSDictionary dictionaryWithDictionary:[plistData objectForKey:@"TypendiumText"]];
-        NSDictionary *dic_timesNewRoman = [NSDictionary dictionaryWithDictionary:[dic_typendiumText objectForKey:@"TimesNewRoman"]];
-        
         NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
         
         Title *title = [xib_title objectAtIndex:0];
         title.img_title.image = [UIImage imageNamed:@"GillSansHeader"];
-        
-        NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph1 = [xib_paragraph1 objectAtIndex:0];
-        paragraph1.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph1"];
-        // [paragraph1.txt_paragraph sizeToFit];
-        
-        NSArray *xib_image1 = [[NSBundle mainBundle] loadNibNamed:@"Image" owner:self options:nil];
-        
-        Image *image1 = [xib_image1 objectAtIndex:0];
-        image1.image.image = [UIImage imageNamed:@"StanleyMorison"];
-        
-        NSArray *xib_paragraph2 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph2 = [xib_paragraph2 objectAtIndex:0];
-        paragraph2.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph2"];
-        
-        NSArray *xib_paragraph3 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph3 = [xib_paragraph3 objectAtIndex:0];
-        paragraph3.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph3"];
-        
-        NSArray *xib_paragraph4 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph4 = [xib_paragraph4 objectAtIndex:0];
-        paragraph4.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph4"];
-        
-        NSArray *xib_quote1 = [[NSBundle mainBundle] loadNibNamed:@"Quote" owner:self options:nil];
-        
-        Quote *quote1 = [xib_quote1 objectAtIndex:0];
-        quote1.lbl_quote.text = [dic_timesNewRoman objectForKey:@"Quote1"];
-        
-        NSArray *xib_paragraph5 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph5 = [xib_paragraph5 objectAtIndex:0];
-        paragraph5.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph5"];
-        
-        [paragraph5.txt_paragraph.layoutManager ensureLayoutForTextContainer:paragraph5.txt_paragraph.textContainer];
-        [paragraph5.txt_paragraph layoutIfNeeded];
-        
-        CGRect frame =  paragraph5.txt_paragraph.frame;
-        UIEdgeInsets inset =  paragraph5.txt_paragraph.contentInset;
-        frame.size.height =  paragraph5.txt_paragraph.contentSize.height * 2 + inset.top + inset.bottom;
-        paragraph5.txt_paragraph.frame = frame;
-        paragraph5.frame = frame;
-        
-        [paragraph5 layoutSubviews];
         
         _arr_gillSans = [[NSArray alloc] initWithObjects: title, nil];
     }
@@ -273,66 +220,48 @@
     
     if (!_arr_palatino) {
         
-        NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *finalPath = [path stringByAppendingPathComponent:@"Typendium.plist"];
-        NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-        NSDictionary *dic_typendiumText = [NSDictionary dictionaryWithDictionary:[plistData objectForKey:@"TypendiumText"]];
-        NSDictionary *dic_timesNewRoman = [NSDictionary dictionaryWithDictionary:[dic_typendiumText objectForKey:@"TimesNewRoman"]];
+        [self typendiumText:@"Palatino"];
         
-        NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+        Title *title;
+        title = [self configureTitle:title :@"PalatinoHeader"];
         
-        Title *title = [xib_title objectAtIndex:0];
-        title.img_title.image = [UIImage imageNamed:@"PalatinoHeader"];
+        Paragraph *paragraph1;
+        paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Paragraph *paragraph2;
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
-        Paragraph *paragraph1 = [xib_paragraph1 objectAtIndex:0];
-        paragraph1.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph1"];
-        // [paragraph1.txt_paragraph sizeToFit];
+        Image *image1;
+        image1 = [self configureImage:image1 :@"HermannZapf"];
         
-        NSArray *xib_image1 = [[NSBundle mainBundle] loadNibNamed:@"Image" owner:self options:nil];
+        Caption *caption1;
+        caption1 = [self configureCaption:caption1 :@"Caption1"];
         
-        Image *image1 = [xib_image1 objectAtIndex:0];
-        image1.image.image = [UIImage imageNamed:@"StanleyMorison"];
+        Paragraph *paragraph3;
+        paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        NSArray *xib_paragraph2 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Quote *quote1;
+        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
-        Paragraph *paragraph2 = [xib_paragraph2 objectAtIndex:0];
-        paragraph2.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph2"];
+        Paragraph *paragraph4;
+        paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        NSArray *xib_paragraph3 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Paragraph *paragraph5;
+        paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
-        Paragraph *paragraph3 = [xib_paragraph3 objectAtIndex:0];
-        paragraph3.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph3"];
+        Paragraph *paragraph6;
+        paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
-        NSArray *xib_paragraph4 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph4 = [xib_paragraph4 objectAtIndex:0];
-        paragraph4.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph4"];
-        
-        NSArray *xib_quote1 = [[NSBundle mainBundle] loadNibNamed:@"Quote" owner:self options:nil];
-        
-        Quote *quote1 = [xib_quote1 objectAtIndex:0];
-        quote1.lbl_quote.text = [dic_timesNewRoman objectForKey:@"Quote1"];
-        
-        NSArray *xib_paragraph5 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph5 = [xib_paragraph5 objectAtIndex:0];
-        paragraph5.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph5"];
-        
-        [paragraph5.txt_paragraph.layoutManager ensureLayoutForTextContainer:paragraph5.txt_paragraph.textContainer];
-        [paragraph5.txt_paragraph layoutIfNeeded];
-        
-        CGRect frame =  paragraph5.txt_paragraph.frame;
-        UIEdgeInsets inset =  paragraph5.txt_paragraph.contentInset;
-        frame.size.height =  paragraph5.txt_paragraph.contentSize.height * 2 + inset.top + inset.bottom;
-        paragraph5.txt_paragraph.frame = frame;
-        paragraph5.frame = frame;
-        
-        [paragraph5 layoutSubviews];
-        
-        _arr_palatino = [[NSArray alloc] initWithObjects: title, nil];
-    }
+        _arr_palatino = @[title,
+                        paragraph1,
+                        paragraph2,
+                        image1,
+                        caption1,
+                        paragraph3,
+                        quote1,
+                        paragraph4,
+                        paragraph5,
+                        paragraph6];    }
     
     return _arr_palatino;
 }
@@ -343,81 +272,44 @@
     
     if (!_arr_timesNewRoman) {
         
-        CGRect frame;
+        [self typendiumText:@"TimesNewRoman"];
         
-        NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *finalPath = [path stringByAppendingPathComponent:@"Typendium.plist"];
-        NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-        NSDictionary *dic_typendiumText = [NSDictionary dictionaryWithDictionary:[plistData objectForKey:@"TypendiumText"]];
-        NSDictionary *dic_timesNewRoman = [NSDictionary dictionaryWithDictionary:[dic_typendiumText objectForKey:@"TimesNewRoman"]];
+        Title *title;
+        title = [self configureTitle:title :@"TimesNewRomanHeader"];
         
-        NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+        Paragraph *paragraph1;
+        paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Title *title = [xib_title objectAtIndex:0];
-        title.img_title.image = [UIImage imageNamed:@"TimesNewRomanHeader"];
+        Paragraph *paragraph2;
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
-        NSArray *xib_paragraph1 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Paragraph *paragraph3;
+        paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        Paragraph *paragraph1 = [xib_paragraph1 objectAtIndex:0];
-        paragraph1.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph1"];
-        [paragraph1.txt_paragraph sizeToFit];
-        frame =  paragraph1.txt_paragraph.frame;
-        paragraph1.frame = frame;
+        Image *image1;
+        image1 = [self configureImage:image1 :@"StanleyMorison"];
         
-        NSArray *xib_image1 = [[NSBundle mainBundle] loadNibNamed:@"Image" owner:self options:nil];
+        Caption *caption1;
+        caption1 = [self configureCaption:caption1 :@"Caption1"];
         
-        Image *image1 = [xib_image1 objectAtIndex:0];
-        image1.image.image = [UIImage imageNamed:@"StanleyMorison"];
+        Paragraph *paragraph4;
+        paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        NSArray *xib_caption1 = [[NSBundle mainBundle] loadNibNamed:@"Caption" owner:self options:nil];
+        Quote *quote1;
+        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
-        Caption *caption1 = [xib_caption1 objectAtIndex:0];
-        caption1.lbl_caption.text = [dic_timesNewRoman objectForKey:@"Caption1"];
-        [caption1.lbl_caption sizeToFit];
-        frame =   caption1.lbl_caption.frame;
-        caption1.frame = frame;
-
-        NSArray *xib_paragraph2 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+        Paragraph *paragraph5;
+        paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
-        Paragraph *paragraph2 = [xib_paragraph2 objectAtIndex:0];
-        paragraph2.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph2"];
-        [paragraph2.txt_paragraph sizeToFit];
-        frame =  paragraph2.txt_paragraph.frame;
-        paragraph2.frame = frame;
-        
-        NSArray *xib_paragraph3 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph3 = [xib_paragraph3 objectAtIndex:0];
-        paragraph3.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph3"];
-        [paragraph3.txt_paragraph sizeToFit];
-        frame =  paragraph3.txt_paragraph.frame;
-        paragraph3.frame = frame;
-        
-        NSArray *xib_paragraph4 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph4 = [xib_paragraph4 objectAtIndex:0];
-        paragraph4.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph4"];
-        [paragraph4.txt_paragraph sizeToFit];
-        frame =  paragraph4.txt_paragraph.frame;
-        paragraph4.frame = frame;
-        
-        NSArray *xib_quote1 = [[NSBundle mainBundle] loadNibNamed:@"Quote" owner:self options:nil];
-        
-        Quote *quote1 = [xib_quote1 objectAtIndex:0];
-        quote1.lbl_quote.text = [dic_timesNewRoman objectForKey:@"Quote1"];
-        [quote1.lbl_quote sizeToFit];
-        frame =   quote1.lbl_quote.frame;
-        quote1.frame = frame;
-        
-        NSArray *xib_paragraph5 = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
-        
-        Paragraph *paragraph5 = [xib_paragraph5 objectAtIndex:0];
-        paragraph5.txt_paragraph.text = [dic_timesNewRoman objectForKey:@"Paragraph5"];
-        [paragraph5.txt_paragraph sizeToFit];
-        frame =  paragraph5.txt_paragraph.frame;
-        paragraph5.frame = frame;
-        
-        _arr_timesNewRoman = [[NSArray alloc] initWithObjects: title, paragraph1, image1, caption1, paragraph2, paragraph3, paragraph4, quote1, paragraph5, nil];
+        _arr_timesNewRoman = @[title,
+                               paragraph1,
+                               paragraph2,
+                               paragraph3,
+                               image1,
+                               caption1,
+                               paragraph4,
+                               quote1,
+                               paragraph5];
     }
     
     return _arr_timesNewRoman;

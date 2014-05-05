@@ -10,14 +10,14 @@
 
 @interface TypendiumText : NSObject
 
-@property (strong, nonatomic) NSArray *arr_baskerville;
+@property (nonatomic) NSArray *arr_baskerville;
 
-@property (strong, nonatomic) NSArray *arr_futura;
+@property (nonatomic) NSArray *arr_futura;
 
-@property (strong, nonatomic) NSArray *arr_gillSans;
+@property (nonatomic) NSArray *arr_gillSans;
 
-@property (strong, nonatomic) NSArray *arr_palatino;
+@property (nonatomic) NSArray *arr_palatino;
 
-@property (strong, nonatomic) NSArray *arr_timesNewRoman;
+@property (nonatomic) NSArray *arr_timesNewRoman;
 
 @end

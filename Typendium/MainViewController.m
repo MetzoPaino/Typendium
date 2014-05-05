@@ -32,7 +32,10 @@
     
     BOOL _hasParallaxStarted;
     BOOL _hasConstructedText;
+    
     BOOL _isTextContainerAtTop;
+    BOOL _isInfoTextContainerAtTop;
+
     
     NSString *_string_currentSection;
 	NSString *_string_currentPage;
@@ -64,7 +67,10 @@
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
     [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
-    [notificationCenter addObserver:self selector:@selector(notAtTopOfText:) name:@"NotAtTopOfText" object:nil];
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfText" object:nil];
+    
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfInfoText" object:nil];
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfInfoText" object:nil];
 
 }
 
@@ -120,24 +126,32 @@
 
 - (void) atTopOfText:(NSNotification *) notification {
     
-    _isTextContainerAtTop = YES;
-  //  NSLog(@"AT TOP");
-    
-}
+    if ([notification.name isEqualToString:@"AtTopOfText"]) {
+        
+        _isTextContainerAtTop = YES;
 
-- (void) notAtTopOfText:(NSNotification *) notification {
+    } else if ([notification.name isEqualToString:@"NotAtTopOfText"]) {
+        
+        _isTextContainerAtTop = NO;
+        
+    }
     
-
-    _isTextContainerAtTop = NO;
-  //  NSLog(@"NOT AT TOP");
-    
+    if ([notification.name isEqualToString:@"AtTopOfInfoText"]) {
+        
+        _isInfoTextContainerAtTop = YES;
+        
+    } else if ([notification.name isEqualToString:@"NotAtTopOfInfoText"]) {
+        
+        _isInfoTextContainerAtTop = NO;
+        
+    }
 }
 
 #pragma mark - Gesture Recognizer Delegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     
-    if ([_string_currentSection isEqualToString:@"Text"]) {
+    if ([_string_currentSection isEqualToString:@"Text"] || [_string_currentSection isEqualToString:@"InfoText"]) {
         
         return YES;
 
@@ -251,7 +265,9 @@
         
        gestureContext = @"Moving Current View Up";
         
-        if (![_currentView isEqual: self.con_text] && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+        if (![_currentView isEqual: self.con_text] &&
+            ![_string_currentPage isEqualToString:@"ComingSoon"] &&
+            ![_currentView isEqual: self.con_infoText]) {
 
             _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
             _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
@@ -268,13 +284,17 @@
         
         gestureContext = @"Moving Current View Down";
         
-        if ([_currentView isEqual: self.con_intro] ||  [_currentView isEqual: self.con_tutorial]) {
+        if ([_currentView isEqual: self.con_intro] ||
+            [_currentView isEqual: self.con_tutorial] ||
+            [_currentView isEqual: self.con_infoText]) {
             
             _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition);
 
         }
         
-        if (![_currentView isEqual: self.con_intro] && ![_currentView isEqual: self.con_tutorial]) {
+        if (![_currentView isEqual: self.con_intro] &&
+            ![_currentView isEqual: self.con_tutorial] &&
+            ![_currentView isEqual: self.con_infoText]) {
             
             if ([_currentView isEqual: self.con_text]) {
                 
@@ -283,8 +303,19 @@
                     _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
                     _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
                     _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition);
+                    
                 }
             
+            } else if ([_currentView isEqual:self.con_infoText]) {
+                
+                if (_isInfoTextContainerAtTop) {
+                    
+                    _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
+                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition);
+                    
+                }
+                
             } else {
                 
                 _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
@@ -307,6 +338,13 @@
             if (_isTextContainerAtTop) {
                 [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
 
+            }
+            
+        } else if ([_currentView isEqual:self.con_infoText]) {
+            
+            if (_isInfoTextContainerAtTop) {
+                
+                [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
             }
             
         } else {

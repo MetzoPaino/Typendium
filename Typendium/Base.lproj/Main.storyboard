@@ -487,6 +487,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="scrollView" destination="SRC-GW-ufP" id="pYH-Pf-UY0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0Q-VO-jei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

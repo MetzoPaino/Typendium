@@ -12,11 +12,11 @@
 
 @interface TextViewController () <UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
-@property (strong, nonatomic) NSArray *arr_pageLayout;
+@property (nonatomic) NSArray *arr_pageLayout;
 
-@property (nonatomic, strong) NSArray *objectsToShare;
+@property (nonatomic) NSArray *objectsToShare;
 
 @end
 
@@ -26,20 +26,30 @@
     NSString *_string_shareText;
     NSString *_string_upArrow;
     
-    dispatch_queue_t backgroundQueue;
 }
 
-- (void)viewDidLoad
-{
+#pragma mark - View Controller Configuration
+
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(constructPage:) name:@"ConstructPage" object:nil];
-
     [notificationCenter addObserver:self selector:@selector(displayUIActivity:) name:@"DisplayUIActivity" object:nil];
+    
     self.scrollView.bounces = NO;
-
-    backgroundQueue = dispatch_queue_create("com.typendium.constructText", 0);
+    
+    NSDictionary *dictionary;
+    
+    dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                  @"History", @"Section",
+                  @"Baskerville", @"Page",
+                  nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"ConstructPage"
+     object:self userInfo:dictionary];
 
     NSTimer *timer = [NSTimer timerWithTimeInterval:0.05
                                              target:self
@@ -49,7 +59,7 @@
     
     [[NSRunLoop currentRunLoop] addTimer:timer
                                  forMode:NSRunLoopCommonModes];
-    }
+}
 
 - (void) displayUIActivity:(NSNotification *) notification {
     
@@ -79,8 +89,6 @@
 }
 
 - (void) constructPage:(NSNotification *) notification {
-    
-
     
     for(UIView *subview in [self.scrollView subviews]) {
         
@@ -179,22 +187,21 @@
 }
 
 - (IBAction)upArrow:(id)sender {
-        
-//    [self.moveViewsDelegate animateContainerUpwards:self
-//                                        currentPage:@"Text"
-//                                            newPage:@"History"];
     
     [UIView animateWithDuration:0.5
-                                   delay:0.0
-                                 options:UIViewAnimationOptionCurveEaseIn
-                              animations:^ {
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^ {
 
-    self.scrollView.contentOffset = CGPointMake(0, 0);
-                              } completion:^(BOOL finished) {
-                                 [self.moveViewsDelegate animateContainerUpwards:self
-                                        currentPage:@"Text"
-                                                                              newPage:@"History"];
-                              }];
+                         self.scrollView.contentOffset = CGPointMake(0, 0);
+                         
+                     } completion:^(BOOL finished) {
+                         
+                         [self.moveViewsDelegate animateContainerUpwards:self
+                                                             currentPage:@"Text"
+                                                                 newPage:@"History"];
+                     }
+     ];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
