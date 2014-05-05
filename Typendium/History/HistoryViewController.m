@@ -146,9 +146,7 @@
                   @"History", @"Section",
                   _string_currentPage, @"Page",
                   nil];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructPageGCD"
-                                                        object:self];
+
     
     return currentPage;
 }

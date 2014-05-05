@@ -10,8 +10,6 @@
 #import "TypendiumText.h"
 #import "NSString+ShareText.h"
 
-@import Dispatch;
-
 @interface TextViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -37,7 +35,6 @@
     
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(constructPage:) name:@"ConstructPage" object:nil];
-    [notificationCenter addObserver:self selector:@selector(constructPageGCD:) name:@"ConstructPageGCD" object:nil];
 
     [notificationCenter addObserver:self selector:@selector(displayUIActivity:) name:@"DisplayUIActivity" object:nil];
     self.scrollView.bounces = NO;
@@ -81,63 +78,6 @@
     
 }
 
-- (void) constructPageGCD:(NSNotification *) notification {
-    
-    dispatch_async(backgroundQueue, ^{
-        for(UIView *subview in [self.scrollView subviews]) {
-            
-            [subview removeFromSuperview];
-        }
-        
-        NSDictionary* userInfo = notification.userInfo;
-        
-        _string_currentPage = [userInfo objectForKey:@"Page"];
-        
-        
-        long itterator = 0;
-        long yPosition = 0;
-        
-        for (UIView *viewSection in self.arr_pageLayout) {
-            
-            if (viewSection.tag == 1) {
-                
-            } else {
-                
-                yPosition += 20;
-                
-            }
-            
-            
-            viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);
-            
-            
-            [self.scrollView addSubview:viewSection];
-            
-            yPosition += viewSection.frame.size.height;
-            
-            itterator++;
-            
-            
-        }
-        
-        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-        upArrow.center = CGPointMake(self.view.center.x, yPosition + upArrow.frame.size.height * 2.5);
-        
-        [upArrow setBackgroundImage:[UIImage imageNamed:_string_upArrow] forState:UIControlStateNormal];
-        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
-        
-        yPosition += upArrow.frame.size.height * 6;
-        
-        [self.scrollView addSubview:upArrow];
-        
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width,
-                                                 yPosition);
-        self.scrollView.showsVerticalScrollIndicator = NO;
-        
-        NSLog(@"BLOCK DONE");
-    });
-    
-}
 - (void) constructPage:(NSNotification *) notification {
     
 
