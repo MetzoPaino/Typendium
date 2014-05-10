@@ -32,6 +32,7 @@
     
     BOOL _hasParallaxStarted;
     BOOL _hasConstructedText;
+    BOOL _hasConstructedInfoText;
     
     BOOL _isTextContainerAtTop;
     BOOL _isInfoTextContainerAtTop;
@@ -221,6 +222,11 @@
         }
         
         if ([_string_currentSection isEqualToString:@"Info"]) {
+            
+            if (!_hasConstructedInfoText) {
+                
+                [self postInfoTextToConstruct];
+            }
             
             _currentView = self.con_info;
             _higherView = self.con_menu;
@@ -413,7 +419,8 @@
                                  } else if ([_string_currentSection isEqualToString:@"Info"]) {
                                      
                                      _string_currentSection = @"InfoText";
-                                     
+                                     _hasConstructedInfoText = NO;
+
                                  }
                                  
                                  _hasParallaxStarted = NO;
@@ -490,7 +497,8 @@
                                  } else if ([_string_currentSection isEqualToString:@"InfoText"]) {
                                      
                                      _string_currentSection = @"Info";
-                                     
+                                     _hasConstructedInfoText = NO;
+
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatInfoPageIsThis"
                                                                                          object:self];
                                      
@@ -601,6 +609,30 @@
         _hasConstructedText = NO;
     }
     
+    if ([currentPage isEqualToString:@"Info"]) {
+        
+        gestureContext = @"Up Arrow Pressed";
+        
+        currentView = self.con_info;
+        higherView = self.con_menu;
+        lowerView = self.con_infoText;
+        
+        if (!_hasConstructedInfoText) {
+            
+            [self postInfoTextToConstruct];
+        }
+    }
+    
+    if ([currentPage isEqualToString:@"InfoText"] && [newPage isEqualToString:@"Info"]) {
+        
+        gestureContext = @"Text Arrow Pressed";
+        currentView = self.con_infoText;
+        higherView = self.con_info;
+        lowerView = nil;
+        
+        _hasConstructedInfoText = NO;
+    }
+    
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
 }
 
@@ -622,6 +654,23 @@
      object:self userInfo:dictionary];
     
     _hasConstructedText = YES;
+}
+
+- (void) postInfoTextToConstruct {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatInfoPageIsThis"
+                                                        object:self];
+    NSDictionary *dictionary;
+    
+    dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                  @"Info", @"Section",
+                  _string_currentPage, @"Page",
+                  nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructInfoPage"
+                                                        object:self userInfo:dictionary];
+    
+    _hasConstructedInfoText = YES;
 }
 
 #pragma mark - Segue
@@ -668,6 +717,13 @@
     if ([segue.identifier isEqualToString:@"Text"]) {
         
         TextViewController *controller = (TextViewController *) [segue destinationViewController];
+        controller.moveViewsDelegate = self;
+        
+    }
+    
+    if ([segue.identifier isEqualToString:@"InfoText"]) {
+        
+        InfoTextViewController *controller = (InfoTextViewController *) [segue destinationViewController];
         controller.moveViewsDelegate = self;
         
     }

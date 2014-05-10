@@ -178,7 +178,7 @@
     
     [self whatPageIsThis];
     
-    self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
+    self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self controllerName:@"History" contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 
 }
 

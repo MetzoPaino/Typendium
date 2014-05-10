@@ -10,9 +10,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TimesNewRomanHeader" id="Egc-pB-Ox5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Egc-pB-Ox5">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.18210089209999999" green="0.61854737999999998" blue="0.42666658759999998" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="owb-Op-nYq">
                     <rect key="frame" x="276" y="0.0" width="44" height="44"/>
@@ -28,11 +29,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="img_title" destination="Egc-pB-Ox5" id="OJR-Yj-13g"/>
+                <outlet property="shareButton" destination="owb-Op-nYq" id="L6u-j0-0bU"/>
             </connections>
         </view>
     </objects>
     <resources>
         <image name="ShareIcon-White" width="128" height="128"/>
-        <image name="TimesNewRomanHeader" width="320" height="130"/>
     </resources>
 </document>

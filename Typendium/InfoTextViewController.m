@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-   // [notificationCenter addObserver:self selector:@selector(constructPage:) name:@"ConstructInfoTextPage" object:nil];
+    [notificationCenter addObserver:self selector:@selector(constructPage:) name:@"ConstructInfoTextPage" object:nil];
     
     self.scrollView.bounces = NO;
     
@@ -87,28 +87,28 @@
     long itterator = 0;
     long yPosition = 0;
     
-//    for (UIView *viewSection in self.arr_pageLayout) {
-//        
-//        if (viewSection.tag == 1) {
-//            
-//        } else {
-//            
-//            yPosition += 20;
-//            
-//        }
-//        
-//        
-//        viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);
-//        
-//        
-//        [self.scrollView addSubview:viewSection];
-//        
-//        yPosition += viewSection.frame.size.height;
-//        
-//        itterator++;
-//        
-//        
-//    }
+    for (UIView *viewSection in self.arr_pageLayout) {
+        
+        if (viewSection.tag == 1) {
+            
+        } else {
+            
+            yPosition += 20;
+            
+        }
+        
+        
+        viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);
+        
+        
+        [self.scrollView addSubview:viewSection];
+        
+        yPosition += viewSection.frame.size.height;
+        
+        itterator++;
+        
+        
+    }
     
     UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     upArrow.center = CGPointMake(self.view.center.x, yPosition + upArrow.frame.size.height * 2.5);
@@ -131,22 +131,22 @@
 
 - (NSArray *)arr_pageLayout {
     
-//    TypendiumText *typendiumText = [TypendiumText new];
-//    
-//    if ([_string_currentPage isEqualToString:@"Baskerville"]) {
-//        
-//        _arr_pageLayout = typendiumText.arr_baskerville;
+    TypendiumInfoText *typendiumInfoText = [TypendiumInfoText new];
+    
+    if ([_string_currentPage isEqualToString:@"References"]) {
+        
+        _arr_pageLayout = typendiumInfoText.arr_references;
 //        _string_shareText = [NSString baskervilleShareText];
-//        _string_upArrow = @"UpArrow-BaskervilleText";
-//        
-//    } else if ([_string_currentPage isEqualToString:@"Futura"]) {
-//        
-//        _arr_pageLayout = typendiumText.arr_futura;
-//        _string_shareText = [NSString futuraShareText];
-//        _string_upArrow = @"UpArrow-FuturaText";
-//        
-//    } else if ([_string_currentPage isEqualToString:@"GillSans"]) {
-//        
+        _string_upArrow = @"UpArrow-BaskervilleText";
+        
+    } else if ([_string_currentPage isEqualToString:@"AboutUs"]) {
+        
+        _arr_pageLayout = typendiumInfoText.arr_aboutUs;
+        //_string_shareText = [NSString futuraShareText];
+        _string_upArrow = @"UpArrow-FuturaText";
+        
+    }// else if ([_string_currentPage isEqualToString:@"GillSans"]) {
+//
 //        _arr_pageLayout = typendiumText.arr_gillSans;
 //        _string_shareText = [NSString gillSansShareText];
 //        _string_upArrow = @"UpArrow-GillSansText";

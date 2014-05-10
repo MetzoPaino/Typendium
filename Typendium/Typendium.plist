@@ -108,5 +108,29 @@
 			<string>Stanley Morison</string>
 		</dict>
 	</dict>
+	<key>TypendiumInfoText</key>
+	<dict>
+		<key>References</key>
+		<dict>
+			<key>TypographyReferenced</key>
+			<dict>
+				<key>Title</key>
+				<string>Typography Referenced</string>
+				<key>Date</key>
+				<string>2012 |</string>
+				<key>Author</key>
+				<string>Allan Haley, Richard Poulin, Jason Tselentis, Tony Seddon, Gerry Leonidas, Ina Saltz, Kathryn Henderson with Tyler Alterman</string>
+			</dict>
+			<key>AnatomyOfATypeface</key>
+			<dict>
+				<key>Title</key>
+				<string>Anatomy Of A Typeface</string>
+				<key>Date</key>
+				<string>1990 |</string>
+				<key>Author</key>
+				<string>Alexander Lawson</string>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

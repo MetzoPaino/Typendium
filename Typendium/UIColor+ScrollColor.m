@@ -44,16 +44,26 @@ float lerp(float v0, float v1, float t) {
  *  @return <#return value description#>
  */
 
-+ (UIColor *)determineScrollColor: (UIViewController *)controller contentOffset: (float)contentOffset currentPage:(long)currentPage {
++ (UIColor *)determineScrollColor: (UIViewController *)controller controllerName:(NSString*) controllerName contentOffset: (float)contentOffset currentPage:(long)currentPage {
 
 	float viewWidth = controller.view.frame.size.width;
 	
-	NSArray *array_color = @[[UIColor baskvervilleColor],
-							 [UIColor futuraColor],
-							 [UIColor gillSansColor],
-							 [UIColor palatinoColor],
-							 [UIColor timesNewRomanColor],
-							 [UIColor comingSoonColor]];
+    NSArray *array_color;
+    
+    if ([controllerName isEqualToString:@"History"]) {
+        
+        array_color = @[[UIColor baskvervilleColor],
+                        [UIColor futuraColor],
+                        [UIColor gillSansColor],
+                        [UIColor palatinoColor],
+                        [UIColor timesNewRomanColor],
+                        [UIColor comingSoonColor]];
+        
+    } else if ([controllerName isEqualToString:@"Info"]) {
+        
+        array_color = @[[UIColor referencesColor],
+                        [UIColor aboutUsColor]];
+    }
 	
 	int colorIndex1;
 	int colorIndex2;

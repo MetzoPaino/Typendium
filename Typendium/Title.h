@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *img_title;
 
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+
 @end

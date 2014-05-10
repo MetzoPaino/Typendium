@@ -10,6 +10,6 @@
 
 @interface UIColor (ScrollColor)
 
-+ (UIColor *)determineScrollColor: (UIViewController *)controller contentOffset: (float)contentOffset currentPage: (long)currentPage;
++ (UIColor *)determineScrollColor: (UIViewController *)controller controllerName: (NSString *)controllerName contentOffset: (float)contentOffset currentPage: (long)currentPage;
 
 @end

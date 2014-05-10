@@ -10,6 +10,6 @@
 
 @interface Paragraph : UIView
 
-@property (strong, nonatomic) IBOutlet UITextView *txt_paragraph;
+@property (nonatomic) IBOutlet UITextView *txt_paragraph;
 
 @end

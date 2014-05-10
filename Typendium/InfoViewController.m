@@ -31,8 +31,10 @@
     [super viewDidLoad];
     
     self.pageControl.numberOfPages = self.infoPageNames.count;
-    self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+    self.pageControl.currentPageIndicatorTintColor = [UIColor referencesColor];
     self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
+    
+    self.image_backgroundColor.backgroundColor = [UIColor referencesColor];
     
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatInfoPageIsThis" object:nil];
@@ -47,6 +49,9 @@
     
     int i = 0;
     
+    NSArray *upArrowsArray = @[@"UpArrow-References",
+                               @"UpArrow-AboutUs"];
+    
     while (i < self.infoPageNames.count) {
         
         UIView *infoPage = [[UIView alloc]
@@ -57,35 +62,35 @@
         
         UIImageView *background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.infoPageNames objectAtIndex:i]]];
         background.center = CGPointMake(self.view.center.x, self.view.center.y);
-        
         [infoPage addSubview:background];
         
-        //        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        //        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
-        //        title.text = [self.menuPageNames objectAtIndex:i];
-        //        title.textAlignment = NSTextAlignmentCenter;
-        //        title.font = [UIFont systemFontOfSize:28];
-        //        [menuPage addSubview:title];
-        
         UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
-        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
+        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
+        [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
         [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
         
-        if (i == 0) {
-            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Red"] forState:UIControlStateNormal];
-            
-        } else {
-            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Blue"] forState:UIControlStateNormal];
-            
-        }
         [infoPage addSubview:upArrow];
+        
+//        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
+//        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
+//        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        if (i == 0) {
+//            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-References"] forState:UIControlStateNormal];
+//            
+//        } else {
+//            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-AboutUs"] forState:UIControlStateNormal];
+//            
+//        }
+//        [infoPage addSubview:upArrow];
         
         
         [self.scrollView addSubview:infoPage];
         
         i++;
     }
-    
+    _string_currentPage = [self assignCurrentPage];
+
 
 }
 
@@ -95,28 +100,12 @@
     
     switch (self.pageControl.currentPage) {
         case 0:
-            self.pageControl.currentPageIndicatorTintColor = [UIColor baskvervilleColor];
+            self.pageControl.currentPageIndicatorTintColor = [UIColor referencesColor];
             currentPage = [self.infoPageNames objectAtIndex:0];
             break;
         case 1:
-            self.pageControl.currentPageIndicatorTintColor = [UIColor futuraColor];
+            self.pageControl.currentPageIndicatorTintColor = [UIColor aboutUsColor];
             currentPage = [self.infoPageNames objectAtIndex:1];
-            break;
-        case 2:
-            self.pageControl.currentPageIndicatorTintColor = [UIColor gillSansColor];
-            currentPage = [self.infoPageNames objectAtIndex:2];
-            break;
-        case 3:
-            self.pageControl.currentPageIndicatorTintColor = [UIColor palatinoColor];
-            currentPage = [self.infoPageNames objectAtIndex:3];
-            break;
-        case 4:
-            self.pageControl.currentPageIndicatorTintColor = [UIColor timesNewRomanColor];
-            currentPage = [self.infoPageNames objectAtIndex:4];
-            break;
-        case 5:
-            self.pageControl.currentPageIndicatorTintColor = [UIColor comingSoonColor];
-            currentPage = [self.infoPageNames objectAtIndex:5];
             break;
         default:
             break;
@@ -161,7 +150,7 @@
     
     if (page == 0) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor referencesColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"Info"
 											  currentPage:[self.infoPageNames objectAtIndex:0]];
@@ -170,13 +159,13 @@
     
     if (page == 1) {
         
-        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
+        self.pageControl.currentPageIndicatorTintColor = [UIColor aboutUsColor];
 		[self.detectCurrentPageDelegate assignCurrentPage:self
 										   currentSection:@"Info"
 											  currentPage:[self.infoPageNames objectAtIndex:1]];
     }
     
-     self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
+    self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self controllerName:@"Info" contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 }
 
 #pragma mark - Action

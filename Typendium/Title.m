@@ -8,8 +8,6 @@
 
 #import "Title.h"
 
-//@property (nonatomic, strong) NSArray *objectsToShare;
-
 @implementation Title {
     
     NSArray *objectsToShare;
@@ -26,14 +24,6 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 - (IBAction)share:(id)sender {
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DisplayUIActivity" object:self];

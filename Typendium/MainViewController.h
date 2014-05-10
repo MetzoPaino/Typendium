@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "IntroViewController.h"
 #import "MenuViewController.h"
-#import "InfoViewController.h"
 #import "TutorialViewController.h"
 #import "HistoryViewController.h"
 #import "TextViewController.h"
+
+#import "InfoViewController.h"
+#import "InfoTextViewController.h"
 
 @interface MainViewController : UIViewController <MoveViewsDelegate, DetectCurrentPageDelegate>
 

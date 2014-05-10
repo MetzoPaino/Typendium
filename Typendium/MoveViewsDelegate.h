@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol MoveViewsDelegate <NSObject>
-//@class IntroViewController;
 
 - (void)animateContainerUpwards: (UIViewController *)controller currentPage: (NSString *)currentPage newPage: (NSString *)newPage;
 
