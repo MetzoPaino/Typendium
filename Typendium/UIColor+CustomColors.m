@@ -167,9 +167,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        referencesColor = [UIColor colorWithRed:67.0 / 255.0
-                                          green:150.0 / 255.0
-                                           blue:156.0 / 255.0
+        referencesColor = [UIColor colorWithRed:166.0 / 255.0
+                                          green:185.0 / 255.0
+                                           blue:193.0 / 255.0
                                           alpha:1.0];
     });
     
@@ -182,9 +182,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        aboutUsColor = [UIColor colorWithRed:136.0 / 255.0
-                                        green:129.0 / 255.0
-                                         blue:167.0 / 255.0
+        aboutUsColor = [UIColor colorWithRed:37.0 / 255.0
+                                        green:170.0 / 255.0
+                                         blue:177.0 / 255.0
                                         alpha:1.0];
     });
     
@@ -197,9 +197,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        specialThanksColor = [UIColor colorWithRed:170.0 / 255.0
-                                       green:121.0 / 255.0
-                                        blue:136.0 / 255.0
+        specialThanksColor = [UIColor colorWithRed:90.0 / 255.0
+                                       green:144.0 / 255.0
+                                        blue:202.0 / 255.0
                                        alpha:1.0];
     });
     
@@ -212,9 +212,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        contactUsColor = [UIColor colorWithRed:132.0 / 255.0
-                                          green:185.0 / 255.0
-                                           blue:177.0 / 255.0
+        contactUsColor = [UIColor colorWithRed:136.0 / 255.0
+                                          green:128.0 / 255.0
+                                           blue:170.0 / 255.0
                                           alpha:1.0];
     });
     
@@ -227,9 +227,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        reviewColor = [UIColor colorWithRed:90.0 / 255.0
-                                       green:144.0 / 255.0
-                                        blue:202.0 / 255.0
+        reviewColor = [UIColor colorWithRed:60.0 / 255.0
+                                       green:86.0 / 255.0
+                                        blue:141.0 / 255.0
                                        alpha:1.0];
     });
     

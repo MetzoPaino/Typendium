@@ -53,9 +53,7 @@
     
     NSArray *upArrowsArray = @[@"UpArrow-References",
                                @"UpArrow-AboutUs",
-                               @"UpArrow-References",
-                               @"UpArrow-AboutUs",
-                               @"UpArrow-AboutUs"];
+                               @"UpArrow-SpecialThanks"];
     
     while (i < self.infoPageNames.count) {
         
