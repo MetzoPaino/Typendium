@@ -161,34 +161,34 @@
 
 #pragma mark - Info Section
 
-+ (UIColor *)aboutUsColor {
-    
-    static UIColor *aboutUsColor;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        aboutUsColor = [UIColor colorWithRed:90.0 / 255.0
-                                        green:144.0 / 255.0
-                                         blue:202.0 / 255.0
-                                        alpha:1.0];
-    });
-    
-    return aboutUsColor;
-}
-
 + (UIColor *)referencesColor {
     
     static UIColor *referencesColor;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        referencesColor = [UIColor colorWithRed:157.0 / 255.0
-                                          green:174.0 / 255.0
-                                           blue:198.0 / 255.0
+        referencesColor = [UIColor colorWithRed:67.0 / 255.0
+                                          green:150.0 / 255.0
+                                           blue:156.0 / 255.0
                                           alpha:1.0];
     });
     
     return referencesColor;
+}
+
++ (UIColor *)aboutUsColor {
+    
+    static UIColor *aboutUsColor;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        aboutUsColor = [UIColor colorWithRed:136.0 / 255.0
+                                        green:129.0 / 255.0
+                                         blue:167.0 / 255.0
+                                        alpha:1.0];
+    });
+    
+    return aboutUsColor;
 }
 
 + (UIColor *)specialThanksColor {
@@ -197,9 +197,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        specialThanksColor = [UIColor colorWithRed:90.0 / 255.0
-                                       green:144.0 / 255.0
-                                        blue:202.0 / 255.0
+        specialThanksColor = [UIColor colorWithRed:170.0 / 255.0
+                                       green:121.0 / 255.0
+                                        blue:136.0 / 255.0
                                        alpha:1.0];
     });
     
@@ -212,9 +212,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        contactUsColor = [UIColor colorWithRed:157.0 / 255.0
-                                          green:174.0 / 255.0
-                                           blue:198.0 / 255.0
+        contactUsColor = [UIColor colorWithRed:132.0 / 255.0
+                                          green:185.0 / 255.0
+                                           blue:177.0 / 255.0
                                           alpha:1.0];
     });
     
