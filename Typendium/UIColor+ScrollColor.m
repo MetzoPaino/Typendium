@@ -62,7 +62,10 @@ float lerp(float v0, float v1, float t) {
     } else if ([controllerName isEqualToString:@"Info"]) {
         
         array_color = @[[UIColor referencesColor],
-                        [UIColor aboutUsColor]];
+                        [UIColor aboutUsColor],
+                        [UIColor specialThanksColor],
+                        [UIColor contactUsColor],
+                        [UIColor reviewColor]];
     }
 	
 	int colorIndex1;

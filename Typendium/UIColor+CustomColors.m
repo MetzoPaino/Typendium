@@ -190,4 +190,49 @@
     
     return referencesColor;
 }
+
++ (UIColor *)specialThanksColor {
+    
+    static UIColor *specialThanksColor;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        specialThanksColor = [UIColor colorWithRed:90.0 / 255.0
+                                       green:144.0 / 255.0
+                                        blue:202.0 / 255.0
+                                       alpha:1.0];
+    });
+    
+    return specialThanksColor;
+}
+
++ (UIColor *)contactUsColor {
+    
+    static UIColor *contactUsColor;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        contactUsColor = [UIColor colorWithRed:157.0 / 255.0
+                                          green:174.0 / 255.0
+                                           blue:198.0 / 255.0
+                                          alpha:1.0];
+    });
+    
+    return contactUsColor;
+}
+
++ (UIColor *)reviewColor {
+    
+    static UIColor *reviewColor;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        reviewColor = [UIColor colorWithRed:90.0 / 255.0
+                                       green:144.0 / 255.0
+                                        blue:202.0 / 255.0
+                                       alpha:1.0];
+    });
+    
+    return reviewColor;
+}
 @end

@@ -21,16 +21,12 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *image_backgroundColor;
 
-
-
 @end
 
 @implementation HistoryViewController {
     
     NSString *_string_currentPage;
 }
-
-
 
 #pragma mark - View Controller Configuration
 
@@ -185,22 +181,28 @@
 - (NSArray *)historyPageNames {
     
     if (!_historyPageNames) {
-        _historyPageNames = [[NSArray alloc] initWithObjects: @"Baskerville", @"Futura", @"GillSans", @"Palatino", @"TimesNewRoman", @"ComingSoon", nil];
+        _historyPageNames = @[@"Baskerville",
+                              @"Futura",
+                              @"GillSans",
+                              @"Palatino",
+                              @"TimesNewRoman",
+                              @"ComingSoon"];
     }
     
     return _historyPageNames;
 }
 
+#pragma mark - Actions
+
 - (IBAction)upArrow:(id)sender {
         
     [self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"History"
-											  currentPage:[self.historyPageNames objectAtIndex:0]];
+                                       currentSection:@"History"
+                                          currentPage:[self.historyPageNames firstObject]];
         
     [self.moveViewsDelegate animateContainerUpwards:self
-                                            currentPage:@"History"
-                                                newPage:@"Text"];
-    
+                                        currentPage:@"History"
+                                            newPage:@"Text"];
 }
 
 - (IBAction)suggestATypeface:(id)sender {

@@ -39,12 +39,11 @@
     NSDictionary *dictionary;
     
     dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                  @"History", @"Section",
+                  @"Info", @"Section",
                   @"References", @"Page",
                   nil];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructInfoTextPage"
-     object:self userInfo:dictionary];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructInfoTextPage" object:self userInfo:dictionary];
     
     NSTimer *timer = [NSTimer timerWithTimeInterval:0.05
                                              target:self
@@ -93,10 +92,16 @@
             
         } else {
             
-            yPosition += 20;
+            if ([_string_currentPage isEqualToString:@"References"]) {
+                yPosition += 5;
+                
+            } else {
+                
+                yPosition += 20;
+
+            }
             
         }
-        
         
         viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);
         
@@ -116,7 +121,6 @@
     [upArrow setBackgroundImage:[UIImage imageNamed:_string_upArrow] forState:UIControlStateNormal];
     [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
     
-    upArrow.backgroundColor = [UIColor orangeColor];
     yPosition += upArrow.frame.size.height * 6;
     
     [self.scrollView addSubview:upArrow];

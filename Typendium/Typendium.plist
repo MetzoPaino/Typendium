@@ -130,6 +130,75 @@
 				<key>Author</key>
 				<string>Alexander Lawson</string>
 			</dict>
+			<key>26Letters</key>
+			<dict>
+				<key>Title</key>
+				<string>26 Letters</string>
+				<key>Date</key>
+				<string>1989 |</string>
+				<key>Author</key>
+				<string>International Cooperation of Typedesigners and Typemanufacturers Printers and Typographers</string>
+			</dict>
+			<key>TheElementsOfTypographicStyle</key>
+			<dict>
+				<key>Title</key>
+				<string>The Elements of Typographic Style 4th Edition</string>
+				<key>Date</key>
+				<string>2013</string>
+				<key>Author</key>
+				<string>Robert Bringhurst</string>
+			</dict>
+			<key>Helvetica</key>
+			<dict>
+				<key>Title</key>
+				<string>Helvetica</string>
+				<key>Date</key>
+				<string>2007</string>
+				<key>Author</key>
+				<string>Gary Hustwit</string>
+			</dict>
+			<key>Linotype</key>
+			<dict>
+				<key>Title</key>
+				<string>Linotype: The Film</string>
+				<key>Date</key>
+				<string>2012</string>
+				<key>Author</key>
+				<string>Doug Wilson</string>
+			</dict>
+			<key>Typeface</key>
+			<dict>
+				<key>Title</key>
+				<string>Typeface</string>
+				<key>Date</key>
+				<string>2010</string>
+				<key>Author</key>
+				<string>Justine Nagan</string>
+			</dict>
+			<key>Section</key>
+			<dict>
+				<key>Book</key>
+				<string>Books</string>
+				<key>Film</key>
+				<string>Films</string>
+			</dict>
+		</dict>
+		<key>AboutUs</key>
+		<dict>
+			<key>William</key>
+			<dict>
+				<key>Name</key>
+				<string>William Robinson</string>
+				<key>Links</key>
+				<string>@MetzoPaino MetzoPaino.com</string>
+			</dict>
+			<key>Robyn</key>
+			<dict>
+				<key>Name</key>
+				<string>Robyn Nevison</string>
+				<key>Links</key>
+				<string>@Greenseaweed robynnevison.com</string>
+			</dict>
 		</dict>
 	</dict>
 </dict>

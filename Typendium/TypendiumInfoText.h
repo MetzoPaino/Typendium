@@ -14,4 +14,6 @@
 
 @property (nonatomic) NSArray *arr_aboutUs;
 
+@property (nonatomic) NSArray *arr_specialThanks;
+
 @end

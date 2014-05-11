@@ -10,7 +10,9 @@
 #import "UIColor+CustomColors.h"
 #import "UIColor+ScrollColor.h"
 
-@interface InfoViewController () <UIScrollViewDelegate>
+@import StoreKit;
+
+@interface InfoViewController () <UIScrollViewDelegate, SKStoreProductViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
@@ -50,6 +52,9 @@
     int i = 0;
     
     NSArray *upArrowsArray = @[@"UpArrow-References",
+                               @"UpArrow-AboutUs",
+                               @"UpArrow-References",
+                               @"UpArrow-AboutUs",
                                @"UpArrow-AboutUs"];
     
     while (i < self.infoPageNames.count) {
@@ -64,12 +69,53 @@
         background.center = CGPointMake(self.view.center.x, self.view.center.y);
         [infoPage addSubview:background];
         
-        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
-        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
-        [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
-        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+        if (i < 3) {
+            
+            UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
+            upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
+            [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
+            [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [infoPage addSubview:upArrow];
+            
+        } else if (i == 3) {
+            
+            float y =  self.pageControl.center.y - self.view.center.y;
+            
+            UIButton *contactUs = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            contactUs.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
+            
+            [contactUs setTitle:@"Contact Us" forState:UIControlStateNormal];
+            [contactUs setTitleColor:[UIColor contactUsColor] forState:UIControlStateNormal];
+            
+            contactUs.layer.borderWidth = 1.0f;
+            contactUs.layer.borderColor = [UIColor comingSoonColor].CGColor;
+            contactUs.layer.cornerRadius = 18.0f;
+            
+            [contactUs addTarget:self action:@selector(contactUs:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [infoPage addSubview:contactUs];
+
+        } else if (i == 4) {
+            
+            float y =  self.pageControl.center.y - self.view.center.y;
+            
+            UIButton *review = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            review.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
+            
+            [review setTitle:@"Review Typendium" forState:UIControlStateNormal];
+            [review setTitleColor:[UIColor contactUsColor] forState:UIControlStateNormal];
+            
+            review.layer.borderWidth = 1.0f;
+            review.layer.borderColor = [UIColor comingSoonColor].CGColor;
+            review.layer.cornerRadius = 18.0f;
+            
+            [review addTarget:self action:@selector(review:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [infoPage addSubview:review];
+        }
         
-        [infoPage addSubview:upArrow];
+
         
 //        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
 //        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
@@ -107,6 +153,18 @@
             self.pageControl.currentPageIndicatorTintColor = [UIColor aboutUsColor];
             currentPage = [self.infoPageNames objectAtIndex:1];
             break;
+        case 2:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor referencesColor];
+            currentPage = [self.infoPageNames objectAtIndex:2];
+            break;
+        case 3:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor aboutUsColor];
+            currentPage = [self.infoPageNames objectAtIndex:3];
+            break;
+        case 4:
+            self.pageControl.currentPageIndicatorTintColor = [UIColor aboutUsColor];
+            currentPage = [self.infoPageNames objectAtIndex:4];
+            break;
         default:
             break;
     }
@@ -134,7 +192,11 @@
 - (NSArray *)infoPageNames {
     
     if (!_infoPageNames) {
-        _infoPageNames = [[NSArray alloc] initWithObjects: @"References", @"AboutUs", nil];
+        _infoPageNames = @[@"References",
+                           @"AboutUs",
+                           @"SpecialThanks",
+                           @"ContactUs",
+                           @"Review"];
     }
     
     return _infoPageNames;
@@ -165,24 +227,76 @@
 											  currentPage:[self.infoPageNames objectAtIndex:1]];
     }
     
+    if (page == 2) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor specialThanksColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Info"
+											  currentPage:[self.infoPageNames objectAtIndex:2]];
+    }
+    
+    if (page == 3) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor contactUsColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Info"
+											  currentPage:[self.infoPageNames objectAtIndex:3]];
+    }
+    
+    if (page == 4) {
+        
+        self.pageControl.currentPageIndicatorTintColor = [UIColor reviewColor];
+		[self.detectCurrentPageDelegate assignCurrentPage:self
+										   currentSection:@"Info"
+											  currentPage:[self.infoPageNames objectAtIndex:4]];
+    }
+    
     self.image_backgroundColor.backgroundColor = [UIColor determineScrollColor:self controllerName:@"Info" contentOffset:scrollView.contentOffset.x currentPage:self.pageControl.currentPage];
 }
 
-#pragma mark - Action
+#pragma mark - Actions
 
 - (IBAction)upArrow:(id)sender {
     
-    if (self.pageControl.currentPage == 0) {
+    [self.detectCurrentPageDelegate assignCurrentPage:self
+                                       currentSection:@"Info"
+                                          currentPage:[self.infoPageNames firstObject]];
         
-        [self.detectCurrentPageDelegate assignCurrentPage:self
-										   currentSection:@"Info"
-											  currentPage:[self.infoPageNames objectAtIndex:0]];
-        
-        [self.moveViewsDelegate animateContainerUpwards:self
-                                            currentPage:@"Info"
-                                                newPage:@"InfoText"];
-        
-    }
+    [self.moveViewsDelegate animateContainerUpwards:self
+                                        currentPage:@"Info"
+                                            newPage:@"InfoText"];
 }
 
+- (IBAction)contactUs:(id)sender {
+    
+    NSString *recipients = @"mailto:MetzoPaino@gmail.com?subject=";
+    NSString *body = @"&body=";
+    
+    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+    
+}
+
+// TEETHING ID 537689173
+// TYPENDIUM ID 769408374
+
+- (IBAction)review:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.com/apps/typendium"]];
+    
+//    NSDictionary *parameters = [NSDictionary dictionaryWithObject:@"537689173" forKey:SKStoreProductParameterITunesItemIdentifier];
+//    
+//    SKStoreProductViewController *productViewController = [[SKStoreProductViewController alloc] init];
+//    productViewController.delegate = self;
+//    [productViewController loadProductWithParameters:parameters completionBlock:NULL];
+//    [self presentViewController:productViewController animated:YES completion:nil];
+    
+}
+
+-(void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

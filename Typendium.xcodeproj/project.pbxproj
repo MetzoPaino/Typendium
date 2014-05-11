@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		430BA1CD1915449200DCF3C4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430BA1CC1915449200DCF3C4 /* MessageUI.framework */; };
 		432C3FD21917EA6C00C18287 /* TypendiumInfoText.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */; };
+		433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D8666191F681F007EE3F9 /* AboutUs.xib */; };
+		433D866A191F7225007EE3F9 /* AboutUs.m in Sources */ = {isa = PBXBuildFile; fileRef = 433D8669191F7224007EE3F9 /* AboutUs.m */; };
+		433D866C191FB009007EE3F9 /* Section.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D866B191FB009007EE3F9 /* Section.xib */; };
+		433D866F191FB041007EE3F9 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 433D866E191FB041007EE3F9 /* Section.m */; };
+		433D8672191FC628007EE3F9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433D8671191FC628007EE3F9 /* StoreKit.framework */; };
 		434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DB2D918E9F31200DC8E42 /* InfoViewController.m */; };
 		435BB028191E98B100B762CE /* Reference.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435BB027191E98B100B762CE /* Reference.xib */; };
 		435BB02B191E9D9A00B762CE /* Reference.m in Sources */ = {isa = PBXBuildFile; fileRef = 435BB02A191E9D9A00B762CE /* Reference.m */; };
@@ -65,6 +70,13 @@
 		430BA1CC1915449200DCF3C4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		432C3FD01917EA6C00C18287 /* TypendiumInfoText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypendiumInfoText.h; sourceTree = "<group>"; };
 		432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypendiumInfoText.m; sourceTree = "<group>"; };
+		433D8666191F681F007EE3F9 /* AboutUs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUs.xib; sourceTree = "<group>"; };
+		433D8668191F7224007EE3F9 /* AboutUs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUs.h; sourceTree = "<group>"; };
+		433D8669191F7224007EE3F9 /* AboutUs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUs.m; sourceTree = "<group>"; };
+		433D866B191FB009007EE3F9 /* Section.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Section.xib; sourceTree = "<group>"; };
+		433D866D191FB041007EE3F9 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
+		433D866E191FB041007EE3F9 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
+		433D8671191FC628007EE3F9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		434DB2D818E9F31200DC8E42 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		434DB2D918E9F31200DC8E42 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		435BB027191E98B100B762CE /* Reference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Reference.xib; path = ../Reference.xib; sourceTree = "<group>"; };
@@ -136,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433D8672191FC628007EE3F9 /* StoreKit.framework in Frameworks */,
 				430BA1CD1915449200DCF3C4 /* MessageUI.framework in Frameworks */,
 				43B2C05018F1F296002BE944 /* QuartzCore.framework in Frameworks */,
 				43BF124218E74BB9009A1C84 /* CoreGraphics.framework in Frameworks */,
@@ -178,6 +191,16 @@
 			name = Videos;
 			sourceTree = "<group>";
 		};
+		433D8670191FB045007EE3F9 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				433D866B191FB009007EE3F9 /* Section.xib */,
+				433D866D191FB041007EE3F9 /* Section.h */,
+				433D866E191FB041007EE3F9 /* Section.m */,
+			);
+			name = Section;
+			sourceTree = "<group>";
+		};
 		434DB2D718E9F23300DC8E42 /* Page Maker */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +222,10 @@
 				435BB027191E98B100B762CE /* Reference.xib */,
 				435BB029191E9D9A00B762CE /* Reference.h */,
 				435BB02A191E9D9A00B762CE /* Reference.m */,
+				433D8666191F681F007EE3F9 /* AboutUs.xib */,
+				433D8668191F7224007EE3F9 /* AboutUs.h */,
+				433D8669191F7224007EE3F9 /* AboutUs.m */,
+				433D8670191FB045007EE3F9 /* Section */,
 			);
 			name = "Page Maker";
 			sourceTree = "<group>";
@@ -251,6 +278,7 @@
 		43BF123E18E74BB9009A1C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				433D8671191FC628007EE3F9 /* StoreKit.framework */,
 				430BA1CC1915449200DCF3C4 /* MessageUI.framework */,
 				43B2C04F18F1F296002BE944 /* QuartzCore.framework */,
 				43BF123F18E74BB9009A1C84 /* Foundation.framework */,
@@ -401,9 +429,11 @@
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
 				435BB028191E98B100B762CE /* Reference.xib in Resources */,
+				433D866C191FB009007EE3F9 /* Section.xib in Resources */,
 				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,
 				437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */,
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
+				433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */,
 				43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,12 +456,14 @@
 				43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */,
 				434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */,
 				43961CE918FDC269009E399A /* TutorialViewController.m in Sources */,
+				433D866F191FB041007EE3F9 /* Section.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
 				439275FB18F09B8D00353437 /* TypendiumText.m in Sources */,
 				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
 				43CF7E7C190D64DA0059EFA0 /* NSString+ShareText.m in Sources */,
 				43FB18F7191279FC00E5DDF8 /* InfoTextViewController.m in Sources */,
 				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,
+				433D866A191F7225007EE3F9 /* AboutUs.m in Sources */,
 				4F64EAD218FAC9CF000B0210 /* UIColor+CustomColors.m in Sources */,
 				43DD1A4C18E834AC00B43DE3 /* Title.m in Sources */,
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,

@@ -24,5 +24,7 @@
 
 + (UIColor *)aboutUsColor;
 + (UIColor *)referencesColor;
-
++ (UIColor *)specialThanksColor;
++ (UIColor *)contactUsColor;
++ (UIColor *)reviewColor;
 @end

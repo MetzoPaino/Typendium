@@ -223,7 +223,7 @@
         
         if ([_string_currentSection isEqualToString:@"Info"]) {
             
-            if (!_hasConstructedInfoText) {
+            if (!_hasConstructedInfoText && ![_string_currentPage isEqualToString:@"ContactUs"] && ![_string_currentPage isEqualToString:@"Review"]) {
                 
                 [self postInfoTextToConstruct];
             }
@@ -272,8 +272,10 @@
        gestureContext = @"Moving Current View Up";
         
         if (![_currentView isEqual: self.con_text] &&
+            ![_currentView isEqual: self.con_infoText] &&
             ![_string_currentPage isEqualToString:@"ComingSoon"] &&
-            ![_currentView isEqual: self.con_infoText]) {
+            ![_string_currentPage isEqualToString:@"ContactUs"] &&
+            ![_string_currentPage isEqualToString:@"Review"]) {
 
             _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
             _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
@@ -291,16 +293,14 @@
         gestureContext = @"Moving Current View Down";
         
         if ([_currentView isEqual: self.con_intro] ||
-            [_currentView isEqual: self.con_tutorial] ||
-            [_currentView isEqual: self.con_infoText]) {
+            [_currentView isEqual: self.con_tutorial]) {
             
             _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition);
 
         }
         
         if (![_currentView isEqual: self.con_intro] &&
-            ![_currentView isEqual: self.con_tutorial] &&
-            ![_currentView isEqual: self.con_infoText]) {
+            ![_currentView isEqual: self.con_tutorial]) {
             
             if ([_currentView isEqual: self.con_text]) {
                 
@@ -667,7 +667,7 @@
                   _string_currentPage, @"Page",
                   nil];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructInfoPage"
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructInfoTextPage"
                                                         object:self userInfo:dictionary];
     
     _hasConstructedInfoText = YES;
