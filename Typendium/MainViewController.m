@@ -67,6 +67,7 @@
 
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
+    
     [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
     [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfText" object:nil];
     
@@ -111,7 +112,7 @@
         view.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
         view.layer.shadowOpacity = 0.0f;
         view.layer.shadowRadius = 10.0f;
-        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.con_intro.bounds].CGPath;
+        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
     }
 }
 
@@ -202,7 +203,8 @@
         
         if ([_string_currentSection isEqualToString:@"History"]) {
             
-            if (!_hasConstructedText && ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+            if (!_hasConstructedText &&
+                ![_string_currentPage isEqualToString:@"ComingSoon"]) {
                 
                 [self postTextToConstruct];
             }
@@ -223,7 +225,9 @@
         
         if ([_string_currentSection isEqualToString:@"Info"]) {
             
-            if (!_hasConstructedInfoText && ![_string_currentPage isEqualToString:@"ContactUs"] && ![_string_currentPage isEqualToString:@"Review"]) {
+            if (!_hasConstructedInfoText &&
+                ![_string_currentPage isEqualToString:@"ContactUs"] &&
+                ![_string_currentPage isEqualToString:@"Review"]) {
                 
                 [self postInfoTextToConstruct];
             }
@@ -306,9 +310,12 @@
                 
                 if (_isTextContainerAtTop) {
                     
-                    _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
-                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition);
+                    _higherView.center = CGPointMake(_higherView.center.x,
+                                                     _higherViewYPosition + panGestureTranslation.y);
+                    _currentView.center = CGPointMake(_currentView.center.x,
+                                                      _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                    _lowerView.center = CGPointMake(_lowerView.center.x,
+                                                    _lowerViewYPosition);
                     
                 }
             
@@ -316,17 +323,23 @@
                 
                 if (_isInfoTextContainerAtTop) {
                     
-                    _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
-                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition);
+                    _higherView.center = CGPointMake(_higherView.center.x,
+                                                     _higherViewYPosition + panGestureTranslation.y);
+                    _currentView.center = CGPointMake(_currentView.center.x,
+                                                      _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                    _lowerView.center = CGPointMake(_lowerView.center.x,
+                                                    _lowerViewYPosition);
                     
                 }
                 
             } else {
                 
-                _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition + panGestureTranslation.y);
-                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition);
+                _higherView.center = CGPointMake(_higherView.center.x,
+                                                 _higherViewYPosition + panGestureTranslation.y);
+                _currentView.center = CGPointMake(_currentView.center.x,
+                                                  _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                _lowerView.center = CGPointMake(_lowerView.center.x,
+                                                _lowerViewYPosition);
             }
             
         } else {
@@ -482,6 +495,7 @@
                                      
                                      _string_currentSection = @"Menu";
                                      _hasConstructedText = NO;
+                                     _hasConstructedInfoText = NO;
                                      
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
                                                                                          object:self];
