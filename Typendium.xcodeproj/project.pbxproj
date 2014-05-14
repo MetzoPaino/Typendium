@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		430BA1CD1915449200DCF3C4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430BA1CC1915449200DCF3C4 /* MessageUI.framework */; };
 		432C3FD21917EA6C00C18287 /* TypendiumInfoText.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */; };
+		4331ECE11923988A002C1D50 /* MadeIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4331ECE01923988A002C1D50 /* MadeIn.m */; };
+		4331ECE3192398A3002C1D50 /* MadeIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4331ECE2192398A3002C1D50 /* MadeIn.xib */; };
 		433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D8666191F681F007EE3F9 /* AboutUs.xib */; };
 		433D866A191F7225007EE3F9 /* AboutUs.m in Sources */ = {isa = PBXBuildFile; fileRef = 433D8669191F7224007EE3F9 /* AboutUs.m */; };
 		433D866C191FB009007EE3F9 /* Section.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D866B191FB009007EE3F9 /* Section.xib */; };
@@ -70,6 +72,9 @@
 		430BA1CC1915449200DCF3C4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		432C3FD01917EA6C00C18287 /* TypendiumInfoText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypendiumInfoText.h; sourceTree = "<group>"; };
 		432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypendiumInfoText.m; sourceTree = "<group>"; };
+		4331ECDF1923988A002C1D50 /* MadeIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadeIn.h; sourceTree = "<group>"; };
+		4331ECE01923988A002C1D50 /* MadeIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MadeIn.m; sourceTree = "<group>"; };
+		4331ECE2192398A3002C1D50 /* MadeIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MadeIn.xib; sourceTree = "<group>"; };
 		433D8666191F681F007EE3F9 /* AboutUs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUs.xib; sourceTree = "<group>"; };
 		433D8668191F7224007EE3F9 /* AboutUs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUs.h; sourceTree = "<group>"; };
 		433D8669191F7224007EE3F9 /* AboutUs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUs.m; sourceTree = "<group>"; };
@@ -225,6 +230,9 @@
 				433D8666191F681F007EE3F9 /* AboutUs.xib */,
 				433D8668191F7224007EE3F9 /* AboutUs.h */,
 				433D8669191F7224007EE3F9 /* AboutUs.m */,
+				4331ECDF1923988A002C1D50 /* MadeIn.h */,
+				4331ECE01923988A002C1D50 /* MadeIn.m */,
+				4331ECE2192398A3002C1D50 /* MadeIn.xib */,
 				433D8670191FB045007EE3F9 /* Section */,
 			);
 			name = "Page Maker";
@@ -425,6 +433,7 @@
 				43DD1A5818E852C800B43DE3 /* Typendium.plist in Resources */,
 				43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */,
 				43F1FB20190510700046A934 /* TypendiumTutorial.mp4 in Resources */,
+				4331ECE3192398A3002C1D50 /* MadeIn.xib in Resources */,
 				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
@@ -454,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */,
+				4331ECE11923988A002C1D50 /* MadeIn.m in Sources */,
 				434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */,
 				43961CE918FDC269009E399A /* TutorialViewController.m in Sources */,
 				433D866F191FB041007EE3F9 /* Section.m in Sources */,
