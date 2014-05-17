@@ -12,6 +12,7 @@
 #import "Section.h"
 
 #import "AboutUs.h"
+#import "MadeIn.h"
 
 #import "UIColor+CustomColors.h"
 
@@ -88,23 +89,17 @@
 
 - (Section *)configureSection :(Section *)section :(NSString *)key {
     
-    CGRect frame;
     NSArray *xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section" owner:self options:nil];
     
     section = [xib_quote objectAtIndex:0];
     NSDictionary *sectionText = [NSDictionary dictionaryWithDictionary:[_typendiumInfoText objectForKey:@"Section"]];
 
     section.title.text = [sectionText objectForKey:key];
-//    [section.lbl_quote sizeToFit];
-//    frame =   quote.lbl_quote.frame;
-//    section.frame = frame;
     
     return section;
 }
 
 - (AboutUs *)configureAboutUs :(AboutUs *)aboutUs :(NSString *)key {
-    
-    CGRect frame;
     
     NSArray *xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"AboutUs" owner:self options:nil];
     aboutUs = [xib_paragraph objectAtIndex:0];
@@ -113,25 +108,15 @@
     
     aboutUs.name.text = [aboutUsText objectForKey:@"Name"];
     aboutUs.links.text = [aboutUsText objectForKey:@"Links"];
-
-//    reference.date.text = [referenceText objectForKey:@"Date"];
-//    reference.author.text = [referenceText objectForKey:@"Author"];
-//    
-//    [reference.title sizeToFit];
-//    [reference.author sizeToFit];
-//    
-//    float height;
-//    
-//    height = reference.title.frame.size.height + 10 + reference.author.frame.size.height + 40;
-//    
-//    frame =  CGRectMake(0, 0, reference.container.frame.size.width, height);
-//    
-//    reference.container.frame = frame;
-//    
-//    reference.frame = frame;
-//    reference.date.center = CGPointMake(0 + reference.date.frame.size.width / 2, reference.frame.size.height / 2);
     
     return aboutUs;
+}
+
+- (MadeIn *)configureMadeIn :(MadeIn *)madeIn {
+    
+    NSArray *xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"MadeIn" owner:self options:nil];
+    madeIn = [xib_paragraph objectAtIndex:0];
+    return madeIn;
 }
 
 #pragma mark - References
@@ -211,7 +196,10 @@
         aboutUs2.picture.layer.cornerRadius = aboutUs2.picture.frame.size.width / 2;
         aboutUs2.picture.layer.masksToBounds = YES;
         
-        _arr_aboutUs = @[title, aboutUs1, aboutUs2];
+        MadeIn *madeIn1;
+        madeIn1 = [self configureMadeIn:madeIn1];
+        
+        _arr_aboutUs = @[title, aboutUs1, aboutUs2, madeIn1];
     }
     
     return _arr_aboutUs;

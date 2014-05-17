@@ -86,15 +86,27 @@
     
     // Place views
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    self.con_intro.frame = screenRect;
     self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
+    
+    self.con_tutorial.frame = screenRect;
     self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
     
+    self.con_menu.frame = screenRect;
     self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
     
+    self.con_history.frame = screenRect;
     self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
+    
+    self.con_text.frame = screenRect;
     self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
 
+    self.con_info.frame = screenRect;
     self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
+    
+    self.con_infoText.frame = screenRect;
     self.con_infoText.center = CGPointMake(self.con_infoText.center.x, self.view.center.y + ViewOffset);
 
     

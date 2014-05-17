@@ -19,6 +19,8 @@
 		434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DB2D918E9F31200DC8E42 /* InfoViewController.m */; };
 		435BB028191E98B100B762CE /* Reference.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435BB027191E98B100B762CE /* Reference.xib */; };
 		435BB02B191E9D9A00B762CE /* Reference.m in Sources */ = {isa = PBXBuildFile; fileRef = 435BB02A191E9D9A00B762CE /* Reference.m */; };
+		435F84451927803B00D6AAEA /* SpecialThanks.m in Sources */ = {isa = PBXBuildFile; fileRef = 435F84441927803B00D6AAEA /* SpecialThanks.m */; };
+		435F84471927807C00D6AAEA /* SpecialThanks.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435F84461927807C00D6AAEA /* SpecialThanks.xib */; };
 		437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437CD7E118E8C37E00AAD7F6 /* Caption.xib */; };
 		437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */ = {isa = PBXBuildFile; fileRef = 437CD7E418E8C38A00AAD7F6 /* Caption.m */; };
 		439275FB18F09B8D00353437 /* TypendiumText.m in Sources */ = {isa = PBXBuildFile; fileRef = 439275FA18F09B8D00353437 /* TypendiumText.m */; };
@@ -87,6 +89,9 @@
 		435BB027191E98B100B762CE /* Reference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Reference.xib; path = ../Reference.xib; sourceTree = "<group>"; };
 		435BB029191E9D9A00B762CE /* Reference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reference.h; sourceTree = "<group>"; };
 		435BB02A191E9D9A00B762CE /* Reference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reference.m; sourceTree = "<group>"; };
+		435F84431927803B00D6AAEA /* SpecialThanks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialThanks.h; sourceTree = "<group>"; };
+		435F84441927803B00D6AAEA /* SpecialThanks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialThanks.m; sourceTree = "<group>"; };
+		435F84461927807C00D6AAEA /* SpecialThanks.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialThanks.xib; sourceTree = "<group>"; };
 		437CD7E118E8C37E00AAD7F6 /* Caption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption.xib; path = XIBs/Caption.xib; sourceTree = "<group>"; };
 		437CD7E318E8C38A00AAD7F6 /* Caption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Caption.h; sourceTree = "<group>"; };
 		437CD7E418E8C38A00AAD7F6 /* Caption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Caption.m; sourceTree = "<group>"; };
@@ -233,6 +238,9 @@
 				4331ECDF1923988A002C1D50 /* MadeIn.h */,
 				4331ECE01923988A002C1D50 /* MadeIn.m */,
 				4331ECE2192398A3002C1D50 /* MadeIn.xib */,
+				435F84431927803B00D6AAEA /* SpecialThanks.h */,
+				435F84441927803B00D6AAEA /* SpecialThanks.m */,
+				435F84461927807C00D6AAEA /* SpecialThanks.xib */,
 				433D8670191FB045007EE3F9 /* Section */,
 			);
 			name = "Page Maker";
@@ -437,6 +445,7 @@
 				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
+				435F84471927807C00D6AAEA /* SpecialThanks.xib in Resources */,
 				435BB028191E98B100B762CE /* Reference.xib in Resources */,
 				433D866C191FB009007EE3F9 /* Section.xib in Resources */,
 				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,
@@ -470,6 +479,7 @@
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
 				439275FB18F09B8D00353437 /* TypendiumText.m in Sources */,
 				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
+				435F84451927803B00D6AAEA /* SpecialThanks.m in Sources */,
 				43CF7E7C190D64DA0059EFA0 /* NSString+ShareText.m in Sources */,
 				43FB18F7191279FC00E5DDF8 /* InfoTextViewController.m in Sources */,
 				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,

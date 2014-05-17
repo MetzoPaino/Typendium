@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -145,32 +145,6 @@
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-q4-QsB" userLabel="btn_tutorial">
-                                <rect key="frame" x="276" y="0.0" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="lxz-Qx-Pfz"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Tutorial-Black"/>
-                                <connections>
-                                    <action selector="tutorialButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="Mg2-Of-ZMI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yi-jI-bXG" userLabel="btn_settings">
-                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="QoV-LV-CmJ"/>
-                                    <constraint firstAttribute="height" constant="44" id="h5b-9n-jgZ"/>
-                                </constraints>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" backgroundImage="Settings-Black">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="settingsButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="AIh-2A-5fU"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TypendiumTitle" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-Ow-xaQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -199,6 +173,32 @@
                                 <state key="normal" backgroundImage="UpArrow-White"/>
                                 <connections>
                                     <action selector="upArrow:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="7ie-la-4pf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-q4-QsB" userLabel="btn_tutorial">
+                                <rect key="frame" x="276" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="lxz-Qx-Pfz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Tutorial-Black"/>
+                                <connections>
+                                    <action selector="tutorialButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="Mg2-Of-ZMI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yi-jI-bXG" userLabel="btn_settings">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="QoV-LV-CmJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="h5b-9n-jgZ"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="Settings-Black">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingsButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="AIh-2A-5fU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -267,12 +267,19 @@
                                     <outlet property="delegate" destination="cy1-VL-Z8p" id="zZn-wE-DyL"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="aDM-Uy-WXH">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="aDM-Uy-WXH">
                                 <rect key="frame" x="140" y="481" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="1SM-KB-asE"/>
+                                </constraints>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ha3-IJ-QzF" firstAttribute="top" secondItem="aDM-Uy-WXH" secondAttribute="bottom" constant="50" id="VvK-FC-GNs"/>
+                            <constraint firstItem="aDM-Uy-WXH" firstAttribute="leading" secondItem="SnP-TV-IjA" secondAttribute="leading" constant="140" id="oPK-Jb-rXR"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
@@ -298,20 +305,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-zf-dxR" userLabel="blockColorBaskerville">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-zf-dxR" userLabel="blockColorBaskerville">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.792156862745098" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-jq-S8L">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-jq-S8L">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="tgI-QH-4bS" id="Pgc-gy-yVV"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fep-Vb-d3D">
-                                <rect key="frame" x="140" y="481" width="39" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="fep-Vb-d3D">
+                                <rect key="frame" x="117" y="481" width="87" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -319,14 +326,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KnW-zf-dxR" firstAttribute="bottom" secondItem="P4p-jq-S8L" secondAttribute="bottom" constant="-284" id="0xz-o8-GRK"/>
-                            <constraint firstItem="P4p-jq-S8L" firstAttribute="top" secondItem="ArR-uK-UX7" secondAttribute="top" id="Bqs-iK-RB4"/>
-                            <constraint firstAttribute="trailing" secondItem="KnW-zf-dxR" secondAttribute="trailing" id="CmZ-M3-NxB"/>
-                            <constraint firstItem="KnW-zf-dxR" firstAttribute="trailing" secondItem="P4p-jq-S8L" secondAttribute="trailing" id="Ts3-C0-nRJ"/>
-                            <constraint firstAttribute="bottom" secondItem="P4p-jq-S8L" secondAttribute="bottom" id="XQs-lX-0EF"/>
-                            <constraint firstItem="KnW-zf-dxR" firstAttribute="leading" secondItem="P4p-jq-S8L" secondAttribute="leading" id="pLp-72-Zlc"/>
-                            <constraint firstItem="KnW-zf-dxR" firstAttribute="top" secondItem="x30-IE-pNO" secondAttribute="bottom" id="r9O-Xd-7WL"/>
-                            <constraint firstItem="P4p-jq-S8L" firstAttribute="leading" secondItem="ArR-uK-UX7" secondAttribute="leading" id="vpY-CT-uOx"/>
+                            <constraint firstItem="fep-Vb-d3D" firstAttribute="leading" secondItem="ArR-uK-UX7" secondAttribute="leading" constant="117" id="FJZ-cv-PhW"/>
+                            <constraint firstItem="k9x-1P-cPY" firstAttribute="top" secondItem="fep-Vb-d3D" secondAttribute="bottom" constant="50" id="cVk-4h-95r"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -352,13 +353,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TutorialFrames-0000" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TutorialFrames-0000" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zs-4w-Du2">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zs-4w-Du2">
                                 <rect key="frame" x="100" y="266" width="120" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="hO2-nm-anQ"/>
+                                    <constraint firstAttribute="height" constant="35" id="m1R-S1-3H3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Tutorial" backgroundImage="Button-White">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,9 +372,12 @@
                                     <action selector="playTutorial:" destination="gdG-TR-VYk" eventType="touchUpInside" id="ZiJ-dE-21o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-wk-Wfu" userLabel="btn_upArrow">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-wk-Wfu" userLabel="btn_upArrow">
                                 <rect key="frame" x="138" y="540" width="44" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="ZML-Dd-Wnf"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="UpArrow-White"/>
                                 <connections>
                                     <action selector="upArrow:" destination="gdG-TR-VYk" eventType="touchUpInside" id="1Ec-PC-kFk"/>
@@ -377,7 +385,16 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q6h-wk-Wfu" firstAttribute="centerX" secondItem="tzy-OP-Jqa" secondAttribute="centerX" id="MQz-19-i7a"/>
+                            <constraint firstAttribute="bottom" secondItem="gKr-dk-4df" secondAttribute="bottom" id="asm-uS-aXB"/>
+                            <constraint firstItem="Q6h-wk-Wfu" firstAttribute="centerX" secondItem="gKr-dk-4df" secondAttribute="centerX" id="cmV-w1-9fH"/>
+                            <constraint firstItem="gKr-dk-4df" firstAttribute="top" secondItem="tzy-OP-Jqa" secondAttribute="top" id="joE-ii-5ZP"/>
+                            <constraint firstItem="Q6h-wk-Wfu" firstAttribute="centerX" secondItem="9Zs-4w-Du2" secondAttribute="centerX" id="kXM-db-FPv"/>
+                            <constraint firstItem="9Zs-4w-Du2" firstAttribute="top" secondItem="Mgj-La-X0E" secondAttribute="bottom" constant="266" id="mXw-rD-MYi"/>
+                            <constraint firstItem="ugr-Em-fpI" firstAttribute="top" secondItem="Q6h-wk-Wfu" secondAttribute="bottom" constant="13" id="mct-sO-Ovb"/>
+                            <constraint firstItem="gKr-dk-4df" firstAttribute="leading" secondItem="tzy-OP-Jqa" secondAttribute="leading" id="yb7-gm-aej"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btn_startTutorial" destination="9Zs-4w-Du2" id="nZE-zz-yrV"/>

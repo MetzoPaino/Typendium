@@ -28,6 +28,8 @@
     NSString *_string_currentPage;
 }
 
+
+
 #pragma mark - View Controller Configuration
 
 - (void)viewDidLoad {
@@ -65,8 +67,12 @@
         
         if (i < self.historyPageNames.count - 1) {
             
-            UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
-            upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 2.5);
+            UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0,
+                                                                           0,
+                                                                           44,
+                                                                           15)];
+            upArrow.center = CGPointMake(self.view.center.x,
+                                         self.view.frame.size.height - upArrow.frame.size.height * 2.5);
             [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
             
@@ -101,6 +107,20 @@
     
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatHistoryPageIsThis" object:nil];
+}
+
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    if (screenRect.size.height <= iPhoneHeight480) {
+        self.image_backgroundColor.frame = CGRectMake(0,
+                                                      0,
+                                                      self.image_backgroundColor.frame.size.width,
+                                                      screenRect.size.height / 2);
+        
+    }
 }
 
 - (NSString *)assignCurrentPage {

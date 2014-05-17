@@ -36,6 +36,13 @@
 
 }
 
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    self.btn_upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 2.5);
+
+}
+
 - (void) startTutorial:(NSNotification *) notification {
     
     [self.avPlayer play];

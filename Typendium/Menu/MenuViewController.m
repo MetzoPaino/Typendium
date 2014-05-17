@@ -65,6 +65,14 @@
 
 - (void)viewDidLayoutSubviews {
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+
+    if (screenRect.size.height <= iPhoneHeight480) {
+        self.image.frame = CGRectMake(0, 0, self.image.frame.size.width, screenRect.size.height / 2);
+        self.image2.frame = CGRectMake(0, 0, self.image.frame.size.width, screenRect.size.height / 2);
+
+    }
+    
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.menuPageNames.count,
                                              self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
