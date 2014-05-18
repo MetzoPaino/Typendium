@@ -13,6 +13,7 @@
 
 #import "AboutUs.h"
 #import "MadeIn.h"
+#import "SpecialThanks.h"
 
 #import "UIColor+CustomColors.h"
 
@@ -119,6 +120,17 @@
     return madeIn;
 }
 
+- (SpecialThanks *)configureSpecialThanks :(SpecialThanks *)specialThanks :(NSString *)key {
+    
+    NSArray *xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"SpecialThanks" owner:self options:nil];
+    specialThanks = [xib_paragraph objectAtIndex:0];
+    NSDictionary *specialThanksText = [NSDictionary dictionaryWithDictionary:[_typendiumInfoText objectForKey:key]];
+    specialThanks.name.text = [specialThanksText objectForKey:@"Name"];
+    specialThanks.description.text = [specialThanksText objectForKey:@"Description"];
+    
+    return specialThanks;
+}
+
 #pragma mark - References
 
 - (NSArray *)arr_references {
@@ -215,8 +227,32 @@
         
         Title *title;
         title = [self configureTitle:title :@"SpecialThanksHeader"];
-                
-        _arr_specialThanks = @[title];
+        
+        SpecialThanks *specialThanks1;
+        specialThanks1 = [self configureSpecialThanks:specialThanks1 :@"MariusIbanez"];
+        
+        SpecialThanks *specialThanks2;
+        specialThanks2 = [self configureSpecialThanks:specialThanks2 :@"MarkFoley"];
+        
+        SpecialThanks *specialThanks3;
+        specialThanks3 = [self configureSpecialThanks:specialThanks3 :@"MarkKerby"];
+        
+        SpecialThanks *specialThanks4;
+        specialThanks4 = [self configureSpecialThanks:specialThanks4 :@"SimonMatt"];
+        
+        SpecialThanks *specialThanks5;
+        specialThanks5 = [self configureSpecialThanks:specialThanks5 :@"RobinsonLibrary"];
+        
+        SpecialThanks *specialThanks6;
+        specialThanks6 = [self configureSpecialThanks:specialThanks6 :@"CityLibrary"];
+        
+        _arr_specialThanks = @[title,
+                               specialThanks1,
+                               specialThanks2,
+                               specialThanks3,
+                               specialThanks4,
+                               specialThanks5,
+                               specialThanks6];
     }
     
     return _arr_specialThanks;

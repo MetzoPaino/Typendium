@@ -200,6 +200,51 @@
 				<string>@Greenseaweed robynnevison.com</string>
 			</dict>
 		</dict>
+		<key>SpecialThanks</key>
+		<dict>
+			<key>MariusIbanez</key>
+			<dict>
+				<key>Name</key>
+				<string>Marius Ibanez</string>
+				<key>Description</key>
+				<string>parallax code</string>
+			</dict>
+			<key>MarkFoley</key>
+			<dict>
+				<key>Name</key>
+				<string>Mark Foley</string>
+				<key>Description</key>
+				<string>suggesting the name Typendium</string>
+			</dict>
+			<key>SimonMatt</key>
+			<dict>
+				<key>Name</key>
+				<string>Simon Withington &amp; Matt Glover</string>
+				<key>Description</key>
+				<string>General programming advice and guidance</string>
+			</dict>
+			<key>RobinsonLibrary</key>
+			<dict>
+				<key>Name</key>
+				<string>Robinson Library</string>
+				<key>Description</key>
+				<string>Access to their collection of books printed by John Baskerville</string>
+			</dict>
+			<key>MarkKerby</key>
+			<dict>
+				<key>Name</key>
+				<string>Mark Kerby</string>
+				<key>Description</key>
+				<string>providing the algorithm to fade between two colors when scrolling</string>
+			</dict>
+			<key>CityLibrary</key>
+			<dict>
+				<key>Name</key>
+				<string>Newcastle City Library</string>
+				<key>Description</key>
+				<string>access to their collection of The Times Newspaper</string>
+			</dict>
+		</dict>
 	</dict>
 </dict>
 </plist>

@@ -78,22 +78,6 @@
     return _avPlayer;
 }
 
-- (IBAction)playTutorial:(id)sender {
-    
-    [UIView animateWithDuration:1
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-
-                         self.btn_startTutorial.alpha = 0;
-                         
-                     }
-                     completion:^(BOOL finished){
-
-                         [self.avPlayer play];
-                     }];
-}
-
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
     
     [UIView animateWithDuration:0.25
@@ -111,6 +95,24 @@
                          [p seekToTime:kCMTimeZero];
                      }];
 
+}
+
+#pragma mark - Actions
+
+- (IBAction)playTutorial:(id)sender {
+    
+    [UIView animateWithDuration:1
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         self.btn_startTutorial.alpha = 0;
+                         
+                     }
+                     completion:^(BOOL finished){
+                         
+                         [self.avPlayer play];
+                     }];
 }
 
 - (IBAction)upArrow:(id)sender {

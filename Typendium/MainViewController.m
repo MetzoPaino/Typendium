@@ -10,10 +10,13 @@
 
 @class Quartz;
 
+
+
 @interface MainViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *con_intro;
 @property (weak, nonatomic) IBOutlet UIView *con_tutorial;
+@property (weak, nonatomic) IBOutlet UIView *con_unlock;
 
 @property (weak, nonatomic) IBOutlet UIView *con_menu;
 
@@ -48,6 +51,8 @@
     UIView *_currentView;
     UIView *_higherView;
     UIView *_lowerView;
+    
+
 }
 
 #define ViewOffset 200
@@ -94,6 +99,9 @@
     self.con_tutorial.frame = screenRect;
     self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
     
+    self.con_unlock.frame = screenRect;
+    self.con_unlock.center = CGPointMake(self.con_unlock.center.x, -self.view.frame.size.height/2);
+    
     self.con_menu.frame = screenRect;
     self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
     
@@ -113,6 +121,7 @@
     // Add shadows to views that need them
     
     NSArray *shadowsArray = @[self.con_tutorial,
+                              self.con_unlock,
                               self.con_intro,
                               self.con_menu,
                               self.con_history,
@@ -161,7 +170,7 @@
     }
 }
 
-#pragma mark - Gesture Recognizer Delegate
+#pragma mark - Gesture Recognizer Delegates
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     
@@ -266,6 +275,14 @@
             _lowerView = self.con_intro;
             
         }
+        
+        if  ([_string_currentSection isEqualToString:@"Unlock"]){
+            
+            _currentView = self.con_unlock;
+            _higherView = nil;
+            _lowerView = self.con_intro;
+            
+        }
     }
     
     CGPoint panGestureTranslation = [panGestureRecognizer translationInView:self.view];
@@ -309,14 +326,16 @@
         gestureContext = @"Moving Current View Down";
         
         if ([_currentView isEqual: self.con_intro] ||
-            [_currentView isEqual: self.con_tutorial]) {
+            [_currentView isEqual: self.con_tutorial] ||
+            [_currentView isEqual: self.con_unlock]) {
             
             _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition);
 
         }
         
         if (![_currentView isEqual: self.con_intro] &&
-            ![_currentView isEqual: self.con_tutorial]) {
+            ![_currentView isEqual: self.con_tutorial] &&
+            ![_currentView isEqual: self.con_unlock]) {
             
             if ([_currentView isEqual: self.con_text]) {
                 
@@ -414,7 +433,11 @@
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"StopTutorial"
                                                                                          object:self];
                                      
-                                 } else if ([_string_currentSection isEqualToString:@"Intro"]) {
+                                 } else if ([_string_currentSection isEqualToString:@"Unlock"]) {
+                                     
+                                     _string_currentSection = @"Intro";
+                                     
+                                 }  else if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
                                      _string_currentSection = @"Menu";
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
@@ -477,9 +500,12 @@
         
     } else if ([gestureContext isEqualToString:@"Moving Current View Down"] ||
                [gestureContext isEqualToString:@"Tutorial Button Pressed"] ||
+               [gestureContext isEqualToString:@"Unlock Button Pressed"] ||
                [gestureContext isEqualToString:@"Text Arrow Pressed"]) {
         
-        if (currentView.center.y + currentView.frame.size.height/2 >= self.view.frame.size.height/4 || [gestureContext isEqualToString:@"Tutorial Button Pressed"]) {
+        if (currentView.center.y + currentView.frame.size.height/2 >= self.view.frame.size.height/4 ||
+            [gestureContext isEqualToString:@"Tutorial Button Pressed"] ||
+            [gestureContext isEqualToString:@"Unlock Button Pressed"]) {
             
             // current view was low enough that it will animate off screen & be replaced with a higher view
             
@@ -492,13 +518,19 @@
                              }
                              completion:^(BOOL finished){
                                  
-                                 if ([_string_currentSection isEqualToString:@"Intro"]) {
+                                 if ([_string_currentSection isEqualToString:@"Intro"] &&
+                                     [gestureContext isEqualToString:@"Tutorial Button Pressed"]) {
                                      
                                      _string_currentSection = @"Tutorial";
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"StartTutorial"
                                                                                          object:self];
                                      
-                                 } else if ([_string_currentSection isEqualToString:@"Menu"]) {
+                                 } else if ([_string_currentSection isEqualToString:@"Intro"] &&
+                                            [gestureContext isEqualToString:@"Unlock Button Pressed"]) {
+                                     
+                                     _string_currentSection = @"Unlock";
+                                     
+                                 }else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
                                      _string_currentSection = @"Intro";
                                      
@@ -578,10 +610,27 @@
         lowerView = nil;
     }
     
+    if ([currentPage isEqualToString:@"Intro"] && [newPage isEqualToString:@"Unlock"]) {
+        
+        gestureContext = @"Unlock Button Pressed";
+        currentView = self.con_intro;
+        higherView = self.con_unlock;
+        lowerView = nil;
+    }
+    
+    
     if ([currentPage isEqualToString:@"Tutorial"] && [newPage isEqualToString:@"Intro"]) {
         
         gestureContext = @"Up Arrow Pressed";
         currentView = self.con_tutorial;
+        higherView = nil;
+        lowerView = self.con_intro;
+    }
+    
+    if ([currentPage isEqualToString:@"Unlock"] && [newPage isEqualToString:@"Intro"]) {
+        
+        gestureContext = @"Up Arrow Pressed";
+        currentView = self.con_unlock;
         higherView = nil;
         lowerView = self.con_intro;
     }
@@ -722,6 +771,13 @@
         TutorialViewController *controller = (TutorialViewController *) [segue destinationViewController];
         controller.delegate = self;
 
+    }
+    
+    if ([segue.identifier isEqualToString:@"Unlock"]) {
+        
+        UnlockViewController *controller = (UnlockViewController *) [segue destinationViewController];
+        controller.delegate = self;
+        
     }
     
     if ([segue.identifier isEqualToString:@"History"]) {

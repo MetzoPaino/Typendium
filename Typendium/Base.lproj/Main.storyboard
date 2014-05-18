@@ -85,6 +85,14 @@
                                     <segue destination="gdG-TR-VYk" kind="embed" identifier="Tutorial" id="llA-Ll-5ye"/>
                                 </connections>
                             </containerView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WF7-ns-ufW" userLabel="unlockContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="4bF-wT-jtj" kind="embed" identifier="Unlock" id="SlW-G9-0HC"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -119,6 +127,7 @@
                         <outlet property="con_menu" destination="Hhe-HR-b8j" id="9ap-L3-N4U"/>
                         <outlet property="con_text" destination="acM-XM-oxq" id="HOD-F3-leu"/>
                         <outlet property="con_tutorial" destination="t3w-Zs-OwB" id="1s6-4L-a90"/>
+                        <outlet property="con_unlock" destination="WF7-ns-ufW" id="ATx-CW-pZw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -198,7 +207,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="settingsButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="AIh-2A-5fU"/>
+                                    <action selector="unlockButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="jpL-jN-Pmj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -226,8 +235,8 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="btn_settings" destination="9Yi-jI-bXG" id="191-lq-D1F"/>
                         <outlet property="btn_tutorial" destination="ghj-q4-QsB" id="y9c-iI-64y"/>
+                        <outlet property="btn_unlock" destination="9Yi-jI-bXG" id="hLd-m0-EEP"/>
                         <outlet property="btn_upArrow" destination="oCG-Ax-RX1" id="abc-D1-dvI"/>
                         <outlet property="image_background" destination="Xip-2S-z0D" id="chP-9E-KfC"/>
                         <outlet property="img_title" destination="nXJ-Ow-xaQ" id="bTr-Fb-yCv"/>
@@ -381,7 +390,6 @@
                                 <state key="normal" backgroundImage="UpArrow-White"/>
                                 <connections>
                                     <action selector="upArrow:" destination="gdG-TR-VYk" eventType="touchUpInside" id="1Ec-PC-kFk"/>
-                                    <action selector="upArrow:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="X69-Up-Ii4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -509,6 +517,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0Q-VO-jei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-456" y="2008"/>
+        </scene>
+        <!--Unlock View Controller-->
+        <scene sceneID="NXe-Ts-KuD">
+            <objects>
+                <viewController storyboardIdentifier="Unlock" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4bF-wT-jtj" customClass="UnlockViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Xn-Ww-HO6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ucr-wR-SyJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7nV-JH-Wlj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGZ-9a-Uwa" userLabel="btn_upArrow">
+                                <rect key="frame" x="138" y="540" width="44" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="PiC-xm-NAJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="UpArrow-White"/>
+                                <connections>
+                                    <action selector="upArrow:" destination="4bF-wT-jtj" eventType="touchUpInside" id="ZlM-Qf-9vX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pn-El-4nG">
+                                <rect key="frame" x="79" y="266" width="162" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Unlock Typendium"/>
+                                <connections>
+                                    <action selector="playTutorial:" destination="gdG-TR-VYk" eventType="touchUpInside" id="D6e-wQ-aUe"/>
+                                    <action selector="unlockTypendium:" destination="4bF-wT-jtj" eventType="touchUpInside" id="89H-me-038"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392157137393951" green="0.20392157137393951" blue="0.20392157137393951" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ucr-wR-SyJ" firstAttribute="top" secondItem="cGZ-9a-Uwa" secondAttribute="bottom" constant="13" id="OQY-6A-br4"/>
+                            <constraint firstItem="cGZ-9a-Uwa" firstAttribute="centerX" secondItem="7nV-JH-Wlj" secondAttribute="centerX" id="gHm-xs-gEf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="unlockButton" destination="3pn-El-4nG" id="vCR-td-UJU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0WI-JC-mqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1033" y="-542"/>
         </scene>
     </scenes>
     <resources>

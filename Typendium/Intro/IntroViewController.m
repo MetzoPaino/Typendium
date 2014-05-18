@@ -9,10 +9,12 @@
 #import "IntroViewController.h"
 #import "MainViewController.h"
 
+
+
 @interface IntroViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *btn_settings;
 @property (weak, nonatomic) IBOutlet UIButton *btn_tutorial;
+@property (weak, nonatomic) IBOutlet UIButton *btn_unlock;
 @property (weak, nonatomic) IBOutlet UIButton *btn_upArrow;
 
 @property (weak, nonatomic) IBOutlet UIImageView *img_title;
@@ -25,6 +27,8 @@
 @implementation IntroViewController {
     
     NSTimer *_fadeTimer;
+    NSArray *_products;
+    NSNumberFormatter *_priceFormatter;
 }
 
 #pragma mark - View Controller Configuration
@@ -34,7 +38,7 @@
     [super viewDidLoad];
     
     self.img_title.alpha = 0;
-    self.btn_settings.alpha = 0;
+    self.btn_unlock.alpha = 0;
     self.btn_tutorial.alpha = 0;
     self.lbl_swipe.alpha = 0;
     
@@ -51,6 +55,10 @@
     
     _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:NO];
 }
+
+
+
+
 
 - (void)fade:(NSTimer *)aTimer {
     
@@ -109,12 +117,15 @@
                                                            
                                                            self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 1.5);
                                                            self.btn_tutorial.alpha = 1;
+                                                           self.btn_unlock.alpha = 1;
                                                        }
                                                        completion:NULL];
                                   }];
                                   
                               } completion:NULL];
 }
+
+#pragma mark - Unlock
 
 - (IBAction)tutorialButton:(id)sender {
     
@@ -128,6 +139,13 @@
     [self.delegate animateContainerUpwards:self
                                currentPage:@"Intro"
                                    newPage:@"Menu"];
+}
+
+- (IBAction)unlockButton:(id)sender {
+    
+    [self.delegate animateContainerUpwards:self
+                               currentPage:@"Intro"
+                                   newPage:@"Unlock"];
 }
 
 

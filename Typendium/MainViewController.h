@@ -10,6 +10,8 @@
 #import "IntroViewController.h"
 #import "MenuViewController.h"
 #import "TutorialViewController.h"
+#import "UnlockViewController.h"
+
 #import "HistoryViewController.h"
 #import "TextViewController.h"
 

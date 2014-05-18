@@ -10,4 +10,7 @@
 
 @interface SpecialThanks : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *description;
+
 @end
