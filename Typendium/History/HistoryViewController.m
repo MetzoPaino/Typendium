@@ -35,6 +35,12 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(unlockTypendium:) name:@"UnlockTypendium" object:nil];
+    [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatHistoryPageIsThis" object:nil];
+
+    
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.historyPageNames.count,
                                              self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
@@ -75,10 +81,12 @@
                                          self.view.frame.size.height - upArrow.frame.size.height * 2.5);
             [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
-            
+            upArrow.restorationIdentifier = @"UpArrow";
             [historyPage addSubview:upArrow];
             
         } else {
+            
+            historyPage.restorationIdentifier = @"ComingSoon";
             
             float y =  self.pageControl.center.y - self.view.center.y;
             
@@ -105,8 +113,39 @@
     }
     _string_currentPage = [self assignCurrentPage];
     
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatHistoryPageIsThis" object:nil];
+    
+    for (UIView *historyPage in self.scrollView.subviews) {
+        
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"] && historyPage.tag > 1 && ![historyPage.restorationIdentifier isEqualToString:@"ComingSoon"] ) {
+
+            float y =  self.pageControl.center.y - self.view.center.y;
+
+            UIButton *unlockTypendium = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            unlockTypendium.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
+            
+            [unlockTypendium setTitle:@"Unlock Typendium" forState:UIControlStateNormal];
+            [unlockTypendium setTitleColor:[UIColor comingSoonColor] forState:UIControlStateNormal];
+            
+            unlockTypendium.layer.borderWidth = 1.0f;
+            unlockTypendium.layer.borderColor = [UIColor comingSoonColor].CGColor;
+            unlockTypendium.layer.cornerRadius = 18.0f;
+            unlockTypendium.restorationIdentifier = @"UnlockTypendium";
+            
+            [unlockTypendium addTarget:self action:@selector(unlockButton:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [historyPage addSubview:unlockTypendium];
+            
+            for (UIButton *button in historyPage.subviews) {
+                if ([button.restorationIdentifier isEqualToString:@"UpArrow"]) {
+                    button.hidden = YES;
+                }
+            }
+            
+            
+        }
+        
+        
+    }
 }
 
 - (void)viewDidLayoutSubviews {
@@ -225,6 +264,13 @@
                                             newPage:@"Text"];
 }
 
+- (IBAction)unlockButton:(id)sender {
+    
+    [self.moveViewsDelegate animateContainerUpwards:self
+                                        currentPage:@"History"
+                                            newPage:@"Unlock"];
+}
+
 - (IBAction)suggestATypeface:(id)sender {
     
     NSString *recipients = @"mailto:MetzoPaino@gmail.com?subject=I Suggest...";
@@ -237,6 +283,22 @@
     
 }
 
+#pragma mark - Observer
 
+- (void)unlockTypendium:(NSNotification *) notification {
+    
+    for (UIView *historyPage in self.scrollView.subviews) {
+
+        for (UIButton *button in historyPage.subviews) {
+            if ([button.restorationIdentifier isEqualToString:@"UpArrow"]) {
+                button.hidden = NO;
+            }
+                
+            if ([button.restorationIdentifier isEqualToString:@"UnlockTypendium"]) {
+                button.hidden = YES;
+            }
+        }
+    }
+}
 
 @end
