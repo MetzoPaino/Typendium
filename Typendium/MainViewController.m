@@ -155,6 +155,7 @@
         _isTextContainerAtTop = YES;
 
     } else if ([notification.name isEqualToString:@"NotAtTopOfText"]) {
+			
         
         _isTextContainerAtTop = NO;
         
