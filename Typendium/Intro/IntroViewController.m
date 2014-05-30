@@ -125,7 +125,7 @@
                               } completion:NULL];
 }
 
-#pragma mark - Unlock
+#pragma mark - IBActions
 
 - (IBAction)tutorialButton:(id)sender {
     

@@ -20,23 +20,42 @@
 
 @implementation UnlockViewController {
     
-    NSTimer *_fadeTimer;
-    NSArray *_products;
-    NSNumberFormatter *_priceFormatter;
+	NSTimer *_fadeTimer;
+	NSArray *_products;
+	NSNumberFormatter *_priceFormatter;
+	NSString *_string_currentPage;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.unlockButton.layer.borderWidth = 1.0f;
-    self.unlockButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.unlockButton.layer.cornerRadius = 18.0f;
+#pragma mark - View Controller Configuration
+
+- (void)viewDidLoad {
+	
+	[super viewDidLoad];
+	self.unlockButton.layer.borderWidth = 1.0f;
+	self.unlockButton.layer.borderColor = [UIColor whiteColor].CGColor;
+	self.unlockButton.layer.cornerRadius = 18.0f;
+	
+	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+	[notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatUnlockPageIsThis" object:nil];
 }
 
-#pragma mark - Actions
+- (void)whatPageIsThis {
+	
+	_string_currentPage = @"Unlock";
+	
+	NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+															@"Menu", @"Section",
+															_string_currentPage, @"Page",
+															nil];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"ThisPage"
+																											object:self userInfo:dictionary];
+}
+
+#pragma mark - IBActions
 
 - (IBAction)upArrow:(id)sender {
-    
+  
     [self.delegate animateContainerUpwards:self
                                currentPage:@"Unlock"
                                    newPage:@"Intro"];

@@ -51,7 +51,8 @@
     UIView *_currentView;
     UIView *_higherView;
     UIView *_lowerView;
-    
+  
+	UIView *_viewUnderUnlock;
 
 }
 
@@ -289,7 +290,7 @@
             
             _currentView = self.con_unlock;
             _higherView = nil;
-            _lowerView = self.con_intro;
+            _lowerView = _viewUnderUnlock;
             
         }
     }
@@ -455,9 +456,16 @@
                                                                                          object:self];
                                      
                                  } else if ([_string_currentSection isEqualToString:@"Unlock"]) {
-                                     
-                                     _string_currentSection = @"Intro";
-                                     
+                                   
+																	 if (lowerView == self.con_intro) {
+																		 
+																		 _string_currentSection = @"Intro";
+																		 
+																	 } else {
+																		 
+                                     _string_currentSection = @"History";
+																	 }
+                                   
                                  }  else if ([_string_currentSection isEqualToString:@"Intro"]) {
                                      
                                      _string_currentSection = @"Menu";
@@ -550,20 +558,31 @@
                                             [gestureContext isEqualToString:@"Unlock Button Pressed"]) {
                                      
                                      _string_currentSection = @"Unlock";
+																	 
                                      
-                                 }else if ([_string_currentSection isEqualToString:@"Menu"]) {
+                                 } else if ([_string_currentSection isEqualToString:@"Menu"]) {
                                      
                                      _string_currentSection = @"Intro";
                                      
                                      
                                  } else if ([_string_currentSection isEqualToString:@"History"] || [_string_currentSection isEqualToString:@"Info"]) {
-                                     
-                                     _string_currentSection = @"Menu";
+                                   
+																	 if ([gestureContext isEqualToString:@"Unlock Button Pressed"]) {
+																		 _string_currentSection = @"Unlock";
+																		 [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatUnlockPageIsThis"
+                                                                                         object:self];
+
+																	 } else {
+																		 
+																		 _string_currentSection = @"Menu";
                                      _hasConstructedText = NO;
                                      _hasConstructedInfoText = NO;
                                      
                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatMenuPageIsThis"
                                                                                          object:self];
+																		 
+																	 }
+
                                      
                                  } else if ([_string_currentSection isEqualToString:@"Text"]) {
                                                                           
@@ -637,6 +656,7 @@
         currentView = self.con_intro;
         higherView = self.con_unlock;
         lowerView = nil;
+			_viewUnderUnlock = currentView;
     }
     
     
@@ -648,12 +668,12 @@
         lowerView = self.con_intro;
     }
     
-    if ([currentPage isEqualToString:@"Unlock"] && [newPage isEqualToString:@"Intro"]) {
+    if ([currentPage isEqualToString:@"Unlock"]) {
         
         gestureContext = @"Up Arrow Pressed";
         currentView = self.con_unlock;
         higherView = nil;
-        lowerView = self.con_intro;
+        lowerView = _viewUnderUnlock;
     }
     
     if ([currentPage isEqualToString:@"Menu"]) {
@@ -701,6 +721,7 @@
         currentView = self.con_history;
         higherView = self.con_unlock;
         lowerView = nil;
+				_viewUnderUnlock = currentView;
     }
     
     if ([currentPage isEqualToString:@"Text"] && [newPage isEqualToString:@"History"]) {
@@ -736,13 +757,14 @@
         
         _hasConstructedInfoText = NO;
     }
-    
+		
+
     [self parallaxToLocation :  currentView : higherView : lowerView : gestureContext];
 }
 
 #pragma mark - Post Text To Construct
 
-- (void) postTextToConstruct {
+- (void)postTextToConstruct {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatHistoryPageIsThis"
                                                         object:self];
@@ -760,7 +782,7 @@
     _hasConstructedText = YES;
 }
 
-- (void) postInfoTextToConstruct {
+- (void)postInfoTextToConstruct {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WhatInfoPageIsThis"
                                                         object:self];
@@ -844,10 +866,15 @@
 
 - (void)assignCurrentPage:(UIViewController *)controller currentSection:(NSString *)currentSection currentPage:(NSString *)currentPage {
 	
-    _string_currentSection = currentSection;
+	_string_currentSection = currentSection;
 	_string_currentPage = currentPage;
+	
+	if ([_string_currentSection isEqualToString:@"Unlock"]) {
+		_string_currentPage = @"Unlock";
+
+	}
     
-    NSLog(@"%@ %@", _string_currentSection, _string_currentPage);
+	NSLog(@"%@ %@", _string_currentSection, _string_currentPage);
 }
 
 @end
