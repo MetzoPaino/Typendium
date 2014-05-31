@@ -48,6 +48,7 @@
     [super viewDidAppear:YES];
 
     self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.view.frame.size.height + self.view.frame.size.height / 2);
+    self.btn_upArrow.alpha = 1.0;
     self.img_title.center = CGPointMake(self.img_title.center.x, self.view.frame.size.height);
     self.img_title.alpha = 1;
 
