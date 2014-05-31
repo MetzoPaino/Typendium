@@ -203,7 +203,7 @@
                                     <constraint firstAttribute="height" constant="44" id="h5b-9n-jgZ"/>
                                 </constraints>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" backgroundImage="Settings-Black">
+                                <state key="normal" backgroundImage="Unlock-Black">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -570,10 +570,10 @@
     <resources>
         <image name="Button-White" width="297" height="85"/>
         <image name="Intro-Black" width="320" height="568"/>
-        <image name="Settings-Black" width="128" height="128"/>
         <image name="Tutorial-Black" width="128" height="128"/>
         <image name="TutorialFrames-0000" width="640" height="1136"/>
         <image name="TypendiumTitle" width="320" height="568"/>
+        <image name="Unlock-Black" width="128" height="128"/>
         <image name="UpArrow-White" width="44" height="14"/>
     </resources>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
