@@ -35,8 +35,15 @@
     [super viewDidLoad];
     
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(constructPage:) name:@"ConstructPage" object:nil];
-    [notificationCenter addObserver:self selector:@selector(displayUIActivity:) name:@"DisplayUIActivity" object:nil];
+    
+    [notificationCenter addObserver:self
+                           selector:@selector(constructPage:)
+                               name:@"ConstructPage"
+                             object:nil];
+    [notificationCenter addObserver:self
+                           selector:@selector(displayUIActivity:)
+                               name:@"DisplayUIActivity"
+                             object:nil];
     
     self.scrollView.bounces = NO;
     
@@ -47,9 +54,9 @@
                   @"Baskerville", @"Page",
                   nil];
     
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"ConstructPage"
-     object:self userInfo:dictionary];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ConstructPage"
+                                                        object:self
+                                                      userInfo:dictionary];
 
     NSTimer *timer = [NSTimer timerWithTimeInterval:0.05
                                              target:self
@@ -61,11 +68,10 @@
                                  forMode:NSRunLoopCommonModes];
 }
 
-- (void) displayUIActivity:(NSNotification *) notification {
+- (void)displayUIActivity:(NSNotification *) notification {
     
-    UIActivityViewController *controller = [[UIActivityViewController alloc]
-                                            initWithActivityItems:@[_string_shareText]
-                                            applicationActivities:nil];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[_string_shareText]
+                                                                             applicationActivities:nil];
     
     [self presentViewController:controller animated:YES completion:nil];
     
@@ -88,9 +94,9 @@
     
 }
 
-- (void) constructPage:(NSNotification *) notification {
+- (void)constructPage:(NSNotification *) notification {
     
-    for(UIView *subview in [self.scrollView subviews]) {
+    for (UIView *subview in [self.scrollView subviews]) {
         
         [subview removeFromSuperview];
     }
@@ -126,18 +132,19 @@
         
     }
     
-    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    upArrow.center = CGPointMake(self.view.center.x, yPosition + upArrow.frame.size.height * 2.5);
+    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 71)];
     
     [upArrow setBackgroundImage:[UIImage imageNamed:_string_upArrow] forState:UIControlStateNormal];
     [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
     
-    yPosition += upArrow.frame.size.height * 6;
-    
-    [self.scrollView addSubview:upArrow];
-    
+    yPosition += upArrow.frame.size.height * 1.5;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width,
                                              yPosition);
+    upArrow.center = CGPointMake(self.view.center.x,
+                                 self.scrollView.contentSize.height - upArrow.center.y);
+    [self.scrollView addSubview:upArrow];
+    
+    
     self.scrollView.showsVerticalScrollIndicator = NO;
     
 }

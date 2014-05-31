@@ -382,7 +382,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-wk-Wfu" userLabel="btn_upArrow">
-                                <rect key="frame" x="138" y="540" width="44" height="15"/>
+                                <rect key="frame" x="138" y="538" width="44" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="ZML-Dd-Wnf"/>
@@ -400,7 +400,7 @@
                             <constraint firstItem="gKr-dk-4df" firstAttribute="top" secondItem="tzy-OP-Jqa" secondAttribute="top" id="joE-ii-5ZP"/>
                             <constraint firstItem="Q6h-wk-Wfu" firstAttribute="centerX" secondItem="9Zs-4w-Du2" secondAttribute="centerX" id="kXM-db-FPv"/>
                             <constraint firstItem="9Zs-4w-Du2" firstAttribute="top" secondItem="Mgj-La-X0E" secondAttribute="bottom" constant="266" id="mXw-rD-MYi"/>
-                            <constraint firstItem="ugr-Em-fpI" firstAttribute="top" secondItem="Q6h-wk-Wfu" secondAttribute="bottom" constant="13" id="mct-sO-Ovb"/>
+                            <constraint firstItem="ugr-Em-fpI" firstAttribute="top" secondItem="Q6h-wk-Wfu" secondAttribute="bottom" constant="15" id="mct-sO-Ovb"/>
                             <constraint firstItem="gKr-dk-4df" firstAttribute="leading" secondItem="tzy-OP-Jqa" secondAttribute="leading" id="yb7-gm-aej"/>
                         </constraints>
                     </view>

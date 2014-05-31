@@ -39,16 +39,16 @@
 - (void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
-    self.btn_upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 2.5);
-
+    //self.btn_upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 2.5);
+//self.btn_upArrow.center = CGPointMake(self.view.center.x, 545);
 }
 
-- (void) startTutorial:(NSNotification *) notification {
+- (void)startTutorial:(NSNotification *) notification {
     
     [self.avPlayer play];
 }
 
-- (void) stopTutorial:(NSNotification *) notification {
+- (void)stopTutorial:(NSNotification *) notification {
     
     [self.avPlayer pause];
     [self.avPlayer seekToTime:kCMTimeZero];
@@ -64,9 +64,13 @@
         _avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:_avPlayer];
         
         _avPlayerLayer.frame = self.view.layer.bounds;
+        
+      //  _avPlayerLayer.frame = CGRectMake(10, 10, self.view.layer.bounds.size.width - 20, self.view.bounds.size.height - 20);
+        
         [self.view.layer addSublayer: _avPlayerLayer];
         [self.view bringSubviewToFront:self.btn_startTutorial];
         [self.view bringSubviewToFront:self.btn_upArrow];
+       // self.btn_upArrow.center = CGPointMake(self.view.center.x, 545);
 
         _avPlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
         

@@ -122,7 +122,12 @@
                                                        completion:NULL];
                                   }];
                                   
-                              } completion:NULL];
+                              } completion:^(BOOL complete) {
+                                  
+                                  NSLog(@"%f", self.btn_upArrow.center.y);
+                              }];
+    
+    
 }
 
 #pragma mark - IBActions
