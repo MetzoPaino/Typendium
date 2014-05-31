@@ -124,12 +124,27 @@
             unlockTypendium.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
             
             [unlockTypendium setTitle:@"Unlock Typendium" forState:UIControlStateNormal];
-            [unlockTypendium setTitleColor:[UIColor comingSoonColor] forState:UIControlStateNormal];
             
             unlockTypendium.layer.borderWidth = 1.0f;
-            unlockTypendium.layer.borderColor = [UIColor comingSoonColor].CGColor;
             unlockTypendium.layer.cornerRadius = 18.0f;
             unlockTypendium.restorationIdentifier = @"UnlockTypendium";
+            
+            switch (historyPage.tag) {
+                case 2:
+                    [unlockTypendium setTitleColor:[UIColor gillSansColor] forState:UIControlStateNormal];
+                    unlockTypendium.layer.borderColor = [UIColor gillSansColor].CGColor;
+                    break;
+                case 3:
+                    [unlockTypendium setTitleColor:[UIColor palatinoColor] forState:UIControlStateNormal];
+                    unlockTypendium.layer.borderColor = [UIColor palatinoColor].CGColor;
+                    break;
+                case 4:
+                    [unlockTypendium setTitleColor:[UIColor timesNewRomanColor] forState:UIControlStateNormal];
+                    unlockTypendium.layer.borderColor = [UIColor timesNewRomanColor].CGColor;
+                    break;
+                default:
+                    break;
+            }
             
             [unlockTypendium addTarget:self action:@selector(unlockButton:) forControlEvents:UIControlEventTouchUpInside];
             
