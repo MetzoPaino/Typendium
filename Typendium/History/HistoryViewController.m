@@ -78,7 +78,7 @@
                                                                            44,
                                                                            15)];
             upArrow.center = CGPointMake(self.view.center.x,
-                                         self.view.frame.size.height - upArrow.frame.size.height * 2.5);
+                                         545);
             [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
             upArrow.restorationIdentifier = @"UpArrow";
