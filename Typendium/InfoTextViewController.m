@@ -95,6 +95,9 @@
             if ([_string_currentPage isEqualToString:@"References"]) {
                 yPosition += 5;
                 
+            } else if ([_string_currentPage isEqualToString:@"SpecialThanks"]) {
+                yPosition += 40;
+                
             } else {
                 
                 yPosition += 20;

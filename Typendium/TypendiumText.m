@@ -66,7 +66,7 @@
     caption = [xib_caption objectAtIndex:0];
     caption.lbl_caption.text = [_typendiumText objectForKey:@"Caption1"];
     [caption.lbl_caption sizeToFit];
-    frame =   caption.lbl_caption.frame;
+    frame = caption.lbl_caption.frame;
     caption.frame = frame;
     
     return caption;

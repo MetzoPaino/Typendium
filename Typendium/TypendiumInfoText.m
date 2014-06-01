@@ -128,6 +128,10 @@
     specialThanks.name.text = [specialThanksText objectForKey:@"Name"];
     specialThanks.description.text = [specialThanksText objectForKey:@"Description"];
     
+    [specialThanks.description sizeToFit];
+    
+    specialThanks.frame = CGRectMake(0, 0, specialThanks.frame.size.width, specialThanks.name.frame.size.height + 6 + specialThanks.description.frame.size.height);
+    
     return specialThanks;
 }
 
@@ -238,13 +242,16 @@
         specialThanks3 = [self configureSpecialThanks:specialThanks3 :@"MarkKerby"];
         
         SpecialThanks *specialThanks4;
-        specialThanks4 = [self configureSpecialThanks:specialThanks4 :@"SimonMatt"];
+        specialThanks4 = [self configureSpecialThanks:specialThanks4 :@"SimonWithington"];
         
         SpecialThanks *specialThanks5;
-        specialThanks5 = [self configureSpecialThanks:specialThanks5 :@"RobinsonLibrary"];
+        specialThanks5 = [self configureSpecialThanks:specialThanks5 :@"SimonWithington"];
         
         SpecialThanks *specialThanks6;
-        specialThanks6 = [self configureSpecialThanks:specialThanks6 :@"CityLibrary"];
+        specialThanks6 = [self configureSpecialThanks:specialThanks6 :@"RobinsonLibrary"];
+        
+        SpecialThanks *specialThanks7;
+        specialThanks7 = [self configureSpecialThanks:specialThanks7 :@"CityLibrary"];
         
         _arr_specialThanks = @[title,
                                specialThanks1,
@@ -252,7 +259,8 @@
                                specialThanks3,
                                specialThanks4,
                                specialThanks5,
-                               specialThanks6];
+                               specialThanks6,
+                               specialThanks7];
     }
     
     return _arr_specialThanks;
