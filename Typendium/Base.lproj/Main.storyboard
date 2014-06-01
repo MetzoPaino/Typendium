@@ -146,31 +146,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Intro-Black" translatesAutoresizingMaskIntoConstraints="NO" id="Xip-2S-z0D" userLabel="img_background">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
-                                </accessibility>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TypendiumTitle" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-Ow-xaQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rku-hK-qYm" userLabel="blockColor">
-                                <rect key="frame" x="0.0" y="282" width="320" height="286"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="286" id="p0a-KF-fIb"/>
+                                    <constraint firstAttribute="height" constant="284" id="p0a-KF-fIb"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-Iw-AyN" userLabel="lbl_swipe">
                                 <rect key="frame" x="20" y="494" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCG-Ax-RX1" userLabel="btn_upArrow">
@@ -179,7 +167,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="sW7-qC-Uie"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="UpArrow-White"/>
+                                <state key="normal" backgroundImage="UpArrow-Black"/>
                                 <connections>
                                     <action selector="upArrow:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="7ie-la-4pf"/>
                                 </connections>
@@ -190,11 +178,23 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="lxz-Qx-Pfz"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Tutorial-Black"/>
+                                <state key="normal" backgroundImage="Tutorial-White"/>
                                 <connections>
                                     <action selector="tutorialButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="Mg2-Of-ZMI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Intro-Black" translatesAutoresizingMaskIntoConstraints="NO" id="Xip-2S-z0D" userLabel="img_background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TypendiumTitle-White" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-Ow-xaQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yi-jI-bXG" userLabel="btn_settings">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,7 +203,7 @@
                                     <constraint firstAttribute="height" constant="44" id="h5b-9n-jgZ"/>
                                 </constraints>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" backgroundImage="Unlock-Black">
+                                <state key="normal" backgroundImage="Unlock-White">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -224,7 +224,7 @@
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="Xip-2S-z0D" secondAttribute="leading" id="T7R-3d-brt"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" id="VRN-Uo-15x"/>
                             <constraint firstItem="ghj-q4-QsB" firstAttribute="trailing" secondItem="nXJ-Ow-xaQ" secondAttribute="trailing" id="ab8-Nx-tY5"/>
-                            <constraint firstItem="rku-hK-qYm" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" id="cuZ-kc-QZ3"/>
+                            <constraint firstItem="rku-hK-qYm" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" constant="-284" id="cuZ-kc-QZ3"/>
                             <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="oCG-Ax-RX1" secondAttribute="centerX" id="f1P-tI-aGl"/>
                             <constraint firstItem="ghj-q4-QsB" firstAttribute="baseline" secondItem="9Yi-jI-bXG" secondAttribute="baseline" id="p3k-zM-hoG"/>
                             <constraint firstItem="9Yi-jI-bXG" firstAttribute="bottom" secondItem="ghj-q4-QsB" secondAttribute="bottom" id="qV1-My-Oha"/>
@@ -260,12 +260,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EMv-ld-td6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.094117647058823528" green="0.49019607843137253" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOC-hh-bB3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.21568627450980393" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -541,9 +541,21 @@
                                     <action selector="upArrow:" destination="4bF-wT-jtj" eventType="touchUpInside" id="ZlM-Qf-9vX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pn-El-4nG">
-                                <rect key="frame" x="79" y="266" width="162" height="35"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unlock" translatesAutoresizingMaskIntoConstraints="NO" id="lJf-oP-xYX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By purchasing Typendium you will gain access to all locked content, as well as any content released in the future." lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="FRf-jk-drx">
+                                <rect key="frame" x="20" y="200" width="280" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pn-El-4nG">
+                                <rect key="frame" x="60" y="371" width="200" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Unlock Typendium"/>
                                 <connections>
@@ -570,10 +582,12 @@
     <resources>
         <image name="Button-White" width="297" height="85"/>
         <image name="Intro-Black" width="320" height="568"/>
-        <image name="Tutorial-Black" width="128" height="128"/>
+        <image name="Tutorial-White" width="128" height="128"/>
         <image name="TutorialFrames-0000" width="640" height="1136"/>
-        <image name="TypendiumTitle" width="320" height="568"/>
-        <image name="Unlock-Black" width="128" height="128"/>
+        <image name="TypendiumTitle-White" width="320" height="568"/>
+        <image name="Unlock" width="320" height="568"/>
+        <image name="Unlock-White" width="128" height="128"/>
+        <image name="UpArrow-Black" width="44" height="14"/>
         <image name="UpArrow-White" width="44" height="14"/>
     </resources>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

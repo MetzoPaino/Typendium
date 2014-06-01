@@ -54,7 +54,7 @@
 
     [self introAnimation];
     
-    _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:NO];
+    _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:nil];
 }
 
 
@@ -82,7 +82,11 @@
                                               
                                               self.lbl_swipe.alpha = 0;
                                           }
-                                          completion:NULL];
+                                          completion:^(BOOL finished) {
+                                              
+                                              _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:nil];
+                                              
+                                          }];
                      }];
 
     

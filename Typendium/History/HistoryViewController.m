@@ -120,9 +120,13 @@
 
             float y =  self.pageControl.center.y - self.view.center.y;
 
-            UIButton *unlockTypendium = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            UIButton *unlockTypendium = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             unlockTypendium.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
             
+            NSLog(@"%f", unlockTypendium.center.y);
+            
+            unlockTypendium.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
+
             [unlockTypendium setTitle:@"Unlock Typendium" forState:UIControlStateNormal];
             
             unlockTypendium.layer.borderWidth = 1.0f;
