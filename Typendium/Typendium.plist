@@ -178,9 +178,9 @@
 			<key>Section</key>
 			<dict>
 				<key>Book</key>
-				<string>Books</string>
+				<string>BOOK</string>
 				<key>Film</key>
-				<string>Films</string>
+				<string>FILM</string>
 			</dict>
 		</dict>
 		<key>AboutUs</key>
@@ -207,49 +207,49 @@
 				<key>Name</key>
 				<string>Marius Ibanez</string>
 				<key>Description</key>
-				<string>for helping to debug the code when we couldn&apos;t figure out what was wrong, and most importantly for helping to create the parallaxing views</string>
+				<string>for helping to debug the code when we couldn&apos;t figure out what was wrong, and most importantly for helping to create the parallaxing views.</string>
 			</dict>
 			<key>MarkFoley</key>
 			<dict>
 				<key>Name</key>
 				<string>Mark Foley</string>
 				<key>Description</key>
-				<string>for suggesting the name Typendium and for being a reliable voice in regards to design</string>
+				<string>for suggesting the name Typendium and for being a reliable voice in regards to design.</string>
 			</dict>
 			<key>SimonWithington</key>
 			<dict>
 				<key>Name</key>
 				<string>Simon Withington</string>
 				<key>Description</key>
-				<string>for hosting the iOS meetup that inspired us to make Typendium</string>
+				<string>for hosting the iOS meetup that inspired us to make Typendium.</string>
 			</dict>
 			<key>MattGlover</key>
 			<dict>
 				<key>Name</key>
 				<string>Matt Glover</string>
 				<key>Description</key>
-				<string>for general programming advice and guidance</string>
+				<string>for general programming advice and guidance.</string>
 			</dict>
 			<key>RobinsonLibrary</key>
 			<dict>
 				<key>Name</key>
 				<string>Robinson Library</string>
 				<key>Description</key>
-				<string>for access to their collection of books printed by John Baskerville</string>
+				<string>for access to their collection of books printed by John Baskerville.</string>
 			</dict>
 			<key>MarkKerby</key>
 			<dict>
 				<key>Name</key>
 				<string>Mark Kerby</string>
 				<key>Description</key>
-				<string>for understanding mathematics and providing the algorithm to fade between two colours when scrolling</string>
+				<string>for understanding mathematics and providing the algorithm to fade between two colours when scrolling.</string>
 			</dict>
 			<key>CityLibrary</key>
 			<dict>
 				<key>Name</key>
 				<string>Newcastle City Library</string>
 				<key>Description</key>
-				<string>for access to their collection of The Times Newspaper</string>
+				<string>for access to their collection of The Times Newspaper.</string>
 			</dict>
 		</dict>
 	</dict>

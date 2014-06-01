@@ -148,30 +148,29 @@
         
         Section *section1;
         section1 = [self configureSection:section1 :@"Book"];
-        
+        section1.backgroundColor = [UIColor referencesColor];
+
         Reference *reference1;
         reference1 = [self configureReference:reference1 :@"26Letters"];
         
         Reference *reference2;
         reference2 = [self configureReference:reference2 :@"AnatomyOfATypeface"];
-        reference2.backgroundColor = [UIColor typendiumLightGray];
 
         Reference *reference3;
         reference3 = [self configureReference:reference3 :@"TypographyReferenced"];
         
         Reference *reference4;
         reference4 = [self configureReference:reference4 :@"TheElementsOfTypographicStyle"];
-        reference4.backgroundColor = [UIColor typendiumLightGray];
         
         Section *section2;
         section2 = [self configureSection:section2 :@"Film"];
+        section2.backgroundColor = [UIColor referencesColor];
         
         Reference *referenceFilm1;
         referenceFilm1 = [self configureReference:referenceFilm1 :@"Helvetica"];
         
         Reference *referenceFilm2;
         referenceFilm2 = [self configureReference:referenceFilm2 :@"Typeface"];
-        referenceFilm2.backgroundColor = [UIColor typendiumLightGray];
         
         Reference *referenceFilm3;
         referenceFilm3 = [self configureReference:referenceFilm3 :@"Linotype"];

@@ -71,7 +71,7 @@
     }
 }
 
-- (void) constructPage:(NSNotification *) notification {
+- (void)constructPage:(NSNotification *) notification {
     
     for(UIView *subview in [self.scrollView subviews]) {
         
@@ -93,9 +93,10 @@
         } else {
             
             if ([_string_currentPage isEqualToString:@"References"]) {
-                yPosition += 5;
+                yPosition += 20;
                 
             } else if ([_string_currentPage isEqualToString:@"SpecialThanks"]) {
+                
                 yPosition += 40;
                 
             } else {
@@ -118,18 +119,18 @@
         
     }
     
-    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    upArrow.center = CGPointMake(self.view.center.x, yPosition + upArrow.frame.size.height * 2.5);
+    UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 71)];
     
     [upArrow setBackgroundImage:[UIImage imageNamed:_string_upArrow] forState:UIControlStateNormal];
     [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
     
-    yPosition += upArrow.frame.size.height * 6;
-    
-    [self.scrollView addSubview:upArrow];
-    
+    yPosition += upArrow.frame.size.height * 1.5;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width,
                                              yPosition);
+    upArrow.center = CGPointMake(self.view.center.x,
+                                 self.scrollView.contentSize.height - upArrow.center.y);
+    [self.scrollView addSubview:upArrow];
+    
     self.scrollView.showsVerticalScrollIndicator = NO;
     
 }
