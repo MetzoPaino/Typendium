@@ -157,6 +157,8 @@
     IAPProduct *product = _products[productIdentifier];
     [self provideContentForProductIdentifier:productIdentifier];
     [self notifyStatusForProductIdentifier:productIdentifier string:@"Purchase complete!"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockTypendium"
+                                                        object:self];
     
     product.purchaseInProgress = NO;
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];

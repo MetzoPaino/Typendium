@@ -15,6 +15,8 @@
 @interface UnlockViewController () <UIAlertViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIButton *unlockButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *upArrow;
 
 @end
 
@@ -37,6 +39,11 @@
 	
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 	[notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatUnlockPageIsThis" object:nil];
+    [notificationCenter addObserver:self selector:@selector(unlockTypendiumNotification:) name:@"UnlockTypendium" object:nil];
+
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
+        [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
+    }
 }
 
 - (void)whatPageIsThis {
@@ -65,6 +72,12 @@
 - (IBAction)unlockTypendium:(id)sender {
     
     _products = nil;
+    
+    [self.activityIndicator startAnimating];
+    self.unlockButton.hidden = YES;
+    self.upArrow.hidden = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableInteraction"
+                                                        object:self];
     [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         
         if (success) {
@@ -121,7 +134,25 @@
             [[TYPEIAPHelper sharedInstance] buyProduct:[_products firstObject]];
 
         }
+    } else {
+        
+        [self.activityIndicator stopAnimating];
+        self.unlockButton.hidden = NO;
+        self.upArrow.hidden = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableInteraction"
+                                                            object:self];
     }
+
+}
+
+- (void)unlockTypendiumNotification:(NSNotification *) notification {
+    
+    [self.activityIndicator stopAnimating];
+    self.unlockButton.hidden = NO;
+    self.upArrow.hidden = NO;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableInteraction"
+                                                        object:self];
+    [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
 }
 
 @end

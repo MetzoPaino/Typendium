@@ -25,6 +25,7 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockTypendium"
                                                             object:self];
+        NSLog(@"TYPENDIUM IS UNLOCKED");
     }
     return self;
 }

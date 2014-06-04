@@ -154,13 +154,6 @@
                                     <constraint firstAttribute="height" constant="284" id="p0a-KF-fIb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-Iw-AyN" userLabel="lbl_swipe">
-                                <rect key="frame" x="20" y="494" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCG-Ax-RX1" userLabel="btn_upArrow">
                                 <rect key="frame" x="138" y="534" width="44" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -195,6 +188,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-Iw-AyN" userLabel="lbl_swipe">
+                                <rect key="frame" x="20" y="494" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VMV-1K-Iis"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yi-jI-bXG" userLabel="btn_settings">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -213,19 +216,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oCG-Ax-RX1" firstAttribute="top" secondItem="M7F-Iw-AyN" secondAttribute="bottom" constant="19" id="0Tj-5m-62c"/>
-                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" constant="20" symbolic="YES" id="1hP-gN-2xT"/>
                             <constraint firstItem="HcZ-te-bAc" firstAttribute="top" secondItem="oCG-Ax-RX1" secondAttribute="bottom" constant="19" id="2CN-NH-S7o"/>
-                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="rku-hK-qYm" secondAttribute="centerX" id="52h-zI-6AB"/>
+                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="oCG-Ax-RX1" secondAttribute="centerX" id="4dF-pb-rMz"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="89a-Ak-qeC"/>
                             <constraint firstItem="Xip-2S-z0D" firstAttribute="top" secondItem="nXJ-Ow-xaQ" secondAttribute="top" id="Al0-2h-P8I"/>
+                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="rku-hK-qYm" secondAttribute="centerX" id="Dmv-6d-2OF"/>
+                            <constraint firstItem="oCG-Ax-RX1" firstAttribute="top" secondItem="M7F-Iw-AyN" secondAttribute="bottom" constant="19" id="Dsl-Iy-OX3"/>
+                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" constant="20" symbolic="YES" id="FpL-Cp-Oyc"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="rku-hK-qYm" secondAttribute="leading" id="HXh-ft-urp"/>
                             <constraint firstItem="9Yi-jI-bXG" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="Imh-WY-zmK"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="Xip-2S-z0D" secondAttribute="leading" id="T7R-3d-brt"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" id="VRN-Uo-15x"/>
                             <constraint firstItem="ghj-q4-QsB" firstAttribute="trailing" secondItem="nXJ-Ow-xaQ" secondAttribute="trailing" id="ab8-Nx-tY5"/>
                             <constraint firstItem="rku-hK-qYm" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" constant="-284" id="cuZ-kc-QZ3"/>
-                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="oCG-Ax-RX1" secondAttribute="centerX" id="f1P-tI-aGl"/>
                             <constraint firstItem="ghj-q4-QsB" firstAttribute="baseline" secondItem="9Yi-jI-bXG" secondAttribute="baseline" id="p3k-zM-hoG"/>
                             <constraint firstItem="9Yi-jI-bXG" firstAttribute="bottom" secondItem="ghj-q4-QsB" secondAttribute="bottom" id="qV1-My-Oha"/>
                             <constraint firstItem="rku-hK-qYm" firstAttribute="trailing" secondItem="ghj-q4-QsB" secondAttribute="trailing" id="rrS-zx-CVM"/>
@@ -545,8 +548,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By purchasing Typendium you will gain access to all locked content, as well as any content released in the future." lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="FRf-jk-drx">
-                                <rect key="frame" x="20" y="200" width="280" height="180"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By purchasing Typendium you will gain access to all locked content, as well as any content released in the future." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="FRf-jk-drx">
+                                <rect key="frame" x="20" y="207" width="280" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -563,6 +566,10 @@
                                     <action selector="unlockTypendium:" destination="4bF-wT-jtj" eventType="touchUpInside" id="89H-me-038"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="XPw-HS-kbA">
+                                <rect key="frame" x="150" y="381" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.20392157137393951" green="0.20392157137393951" blue="0.20392157137393951" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -571,7 +578,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="XPw-HS-kbA" id="2xb-G5-bh3"/>
                         <outlet property="unlockButton" destination="3pn-El-4nG" id="vCR-td-UJU"/>
+                        <outlet property="upArrow" destination="cGZ-9a-Uwa" id="DYq-yd-OYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WI-JC-mqh" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -29,6 +29,8 @@
 
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 
+@property (nonatomic) BOOL allowInteraction;
+
 @end
 
 @implementation MainViewController {
@@ -79,6 +81,9 @@
     
     [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfInfoText" object:nil];
     [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfInfoText" object:nil];
+
+    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"EnableInteraction" object:nil];
+    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"DisableInteraction" object:nil];
 
 }
 
@@ -172,6 +177,19 @@
     }
 }
 
+- (void)toggleInteraction:(NSNotification *) notification {
+    
+    if ([notification.name isEqualToString:@"EnableInteraction"]) {
+        
+        self.allowInteraction = YES;
+    }
+    
+    if ([notification.name isEqualToString:@"DisableInteraction"]) {
+        
+        self.allowInteraction = NO;
+    }
+}
+
 #pragma mark - Gesture Recognizer Delegates
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
@@ -187,182 +205,208 @@
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer {
     
     NSString *gestureContext;
-
-    if (!_hasParallaxStarted) {
+    
+    if (self.allowInteraction) {
         
-        if ([_string_currentSection isEqualToString:@"Intro"]) {
+        if (!_hasParallaxStarted) {
             
-            _currentView = self.con_intro;
-            _higherView = nil;
-            _lowerView = self.con_menu;
-        }
-        
-        if ([_string_currentSection isEqualToString:@"Menu"]) {
+            if ([_string_currentSection isEqualToString:@"Intro"]) {
+                
+                _currentView = self.con_intro;
+                _higherView = nil;
+                _lowerView = self.con_menu;
+            }
             
-            _currentView = self.con_menu;
-            _higherView = self.con_intro;
+            if ([_string_currentSection isEqualToString:@"Menu"]) {
+                
+                _currentView = self.con_menu;
+                _higherView = self.con_intro;
+                
+                if ([_string_currentPage isEqualToString:@"History"]) {
+                    
+                    self.con_history.hidden = NO;
+                    self.con_text.hidden = NO;
+                    
+                    self.con_info.hidden = YES;
+                    self.con_infoText.hidden = YES;
+                    
+                    _lowerView = self.con_history;
+                    
+                } else {
+                    
+                    self.con_history.hidden = YES;
+                    self.con_text.hidden = YES;
+                    
+                    self.con_info.hidden = NO;
+                    self.con_infoText.hidden = NO;
+                    
+                    _lowerView = self.con_info;
+                }
+            }
             
-            if ([_string_currentPage isEqualToString:@"History"]) {
+            if ([_string_currentSection isEqualToString:@"History"]) {
                 
-                self.con_history.hidden = NO;
-                self.con_text.hidden = NO;
+                if (!_hasConstructedText &&
+                    ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+                    
+                    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
+                        
+                        [self postTextToConstruct];
+                        
+                    } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
+                               ![_string_currentPage isEqualToString:@"Palatino"] &&
+                               ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
+                        
+                        [self postTextToConstruct];
+                    }
+                }
                 
-                self.con_info.hidden = YES;
-                self.con_infoText.hidden = YES;
+                _currentView = self.con_history;
+                _higherView = self.con_menu;
+                _lowerView = self.con_text;
                 
-                _lowerView = self.con_history;
+            }
+            
+            if  ([_string_currentSection isEqualToString:@"Text"]){
                 
-            } else {
+                _currentView = self.con_text;
+                _higherView = self.con_history;
+                _lowerView = nil;
                 
-                self.con_history.hidden = YES;
-                self.con_text.hidden = YES;
+            }
+            
+            if ([_string_currentSection isEqualToString:@"Info"]) {
                 
-                self.con_info.hidden = NO;
-                self.con_infoText.hidden = NO;
+                if (!_hasConstructedInfoText &&
+                    ![_string_currentPage isEqualToString:@"ContactUs"] &&
+                    ![_string_currentPage isEqualToString:@"Review"]) {
+                    
+                    [self postInfoTextToConstruct];
+                }
                 
-                _lowerView = self.con_info;
+                _currentView = self.con_info;
+                _higherView = self.con_menu;
+                _lowerView = self.con_infoText;
+                
+                
+            }
+            
+            if  ([_string_currentSection isEqualToString:@"InfoText"]){
+                
+                _currentView = self.con_infoText;
+                _higherView = self.con_info;
+                _lowerView = nil;
+                
+            }
+            
+            if  ([_string_currentSection isEqualToString:@"Tutorial"]){
+                
+                _currentView = self.con_tutorial;
+                _higherView = nil;
+                _lowerView = self.con_intro;
+                
+            }
+            
+            if  ([_string_currentSection isEqualToString:@"Unlock"]){
+                
+                _currentView = self.con_unlock;
+                _higherView = nil;
+                _lowerView = _viewUnderUnlock;
+                
             }
         }
         
-        if ([_string_currentSection isEqualToString:@"History"]) {
+        CGPoint panGestureTranslation = [panGestureRecognizer translationInView:self.view];
+        float parallaxCoefficient = ViewOffset / self.view.frame.size.height;
+        
+        if (_hasParallaxStarted == NO) {
             
-            if (!_hasConstructedText &&
-                ![_string_currentPage isEqualToString:@"ComingSoon"]) {
+            _hasParallaxStarted = YES;
+            _currentViewYPosition = _currentView.center.y;
+            _higherViewYPosition = _higherView.center.y;
+            _lowerViewYPosition = _lowerView.center.y;
+            _currentView.layer.shadowOpacity = 0.3f;
+            
+        }
+        
+        if (panGestureTranslation.y <= 0.0) {
+            
+            _currentView.layer.shadowOpacity = 0.3f;
+            
+            gestureContext = @"Moving Current View Up";
+            
+            if (![_currentView isEqual: self.con_text] &&
+                ![_currentView isEqual: self.con_infoText] &&
+                ![_string_currentPage isEqualToString:@"ComingSoon"] &&
+                ![_string_currentPage isEqualToString:@"ContactUs"] &&
+                ![_string_currentPage isEqualToString:@"Review"]) {
                 
                 if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
                     
-                    [self postTextToConstruct];
+                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
                     
                 } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
                            ![_string_currentPage isEqualToString:@"Palatino"] &&
                            ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
                     
-                    [self postTextToConstruct];
+                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
                 }
+                
+                
+                
             }
             
-            _currentView = self.con_history;
-            _higherView = self.con_menu;
-            _lowerView = self.con_text;
+            _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition);
             
-        }
-        
-        if  ([_string_currentSection isEqualToString:@"Text"]){
+            // Check the text view, when moving up and down fast the history page can get stuck
             
-            _currentView = self.con_text;
-            _higherView = self.con_history;
-            _lowerView = nil;
+        } else {
             
-        }
-        
-        if ([_string_currentSection isEqualToString:@"Info"]) {
+            _higherView.layer.shadowOpacity = 0.3f;
             
-            if (!_hasConstructedInfoText &&
-                ![_string_currentPage isEqualToString:@"ContactUs"] &&
-                ![_string_currentPage isEqualToString:@"Review"]) {
+            gestureContext = @"Moving Current View Down";
+            
+            if ([_currentView isEqual: self.con_intro] ||
+                [_currentView isEqual: self.con_tutorial] ||
+                [_currentView isEqual: self.con_unlock]) {
                 
-                [self postInfoTextToConstruct];
+                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition);
+                
             }
             
-            _currentView = self.con_info;
-            _higherView = self.con_menu;
-            _lowerView = self.con_infoText;
-            
-            
-        }
-        
-        if  ([_string_currentSection isEqualToString:@"InfoText"]){
-            
-            _currentView = self.con_infoText;
-            _higherView = self.con_info;
-            _lowerView = nil;
-            
-        }
-       
-        if  ([_string_currentSection isEqualToString:@"Tutorial"]){
-            
-            _currentView = self.con_tutorial;
-            _higherView = nil;
-            _lowerView = self.con_intro;
-            
-        }
-        
-        if  ([_string_currentSection isEqualToString:@"Unlock"]){
-            
-            _currentView = self.con_unlock;
-            _higherView = nil;
-            _lowerView = _viewUnderUnlock;
-            
-        }
-    }
-    
-    CGPoint panGestureTranslation = [panGestureRecognizer translationInView:self.view];
-    float parallaxCoefficient = ViewOffset / self.view.frame.size.height;
-
-    if (_hasParallaxStarted == NO) {
-        
-        _hasParallaxStarted = YES;
-        _currentViewYPosition = _currentView.center.y;
-        _higherViewYPosition = _higherView.center.y;
-        _lowerViewYPosition = _lowerView.center.y;
-        _currentView.layer.shadowOpacity = 0.3f;
-
-    }
-    
-    if (panGestureTranslation.y <= 0.0) {
-        
-        _currentView.layer.shadowOpacity = 0.3f;
-        
-       gestureContext = @"Moving Current View Up";
-        
-        if (![_currentView isEqual: self.con_text] &&
-            ![_currentView isEqual: self.con_infoText] &&
-            ![_string_currentPage isEqualToString:@"ComingSoon"] &&
-            ![_string_currentPage isEqualToString:@"ContactUs"] &&
-            ![_string_currentPage isEqualToString:@"Review"]) {
-            
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
+            if (![_currentView isEqual: self.con_intro] &&
+                ![_currentView isEqual: self.con_tutorial] &&
+                ![_currentView isEqual: self.con_unlock]) {
                 
-                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-                _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                
-            } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
-                       ![_string_currentPage isEqualToString:@"Palatino"] &&
-                       ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-                
-                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-                _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-            }
-
-
-            
-        }
-        
-        _higherView.center = CGPointMake(_higherView.center.x, _higherViewYPosition);
-        
-        // Check the text view, when moving up and down fast the history page can get stuck
-        
-    } else {
-        
-        _higherView.layer.shadowOpacity = 0.3f;
-        
-        gestureContext = @"Moving Current View Down";
-        
-        if ([_currentView isEqual: self.con_intro] ||
-            [_currentView isEqual: self.con_tutorial] ||
-            [_currentView isEqual: self.con_unlock]) {
-            
-            _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition);
-
-        }
-        
-        if (![_currentView isEqual: self.con_intro] &&
-            ![_currentView isEqual: self.con_tutorial] &&
-            ![_currentView isEqual: self.con_unlock]) {
-            
-            if ([_currentView isEqual: self.con_text]) {
-                
-                if (_isTextContainerAtTop) {
+                if ([_currentView isEqual: self.con_text]) {
+                    
+                    if (_isTextContainerAtTop) {
+                        
+                        _higherView.center = CGPointMake(_higherView.center.x,
+                                                         _higherViewYPosition + panGestureTranslation.y);
+                        _currentView.center = CGPointMake(_currentView.center.x,
+                                                          _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                        _lowerView.center = CGPointMake(_lowerView.center.x,
+                                                        _lowerViewYPosition);
+                        
+                    }
+                    
+                } else if ([_currentView isEqual:self.con_infoText]) {
+                    
+                    if (_isInfoTextContainerAtTop) {
+                        
+                        _higherView.center = CGPointMake(_higherView.center.x,
+                                                         _higherViewYPosition + panGestureTranslation.y);
+                        _currentView.center = CGPointMake(_currentView.center.x,
+                                                          _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                        _lowerView.center = CGPointMake(_lowerView.center.x,
+                                                        _lowerViewYPosition);
+                        
+                    }
+                    
+                } else {
                     
                     _higherView.center = CGPointMake(_higherView.center.x,
                                                      _higherViewYPosition + panGestureTranslation.y);
@@ -370,62 +414,41 @@
                                                       _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
                     _lowerView.center = CGPointMake(_lowerView.center.x,
                                                     _lowerViewYPosition);
-                    
-                }
-            
-            } else if ([_currentView isEqual:self.con_infoText]) {
-                
-                if (_isInfoTextContainerAtTop) {
-                    
-                    _higherView.center = CGPointMake(_higherView.center.x,
-                                                     _higherViewYPosition + panGestureTranslation.y);
-                    _currentView.center = CGPointMake(_currentView.center.x,
-                                                      _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                    _lowerView.center = CGPointMake(_lowerView.center.x,
-                                                    _lowerViewYPosition);
-                    
                 }
                 
             } else {
                 
-                _higherView.center = CGPointMake(_higherView.center.x,
-                                                 _higherViewYPosition + panGestureTranslation.y);
-                _currentView.center = CGPointMake(_currentView.center.x,
-                                                  _currentViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                _lowerView.center = CGPointMake(_lowerView.center.x,
-                                                _lowerViewYPosition);
+                gestureContext = @"Don't Move";
             }
-            
-        } else {
-            
-            gestureContext = @"Don't Move";
         }
-    }
-    
-    //Should have a check because can happen if you gesture on a page that shouldn't move'
-    
-    if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
         
-        if ([_currentView isEqual:self.con_text]) {
+        //Should have a check because can happen if you gesture on a page that shouldn't move'
+        
+        if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
             
-            if (_isTextContainerAtTop) {
-                [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
-
-            }
-            
-        } else if ([_currentView isEqual:self.con_infoText]) {
-            
-            if (_isInfoTextContainerAtTop) {
+            if ([_currentView isEqual:self.con_text]) {
+                
+                if (_isTextContainerAtTop) {
+                    [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
+                    
+                }
+                
+            } else if ([_currentView isEqual:self.con_infoText]) {
+                
+                if (_isInfoTextContainerAtTop) {
+                    
+                    [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
+                }
+                
+            } else {
                 
                 [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
+                
             }
-            
-        } else {
-            
-            [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
-
         }
     }
+
+
 }
 
 #pragma mark - Parallax To Location

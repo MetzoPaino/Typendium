@@ -91,10 +91,11 @@
             float y =  self.pageControl.center.y - self.view.center.y;
             
             
-            UIButton *suggestATypeface = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            UIButton *suggestATypeface = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             suggestATypeface.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
             
-            [suggestATypeface setTitle:@"Suggest a typeface" forState:UIControlStateNormal];
+            suggestATypeface.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
+            [suggestATypeface setTitle:@"Suggest A Typeface" forState:UIControlStateNormal];
             [suggestATypeface setTitleColor:[UIColor comingSoonColor] forState:UIControlStateNormal];
             
             suggestATypeface.layer.borderWidth = 1.0f;
@@ -122,9 +123,6 @@
 
             UIButton *unlockTypendium = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             unlockTypendium.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
-            
-            NSLog(@"%f", unlockTypendium.center.y);
-            
             unlockTypendium.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
 
             [unlockTypendium setTitle:@"Unlock Typendium" forState:UIControlStateNormal];

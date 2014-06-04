@@ -81,14 +81,15 @@
             
             float y =  self.pageControl.center.y - self.view.center.y;
             
-            UIButton *contactUs = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            UIButton *contactUs = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             contactUs.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
             
+            contactUs.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
             [contactUs setTitle:@"Contact Us" forState:UIControlStateNormal];
             [contactUs setTitleColor:[UIColor contactUsColor] forState:UIControlStateNormal];
             
             contactUs.layer.borderWidth = 1.0f;
-            contactUs.layer.borderColor = [UIColor comingSoonColor].CGColor;
+            contactUs.layer.borderColor = [UIColor contactUsColor].CGColor;
             contactUs.layer.cornerRadius = 18.0f;
             
             [contactUs addTarget:self action:@selector(contactUs:) forControlEvents:UIControlEventTouchUpInside];
@@ -99,14 +100,17 @@
             
             float y =  self.pageControl.center.y - self.view.center.y;
             
-            UIButton *review = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 180, 35)];
+            UIButton *review = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             review.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
             
+            review.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
             [review setTitle:@"Review Typendium" forState:UIControlStateNormal];
-            [review setTitleColor:[UIColor contactUsColor] forState:UIControlStateNormal];
+            
+    
+            [review setTitleColor:[UIColor reviewColor] forState:UIControlStateNormal];
             
             review.layer.borderWidth = 1.0f;
-            review.layer.borderColor = [UIColor comingSoonColor].CGColor;
+            review.layer.borderColor = [UIColor reviewColor].CGColor;
             review.layer.cornerRadius = 18.0f;
             
             [review addTarget:self action:@selector(review:) forControlEvents:UIControlEventTouchUpInside];

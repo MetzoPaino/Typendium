@@ -54,7 +54,7 @@
 
     [self introAnimation];
     
-    _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:nil];
+    _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:NO];
 }
 
 
@@ -84,7 +84,7 @@
                                           }
                                           completion:^(BOOL finished) {
                                               
-                                              _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:nil];
+                                              _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:NO];
                                               
                                           }];
                      }];
@@ -128,8 +128,9 @@
                                   }];
                                   
                               } completion:^(BOOL complete) {
-                                  
-                                  NSLog(@"%f", self.btn_upArrow.center.y);
+
+                                  [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableInteraction"
+                                                                                      object:self];
                               }];
     
     
