@@ -228,6 +228,56 @@
 				<key>Film</key>
 				<string>FILM</string>
 			</dict>
+			<key>Websites</key>
+			<array>
+				<string>100besttypefaces.com</string>
+				<string>abeautifulbook.wordpress.com</string>
+				<string>aiga.org</string>
+				<string>artlebedev.com</string>
+				<string>bbc.co.uk</string>
+				<string>beatwicki.wordpress.com</string>
+				<string>blog.8faces.com</string>
+				<string>braicantype2.wordpress.com</string>
+				<string>creativepro.com</string>
+				<string>davidquaydesign.com</string>
+				<string>designmodo.com</string>
+				<string>eyemagazine.com</string>
+				<string>fontbureau.com</string>
+				<string>fontfeed.com</string>
+				<string>fonts.com</string>
+				<string>fontshop.com</string>
+				<string>founders.archives.gov</string>
+				<string>galegroup.com</string>
+				<string>hyphenpress.co.uk</string>
+				<string>idsgn.org</string>
+				<string>ilovetypography.com</string>
+				<string>joeratterman.blogspot.co.uk</string>
+				<string>jquarter.org.uk</string>
+				<string>katesutphen.blogspot.co.uk</string>
+				<string>linotype.com</string>
+				<string>markboulton.co.uk</string>
+				<string>marksimonson.com</string>
+				<string>monotype.com</string>
+				<string>multimediaman.wordpress.com</string>
+				<string>museumwales.ac.uk</string>
+				<string>myfonts.com</string>
+				<string>nytimes.com</string>
+				<string>opentype.info</string>
+				<string>palomar.edu</string>
+				<string>paulshawletterdesign.com</string>
+				<string>practicaltypography.com</string>
+				<string>squidoo.com</string>
+				<string>stoneletters.wordpress.com</string>
+				<string>typeoff.de</string>
+				<string>typewritingblog.wordpress.com</string>
+				<string>typographica.org</string>
+				<string>typographydeconstructed.com</string>
+				<string>typophile.com</string>
+				<string>typotheque.com</string>
+				<string>visualaddicted.wordpress.com</string>
+				<string>yingriguan.com</string>
+				<string>zosie.com</string>
+			</array>
 		</dict>
 		<key>AboutUs</key>
 		<dict>

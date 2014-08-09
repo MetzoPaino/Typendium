@@ -175,6 +175,114 @@
         Reference *referenceFilm3;
         referenceFilm3 = [self configureReference:referenceFilm3 :@"Linotype"];
         
+        Section *websitesSection;
+        websitesSection = [self configureSection:websitesSection :@"Websites"];
+        websitesSection.backgroundColor = [UIColor referencesColor];
+        
+        Reference *referenceWebsite1;
+        Reference *referenceWebsite2;
+        Reference *referenceWebsite3;
+        Reference *referenceWebsite4;
+        Reference *referenceWebsite5;
+        Reference *referenceWebsite6;
+        Reference *referenceWebsite7;
+        Reference *referenceWebsite8;
+        Reference *referenceWebsite9;
+        Reference *referenceWebsite10;
+        Reference *referenceWebsite11;
+        Reference *referenceWebsite12;
+        Reference *referenceWebsite13;
+        Reference *referenceWebsite14;
+        Reference *referenceWebsite15;
+        Reference *referenceWebsite16;
+        Reference *referenceWebsite17;
+        Reference *referenceWebsite18;
+        Reference *referenceWebsite19;
+        Reference *referenceWebsite20;
+        Reference *referenceWebsite21;
+        Reference *referenceWebsite22;
+        Reference *referenceWebsite23;
+        Reference *referenceWebsite24;
+        Reference *referenceWebsite25;
+        Reference *referenceWebsite26;
+        Reference *referenceWebsite27;
+        Reference *referenceWebsite28;
+        Reference *referenceWebsite29;
+        Reference *referenceWebsite30;
+        Reference *referenceWebsite31;
+        Reference *referenceWebsite32;
+        Reference *referenceWebsite33;
+        Reference *referenceWebsite34;
+        Reference *referenceWebsite35;
+        Reference *referenceWebsite36;
+        Reference *referenceWebsite37;
+        Reference *referenceWebsite38;
+        Reference *referenceWebsite39;
+        Reference *referenceWebsite40;
+        Reference *referenceWebsite41;
+        Reference *referenceWebsite42;
+        Reference *referenceWebsite43;
+        Reference *referenceWebsite44;
+        Reference *referenceWebsite45;
+        Reference *referenceWebsite46;
+        Reference *referenceWebsite47;
+        
+//        NSArray *referenceWebsites = @[referenceWebsite1,
+//                                       referenceWebsite2,
+//                                       referenceWebsite3,
+//                                       referenceWebsite4,
+//                                       referenceWebsite5,
+//                                       referenceWebsite6,
+//                                       referenceWebsite7,
+//                                       referenceWebsite8,
+//                                       referenceWebsite9,
+//                                       referenceWebsite10,
+//                                       referenceWebsite11,
+//                                       referenceWebsite12,
+//                                       referenceWebsite13,
+//                                       referenceWebsite14,
+//                                       referenceWebsite15,
+//                                       referenceWebsite16,
+//                                       referenceWebsite17,
+//                                       referenceWebsite18,
+//                                       referenceWebsite19,
+//                                       referenceWebsite20,
+//                                       referenceWebsite21,
+//                                       referenceWebsite22,
+//                                       referenceWebsite23,
+//                                       referenceWebsite24,
+//                                       referenceWebsite25,
+//                                       referenceWebsite26,
+//                                       referenceWebsite27,
+//                                       referenceWebsite28,
+//                                       referenceWebsite29,
+//                                       referenceWebsite30,
+//                                       referenceWebsite31,
+//                                       referenceWebsite32,
+//                                       referenceWebsite33,
+//                                       referenceWebsite34,
+//                                       referenceWebsite35,
+//                                       referenceWebsite36,
+//                                       referenceWebsite37,
+//                                       referenceWebsite38,
+//                                       referenceWebsite39,
+//                                       referenceWebsite40,
+//                                       referenceWebsite41,
+//                                       referenceWebsite42,
+//                                       referenceWebsite43,
+//                                       referenceWebsite44,
+//                                       referenceWebsite45,
+//                                       referenceWebsite46,
+//                                       referenceWebsite47,
+//                                       ];
+        
+//        NSArray *websites = [NSArray arrayWithArray:[_typendiumInfoText objectForKey:@"Websites"]];
+        
+//        for (Reference *website in referenceWebsites) {
+//            <#statements#>
+//        }
+        
+        
         _arr_references = @[title,
                             section1,
                             reference1,
@@ -184,7 +292,8 @@
                             section2,
                             referenceFilm1,
                             referenceFilm2,
-                            referenceFilm3];
+                            referenceFilm3,
+];
     }
     
     return _arr_references;
