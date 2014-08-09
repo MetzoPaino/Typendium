@@ -50,12 +50,64 @@
     NSArray *xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
     paragraph = [xib_paragraph objectAtIndex:0];
     
-    paragraph.txt_paragraph.text = [_typendiumText objectForKey:key];
+    NSMutableString *text = [_typendiumText objectForKey:key];
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
+    UIFont *avenierBook =[UIFont fontWithName:@"Avenir-Book" size:20.0f];
+    [attributedText addAttribute:NSFontAttributeName value:avenierBook range:NSMakeRange(0, attributedText.length)];
+    
+    NSString *italicStart = @"<italic>";
+
+    NSRange range1 = [text rangeOfString:italicStart];
+    
+    // If range is 0 then there is no need for italics
+    if (range1.length) {
+        
+        [self addItalicsTo:attributedText withInitialRange:range1 usingGenericText:text];
+
+    }
+
+    paragraph.txt_paragraph.attributedText = attributedText;
+    
     [paragraph.txt_paragraph sizeToFit];
     frame =  paragraph.txt_paragraph.frame;
     paragraph.frame = frame;
     
     return paragraph;
+}
+
+- (NSMutableAttributedString *)addItalicsTo: (NSMutableAttributedString *)attributedText withInitialRange: (NSRange)range1 usingGenericText: (NSMutableString *) text {
+    
+    NSString *italicStart = @"<italic>";
+    NSString *italicEnd = @"</italic>";
+    
+    // Create a string from the end of <italic>
+    NSString *substring1 = [text substringFromIndex:NSMaxRange(range1)];
+    
+    // Get the range of </italic> from the whole text so that it can be removed
+    NSRange range2 = [text rangeOfString:italicEnd];
+    
+    // Use the substring to get the range up to </italic> so that we know how much to italicise
+    NSRange range3 = [substring1 rangeOfString:italicEnd];
+    
+    // Now we have the ranges, remove the instances of <italics> & </italics>
+    [[attributedText mutableString] replaceOccurrencesOfString:italicEnd withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(range2.location, range2.length)];
+    [[attributedText mutableString] replaceOccurrencesOfString:italicStart withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(range1.location, range1.length)];
+    
+    // Add the italics attribute from the first character after <italics> to the last character before </italics>
+    UIFont *avenirBookOblique = [UIFont fontWithName:@"Avenir-BookOblique" size:20.0f];
+    [attributedText addAttribute:NSFontAttributeName value:avenirBookOblique range:NSMakeRange(range1.location, range3.location)];
+    
+    text = [NSMutableString stringWithString:[attributedText string]];
+    
+    range1 = [text rangeOfString:italicStart];
+    
+    if (range1.length) {
+        
+        [self addItalicsTo:attributedText withInitialRange:range1 usingGenericText:text];
+
+    }
+
+    return attributedText;
 }
 
 - (Caption *)configureCaption :(Caption *)caption :(NSString *)key {
@@ -64,7 +116,7 @@
     NSArray *xib_caption = [[NSBundle mainBundle] loadNibNamed:@"Caption" owner:self options:nil];
     
     caption = [xib_caption objectAtIndex:0];
-    caption.lbl_caption.text = [_typendiumText objectForKey:@"Caption1"];
+    caption.lbl_caption.text = [_typendiumText objectForKey:key];
     [caption.lbl_caption sizeToFit];
     frame = caption.lbl_caption.frame;
     caption.frame = frame;
@@ -130,6 +182,32 @@
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
+        Paragraph *paragraph6;
+        paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
+        
+        Paragraph *paragraph7;
+        paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
+        
+        Paragraph *paragraph8;
+        paragraph8 = [self configureParagraph:paragraph8 :@"Paragraph8"];
+        
+        Paragraph *paragraph9;
+        paragraph9 = [self configureParagraph:paragraph9 :@"Paragraph9"];
+        
+        Paragraph *paragraph10;
+        paragraph10 = [self configureParagraph:paragraph10 :@"Paragraph10"];
+        
+        Paragraph *paragraph11;
+        paragraph11 = [self configureParagraph:paragraph11 :@"Paragraph11"];
+        
+        Paragraph *paragraph12;
+        paragraph12 = [self configureParagraph:paragraph12 :@"Paragraph12"];
+        
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BaskervilleSpecimen"]];
+        [specimen addSubview:image];
+        specimen.restorationIdentifier = @"Specimen";
+
         _arr_baskerville = @[title,
                              paragraph1,
                              image1,
@@ -138,7 +216,15 @@
                              paragraph3,
                              paragraph4,
                              quote1,
-                             paragraph5];
+                             paragraph5,
+                             paragraph6,
+                             paragraph7,
+                             paragraph8,
+                             paragraph9,
+                             paragraph10,
+                             paragraph11,
+                             paragraph12,
+                             specimen];
     }
     
     return _arr_baskerville;
@@ -176,12 +262,35 @@
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
+        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 64)];
+        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
+        [image2 addSubview:imageView2];
+        image2.restorationIdentifier = @"FuturaOld";
+        
+        Caption *caption2;
+        caption2 = [self configureCaption:caption2 :@"Caption2"];
+        
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
+        
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 89)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
+        [image3 addSubview:imageView3];
+        
+        Caption *caption3;
+        caption3 = [self configureCaption:caption3 :@"Caption3"];
         
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
+        Paragraph *paragraph7;
+        paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
+        
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
+        [specimen addSubview:image];
+        specimen.restorationIdentifier = @"Specimen";
+
         _arr_futura = @[title,
                         paragraph1,
                         quote1,
@@ -190,8 +299,14 @@
                         image1,
                         caption1,
                         paragraph4,
+                        image2,
+                        caption2,
                         paragraph5,
-                        paragraph6];
+                        image3,
+                        caption3,
+                        paragraph6,
+                        paragraph7,
+                        specimen];
     }
     
     return _arr_futura;
@@ -203,12 +318,74 @@
     
     if (!_arr_gillSans) {
         
-        NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+        [self typendiumText:@"Gill Sans"];
         
-        Title *title = [xib_title objectAtIndex:0];
-        title.img_title.image = [UIImage imageNamed:@"GillSansHeader"];
+        Title *title;
+        title = [self configureTitle:title :@"GillSansHeader"];
         
-        _arr_gillSans = [[NSArray alloc] initWithObjects: title, nil];
+        Paragraph *paragraph1;
+        paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
+        
+        Paragraph *paragraph2;
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
+        
+        Image *image1;
+        image1 = [self configureImage:image1 :@"EricGill"];
+        
+        Caption *caption1;
+        caption1 = [self configureCaption:caption1 :@"Caption1"];
+        
+        Paragraph *paragraph3;
+        paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
+        
+        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 266)];
+        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel"]];
+        [image2 addSubview:imageView2];
+        
+        Caption *caption2;
+        caption2= [self configureCaption:caption2 :@"Caption2"];
+        
+        Paragraph *paragraph4;
+        paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
+        
+        Paragraph *paragraph5;
+        paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
+        
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 218)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
+        [image3 addSubview:imageView3];
+        
+        Paragraph *paragraph6;
+        paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
+        
+        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 195)];
+        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
+        [image4 addSubview:imageView4];
+
+        
+        Paragraph *paragraph7;
+        paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
+        
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
+        [specimen addSubview:image];
+        specimen.restorationIdentifier = @"Specimen";
+
+        _arr_gillSans = @[title,
+                          paragraph1,
+                          paragraph2,
+                          image1,
+                          caption1,
+                          paragraph3,
+                          image2,
+                          caption2,
+                          paragraph4,
+                          paragraph5,
+                          image3,
+                          paragraph6,
+                          image4,
+                          paragraph7,
+                          specimen];
     }
     
     return _arr_gillSans;
@@ -249,19 +426,52 @@
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
+        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 180)];
+        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter"]];
+        [image2 addSubview:imageView2];
+        
+        Caption *caption2;
+        caption2 = [self configureCaption:caption2 :@"Caption2"];
+        
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 88)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang"]];
+        [image3 addSubview:imageView3];
+        
+        Caption *caption3;
+        caption3 = [self configureCaption:caption3 :@"Caption3"];
+        
+        Paragraph *paragraph7;
+        paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
+        
+        Paragraph *paragraph8;
+        paragraph8 = [self configureParagraph:paragraph8 :@"Paragraph8"];
+        
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
+        [specimen addSubview:image];
+        specimen.restorationIdentifier = @"Specimen";
+
         _arr_palatino = @[title,
-                        paragraph1,
-                        paragraph2,
-                        image1,
-                        caption1,
-                        paragraph3,
-                        quote1,
-                        paragraph4,
-                        paragraph5,
-                        paragraph6];    }
+                          paragraph1,
+                          paragraph2,
+                          image1,
+                          caption1,
+                          paragraph3,
+                          quote1,
+                          paragraph4,
+                          paragraph5,
+                          image2,
+                          caption2,
+                          paragraph6,
+                          image3,
+                          caption3,
+                          paragraph7,
+                          paragraph8,
+                          specimen];
+    }
     
     return _arr_palatino;
 }
@@ -301,6 +511,28 @@
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
+        Paragraph *paragraph6;
+        paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
+        
+        Paragraph *paragraph7;
+        paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
+        
+        Paragraph *paragraph8;
+        paragraph8 = [self configureParagraph:paragraph8 :@"Paragraph8"];
+        
+        Paragraph *paragraph9;
+        paragraph9 = [self configureParagraph:paragraph9 :@"Paragraph9"];
+        
+        Paragraph *paragraph10;
+        paragraph10 = [self configureParagraph:paragraph10 :@"Paragraph10"];
+        
+        Paragraph *paragraph11;
+        paragraph11 = [self configureParagraph:paragraph11 :@"Paragraph11"];
+        
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
+        [specimen addSubview:image];
+        specimen.restorationIdentifier = @"Specimen";
         _arr_timesNewRoman = @[title,
                                paragraph1,
                                paragraph2,
@@ -309,7 +541,14 @@
                                caption1,
                                paragraph4,
                                quote1,
-                               paragraph5];
+                               paragraph5,
+                               paragraph6,
+                               paragraph7,
+                               paragraph8,
+                               paragraph9,
+                               paragraph10,
+                               paragraph11,
+                               specimen];
     }
     
     return _arr_timesNewRoman;

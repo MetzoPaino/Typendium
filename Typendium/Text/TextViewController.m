@@ -114,7 +114,7 @@
         if (viewSection.tag == 1) {
             
         } else {
-            
+        
             yPosition += 20;
             
         }
@@ -137,7 +137,7 @@
     [upArrow setBackgroundImage:[UIImage imageNamed:_string_upArrow] forState:UIControlStateNormal];
     [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
     
-    yPosition += upArrow.frame.size.height * 1.5;
+    yPosition += upArrow.frame.size.height * 1;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width,
                                              yPosition);
     upArrow.center = CGPointMake(self.view.center.x,
