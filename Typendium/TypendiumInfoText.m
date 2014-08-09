@@ -163,16 +163,61 @@
         section1.backgroundColor = [UIColor referencesColor];
 
         Reference *reference1;
-        reference1 = [self configureReference:reference1 :@"26Letters"];
+        reference1 = [self configureReference:reference1 :@"FirstPrinciples"];
         
         Reference *reference2;
-        reference2 = [self configureReference:reference2 :@"AnatomyOfATypeface"];
+        reference2 = [self configureReference:reference2 :@"CrystalGoblet"];
 
         Reference *reference3;
-        reference3 = [self configureReference:reference3 :@"TypographyReferenced"];
+        reference3 = [self configureReference:reference3 :@"BasicTypography"];
         
         Reference *reference4;
-        reference4 = [self configureReference:reference4 :@"TheElementsOfTypographicStyle"];
+        reference4 = [self configureReference:reference4 :@"TallyOfTypes"];
+        
+        Reference *reference5;
+        reference5 = [self configureReference:reference5 :@"26Letters"];
+        
+        Reference *reference6;
+        reference6 = [self configureReference:reference6 :@"EricGill"];
+        
+        Reference *reference7;
+        reference7 = [self configureReference:reference7 :@"AnatomyOfATypeface"];
+        
+        Reference *reference8;
+        reference8 = [self configureReference:reference8 :@"TheBauhausIdea"];
+        
+        Reference *reference9;
+        reference9 = [self configureReference:reference9 :@"TheElementsOfTypographicStyle"];
+        
+        Reference *reference10;
+        reference10 = [self configureReference:reference10 :@"PrintingTypes"];
+        
+        Reference *reference11;
+        reference11 = [self configureReference:reference11 :@"TheCompleteManualOfTypography"];
+        
+        Reference *reference12;
+        reference12 = [self configureReference:reference12 :@"CambridgeUniversity"];
+        
+        Reference *reference13;
+        reference13 = [self configureReference:reference13 :@"Futura"];
+        
+        Reference *reference14;
+        reference14 = [self configureReference:reference14 :@"ModernTypography"];
+        
+        Reference *reference15;
+        reference15 = [self configureReference:reference15 :@"TheSecretHistoryOfLetters"];
+        
+        Reference *reference16;
+        reference16 = [self configureReference:reference16 :@"JustMyType"];
+        
+        Reference *reference17;
+        reference17 = [self configureReference:reference17 :@"JohnBaskerville"];
+        
+        Reference *reference18;
+        reference18 = [self configureReference:reference18 :@"TypographyReferenced"];
+        
+        Reference *reference19;
+        reference19 = [self configureReference:reference19 :@"AnEssayOnTypography"];
         
         Section *section2;
         section2 = [self configureSection:section2 :@"Film"];
@@ -340,6 +385,21 @@
                             reference2,
                             reference3,
                             reference4,
+                            reference5,
+                            reference6,
+                            reference7,
+                            reference8,
+                            reference9,
+                            reference10,
+                            reference11,
+                            reference12,
+                            reference13,
+                            reference14,
+                            reference15,
+                            reference16,
+                            reference17,
+                            reference18,
+                            reference19,
                             section2,
                             referenceFilm1,
                             referenceFilm2,
@@ -453,7 +513,7 @@
         specialThanks4 = [self configureSpecialThanks:specialThanks4 :@"SimonWithington"];
         
         SpecialThanks *specialThanks5;
-        specialThanks5 = [self configureSpecialThanks:specialThanks5 :@"SimonWithington"];
+        specialThanks5 = [self configureSpecialThanks:specialThanks5 :@"MattGlover"];
         
         SpecialThanks *specialThanks6;
         specialThanks6 = [self configureSpecialThanks:specialThanks6 :@"RobinsonLibrary"];

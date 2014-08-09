@@ -12,35 +12,35 @@
 
 + (NSString *)baskervilleShareText {
     
-    NSString *shareText = @"";
+    NSString *shareText = @"Baskerville, a maverick typeface & typographer - typendium.com";
     
     return shareText;
 }
 
 + (NSString *)futuraShareText {
     
-    NSString *shareText = @"";
+    NSString *shareText = @"Futura, the first typeface on the moon - typendium.com";
     
     return shareText;
 }
 
 + (NSString *)gillSansShareText {
     
-    NSString *shareText = @"";
+    NSString *shareText = @"Gill Sans, the typeface of Britain - typendium.com";
     
     return shareText;
 }
 
 + (NSString *)palatinoShareText {
     
-    NSString *shareText = @"Palatino, the world’s most pirated typeface";
+    NSString *shareText = @"Palatino, the world’s most pirated typeface - typendium.com";
     
     return shareText;
 }
 
 + (NSString *)timesNewRomanShareText {
     
-    NSString *shareText = @"";
+    NSString *shareText = @"Times New Roman, the office workhorse - typendium.com";
     return shareText;
 }
 @end

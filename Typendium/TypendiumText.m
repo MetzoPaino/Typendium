@@ -173,6 +173,13 @@
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
+        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 169)];
+        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Q & G"]];
+        [image2 addSubview:imageView2];
+        
+        Caption *caption2;
+        caption2 = [self configureCaption:caption2 :@"Caption2"];
+        
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
@@ -185,6 +192,13 @@
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 208)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Baskerville Photo"]];
+        [image3 addSubview:imageView3];
+        
+        Caption *caption3;
+        caption3 = [self configureCaption:caption2 :@"Caption3"];
+        
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
@@ -196,6 +210,13 @@
         
         Paragraph *paragraph10;
         paragraph10 = [self configureParagraph:paragraph10 :@"Paragraph10"];
+        
+        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 310)];
+        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Press"]];
+        [image4 addSubview:imageView4];
+        
+        Caption *caption4;
+        caption4 = [self configureCaption:caption1 :@"Caption4"];
         
         Paragraph *paragraph11;
         paragraph11 = [self configureParagraph:paragraph11 :@"Paragraph11"];
@@ -214,13 +235,19 @@
                              caption1,
                              paragraph2,
                              paragraph3,
+                             image2,
+                             caption2,
                              paragraph4,
                              paragraph5,
                              paragraph6,
+                             image3,
+                             caption3,
                              paragraph7,
                              paragraph8,
                              paragraph9,
                              paragraph10,
+                             image4,
+                             caption4,
                              paragraph11,
                              paragraph12,
                              specimen];
@@ -257,10 +284,6 @@
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
-
-        
-        Paragraph *paragraph4;
-        paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
         UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 64)];
         UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
@@ -269,16 +292,26 @@
         
         Caption *caption2;
         caption2 = [self configureCaption:caption2 :@"Caption2"];
+
+        Paragraph *paragraph4;
+        paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        Paragraph *paragraph5;
-        paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
-        
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 89)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 187)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
         [image3 addSubview:imageView3];
         
         Caption *caption3;
         caption3 = [self configureCaption:caption3 :@"Caption3"];
+        
+        Paragraph *paragraph5;
+        paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
+        
+        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 89)];
+        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
+        [image4 addSubview:imageView4];
+        
+        Caption *caption4;
+        caption4 = [self configureCaption:caption4 :@"Caption4"];
         
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
@@ -297,12 +330,14 @@
                         caption1,
                         paragraph2,
                         paragraph3,
-                        paragraph4,
                         image2,
                         caption2,
-                        paragraph5,
+                        paragraph4,
                         image3,
                         caption3,
+                        paragraph5,
+                        image4,
+                        caption4,
                         paragraph6,
                         paragraph7,
                         specimen];
@@ -334,8 +369,6 @@
         Paragraph *paragraph2;
         paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
-
-        
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
@@ -349,20 +382,32 @@
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 214)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold"]];
+        [image3 addSubview:imageView3];
+        
+        Caption *caption3;
+        caption3 = [self configureCaption:caption3 :@"Caption3"];
+        
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 218)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
-        [image3 addSubview:imageView3];
+        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 218)];
+        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
+        [image4 addSubview:imageView4];
+        
+        Caption *caption4;
+        caption4 = [self configureCaption:caption4 :@"Caption4"];
         
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
-        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 195)];
-        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
-        [image4 addSubview:imageView4];
+        UIView *image5 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 195)];
+        UIImageView *imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
+        [image5 addSubview:imageView5];
 
+        Caption *caption5;
+        caption5 = [self configureCaption:caption5 :@"Caption5"];
         
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
@@ -377,15 +422,18 @@
                           image1,
                           caption1,
                           paragraph2,
-
                           paragraph3,
                           image2,
                           caption2,
                           paragraph4,
-                          paragraph5,
                           image3,
-                          paragraph6,
+                          caption3,
+                          paragraph5,
                           image4,
+                          caption4,
+                          paragraph6,
+                          image5,
+                          caption5,
                           paragraph7,
                           specimen];
     }
@@ -448,6 +496,9 @@
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
+        Paragraph *paragraph8;
+        paragraph8 = [self configureParagraph:paragraph7 :@"Paragraph8"];
+        
         UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
         [specimen addSubview:image];
@@ -458,7 +509,6 @@
                           image1,
                           caption1,
                           paragraph2,
-
                           paragraph3,
                           paragraph4,
                           paragraph5,
@@ -468,6 +518,7 @@
                           image3,
                           caption3,
                           paragraph7,
+                          paragraph8,
                           specimen];
     }
     
@@ -500,7 +551,12 @@
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-
+        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 240)];
+        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press"]];
+        [image2 addSubview:imageView2];
+        
+        Caption *caption2;
+        caption2 = [self configureCaption:caption2 :@"Caption2"];
         
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
@@ -523,6 +579,13 @@
         Paragraph *paragraph9;
         paragraph9 = [self configureParagraph:paragraph9 :@"Paragraph9"];
         
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 240)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes"]];
+        [image3 addSubview:imageView3];
+        
+        Caption *caption3;
+        caption3 = [self configureCaption:caption3 :@"Caption3"];
+        
         Paragraph *paragraph10;
         paragraph10 = [self configureParagraph:paragraph10 :@"Paragraph10"];
         
@@ -539,12 +602,16 @@
                                caption1,
                                paragraph2,
                                paragraph3,
+                               image2,
+                               caption2,
                                paragraph4,
                                paragraph5,
                                paragraph6,
                                paragraph7,
                                paragraph8,
                                paragraph9,
+                               image3,
+                               caption3,
                                paragraph10,
                                paragraph11,
                                specimen];

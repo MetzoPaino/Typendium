@@ -36,6 +36,12 @@
 			<string>‘Had I no other dependence than typefounding and printing, I must starve’</string>
 			<key>Caption1</key>
 			<string>John Baskerville</string>
+			<key>Caption2</key>
+			<string>Baskerville&apos;s most famous characters demonstrate his calligraphic skill</string>
+			<key>Caption3</key>
+			<string>John Milton&apos;s Paradise Lost, printed by Baskerville in 1758</string>
+			<key>Caption4</key>
+			<string>A printing press much like the one Baskerville would have used</string>
 		</dict>
 		<key>Futura</key>
 		<dict>
@@ -48,7 +54,7 @@
 			<key>Paragraph3</key>
 			<string>The Werkbund aimed to form “a rallying point for all those who are able and willing to work for high quality” by promoting and practicing the unity of industrial mass production techniques with traditional craft techniques. They believed that by “selecting the best representatives of art, industry, crafts and trades” Germany would be able to compete internationally with products being made in England and the United States of America. After joining Renner became familiar with the publishers and compositors of Munich, and in 1908 at the age of 30 Renner became a book designer for the Munich Publishing Trade. While there he established “a new set of standards for quality book design”, and explored typography in his 1922 book &lt;italic&gt;Typografie als Kunst, Typography As Art&lt;/italic&gt;.</string>
 			<key>Paragraph4</key>
-			<string>Like almost all Germanic literature of the time, &lt;italic&gt;Typografie als Kunst&lt;/italic&gt; was set in blackletter, which Renner was initially fond of. However the end of The First World War brought new ideas and experiments from German artists who sought to distance themselves from tradition. Renner was conservative, but by 1924 he had become unhappy with the calligraphic nature of blackletter, and found Roman designs inconsistent between upper and lowercase, which was unsuitable to the German language’s heavy use of capitals. Concerned with the legibility and functionality of type, Renner began experimenting with abstract ideas and designs which would eventually become Futura.</string>
+			<string>Like almost all Germanic literature of the time, &lt;italic&gt;Typografie als Kunst&lt;/italic&gt; was set in blackletter, which Renner was initially fond of. However the end of The First World War brought new ideas and experiments from German artists who sought to distance themselves from tradition. Renner was conservative, but by 1924 he had become unhappy with the calligraphic nature of blackletter, and found Roman designs inconsistent between upper and lowercase, which was unsuitable due to the heavy use of capitals in the German language. Concerned with the legibility and functionality of type, Renner began experimenting with abstract ideas and designs which would eventually become Futura.</string>
 			<key>Paragraph5</key>
 			<string>Futura was to be an industrial typeface for an industrial age, and Renner’s initial designs strictly adhered to the laws of compass and rule, resulting in geometric forms that are more architectural than functional. In his rejection of blackletter, Renner sought to remove all handwritten characteristics of his typeface, believing that a machine could not, and should not attempt to “transplant the forms of the handcraft on to machine-made products”. However, Futura would eventually become more of a “transitional force” between the traditional and modern typefaces. Renner’s humanist tendencies caused him to compromise his initial aims for a more legible typeface. For instance, what may initially seem like a perfect circle, such as the bowls on a p are carefully shaped for optimised legibility, showing Renner’s mastery of design.</string>
 			<key>Paragraph6</key>
@@ -60,9 +66,11 @@
 			<key>Caption1</key>
 			<string>Paul Renner</string>
 			<key>Caption2</key>
-			<string>Futura Classic, based on Renner&apos;s original designs</string>
+			<string>Futura Classic, based on Renner&apos;s original geometric designs</string>
 			<key>Caption3</key>
-			<string>Comparison of a perfect circle and Futura&apos;s lowercase o</string>
+			<string>Blackletter compared to Futura</string>
+			<key>Caption4</key>
+			<string>Though Renner intended Futura to be a purely geometric typeface, he sacrificed small amounts of symmetry for readability. </string>
 		</dict>
 		<key>Gill Sans</key>
 		<dict>
@@ -87,11 +95,13 @@
 			<key>Caption1</key>
 			<string>Eric Gill</string>
 			<key>Caption2</key>
-			<string>Gill&apos;s Prospero &amp; Ariel, installed on Broadcasting House in 1933</string>
+			<string>Gill&apos;s renowned Prospero &amp; Ariel, installed on Broadcasting House in 1933</string>
 			<key>Caption3</key>
-			<string></string>
+			<string>Penguin&apos;s use of Gill Sans brought the typeface much acclaim</string>
 			<key>Caption4</key>
-			<string></string>
+			<string>The famous Gill Sans spectacles</string>
+			<key>Caption5</key>
+			<string>Ultra Light to Ultra Bold and back again</string>
 		</dict>
 		<key>Palatino</key>
 		<dict>
@@ -110,7 +120,9 @@
 			<key>Paragraph6</key>
 			<string>Palatino’s beauty makes it suitable for both design and long form text. Due to its immense success, Palatino has been adapted for almost every typesetting technology available and iterated upon several times. The Palatino family now includes Latin, Greek and Cyrillic characters, as well as an extensive amount of symbols, all created by Zapf himself. Unfortunately success has plagued Palatino with piracy. In most countries the law states that only the name of a typeface can be registered, but its design is unpatentable and therefore in the public domain. Monotypes Book Antiqua shares the same character width, spacing and kerning as Palatino, and there are countless other copies such as Pontiac, Paladium, Andover, Malibu and Elgante. Piracy of Zapf’s designs became so bad that he considered quitting his work as a type designer.</string>
 			<key>Paragraph7</key>
-			<string>Thankfully Zapf continued his work, embracing computer aided design and bringing it to the mainstream. Initially his progressive ideas were not taken seriously in Germany, causing him to take his work to the United States. This move resulted in the Hz-program, an algorithm for advanced spacing techniques and Zapfino, a groundbreaking typeface, which as a purely digital design was unconstrained by physical limitations. Zapf has never stopped working, in 2005 unveiling Palatino Nova, the result of a collaboration with Akira Kobayashi. By using digital technologies, Palatino Nova more closely meets Zapf’s original designs, featuring complex angles and kerning capabilities that were not possible due to the limitations of the hot metal printing of the time.</string>
+			<string>Palatino’s beauty makes it suitable for both design and long form text. Due to its immense success, Palatino has been adapted for almost every typesetting technology available and iterated upon several times. The Palatino family now includes Latin, Greek and Cyrillic characters, as well as an extensive amount of symbols, all created by Zapf himself.</string>
+			<key>Paragraph8</key>
+			<string>Unfortunately success has plagued Palatino with piracy. In most countries the law states that only the name of a typeface can be registered, but its design is unpatentable and therefore in the public domain. Monotypes Book Antiqua shares the same character width, spacing and kerning as Palatino, and there are countless other copies such as Pontiac, Paladium, Andover, Malibu and Elgante. Piracy of Zapf’s designs became so bad that he considered quitting his work as a type designer.</string>
 			<key>Quote1</key>
 			<string>Gaimbattista Palatino, a ‘calligrapher&apos;s calligrapher’</string>
 			<key>Caption1</key>
@@ -118,7 +130,11 @@
 			<key>Caption2</key>
 			<string>Palatino&apos;s famous open counters</string>
 			<key>Caption3</key>
-			<string>Interrorbang</string>
+			<string>Palatino is one of the few typefaces to include the interrorbang character</string>
+			<key>Caption4</key>
+			<string></string>
+			<key>Caption5</key>
+			<string></string>
 		</dict>
 		<key>TimesNewRoman</key>
 		<dict>
@@ -150,29 +166,51 @@
 			<string>“For a new font to be successful, it has to be so good that only very few recognise its novelty”</string>
 			<key>Caption1</key>
 			<string>Stanley Morison</string>
+			<key>Caption2</key>
+			<string>The Pelican Press provided Morison with the opportunity to write &amp; publish his first substantial essay</string>
+			<key>Caption3</key>
+			<string>The Times before and after Morison&apos;s revison</string>
 		</dict>
 	</dict>
 	<key>TypendiumInfoText</key>
 	<dict>
 		<key>References</key>
 		<dict>
-			<key>TypographyReferenced</key>
+			<key>FirstPrinciples</key>
 			<dict>
 				<key>Title</key>
-				<string>Typography Referenced</string>
+				<string>First Principles of Typography</string>
 				<key>Date</key>
-				<string>2012</string>
+				<string>1936</string>
 				<key>Author</key>
-				<string>Allan Haley, Richard Poulin, Jason Tselentis, Tony Seddon, Gerry Leonidas, Ina Saltz, Kathryn Henderson with Tyler Alterman</string>
+				<string>Stanley Morison</string>
 			</dict>
-			<key>AnatomyOfATypeface</key>
+			<key>CrystalGoblet</key>
 			<dict>
 				<key>Title</key>
-				<string>Anatomy Of A Typeface</string>
+				<string>The Crystal Goblet: Sixteen Essays on Typography</string>
 				<key>Date</key>
-				<string>1990</string>
+				<string>1955</string>
 				<key>Author</key>
-				<string>Alexander Lawson</string>
+				<string>Beatrice Warde</string>
+			</dict>
+			<key>BasicTypography</key>
+			<dict>
+				<key>Title</key>
+				<string>Basic Typography</string>
+				<key>Date</key>
+				<string>1968</string>
+				<key>Author</key>
+				<string>John R. Biggs</string>
+			</dict>
+			<key>TallyOfTypes</key>
+			<dict>
+				<key>Title</key>
+				<string>A Tally of Types</string>
+				<key>Date</key>
+				<string>1973</string>
+				<key>Author</key>
+				<string>Stanley Morison</string>
 			</dict>
 			<key>26Letters</key>
 			<dict>
@@ -183,6 +221,33 @@
 				<key>Author</key>
 				<string>International Cooperation of Typedesigners and Typemanufacturers Printers and Typographers</string>
 			</dict>
+			<key>EricGill</key>
+			<dict>
+				<key>Title</key>
+				<string>Eric Gill</string>
+				<key>Date</key>
+				<string>1989</string>
+				<key>Author</key>
+				<string>Fiona MacCarthy</string>
+			</dict>
+			<key>AnatomyOfATypeface</key>
+			<dict>
+				<key>Title</key>
+				<string>Anatomy Of A Typeface</string>
+				<key>Date</key>
+				<string>1990</string>
+				<key>Author</key>
+				<string>Alexander Lawson</string>
+			</dict>
+			<key>TheBauhausIdea</key>
+			<dict>
+				<key>Title</key>
+				<string>The Bauhaus Idea and Bauhaus Politics</string>
+				<key>Date</key>
+				<string>1995</string>
+				<key>Author</key>
+				<string>Éva Forgács</string>
+			</dict>
 			<key>TheElementsOfTypographicStyle</key>
 			<dict>
 				<key>Title</key>
@@ -191,6 +256,96 @@
 				<string>2013</string>
 				<key>Author</key>
 				<string>Robert Bringhurst</string>
+			</dict>
+			<key>PrintingTypes</key>
+			<dict>
+				<key>Title</key>
+				<string>Printing Types: Their History, Forms, and Use</string>
+				<key>Date</key>
+				<string>2001</string>
+				<key>Author</key>
+				<string>Daniel Berkeley Updike</string>
+			</dict>
+			<key>TheCompleteManualOfTypography</key>
+			<dict>
+				<key>Title</key>
+				<string>The Complete Manual of Typography</string>
+				<key>Date</key>
+				<string>2003</string>
+				<key>Author</key>
+				<string>James Felici</string>
+			</dict>
+			<key>CambridgeUniversity</key>
+			<dict>
+				<key>Title</key>
+				<string>A History of Cambridge University Press: Volume 3, New Worlds for Learning, 1873 - 1972</string>
+				<key>Date</key>
+				<string>2004</string>
+				<key>Author</key>
+				<string>David McKitterick</string>
+			</dict>
+			<key>Futura</key>
+			<dict>
+				<key>Title</key>
+				<string>Futura: The Typeface of Our Times</string>
+				<key>Date</key>
+				<string>2004</string>
+				<key>Author</key>
+				<string>Zosimo Monzon III</string>
+			</dict>
+			<key>ModernTypography</key>
+			<dict>
+				<key>Title</key>
+				<string>Modern Typography: An Essay in Critical History</string>
+				<key>Date</key>
+				<string>2004</string>
+				<key>Author</key>
+				<string>Robin Kinross</string>
+			</dict>
+			<key>TheSecretHistoryOfLetters</key>
+			<dict>
+				<key>Title</key>
+				<string>Type: The Secret History of Letters</string>
+				<key>Date</key>
+				<string>2004</string>
+				<key>Author</key>
+				<string>Simon Loxley</string>
+			</dict>
+			<key>JustMyType</key>
+			<dict>
+				<key>Title</key>
+				<string>Just My Type: A Book About Fonts</string>
+				<key>Date</key>
+				<string>2010</string>
+				<key>Author</key>
+				<string>Simon Garfield</string>
+			</dict>
+			<key>JohnBaskerville</key>
+			<dict>
+				<key>Title</key>
+				<string>John Baskerville: A Biography</string>
+				<key>Date</key>
+				<string>2011</string>
+				<key>Author</key>
+				<string>Phillip Gaskell</string>
+			</dict>
+			<key>TypographyReferenced</key>
+			<dict>
+				<key>Title</key>
+				<string>Typography Referenced</string>
+				<key>Date</key>
+				<string>2012</string>
+				<key>Author</key>
+				<string>Allan Haley, Richard Poulin, Jason Tselentis, Tony Seddon, Gerry Leonidas, Ina Saltz, Kathryn Henderson with Tyler Alterman</string>
+			</dict>
+			<key>AnEssayOnTypography</key>
+			<dict>
+				<key>Title</key>
+				<string>An Essay on Typography</string>
+				<key>Date</key>
+				<string>2013</string>
+				<key>Author</key>
+				<string>Eric Gill</string>
 			</dict>
 			<key>Helvetica</key>
 			<dict>
