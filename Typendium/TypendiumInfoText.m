@@ -10,12 +10,15 @@
 #import "Title.h"
 #import "Reference.h"
 #import "Section.h"
+#import "Website.h"
 
 #import "AboutUs.h"
 #import "MadeIn.h"
 #import "SpecialThanks.h"
 
 #import "UIColor+CustomColors.h"
+
+
 
 @import QuartzCore;
 @implementation TypendiumInfoText {
@@ -50,8 +53,6 @@
 }
 
 - (Reference *)configureReference :(Reference *)reference :(NSString *)key {
-    
-   // CGRect frame;
     
     NSArray *xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Reference" owner:self options:nil];
     reference = [xib_paragraph objectAtIndex:0];
@@ -88,6 +89,17 @@
     return reference;
 }
 
+- (Website *)configureWebsite:(Website *)website : (NSString *) key {
+    
+    NSArray *xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Website" owner:self options:nil];
+    website = [xib_paragraph objectAtIndex:0];
+    website.title.text = key;
+
+    [website.title sizeToFit];
+    
+    return website;
+
+}
 - (Section *)configureSection :(Section *)section :(NSString *)key {
     
     NSArray *xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section" owner:self options:nil];
@@ -179,109 +191,148 @@
         websitesSection = [self configureSection:websitesSection :@"Websites"];
         websitesSection.backgroundColor = [UIColor referencesColor];
         
-        Reference *referenceWebsite1;
-        Reference *referenceWebsite2;
-        Reference *referenceWebsite3;
-        Reference *referenceWebsite4;
-        Reference *referenceWebsite5;
-        Reference *referenceWebsite6;
-        Reference *referenceWebsite7;
-        Reference *referenceWebsite8;
-        Reference *referenceWebsite9;
-        Reference *referenceWebsite10;
-        Reference *referenceWebsite11;
-        Reference *referenceWebsite12;
-        Reference *referenceWebsite13;
-        Reference *referenceWebsite14;
-        Reference *referenceWebsite15;
-        Reference *referenceWebsite16;
-        Reference *referenceWebsite17;
-        Reference *referenceWebsite18;
-        Reference *referenceWebsite19;
-        Reference *referenceWebsite20;
-        Reference *referenceWebsite21;
-        Reference *referenceWebsite22;
-        Reference *referenceWebsite23;
-        Reference *referenceWebsite24;
-        Reference *referenceWebsite25;
-        Reference *referenceWebsite26;
-        Reference *referenceWebsite27;
-        Reference *referenceWebsite28;
-        Reference *referenceWebsite29;
-        Reference *referenceWebsite30;
-        Reference *referenceWebsite31;
-        Reference *referenceWebsite32;
-        Reference *referenceWebsite33;
-        Reference *referenceWebsite34;
-        Reference *referenceWebsite35;
-        Reference *referenceWebsite36;
-        Reference *referenceWebsite37;
-        Reference *referenceWebsite38;
-        Reference *referenceWebsite39;
-        Reference *referenceWebsite40;
-        Reference *referenceWebsite41;
-        Reference *referenceWebsite42;
-        Reference *referenceWebsite43;
-        Reference *referenceWebsite44;
-        Reference *referenceWebsite45;
-        Reference *referenceWebsite46;
-        Reference *referenceWebsite47;
+        NSArray *websitesArray = [NSArray arrayWithArray:[_typendiumInfoText objectForKey:@"Websites"]];
         
-//        NSArray *referenceWebsites = @[referenceWebsite1,
-//                                       referenceWebsite2,
-//                                       referenceWebsite3,
-//                                       referenceWebsite4,
-//                                       referenceWebsite5,
-//                                       referenceWebsite6,
-//                                       referenceWebsite7,
-//                                       referenceWebsite8,
-//                                       referenceWebsite9,
-//                                       referenceWebsite10,
-//                                       referenceWebsite11,
-//                                       referenceWebsite12,
-//                                       referenceWebsite13,
-//                                       referenceWebsite14,
-//                                       referenceWebsite15,
-//                                       referenceWebsite16,
-//                                       referenceWebsite17,
-//                                       referenceWebsite18,
-//                                       referenceWebsite19,
-//                                       referenceWebsite20,
-//                                       referenceWebsite21,
-//                                       referenceWebsite22,
-//                                       referenceWebsite23,
-//                                       referenceWebsite24,
-//                                       referenceWebsite25,
-//                                       referenceWebsite26,
-//                                       referenceWebsite27,
-//                                       referenceWebsite28,
-//                                       referenceWebsite29,
-//                                       referenceWebsite30,
-//                                       referenceWebsite31,
-//                                       referenceWebsite32,
-//                                       referenceWebsite33,
-//                                       referenceWebsite34,
-//                                       referenceWebsite35,
-//                                       referenceWebsite36,
-//                                       referenceWebsite37,
-//                                       referenceWebsite38,
-//                                       referenceWebsite39,
-//                                       referenceWebsite40,
-//                                       referenceWebsite41,
-//                                       referenceWebsite42,
-//                                       referenceWebsite43,
-//                                       referenceWebsite44,
-//                                       referenceWebsite45,
-//                                       referenceWebsite46,
-//                                       referenceWebsite47,
-//                                       ];
+        Website *referenceWebsite1;
+        referenceWebsite1 = [self configureWebsite:referenceWebsite1 : [websitesArray objectAtIndex:0]];
         
-//        NSArray *websites = [NSArray arrayWithArray:[_typendiumInfoText objectForKey:@"Websites"]];
+        Website *referenceWebsite2;
+        referenceWebsite2 = [self configureWebsite:referenceWebsite2 : [websitesArray objectAtIndex:1]];
         
-//        for (Reference *website in referenceWebsites) {
-//            <#statements#>
-//        }
+        Website *referenceWebsite3;
+        referenceWebsite3 = [self configureWebsite:referenceWebsite3 : [websitesArray objectAtIndex:2]];
         
+        Website *referenceWebsite4;
+        referenceWebsite4 = [self configureWebsite:referenceWebsite4 : [websitesArray objectAtIndex:3]];
+        
+        Website *referenceWebsite5;
+        referenceWebsite5 = [self configureWebsite:referenceWebsite5 : [websitesArray objectAtIndex:4]];
+        
+        Website *referenceWebsite6;
+        referenceWebsite6 = [self configureWebsite:referenceWebsite6 : [websitesArray objectAtIndex:5]];
+        
+        Website *referenceWebsite7;
+        referenceWebsite7 = [self configureWebsite:referenceWebsite7 : [websitesArray objectAtIndex:6]];
+        
+        Website *referenceWebsite8;
+        referenceWebsite8 = [self configureWebsite:referenceWebsite8 : [websitesArray objectAtIndex:7]];
+        
+        Website *referenceWebsite9;
+        referenceWebsite9 = [self configureWebsite:referenceWebsite9 : [websitesArray objectAtIndex:8]];
+        
+        Website *referenceWebsite10;
+        referenceWebsite10 = [self configureWebsite:referenceWebsite10 : [websitesArray objectAtIndex:9]];
+        
+        Website *referenceWebsite11;
+        referenceWebsite11 = [self configureWebsite:referenceWebsite11 : [websitesArray objectAtIndex:10]];
+        
+        Website *referenceWebsite12;
+        referenceWebsite12 = [self configureWebsite:referenceWebsite12 : [websitesArray objectAtIndex:11]];
+        
+        Website *referenceWebsite13;
+        referenceWebsite13 = [self configureWebsite:referenceWebsite13 : [websitesArray objectAtIndex:12]];
+        
+        Website *referenceWebsite14;
+        referenceWebsite14 = [self configureWebsite:referenceWebsite14 : [websitesArray objectAtIndex:13]];
+        
+        Website *referenceWebsite15;
+        referenceWebsite15 = [self configureWebsite:referenceWebsite15 : [websitesArray objectAtIndex:14]];
+        
+        Website *referenceWebsite16;
+        referenceWebsite16 = [self configureWebsite:referenceWebsite16 : [websitesArray objectAtIndex:15]];
+        
+        Website *referenceWebsite17;
+        referenceWebsite17 = [self configureWebsite:referenceWebsite17 : [websitesArray objectAtIndex:16]];
+        
+        Website *referenceWebsite18;
+        referenceWebsite18 = [self configureWebsite:referenceWebsite18 : [websitesArray objectAtIndex:17]];
+        
+        Website *referenceWebsite19;
+        referenceWebsite19 = [self configureWebsite:referenceWebsite19 : [websitesArray objectAtIndex:18]];
+        
+        Website *referenceWebsite20;
+        referenceWebsite20 = [self configureWebsite:referenceWebsite20 : [websitesArray objectAtIndex:19]];
+        
+        Website *referenceWebsite21;
+        referenceWebsite21 = [self configureWebsite:referenceWebsite21 : [websitesArray objectAtIndex:20]];
+        
+        Website *referenceWebsite22;
+        referenceWebsite22 = [self configureWebsite:referenceWebsite22 : [websitesArray objectAtIndex:21]];
+        
+        Website *referenceWebsite23;
+        referenceWebsite23 = [self configureWebsite:referenceWebsite23 : [websitesArray objectAtIndex:22]];
+        
+        Website *referenceWebsite24;
+        referenceWebsite24 = [self configureWebsite:referenceWebsite24 : [websitesArray objectAtIndex:23]];
+        
+        Website *referenceWebsite25;
+        referenceWebsite25 = [self configureWebsite:referenceWebsite25 : [websitesArray objectAtIndex:24]];
+        
+        Website *referenceWebsite26;
+        referenceWebsite26 = [self configureWebsite:referenceWebsite26 : [websitesArray objectAtIndex:25]];
+        
+        Website *referenceWebsite27;
+        referenceWebsite27 = [self configureWebsite:referenceWebsite27 : [websitesArray objectAtIndex:26]];
+        
+        Website *referenceWebsite28;
+        referenceWebsite28 = [self configureWebsite:referenceWebsite28 : [websitesArray objectAtIndex:27]];
+        
+        Website *referenceWebsite29;
+        referenceWebsite29 = [self configureWebsite:referenceWebsite29 : [websitesArray objectAtIndex:28]];
+        
+        Website *referenceWebsite30;
+        referenceWebsite30 = [self configureWebsite:referenceWebsite30 : [websitesArray objectAtIndex:29]];
+        
+        Website *referenceWebsite31;
+        referenceWebsite31 = [self configureWebsite:referenceWebsite20 : [websitesArray objectAtIndex:30]];
+        
+        Website *referenceWebsite32;
+        referenceWebsite32 = [self configureWebsite:referenceWebsite21 : [websitesArray objectAtIndex:31]];
+        
+        Website *referenceWebsite33;
+        referenceWebsite33 = [self configureWebsite:referenceWebsite22 : [websitesArray objectAtIndex:32]];
+        
+        Website *referenceWebsite34;
+        referenceWebsite34 = [self configureWebsite:referenceWebsite23 : [websitesArray objectAtIndex:33]];
+        
+        Website *referenceWebsite35;
+        referenceWebsite35 = [self configureWebsite:referenceWebsite24 : [websitesArray objectAtIndex:34]];
+        
+        Website *referenceWebsite36;
+        referenceWebsite36 = [self configureWebsite:referenceWebsite25 : [websitesArray objectAtIndex:35]];
+        
+        Website *referenceWebsite37;
+        referenceWebsite37 = [self configureWebsite:referenceWebsite26 : [websitesArray objectAtIndex:36]];
+        
+        Website *referenceWebsite38;
+        referenceWebsite38 = [self configureWebsite:referenceWebsite27 : [websitesArray objectAtIndex:37]];
+        
+        Website *referenceWebsite39;
+        referenceWebsite39 = [self configureWebsite:referenceWebsite28 : [websitesArray objectAtIndex:38]];
+        
+        Website *referenceWebsite40;
+        referenceWebsite40 = [self configureWebsite:referenceWebsite29 : [websitesArray objectAtIndex:39]];
+        
+        Website *referenceWebsite41;
+        referenceWebsite41 = [self configureWebsite:referenceWebsite30 : [websitesArray objectAtIndex:40]];
+        
+        Website *referenceWebsite42;
+        referenceWebsite42 = [self configureWebsite:referenceWebsite26 : [websitesArray objectAtIndex:41]];
+        
+        Website *referenceWebsite43;
+        referenceWebsite43 = [self configureWebsite:referenceWebsite27 : [websitesArray objectAtIndex:42]];
+        
+        Website *referenceWebsite44;
+        referenceWebsite44 = [self configureWebsite:referenceWebsite28 : [websitesArray objectAtIndex:43]];
+        
+        Website *referenceWebsite45;
+        referenceWebsite45 = [self configureWebsite:referenceWebsite29 : [websitesArray objectAtIndex:44]];
+        
+        Website *referenceWebsite46;
+        referenceWebsite46 = [self configureWebsite:referenceWebsite30 : [websitesArray objectAtIndex:45]];
+        
+        Website *referenceWebsite47;
+        referenceWebsite47 = [self configureWebsite:referenceWebsite30 : [websitesArray objectAtIndex:46]];
         
         _arr_references = @[title,
                             section1,
@@ -293,7 +344,56 @@
                             referenceFilm1,
                             referenceFilm2,
                             referenceFilm3,
-];
+                            websitesSection,
+                            referenceWebsite1,
+                            referenceWebsite2,
+                            referenceWebsite3,
+                            referenceWebsite4,
+                            referenceWebsite5,
+                            referenceWebsite6,
+                            referenceWebsite7,
+                            referenceWebsite8,
+                            referenceWebsite9,
+                            referenceWebsite10,
+                            referenceWebsite11,
+                            referenceWebsite12,
+                            referenceWebsite13,
+                            referenceWebsite14,
+                            referenceWebsite15,
+                            referenceWebsite16,
+                            referenceWebsite17,
+                            referenceWebsite18,
+                            referenceWebsite19,
+                            referenceWebsite20,
+                            referenceWebsite21,
+                            referenceWebsite22,
+                            referenceWebsite23,
+                            referenceWebsite24,
+                            referenceWebsite25,
+                            referenceWebsite26,
+                            referenceWebsite27,
+                            referenceWebsite28,
+                            referenceWebsite29,
+                            referenceWebsite30,
+                            referenceWebsite31,
+                            referenceWebsite32,
+                            referenceWebsite33,
+                            referenceWebsite34,
+                            referenceWebsite35,
+                            referenceWebsite36,
+                            referenceWebsite37,
+                            referenceWebsite38,
+                            referenceWebsite39,
+                            referenceWebsite40,
+                            referenceWebsite41,
+                            referenceWebsite42,
+                            referenceWebsite43,
+                            referenceWebsite44,
+                            referenceWebsite45,
+                            referenceWebsite46,
+                            referenceWebsite47,
+
+                            ];
     }
     
     return _arr_references;

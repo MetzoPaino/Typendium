@@ -215,7 +215,6 @@
                              paragraph2,
                              paragraph3,
                              paragraph4,
-                             quote1,
                              paragraph5,
                              paragraph6,
                              paragraph7,
@@ -244,6 +243,12 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
+        Image *image1;
+        image1 = [self configureImage:image1 :@"PaulRenner"];
+        
+        Caption *caption1;
+        caption1 = [self configureCaption:caption1 :@"Caption1"];
+        
         Quote *quote1;
         quote1 = [self configureQuote:quote1 :@"Quote1"];
         
@@ -252,12 +257,7 @@
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
-        
-        Image *image1;
-        image1 = [self configureImage:image1 :@"PaulRenner"];
-        
-        Caption *caption1;
-        caption1 = [self configureCaption:caption1 :@"Caption1"];
+
         
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
@@ -293,11 +293,10 @@
 
         _arr_futura = @[title,
                         paragraph1,
-                        quote1,
-                        paragraph2,
-                        paragraph3,
                         image1,
                         caption1,
+                        paragraph2,
+                        paragraph3,
                         paragraph4,
                         image2,
                         caption2,
@@ -326,14 +325,16 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Paragraph *paragraph2;
-        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
-        
         Image *image1;
         image1 = [self configureImage:image1 :@"EricGill"];
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
+        
+        Paragraph *paragraph2;
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
+        
+
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
@@ -373,9 +374,10 @@
 
         _arr_gillSans = @[title,
                           paragraph1,
-                          paragraph2,
                           image1,
                           caption1,
+                          paragraph2,
+
                           paragraph3,
                           image2,
                           caption2,
@@ -405,14 +407,14 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Paragraph *paragraph2;
-        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
-        
         Image *image1;
         image1 = [self configureImage:image1 :@"HermannZapf"];
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
+        
+        Paragraph *paragraph2;
+        paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
@@ -446,9 +448,6 @@
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
-        Paragraph *paragraph8;
-        paragraph8 = [self configureParagraph:paragraph8 :@"Paragraph8"];
-        
         UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
         [specimen addSubview:image];
@@ -456,11 +455,11 @@
 
         _arr_palatino = @[title,
                           paragraph1,
-                          paragraph2,
                           image1,
                           caption1,
+                          paragraph2,
+
                           paragraph3,
-                          quote1,
                           paragraph4,
                           paragraph5,
                           image2,
@@ -469,7 +468,6 @@
                           image3,
                           caption3,
                           paragraph7,
-                          paragraph8,
                           specimen];
     }
     
@@ -490,17 +488,19 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
+        Image *image1;
+        image1 = [self configureImage:image1 :@"StanleyMorison"];
+        
+        Caption *caption1;
+        caption1 = [self configureCaption:caption1 :@"Caption1"];
+        
         Paragraph *paragraph2;
         paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        Image *image1;
-        image1 = [self configureImage:image1 :@"StanleyMorison"];
-        
-        Caption *caption1;
-        caption1 = [self configureCaption:caption1 :@"Caption1"];
+
         
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
@@ -535,12 +535,11 @@
         specimen.restorationIdentifier = @"Specimen";
         _arr_timesNewRoman = @[title,
                                paragraph1,
-                               paragraph2,
-                               paragraph3,
                                image1,
                                caption1,
+                               paragraph2,
+                               paragraph3,
                                paragraph4,
-                               quote1,
                                paragraph5,
                                paragraph6,
                                paragraph7,

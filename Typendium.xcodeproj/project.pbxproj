@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43079BFB1996A28400E2F5AC /* Website.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079BFA1996A28400E2F5AC /* Website.m */; };
+		43079BFD1996A77600E2F5AC /* Website.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43079BFC1996A77600E2F5AC /* Website.xib */; };
 		430BA1CD1915449200DCF3C4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430BA1CC1915449200DCF3C4 /* MessageUI.framework */; };
 		432C3FD21917EA6C00C18287 /* TypendiumInfoText.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */; };
 		4331ECE11923988A002C1D50 /* MadeIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4331ECE01923988A002C1D50 /* MadeIn.m */; };
@@ -75,6 +77,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43079BF91996A28400E2F5AC /* Website.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Website.h; sourceTree = "<group>"; };
+		43079BFA1996A28400E2F5AC /* Website.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Website.m; sourceTree = "<group>"; };
+		43079BFC1996A77600E2F5AC /* Website.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Website.xib; sourceTree = "<group>"; };
 		430BA1CC1915449200DCF3C4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		432C3FD01917EA6C00C18287 /* TypendiumInfoText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypendiumInfoText.h; sourceTree = "<group>"; };
 		432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypendiumInfoText.m; sourceTree = "<group>"; };
@@ -242,9 +247,12 @@
 				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
 				43DD1A5418E8485C00B43DE3 /* Quote.h */,
 				43DD1A5518E8485C00B43DE3 /* Quote.m */,
-				435BB027191E98B100B762CE /* Reference.xib */,
+				43079BF91996A28400E2F5AC /* Website.h */,
+				43079BFA1996A28400E2F5AC /* Website.m */,
+				43079BFC1996A77600E2F5AC /* Website.xib */,
 				435BB029191E9D9A00B762CE /* Reference.h */,
 				435BB02A191E9D9A00B762CE /* Reference.m */,
+				435BB027191E98B100B762CE /* Reference.xib */,
 				433D8666191F681F007EE3F9 /* AboutUs.xib */,
 				433D8668191F7224007EE3F9 /* AboutUs.h */,
 				433D8669191F7224007EE3F9 /* AboutUs.m */,
@@ -486,6 +494,7 @@
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
 				433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */,
 				43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */,
+				43079BFD1996A77600E2F5AC /* Website.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +534,7 @@
 				4360D3B919293A06003902F3 /* UnlockViewController.m in Sources */,
 				43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */,
 				4360D3AB1928D1C9003902F3 /* TYPEIAPHelper.m in Sources */,
+				43079BFB1996A28400E2F5AC /* Website.m in Sources */,
 				432C3FD21917EA6C00C18287 /* TypendiumInfoText.m in Sources */,
 				43D025421906C6050044BFBF /* UIColor+ScrollColor.m in Sources */,
 				43BF127918E754AB009A1C84 /* MenuViewController.m in Sources */,
