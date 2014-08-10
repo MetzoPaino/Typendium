@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "Gill Sans.png"
+      "filename" : "gillsans.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Gill Sans.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

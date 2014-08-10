@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "SpecialThanks.png"
+      "filename" : "specialthanks-1.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "SpecialThanks.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

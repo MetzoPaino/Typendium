@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -216,20 +216,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="trailing" secondItem="ghj-q4-QsB" secondAttribute="trailing" id="1cx-up-N1m"/>
                             <constraint firstItem="HcZ-te-bAc" firstAttribute="top" secondItem="oCG-Ax-RX1" secondAttribute="bottom" constant="19" id="2CN-NH-S7o"/>
                             <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="oCG-Ax-RX1" secondAttribute="centerX" id="4dF-pb-rMz"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="89a-Ak-qeC"/>
-                            <constraint firstItem="Xip-2S-z0D" firstAttribute="top" secondItem="nXJ-Ow-xaQ" secondAttribute="top" id="Al0-2h-P8I"/>
                             <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="rku-hK-qYm" secondAttribute="centerX" id="Dmv-6d-2OF"/>
                             <constraint firstItem="oCG-Ax-RX1" firstAttribute="top" secondItem="M7F-Iw-AyN" secondAttribute="bottom" constant="19" id="Dsl-Iy-OX3"/>
                             <constraint firstItem="M7F-Iw-AyN" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" constant="20" symbolic="YES" id="FpL-Cp-Oyc"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="rku-hK-qYm" secondAttribute="leading" id="HXh-ft-urp"/>
                             <constraint firstItem="9Yi-jI-bXG" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="Imh-WY-zmK"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="Xip-2S-z0D" secondAttribute="leading" id="T7R-3d-brt"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" id="VRN-Uo-15x"/>
-                            <constraint firstItem="ghj-q4-QsB" firstAttribute="trailing" secondItem="nXJ-Ow-xaQ" secondAttribute="trailing" id="ab8-Nx-tY5"/>
+                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="rku-hK-qYm" secondAttribute="leading" id="M43-UB-lw0"/>
+                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="Xip-2S-z0D" secondAttribute="leading" id="avK-ib-cV5"/>
                             <constraint firstItem="rku-hK-qYm" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" constant="-284" id="cuZ-kc-QZ3"/>
+                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="rku-hK-qYm" secondAttribute="top" id="ff6-3h-IA3"/>
+                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="m6p-ho-B9S"/>
+                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" id="mVQ-VS-Ze7"/>
                             <constraint firstItem="ghj-q4-QsB" firstAttribute="baseline" secondItem="9Yi-jI-bXG" secondAttribute="baseline" id="p3k-zM-hoG"/>
+                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" id="pnr-He-LmM"/>
                             <constraint firstItem="9Yi-jI-bXG" firstAttribute="bottom" secondItem="ghj-q4-QsB" secondAttribute="bottom" id="qV1-My-Oha"/>
                             <constraint firstItem="rku-hK-qYm" firstAttribute="trailing" secondItem="ghj-q4-QsB" secondAttribute="trailing" id="rrS-zx-CVM"/>
                             <constraint firstItem="9Yi-jI-bXG" firstAttribute="top" secondItem="fv8-dW-0rT" secondAttribute="top" id="wIO-Qg-mgt"/>
@@ -242,6 +243,7 @@
                         <outlet property="btn_unlock" destination="9Yi-jI-bXG" id="hLd-m0-EEP"/>
                         <outlet property="btn_upArrow" destination="oCG-Ax-RX1" id="abc-D1-dvI"/>
                         <outlet property="image_background" destination="Xip-2S-z0D" id="chP-9E-KfC"/>
+                        <outlet property="image_backgroundColor" destination="rku-hK-qYm" id="mXz-Ik-hAa"/>
                         <outlet property="img_title" destination="nXJ-Ow-xaQ" id="bTr-Fb-yCv"/>
                         <outlet property="lbl_swipe" destination="M7F-Iw-AyN" id="2Vz-1L-uUq"/>
                     </connections>
@@ -365,17 +367,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TutorialFrames-0000" translatesAutoresizingMaskIntoConstraints="NO" id="gKr-dk-4df">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zs-4w-Du2">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zs-4w-Du2">
                                 <rect key="frame" x="100" y="266" width="120" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="hO2-nm-anQ"/>
-                                    <constraint firstAttribute="height" constant="35" id="m1R-S1-3H3"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Tutorial" backgroundImage="Button-White">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -384,28 +378,16 @@
                                     <action selector="playTutorial:" destination="gdG-TR-VYk" eventType="touchUpInside" id="ZiJ-dE-21o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-wk-Wfu" userLabel="btn_upArrow">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-wk-Wfu" userLabel="btn_upArrow">
                                 <rect key="frame" x="138" y="538" width="44" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="ZML-Dd-Wnf"/>
-                                </constraints>
                                 <state key="normal" backgroundImage="UpArrow-White"/>
                                 <connections>
                                     <action selector="upArrow:" destination="gdG-TR-VYk" eventType="touchUpInside" id="1Ec-PC-kFk"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="Q6h-wk-Wfu" firstAttribute="centerX" secondItem="tzy-OP-Jqa" secondAttribute="centerX" id="MQz-19-i7a"/>
-                            <constraint firstAttribute="bottom" secondItem="gKr-dk-4df" secondAttribute="bottom" id="asm-uS-aXB"/>
-                            <constraint firstItem="Q6h-wk-Wfu" firstAttribute="centerX" secondItem="gKr-dk-4df" secondAttribute="centerX" id="cmV-w1-9fH"/>
-                            <constraint firstItem="gKr-dk-4df" firstAttribute="top" secondItem="tzy-OP-Jqa" secondAttribute="top" id="joE-ii-5ZP"/>
-                            <constraint firstItem="Q6h-wk-Wfu" firstAttribute="centerX" secondItem="9Zs-4w-Du2" secondAttribute="centerX" id="kXM-db-FPv"/>
-                            <constraint firstItem="9Zs-4w-Du2" firstAttribute="top" secondItem="Mgj-La-X0E" secondAttribute="bottom" constant="266" id="mXw-rD-MYi"/>
-                            <constraint firstItem="ugr-Em-fpI" firstAttribute="top" secondItem="Q6h-wk-Wfu" secondAttribute="bottom" constant="15" id="mct-sO-Ovb"/>
-                            <constraint firstItem="gKr-dk-4df" firstAttribute="leading" secondItem="tzy-OP-Jqa" secondAttribute="leading" id="yb7-gm-aej"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.20392157137393951" green="0.20392157137393951" blue="0.20392157137393951" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="btn_startTutorial" destination="9Zs-4w-Du2" id="nZE-zz-yrV"/>
@@ -592,8 +574,7 @@
         <image name="Button-White" width="297" height="85"/>
         <image name="Intro-Black" width="320" height="568"/>
         <image name="Tutorial-White" width="128" height="128"/>
-        <image name="TutorialFrames-0000" width="640" height="1136"/>
-        <image name="TypendiumTitle-White" width="320" height="568"/>
+        <image name="TypendiumTitle-White" width="320" height="480"/>
         <image name="Unlock" width="320" height="568"/>
         <image name="Unlock-White" width="128" height="128"/>
         <image name="UpArrow-Black" width="44" height="14"/>

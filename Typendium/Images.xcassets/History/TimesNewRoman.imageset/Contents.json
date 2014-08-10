@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "Times New Roman.png"
+      "filename" : "timesnewroman.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Times New Roman.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

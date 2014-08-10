@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "Coming Soon.png"
+      "filename" : "comingsoon.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Coming Soon.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

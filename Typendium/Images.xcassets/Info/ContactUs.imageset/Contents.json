@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "Contact.png"
+      "filename" : "contact-1.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Contact.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

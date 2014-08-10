@@ -224,7 +224,7 @@
         Paragraph *paragraph12;
         paragraph12 = [self configureParagraph:paragraph12 :@"Paragraph12"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BaskervilleSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -319,7 +319,7 @@
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -412,7 +412,7 @@
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -499,7 +499,7 @@
         Paragraph *paragraph8;
         paragraph8 = [self configureParagraph:paragraph7 :@"Paragraph8"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -592,7 +592,7 @@
         Paragraph *paragraph11;
         paragraph11 = [self configureParagraph:paragraph11 :@"Paragraph11"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 568)];
+        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";

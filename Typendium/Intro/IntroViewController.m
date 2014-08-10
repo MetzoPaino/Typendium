@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_swipe;
 
 @property (weak, nonatomic) IBOutlet UIImageView *image_background;
+@property (weak, nonatomic) IBOutlet UIImageView *image_backgroundColor;
 
 @end
 
@@ -41,9 +42,22 @@
     self.btn_unlock.alpha = 0;
     self.btn_tutorial.alpha = 0;
     self.lbl_swipe.alpha = 0;
-    
 }
 
+- (void) viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+
+    if (screenRect.size.height <= iPhoneHeight480) {
+        self.image_background.frame = CGRectMake(0, 0, self.image_background.frame.size.width, self.image_background.frame.size.height);
+        
+    }
+    
+    self.image_backgroundColor.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 2);
+
+}
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
 
@@ -51,7 +65,7 @@
     self.btn_upArrow.alpha = 1.0;
     self.img_title.center = CGPointMake(self.img_title.center.x, self.view.frame.size.height);
     self.img_title.alpha = 1;
-
+    
     [self introAnimation];
     
     _fadeTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(fade:) userInfo:nil repeats:NO];
@@ -106,6 +120,7 @@
                               animations:^ {
                                   
                                   [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 animations:^{
+                                    
                                       
                                       self.img_title.center = CGPointMake(self.img_title.center.x, self.view.center.y);
                                       

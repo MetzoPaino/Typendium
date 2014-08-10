@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "History.png"
+      "filename" : "Historynew.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "History.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

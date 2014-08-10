@@ -1,13 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "Futura.png"
+      "filename" : "futura-1.png"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Futura.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
     }
   ],
   "info" : {

@@ -79,6 +79,10 @@
                                                                            15)];
             upArrow.center = CGPointMake(self.view.center.x,
                                          545);
+            if (self.view.bounds.size.height < 568) {
+                upArrow.center = CGPointMake(upArrow.center.x, upArrow.center.y - 88);
+            }
+
             [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
             upArrow.restorationIdentifier = @"UpArrow";
@@ -175,6 +179,15 @@
                                                       0,
                                                       self.image_backgroundColor.frame.size.width,
                                                       screenRect.size.height / 2);
+
+
+//        - (void)viewDidLayoutSubviews {
+//            
+//            [super viewDidLayoutSubviews];
+//            if (self.view.bounds.size.height < 568) {
+//                self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.btn_upArrow.center.y - 88);
+//            }
+//        }
         
     }
 }

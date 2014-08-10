@@ -39,8 +39,9 @@
 - (void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
-    //self.btn_upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - self.btn_upArrow.frame.size.height * 2.5);
-//self.btn_upArrow.center = CGPointMake(self.view.center.x, 545);
+    if (self.view.bounds.size.height < 568) {
+        self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.btn_upArrow.center.y - 88);
+    }
 }
 
 - (void)startTutorial:(NSNotification *) notification {
