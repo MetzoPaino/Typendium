@@ -455,6 +455,9 @@
 
 - (void)parallaxToLocation : (UIView*)currentView : (UIView*) higherView : (UIView*)lowerView : (NSString*)gestureContext {
     
+    _hasConstructedText = NO;
+    _hasConstructedInfoText = NO;
+    
     NSLog(@"Start Section: %@ / Start Page: %@", _string_currentSection, _string_currentPage);
 
     if ([gestureContext isEqualToString:@"Moving Current View Up"] || [gestureContext isEqualToString:@"Up Arrow Pressed"]) {
