@@ -572,7 +572,7 @@
     </scenes>
     <resources>
         <image name="Button-White" width="297" height="85"/>
-        <image name="Intro-Black" width="320" height="568"/>
+        <image name="Intro-Black" width="320" height="480"/>
         <image name="Tutorial-White" width="128" height="128"/>
         <image name="TypendiumTitle-White" width="320" height="480"/>
         <image name="Unlock" width="320" height="568"/>

@@ -105,9 +105,9 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        gillSansColor = [UIColor colorWithRed:254.0 / 255.0
-                                        green:185.0 / 255.0
-                                         blue:73.0 / 255.0
+        gillSansColor = [UIColor colorWithRed:251.0 / 255.0
+                                        green:187.0 / 255.0
+                                         blue:35.0 / 255.0
                                         alpha:1.0];
     });
     
