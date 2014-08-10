@@ -93,7 +93,13 @@
         } else {
             
             if ([_string_currentPage isEqualToString:@"References"]) {
-                yPosition += 20;
+                
+                if ([viewSection.restorationIdentifier isEqualToString:@"Book"]) {
+                    yPosition += 0;
+                } else {
+                    yPosition += 20;
+
+                }
                 
             } else if ([_string_currentPage isEqualToString:@"SpecialThanks"]) {
                 

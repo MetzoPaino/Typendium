@@ -161,6 +161,7 @@
         Section *section1;
         section1 = [self configureSection:section1 :@"Book"];
         section1.backgroundColor = [UIColor referencesColor];
+        section1.restorationIdentifier = @"Book";
 
         Reference *reference1;
         reference1 = [self configureReference:reference1 :@"FirstPrinciples"];
