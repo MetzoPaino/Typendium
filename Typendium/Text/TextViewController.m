@@ -72,6 +72,8 @@
     
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[_string_shareText]
                                                                              applicationActivities:nil];
+    controller.excludedActivityTypes = @[UIActivityTypeMessage,
+                                         UIActivityTypeMail];
     
     [self presentViewController:controller animated:YES completion:nil];
     
