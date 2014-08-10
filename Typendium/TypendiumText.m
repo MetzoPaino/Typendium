@@ -291,10 +291,9 @@
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 64)];
-        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
+        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 187)];
+        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
         [image2 addSubview:imageView2];
-        image2.restorationIdentifier = @"FuturaOld";
         
         Caption *caption2;
         caption2 = [self configureCaption:caption2 :@"Caption2"];
@@ -302,8 +301,8 @@
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 187)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
+        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 64)];
+        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
         [image3 addSubview:imageView3];
         
         Caption *caption3;

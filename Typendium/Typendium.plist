@@ -68,9 +68,9 @@
 			<key>Caption1</key>
 			<string>Paul Renner</string>
 			<key>Caption2</key>
-			<string>Futura Classic, based on Renner&apos;s original geometric designs</string>
-			<key>Caption3</key>
 			<string>Blackletter compared to Futura</string>
+			<key>Caption3</key>
+			<string>Futura Classic, based on Renner&apos;s original geometric designs</string>
 			<key>Caption4</key>
 			<string>Though Renner intended Futura to be a purely geometric typeface, he sacrificed small amounts of symmetry for readability. </string>
 		</dict>
@@ -120,11 +120,11 @@
 			<key>Paragraph5</key>
 			<string>Inspired by Italian Renaissance letterforms and named after the master calligrapher Gaimbattista Palatino, Zapf’s Palatino typeface embodies a vitality that was much much desired after World War 2. Highly legible thanks to its elegant light lines and large character size, Palatino is the result of careful studies by both Zapf and the punch cutter August Rosenberger. Weights of the serifs and strokes were carefully scrutinised, and the famous open counters stem from practical considerations to reduce the smudging caused by the poor quality paper available in Germany at the time.</string>
 			<key>Paragraph6</key>
-			<string>Palatino’s beauty makes it suitable for both design and long form text. Due to its immense success, Palatino has been adapted for almost every typesetting technology available and iterated upon several times. The Palatino family now includes Latin, Greek and Cyrillic characters, as well as an extensive amount of symbols, all created by Zapf himself. Unfortunately success has plagued Palatino with piracy. In most countries the law states that only the name of a typeface can be registered, but its design is unpatentable and therefore in the public domain. Monotypes Book Antiqua shares the same character width, spacing and kerning as Palatino, and there are countless other copies such as Pontiac, Paladium, Andover, Malibu and Elgante. Piracy of Zapf’s designs became so bad that he considered quitting his work as a type designer.</string>
-			<key>Paragraph7</key>
 			<string>Palatino’s beauty makes it suitable for both design and long form text. Due to its immense success, Palatino has been adapted for almost every typesetting technology available and iterated upon several times. The Palatino family now includes Latin, Greek and Cyrillic characters, as well as an extensive amount of symbols, all created by Zapf himself.</string>
-			<key>Paragraph8</key>
+			<key>Paragraph7</key>
 			<string>Unfortunately success has plagued Palatino with piracy. In most countries the law states that only the name of a typeface can be registered, but its design is unpatentable and therefore in the public domain. Monotypes Book Antiqua shares the same character width, spacing and kerning as Palatino, and there are countless other copies such as Pontiac, Paladium, Andover, Malibu and Elgante. Piracy of Zapf’s designs became so bad that he considered quitting his work as a type designer.</string>
+			<key>Paragraph8</key>
+			<string>Thankfully Zapf continued his work, embracing computer aided design and bringing it to the mainstream. Initially his progressive ideas were not taken seriously in Germany, causing him to take his work to the United States. This move resulted in the Hz-program, an algorithm for advanced spacing techniques and Zapfino, a groundbreaking typeface, which as a purely digital design was unconstrained by physical limitations. Zapf has never stopped working, in 2005 unveiling Palatino Nova, the result of a collaboration with Akira Kobayashi. By using digital technologies, Palatino Nova more closely meets Zapf’s original designs, featuring complex angles and kerning capabilities that were not possible due to the limitations of the hot metal printing of the time.</string>
 			<key>Quote1</key>
 			<string>“No calligrapher pollutes rivers with his ink, or poisons the air we breathe. Calligraphy makes no noise”</string>
 			<key>Quote2</key>

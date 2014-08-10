@@ -224,9 +224,11 @@
                             <constraint firstItem="M7F-Iw-AyN" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" constant="20" symbolic="YES" id="FpL-Cp-Oyc"/>
                             <constraint firstItem="9Yi-jI-bXG" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="Imh-WY-zmK"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="rku-hK-qYm" secondAttribute="leading" id="M43-UB-lw0"/>
+                            <constraint firstItem="Xip-2S-z0D" firstAttribute="top" secondItem="T4v-sc-4MX" secondAttribute="bottom" id="U86-Wx-1J7"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="Xip-2S-z0D" secondAttribute="leading" id="avK-ib-cV5"/>
                             <constraint firstItem="rku-hK-qYm" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" constant="-284" id="cuZ-kc-QZ3"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="rku-hK-qYm" secondAttribute="top" id="ff6-3h-IA3"/>
+                            <constraint firstAttribute="trailing" secondItem="Xip-2S-z0D" secondAttribute="trailing" id="khx-cx-4yR"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="m6p-ho-B9S"/>
                             <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" id="mVQ-VS-Ze7"/>
                             <constraint firstItem="ghj-q4-QsB" firstAttribute="baseline" secondItem="9Yi-jI-bXG" secondAttribute="baseline" id="p3k-zM-hoG"/>

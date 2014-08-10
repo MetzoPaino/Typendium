@@ -14,7 +14,7 @@
                     <rect key="frame" x="20" y="0.0" width="280" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="24"/>
-                    <color key="textColor" red="0.20392157137393951" green="0.20392157137393951" blue="0.20392157137393951" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.51764705882352935" green="0.54117647058823526" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
