@@ -130,7 +130,7 @@
     NSArray *xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Quote" owner:self options:nil];
 
     quote = [xib_quote objectAtIndex:0];
-    quote.lbl_quote.text = [_typendiumText objectForKey:@"Quote1"];
+    quote.lbl_quote.text = [_typendiumText objectForKey:key];
     [quote.lbl_quote sizeToFit];
     frame =   quote.lbl_quote.frame;
     quote.frame = frame;
@@ -170,6 +170,9 @@
         Paragraph *paragraph2;
         paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
+        Quote *quote1;
+        quote1 = [self configureQuote:quote1 :@"Quote1"];
+        
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
@@ -182,9 +185,6 @@
         
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
-        
-        Quote *quote1;
-        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
@@ -204,6 +204,9 @@
         
         Paragraph *paragraph8;
         paragraph8 = [self configureParagraph:paragraph8 :@"Paragraph8"];
+        
+        Quote *quote2;
+        quote2 = [self configureQuote:quote2 :@"Quote2"];
         
         Paragraph *paragraph9;
         paragraph9 = [self configureParagraph:paragraph9 :@"Paragraph9"];
@@ -234,6 +237,7 @@
                              image1,
                              caption1,
                              paragraph2,
+                             quote1,
                              paragraph3,
                              image2,
                              caption2,
@@ -244,6 +248,7 @@
                              caption3,
                              paragraph7,
                              paragraph8,
+                             quote2,
                              paragraph9,
                              paragraph10,
                              image4,
@@ -275,12 +280,13 @@
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
-        
-        Quote *quote1;
-        quote1 = [self configureQuote:quote1 :@"Quote1"];
+
         
         Paragraph *paragraph2;
         paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
+        
+        Quote *quote1;
+        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
@@ -329,6 +335,7 @@
                         image1,
                         caption1,
                         paragraph2,
+                        quote1,
                         paragraph3,
                         image2,
                         caption2,
@@ -368,6 +375,9 @@
         
         Paragraph *paragraph2;
         paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
+        
+        Quote *quote1;
+        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
@@ -422,6 +432,7 @@
                           image1,
                           caption1,
                           paragraph2,
+                          quote1,
                           paragraph3,
                           image2,
                           caption2,
@@ -464,14 +475,17 @@
         Paragraph *paragraph2;
         paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
         
-        Paragraph *paragraph3;
-        paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
-        
         Quote *quote1;
         quote1 = [self configureQuote:quote1 :@"Quote1"];
         
+        Paragraph *paragraph3;
+        paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
+        
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
+        
+        Quote *quote2;
+        quote2 = [self configureQuote:quote2 :@"Quote2"];
         
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
@@ -509,8 +523,10 @@
                           image1,
                           caption1,
                           paragraph2,
+                          quote1,
                           paragraph3,
                           paragraph4,
+                          quote2,
                           paragraph5,
                           image2,
                           caption2,
@@ -561,17 +577,21 @@
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        Quote *quote1;
-        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
+        
+        Quote *quote1;
+        quote1 = [self configureQuote:quote1 :@"Quote1"];
         
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
+        
+        Quote *quote2;
+        quote2 = [self configureQuote:quote2 :@"Quote2"];
         
         Paragraph *paragraph8;
         paragraph8 = [self configureParagraph:paragraph8 :@"Paragraph8"];
@@ -606,8 +626,10 @@
                                caption2,
                                paragraph4,
                                paragraph5,
+                               quote1,
                                paragraph6,
                                paragraph7,
+                               quote2,
                                paragraph8,
                                paragraph9,
                                image3,

@@ -33,7 +33,9 @@
 			<key>Paragraph12</key>
 			<string>By striving for perfection Baskerville revolutionised the printing process. Despite being scorned by his contemporaries, it didn’t take long for Baskerville’s innovations to be become standard practice, and eventually his genius was recognised in Britain. The turn of the 20th century revitalised the Baskerville typeface thanks to the private press movement as well as the work of Stanley Morison and Bruce Rogers. In the digital age most foundries have multiple versions of Baskerville available, ranging from more traditional designs to those adapted for usability, and Baskerville is also inspiring new designs, such as Mrs. Eaves by Zuzana Licko. As was John Baskerville’s way, perseverance eventually proved him to be one of the worlds greatest typographers.</string>
 			<key>Quote1</key>
-			<string>‘Had I no other dependence than typefounding and printing, I must starve’</string>
+			<string>“Having been an early admirer of the beauty of Letters, I became insensibly desirous of contributing to the perfection of them”</string>
+			<key>Quote2</key>
+			<string>“Had I no other dependence than type-founding and printing, I must starve”</string>
 			<key>Caption1</key>
 			<string>John Baskerville</string>
 			<key>Caption2</key>
@@ -62,7 +64,7 @@
 			<key>Paragraph7</key>
 			<string>Unfortunately the rise of Nazism in Germany initially caused a revival in blackletter typefaces. Renner was an outspoken critic of the Nazi party, even going so far as to publish &lt;italic&gt;Kultur-bolschewismus?, Cultural Bolshevism?&lt;/italic&gt; in 1932. Unsurprisingly when the Nazi’s took power in 1933 Renner was labeled an “intellectual subversive” and forced to resign from his position at the Printing Trade School. Rather than flee, Renner went into self-imposed exile and focused his time on design, in 1939 creating the influential book &lt;italic&gt;Die Kunst der Typographie&lt;/italic&gt;. He worked up until his death in 1956, always trying to combine craft and industry.</string>
 			<key>Quote1</key>
-			<string>&apos;Die neue Typographie&apos;</string>
+			<string>“Everything in nature models itself on the sphere, cone and cylinder; it is necessary to paint along these simple lines, then one can do what one wants”</string>
 			<key>Caption1</key>
 			<string>Paul Renner</string>
 			<key>Caption2</key>
@@ -91,7 +93,7 @@
 			<key>Paragraph7</key>
 			<string>When using Gill Sans, one must decide if they can separate what was made by the hands of Eric Gill from Eric Gill himself. Gill had a curious and insatiable sexual appetite, his multiple extramarital affairs and incestuous relationship with his sister were well known, and for many years treated as merely footnotes in his eccentric life as an artist. However the work of biographer Fiona MacCarthy uncovered Gill’s sexual relationships with his two eldest daughters during their teenage years, not to mention experiments with a dog. When questioned about these actions, Petra Gill stated that her family “just took it for granted”, and that she felt no shame. Regardless, Gill abused his responsibilities as a parent and partook in acts that would surely put him in jail now, as well as in his own time. Does this knowledge make Gill’s typefaces tainted and unusable, or being essentially tools, do they stand apart from the man who made them? Each designer must come to their own opinion.</string>
 			<key>Quote1</key>
-			<string>‘Had I no other dependence than typefounding and printing, I must starve’</string>
+			<string>“The artist is not a different kind of person, but every person is a different kind of artist”</string>
 			<key>Caption1</key>
 			<string>Eric Gill</string>
 			<key>Caption2</key>
@@ -124,7 +126,9 @@
 			<key>Paragraph8</key>
 			<string>Unfortunately success has plagued Palatino with piracy. In most countries the law states that only the name of a typeface can be registered, but its design is unpatentable and therefore in the public domain. Monotypes Book Antiqua shares the same character width, spacing and kerning as Palatino, and there are countless other copies such as Pontiac, Paladium, Andover, Malibu and Elgante. Piracy of Zapf’s designs became so bad that he considered quitting his work as a type designer.</string>
 			<key>Quote1</key>
-			<string>Gaimbattista Palatino, a ‘calligrapher&apos;s calligrapher’</string>
+			<string>“No calligrapher pollutes rivers with his ink, or poisons the air we breathe. Calligraphy makes no noise”</string>
+			<key>Quote2</key>
+			<string>“Typography is two-dimensional architecture, based on experience and imagination, and guided by rules and readability”</string>
 			<key>Caption1</key>
 			<string>Hermann Zapf</string>
 			<key>Caption2</key>
@@ -163,6 +167,8 @@
 			<key>Paragraph11</key>
 			<string>Some have critiqued Times New Roman’s lack of personality, however creating an almost invisible typeface was Morison’s aim, he believed that type should be a vehicle for the message of the text and that, “the typographers only purpose is to express, not himself, but his author”. Over the years Times New Roman has been adapted to Greek and Cyrillic, and expanded with countless variations, weights and characters for use across the globe. &lt;italic&gt;The Times&lt;/italic&gt; newspaper however has moved on. After 40 years of use the venerable typeface was replaced in 1972 with Times Europa, a sturdier design that can withstand faster presses on cheaper paper. Times Europa has since been replaced several times, with &lt;italic&gt;The Times&lt;/italic&gt; currently using Times Modern. However, “the transparent typeface” that is Times New Roman, has flourished in book and magazine printing, as well as desktop publishing with its calm authority and practicality.</string>
 			<key>Quote1</key>
+			<string>&quot;Discipline in typography is a prime virtue”</string>
+			<key>Quote2</key>
 			<string>“For a new font to be successful, it has to be so good that only very few recognise its novelty”</string>
 			<key>Caption1</key>
 			<string>Stanley Morison</string>
