@@ -51,9 +51,10 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
 
     if (screenRect.size.height <= iPhoneHeight480) {
-        self.image_background.frame = CGRectMake(0, 0, self.image_background.frame.size.width, self.image_background.frame.size.height);
+        self.image_background.frame = CGRectMake(0, 0, self.image_background.frame.size.width, self.view.frame.size.height);
         
     }
+    
     
     self.image_backgroundColor.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 2);
 
