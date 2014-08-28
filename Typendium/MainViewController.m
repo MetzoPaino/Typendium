@@ -8,6 +8,9 @@
 
 #import "MainViewController.h"
 
+#import "TYPEIAPHelper.h"
+#import "IAPProduct.h"
+
 @class Quartz;
 
 
@@ -84,6 +87,11 @@
 
     [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"EnableInteraction" object:nil];
     [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"DisableInteraction" object:nil];
+    
+    [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+    
+    }];
+
 
 }
 

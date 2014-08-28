@@ -563,6 +563,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="XPw-HS-kbA" id="2xb-G5-bh3"/>
+                        <outlet property="infoText" destination="FRf-jk-drx" id="ZUm-qb-wD4"/>
                         <outlet property="unlockButton" destination="3pn-El-4nG" id="vCR-td-UJU"/>
                         <outlet property="upArrow" destination="cGZ-9a-Uwa" id="DYq-yd-OYa"/>
                     </connections>

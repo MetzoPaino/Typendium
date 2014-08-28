@@ -17,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *unlockButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *upArrow;
+@property (weak, nonatomic) IBOutlet UILabel *infoText;
 
 @end
 
@@ -40,6 +41,7 @@
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 	[notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatUnlockPageIsThis" object:nil];
     [notificationCenter addObserver:self selector:@selector(unlockTypendiumNotification:) name:@"UnlockTypendium" object:nil];
+    [notificationCenter addObserver:self selector:@selector(typendiumPrice:) name:@"TypendiumPrice" object:nil];
 
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
         [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
@@ -151,6 +153,17 @@
                                                             object:self];
     }
 
+}
+
+- (void)typendiumPrice:(NSNotification *) notificiation {
+    
+    NSDictionary *notificationDictionary = notificiation.userInfo;
+    NSString *typendiumPrice = [notificationDictionary objectForKey:@"TypendiumPrice"];
+    
+    self.infoText.text = [NSString stringWithFormat:@"%@ %@ %@", @"By purchasing Typendium for", typendiumPrice, @"you will gain access to all locked content, as well as any content released in the future." ];
+    
+
+    
 }
 
 - (void)unlockTypendiumNotification:(NSNotification *) notification {

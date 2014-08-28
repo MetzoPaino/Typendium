@@ -54,6 +54,17 @@
         product.skProduct = skProduct;
         product.availableForPurchase = YES;
         
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [numberFormatter setLocale:product.skProduct.priceLocale];
+        NSString *formattedString = [numberFormatter stringFromNumber:product.skProduct.price];
+        NSLog(@"%@", formattedString);
+        
+        NSDictionary *dictionary = @{@"TypendiumPrice": formattedString};
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TypendiumPrice"
+                                                            object:self
+                                                            userInfo:dictionary];
         
 //        NSLog(@"Found product: %@ %@ %0.2f",
 //              skProduct.productIdentifier,
