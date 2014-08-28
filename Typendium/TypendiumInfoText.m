@@ -508,19 +508,22 @@
         specialThanks2 = [self configureSpecialThanks:specialThanks2 :@"MarkFoley"];
         
         SpecialThanks *specialThanks3;
-        specialThanks3 = [self configureSpecialThanks:specialThanks3 :@"MarkKerby"];
+        specialThanks3 = [self configureSpecialThanks:specialThanks3 :@"JosephJackson"];
         
         SpecialThanks *specialThanks4;
-        specialThanks4 = [self configureSpecialThanks:specialThanks4 :@"SimonWithington"];
+        specialThanks4 = [self configureSpecialThanks:specialThanks4 :@"MarkKerby"];
         
         SpecialThanks *specialThanks5;
-        specialThanks5 = [self configureSpecialThanks:specialThanks5 :@"MattGlover"];
+        specialThanks5 = [self configureSpecialThanks:specialThanks5 :@"SimonWithington"];
         
         SpecialThanks *specialThanks6;
-        specialThanks6 = [self configureSpecialThanks:specialThanks6 :@"RobinsonLibrary"];
+        specialThanks6 = [self configureSpecialThanks:specialThanks6 :@"MattGlover"];
         
         SpecialThanks *specialThanks7;
-        specialThanks7 = [self configureSpecialThanks:specialThanks7 :@"CityLibrary"];
+        specialThanks7 = [self configureSpecialThanks:specialThanks7 :@"RobinsonLibrary"];
+        
+        SpecialThanks *specialThanks8;
+        specialThanks8 = [self configureSpecialThanks:specialThanks8 :@"CityLibrary"];
         
         _arr_specialThanks = @[title,
                                specialThanks1,
@@ -529,7 +532,8 @@
                                specialThanks4,
                                specialThanks5,
                                specialThanks6,
-                               specialThanks7];
+                               specialThanks7,
+                               specialThanks8];
     }
     
     return _arr_specialThanks;

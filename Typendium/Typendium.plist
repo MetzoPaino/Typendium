@@ -459,6 +459,13 @@
 		</dict>
 		<key>SpecialThanks</key>
 		<dict>
+			<key>JosephJackson</key>
+			<dict>
+				<key>Name</key>
+				<string>Joseph Jackson</string>
+				<key>Description</key>
+				<string>for creating typendium.com and providing moral support throughout development.</string>
+			</dict>
 			<key>MariusIbanez</key>
 			<dict>
 				<key>Name</key>
