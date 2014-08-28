@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *upArrow;
 @property (weak, nonatomic) IBOutlet UILabel *infoText;
+@property (weak, nonatomic) IBOutlet UIButton *redeemButton;
 
 @end
 
@@ -27,6 +28,7 @@
 	NSArray *_products;
 	NSNumberFormatter *_priceFormatter;
 	NSString *_string_currentPage;
+    NSString *typendiumPrice;
 }
 
 #pragma mark - View Controller Configuration
@@ -46,6 +48,8 @@
 
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
         [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
+        self.redeemButton.hidden = YES;
+
     }
 }
 
@@ -87,6 +91,7 @@
     [self.activityIndicator startAnimating];
     self.unlockButton.hidden = YES;
     self.upArrow.hidden = YES;
+    self.redeemButton.hidden = YES;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableInteraction"
                                                         object:self];
     [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
@@ -104,8 +109,10 @@
             
             if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
                 
+                 NSString *message = [NSString stringWithFormat:@"%@ %@", product.skProduct.localizedDescription, typendiumPrice];
+                
                 alertView = [[UIAlertView alloc] initWithTitle:product.skProduct.localizedTitle
-                                                       message:product.skProduct.localizedDescription
+                                                       message:message
                                                       delegate:self
                                              cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"Redeem", nil];
@@ -113,8 +120,10 @@
                 
             } else {
                 
+                NSString *message = [NSString stringWithFormat:@"%@ %@", product.skProduct.localizedDescription, typendiumPrice];
+                
                 alertView = [[UIAlertView alloc] initWithTitle:product.skProduct.localizedTitle
-                                                       message:product.skProduct.localizedDescription
+                                                       message:message
                                                       delegate:self
                                              cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"Buy", nil];
@@ -130,6 +139,19 @@
     _priceFormatter = [[NSNumberFormatter alloc] init];
     [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+}
+
+- (IBAction)redeemTypendium:(id)sender {
+    
+    [[TYPEIAPHelper sharedInstance] restoreCompletedTransactions];
+    
+    
+//    [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+//
+//    }];
+    
+    
+//    [[TYPEIAPHelper sharedInstance] restoreCompletedTransactions];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -159,7 +181,7 @@
 - (void)typendiumPrice:(NSNotification *) notificiation {
     
     NSDictionary *notificationDictionary = notificiation.userInfo;
-    NSString *typendiumPrice = [notificationDictionary objectForKey:@"TypendiumPrice"];
+    typendiumPrice = [notificationDictionary objectForKey:@"TypendiumPrice"];
     
     self.infoText.text = [NSString stringWithFormat:@"%@ %@ %@", @"By purchasing Typendium for", typendiumPrice, @"you will gain access to all locked content, as well as any content released in the future." ];
     
@@ -175,6 +197,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableInteraction"
                                                         object:self];
     [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
+    self.redeemButton.hidden = YES;
 }
 
 - (void)purchaseFailed:(NSNotification *) notification {
@@ -182,6 +205,7 @@
     [self.activityIndicator stopAnimating];
     self.unlockButton.hidden = NO;
     self.upArrow.hidden = NO;
+    self.redeemButton.hidden = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableInteraction"
                                                         object:self];
     

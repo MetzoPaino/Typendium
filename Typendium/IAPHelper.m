@@ -17,6 +17,7 @@
 @implementation IAPHelper {
     SKProductsRequest *_productsRequest;
     RequestProductsCompletionHandler _completionHandler;
+    BOOL restoringPurchase;
 }
 
 - (id)initWithProducts:(NSMutableDictionary *)products {
@@ -65,6 +66,9 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"TypendiumPrice"
                                                             object:self
                                                             userInfo:dictionary];
+        
+//        [self restoreCompletedTransactions];
+
         
 //        NSLog(@"Found product: %@ %@ %0.2f",
 //              skProduct.productIdentifier,
@@ -196,6 +200,9 @@
 }
 
 - (void)restoreCompletedTransactions {
+    
+
+
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
     
 }
