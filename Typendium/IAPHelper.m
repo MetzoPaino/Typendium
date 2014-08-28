@@ -165,14 +165,29 @@
 
 - (void)provideContentForTransaction:(SKPaymentTransaction *)transaction productIdentifier:(NSString *)productIdentifier {
     
-    IAPProduct *product = _products[productIdentifier];
-    [self provideContentForProductIdentifier:productIdentifier];
-    [self notifyStatusForProductIdentifier:productIdentifier string:@"Purchase complete!"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockTypendium"
-                                                        object:self];
+    if (productIdentifier == nil) {
+        
+        IAPProduct *product = _products[transaction.payment.productIdentifier];
+        [self notifyStatusForProductIdentifier:transaction.payment.productIdentifier string:@"Purchase failed."];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"PurchaseFailed"
+                                                            object:self];
+        product.purchaseInProgress = NO;
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+        
+    } else {
     
-    product.purchaseInProgress = NO;
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+        IAPProduct *product = _products[productIdentifier];
+        [self provideContentForProductIdentifier:productIdentifier];
+        [self notifyStatusForProductIdentifier:productIdentifier string:@"Purchase complete!"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockTypendium"
+                                                            object:self];
+        
+        product.purchaseInProgress = NO;
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    }
+    
+    
+
     
 }
 

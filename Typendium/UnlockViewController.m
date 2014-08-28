@@ -42,6 +42,7 @@
 	[notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatUnlockPageIsThis" object:nil];
     [notificationCenter addObserver:self selector:@selector(unlockTypendiumNotification:) name:@"UnlockTypendium" object:nil];
     [notificationCenter addObserver:self selector:@selector(typendiumPrice:) name:@"TypendiumPrice" object:nil];
+    [notificationCenter addObserver:self selector:@selector(purchaseFailed:) name:@"PurchaseFailed" object:nil];
 
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
         [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
@@ -176,4 +177,13 @@
     [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
 }
 
+- (void)purchaseFailed:(NSNotification *) notification {
+    
+    [self.activityIndicator stopAnimating];
+    self.unlockButton.hidden = NO;
+    self.upArrow.hidden = NO;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableInteraction"
+                                                        object:self];
+    
+}
 @end
