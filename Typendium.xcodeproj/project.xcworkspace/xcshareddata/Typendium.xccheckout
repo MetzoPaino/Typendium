@@ -10,29 +10,29 @@
 	<string>Typendium</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>779DA7B8-978C-48D4-87E6-35BD2189C013</key>
+		<key>0B177EF746D210A7EBD6CD3BEB38F343EFBF9E7A</key>
 		<string>https://github.com/MetzoPaino/Typendium.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Typendium.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>779DA7B8-978C-48D4-87E6-35BD2189C013</key>
+		<key>0B177EF746D210A7EBD6CD3BEB38F343EFBF9E7A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/MetzoPaino/Typendium.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>779DA7B8-978C-48D4-87E6-35BD2189C013</string>
+	<string>0B177EF746D210A7EBD6CD3BEB38F343EFBF9E7A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>779DA7B8-978C-48D4-87E6-35BD2189C013</string>
+			<string>0B177EF746D210A7EBD6CD3BEB38F343EFBF9E7A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Typendium</string>
 		</dict>
