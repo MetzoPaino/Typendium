@@ -48,7 +48,6 @@
     CGRect frame;
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
     CGFloat screenWidth = screenRect.size.width;
 
     NSArray *xib_paragraph;
@@ -141,8 +140,19 @@
 - (Quote *)configureQuote :(Quote *)quote :(NSString *)key {
     
     CGRect frame;
-    NSArray *xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Quote" owner:self options:nil];
-
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    NSArray *xib_quote;
+    
+    if (screenWidth <= 320) {
+        
+        xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Quote" owner:self options:nil];
+        
+    } else {
+        
+        xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Quote_6Plus" owner:self options:nil];
+    }
+    
     quote = [xib_quote objectAtIndex:0];
     quote.lbl_quote.text = [_typendiumText objectForKey:key];
     [quote.lbl_quote sizeToFit];
