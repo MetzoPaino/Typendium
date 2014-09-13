@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Main-->
@@ -138,58 +137,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rku-hK-qYm" userLabel="blockColor">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rku-hK-qYm" userLabel="blockColor">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                 <color key="backgroundColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="284" id="p0a-KF-fIb"/>
-                                </constraints>
                             </imageView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCG-Ax-RX1" userLabel="btn_upArrow">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCG-Ax-RX1" userLabel="btn_upArrow">
                                 <rect key="frame" x="138" y="534" width="44" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="sW7-qC-Uie"/>
-                                </constraints>
                                 <state key="normal" backgroundImage="UpArrow-Black"/>
                                 <connections>
                                     <action selector="upArrow:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="7ie-la-4pf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-q4-QsB" userLabel="btn_tutorial">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghj-q4-QsB" userLabel="btn_tutorial">
                                 <rect key="frame" x="276" y="0.0" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="lxz-Qx-Pfz"/>
-                                </constraints>
                                 <state key="normal" backgroundImage="Tutorial-White"/>
                                 <connections>
                                     <action selector="tutorialButton:" destination="iCE-Yh-opQ" eventType="touchUpInside" id="Mg2-Of-ZMI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Intro-Black" translatesAutoresizingMaskIntoConstraints="NO" id="Xip-2S-z0D" userLabel="img_background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Intro-Black" translatesAutoresizingMaskIntoConstraints="NO" id="Xip-2S-z0D" userLabel="img_background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TypendiumTitle-White" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-Ow-xaQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TypendiumTitle-White" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-Ow-xaQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-Iw-AyN" userLabel="lbl_swipe">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-Iw-AyN" userLabel="lbl_swipe">
                                 <rect key="frame" x="20" y="494" width="280" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="VMV-1K-Iis"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yi-jI-bXG" userLabel="btn_settings">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yi-jI-bXG" userLabel="btn_settings">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="QoV-LV-CmJ"/>
-                                    <constraint firstAttribute="height" constant="44" id="h5b-9n-jgZ"/>
-                                </constraints>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="Unlock-White">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,29 +183,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="trailing" secondItem="ghj-q4-QsB" secondAttribute="trailing" id="1cx-up-N1m"/>
-                            <constraint firstItem="HcZ-te-bAc" firstAttribute="top" secondItem="oCG-Ax-RX1" secondAttribute="bottom" constant="19" id="2CN-NH-S7o"/>
-                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="oCG-Ax-RX1" secondAttribute="centerX" id="4dF-pb-rMz"/>
-                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="centerX" secondItem="rku-hK-qYm" secondAttribute="centerX" id="Dmv-6d-2OF"/>
-                            <constraint firstItem="oCG-Ax-RX1" firstAttribute="top" secondItem="M7F-Iw-AyN" secondAttribute="bottom" constant="19" id="Dsl-Iy-OX3"/>
-                            <constraint firstItem="M7F-Iw-AyN" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" constant="20" symbolic="YES" id="FpL-Cp-Oyc"/>
-                            <constraint firstItem="9Yi-jI-bXG" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="Imh-WY-zmK"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="rku-hK-qYm" secondAttribute="leading" id="M43-UB-lw0"/>
-                            <constraint firstItem="Xip-2S-z0D" firstAttribute="top" secondItem="T4v-sc-4MX" secondAttribute="bottom" id="U86-Wx-1J7"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="Xip-2S-z0D" secondAttribute="leading" id="avK-ib-cV5"/>
-                            <constraint firstItem="rku-hK-qYm" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" constant="-284" id="cuZ-kc-QZ3"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="rku-hK-qYm" secondAttribute="top" id="ff6-3h-IA3"/>
-                            <constraint firstAttribute="trailing" secondItem="Xip-2S-z0D" secondAttribute="trailing" id="khx-cx-4yR"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="top" secondItem="ghj-q4-QsB" secondAttribute="top" id="m6p-ho-B9S"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="leading" secondItem="fv8-dW-0rT" secondAttribute="leading" id="mVQ-VS-Ze7"/>
-                            <constraint firstItem="ghj-q4-QsB" firstAttribute="baseline" secondItem="9Yi-jI-bXG" secondAttribute="baseline" id="p3k-zM-hoG"/>
-                            <constraint firstItem="nXJ-Ow-xaQ" firstAttribute="bottom" secondItem="Xip-2S-z0D" secondAttribute="bottom" id="pnr-He-LmM"/>
-                            <constraint firstItem="9Yi-jI-bXG" firstAttribute="bottom" secondItem="ghj-q4-QsB" secondAttribute="bottom" id="qV1-My-Oha"/>
-                            <constraint firstItem="rku-hK-qYm" firstAttribute="trailing" secondItem="ghj-q4-QsB" secondAttribute="trailing" id="rrS-zx-CVM"/>
-                            <constraint firstItem="9Yi-jI-bXG" firstAttribute="top" secondItem="fv8-dW-0rT" secondAttribute="top" id="wIO-Qg-mgt"/>
-                            <constraint firstItem="rku-hK-qYm" firstAttribute="leading" secondItem="9Yi-jI-bXG" secondAttribute="leading" id="yBM-hb-TN2"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
@@ -558,10 +518,10 @@
         <image name="UpArrow-Black" width="44" height="14"/>
         <image name="UpArrow-White" width="44" height="14"/>
     </resources>
-    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>

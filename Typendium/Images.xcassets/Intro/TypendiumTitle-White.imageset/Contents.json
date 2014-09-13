@@ -14,6 +14,11 @@
       "filename" : "Intro text.png",
       "subtype" : "retina4",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "filename" : "IntroText.png"
     }
   ],
   "info" : {
