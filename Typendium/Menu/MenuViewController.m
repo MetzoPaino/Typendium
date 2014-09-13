@@ -27,7 +27,7 @@
 @implementation MenuViewController {
     
     NSString *_string_currentPage;
-    BOOL configuredScrollView;
+    BOOL _configuredScrollView;
 
 }
 
@@ -70,16 +70,10 @@
     
     [super viewDidLayoutSubviews];
     
-    if (configuredScrollView == NO) {
-        configuredScrollView = YES;
+    if (_configuredScrollView == NO) {
+        _configuredScrollView = YES;
         [self configureScrollView];
-
     }
-    
-    
-
-    
-
 }
 
 - (void)configureScrollView {

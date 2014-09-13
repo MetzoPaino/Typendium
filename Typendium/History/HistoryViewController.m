@@ -26,9 +26,10 @@
 @implementation HistoryViewController {
     
     NSString *_string_currentPage;
+    BOOL _configuredScrollView;
 }
 
-
+#define upArrowButtonGap 20
 
 #pragma mark - View Controller Configuration
 
@@ -41,8 +42,7 @@
     [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatHistoryPageIsThis" object:nil];
 
     
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.historyPageNames.count,
-                                             self.scrollView.frame.size.height);
+
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     
@@ -50,7 +50,31 @@
     self.pageControl.pageIndicatorTintColor = [UIColor typendiumLightGray];
 
 	self.image_backgroundColor.backgroundColor = [UIColor baskvervilleColor];
-	
+}
+
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    if (_configuredScrollView == NO) {
+        _configuredScrollView = YES;
+        [self configureScrollView];
+    }
+    
+    if (screenRect.size.height <= iPhoneHeight480) {
+        self.image_backgroundColor.frame = CGRectMake(0,
+                                                      0,
+                                                      self.image_backgroundColor.frame.size.width,
+                                                      screenRect.size.height / 2);
+    }
+}
+
+- (void)configureScrollView {
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.historyPageNames.count,
+                                             self.scrollView.frame.size.height);
+    
     int i = 0;
     
     NSArray *upArrowsArray = @[@"UpArrow-Baskerville",
@@ -62,8 +86,8 @@
     while (i < self.historyPageNames.count) {
         
         UIView *historyPage = [[UIView alloc]
-                            initWithFrame:CGRectMake(((self.scrollView.frame.size.width)*i), 0,
-                                                     (self.scrollView.frame.size.width), self.scrollView.frame.size.height)];
+                               initWithFrame:CGRectMake(((self.scrollView.frame.size.width)*i), 0,
+                                                        (self.scrollView.frame.size.width), self.scrollView.frame.size.height)];
         
         [historyPage setTag:i];
         
@@ -78,11 +102,11 @@
                                                                            44,
                                                                            15)];
             upArrow.center = CGPointMake(self.view.center.x,
-                                         545);
+                                         self.view.frame.size.height - upArrowButtonGap);
             if (self.view.bounds.size.height < 568) {
                 upArrow.center = CGPointMake(upArrow.center.x, upArrow.center.y - 88);
             }
-
+            
             [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
             upArrow.restorationIdentifier = @"UpArrow";
@@ -109,9 +133,9 @@
             [suggestATypeface addTarget:self action:@selector(suggestATypeface:) forControlEvents:UIControlEventTouchUpInside];
             
             [historyPage addSubview:suggestATypeface];
-
+            
         }
-
+        
         [self.scrollView addSubview:historyPage];
         
         i++;
@@ -122,13 +146,13 @@
     for (UIView *historyPage in self.scrollView.subviews) {
         
         if (![[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"] && historyPage.tag > 1 && ![historyPage.restorationIdentifier isEqualToString:@"ComingSoon"] ) {
-
+            
             float y =  self.pageControl.center.y - self.view.center.y;
-
+            
             UIButton *unlockTypendium = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             unlockTypendium.center = CGPointMake(self.view.center.x, self.view.center.y + (y / 2));
             unlockTypendium.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
-
+            
             [unlockTypendium setTitle:@"Unlock Typendium" forState:UIControlStateNormal];
             
             unlockTypendium.layer.borderWidth = 1.0f;
@@ -161,34 +185,7 @@
                     button.hidden = YES;
                 }
             }
-            
-            
         }
-        
-        
-    }
-}
-
-- (void)viewDidLayoutSubviews {
-    
-    [super viewDidLayoutSubviews];
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
-    if (screenRect.size.height <= iPhoneHeight480) {
-        self.image_backgroundColor.frame = CGRectMake(0,
-                                                      0,
-                                                      self.image_backgroundColor.frame.size.width,
-                                                      screenRect.size.height / 2);
-
-
-//        - (void)viewDidLayoutSubviews {
-//            
-//            [super viewDidLayoutSubviews];
-//            if (self.view.bounds.size.height < 568) {
-//                self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.btn_upArrow.center.y - 88);
-//            }
-//        }
-        
     }
 }
 
