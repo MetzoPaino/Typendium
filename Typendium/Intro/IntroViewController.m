@@ -42,6 +42,7 @@
     self.btn_unlock.alpha = 0;
     self.btn_tutorial.alpha = 0;
     self.lbl_swipe.alpha = 0;
+    
 }
 
 - (void) viewDidLayoutSubviews {

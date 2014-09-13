@@ -27,6 +27,7 @@
 @implementation MenuViewController {
     
     NSString *_string_currentPage;
+    BOOL configuredScrollView;
 
 }
 
@@ -42,6 +43,8 @@
 
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(whatPageIsThis) name:@"WhatMenuPageIsThis" object:nil];
+    
+    
 }
 
 - (NSString *)assignCurrentPage {
@@ -65,12 +68,28 @@
 
 - (void)viewDidLayoutSubviews {
     
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    [super viewDidLayoutSubviews];
+    
+    if (configuredScrollView == NO) {
+        configuredScrollView = YES;
+        [self configureScrollView];
 
+    }
+    
+    
+
+    
+
+}
+
+- (void)configureScrollView {
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
     if (screenRect.size.height <= iPhoneHeight480) {
         self.image.frame = CGRectMake(0, 0, self.image.frame.size.width, screenRect.size.height / 2);
         self.image2.frame = CGRectMake(0, 0, self.image.frame.size.width, screenRect.size.height / 2);
-
+        
     }
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.menuPageNames.count,
@@ -90,15 +109,15 @@
         
         UIImageView *background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.menuPageNames objectAtIndex:i]]];
         background.center = CGPointMake(self.view.center.x, self.view.center.y);
-
+        
         [menuPage addSubview:background];
         
-//        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-//        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
-//        title.text = [self.menuPageNames objectAtIndex:i];
-//        title.textAlignment = NSTextAlignmentCenter;
-//        title.font = [UIFont systemFontOfSize:28];
-//        [menuPage addSubview:title];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
+        title.text = [self.menuPageNames objectAtIndex:i];
+        title.textAlignment = NSTextAlignmentCenter;
+        title.font = [UIFont systemFontOfSize:28];
+        [menuPage addSubview:title];
         
         UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
         upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
@@ -106,10 +125,10 @@
         
         if (i == 0) {
             [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Red"] forState:UIControlStateNormal];
-
+            
         } else {
             [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-Blue"] forState:UIControlStateNormal];
-
+            
         }
         [menuPage addSubview:upArrow];
         
@@ -118,8 +137,6 @@
         
         i++;
     }
-    
-
 }
 
 - (void)whatPageIsThis {

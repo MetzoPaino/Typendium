@@ -69,28 +69,28 @@
 {
     [super viewDidLoad];
     
-    _string_currentSection = @"Intro";
-	_string_currentPage = @"Intro";
-    
-    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    [self.view addGestureRecognizer:self.panGesture];
-    self.panGesture.delegate = self;
-
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
-    
-    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
-    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfText" object:nil];
-    
-    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfInfoText" object:nil];
-    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfInfoText" object:nil];
-
-    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"EnableInteraction" object:nil];
-    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"DisableInteraction" object:nil];
-    
-    [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
-    
-    }];
+//    _string_currentSection = @"Intro";
+//	_string_currentPage = @"Intro";
+//    
+//    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+//    [self.view addGestureRecognizer:self.panGesture];
+//    self.panGesture.delegate = self;
+//
+//    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+//    [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
+//    
+//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
+//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfText" object:nil];
+//    
+//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfInfoText" object:nil];
+//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfInfoText" object:nil];
+//
+//    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"EnableInteraction" object:nil];
+//    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"DisableInteraction" object:nil];
+//    
+//    [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+//    
+//    }];
 
 
 }
@@ -105,50 +105,50 @@
     
     // Place views
     
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
-    self.con_intro.frame = screenRect;
-    self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
-    
-    self.con_tutorial.frame = screenRect;
-    self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
-    
-    self.con_unlock.frame = screenRect;
-    self.con_unlock.center = CGPointMake(self.con_unlock.center.x, -self.view.frame.size.height/2);
-    
-    self.con_menu.frame = screenRect;
-    self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
-    
-    self.con_history.frame = screenRect;
-    self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
-    
-    self.con_text.frame = screenRect;
-    self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
-
-    self.con_info.frame = screenRect;
-    self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
-    
-    self.con_infoText.frame = screenRect;
-    self.con_infoText.center = CGPointMake(self.con_infoText.center.x, self.view.center.y + ViewOffset);
-
-    
-    // Add shadows to views that need them
-    
-    NSArray *shadowsArray = @[self.con_tutorial,
-                              self.con_unlock,
-                              self.con_intro,
-                              self.con_menu,
-                              self.con_history,
-                              self.con_info];
-    
-    for (UIView *view in shadowsArray) {
-        
-        view.layer.shadowColor = [[UIColor blackColor] CGColor];
-        view.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
-        view.layer.shadowOpacity = 0.0f;
-        view.layer.shadowRadius = 10.0f;
-        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
-    }
+//    CGRect screenRect = [[UIScreen mainScreen] bounds];
+//    
+//    self.con_intro.frame = screenRect;
+//    self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
+//    
+//    self.con_tutorial.frame = screenRect;
+//    self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
+//    
+//    self.con_unlock.frame = screenRect;
+//    self.con_unlock.center = CGPointMake(self.con_unlock.center.x, -self.view.frame.size.height/2);
+//    
+//    self.con_menu.frame = screenRect;
+//    self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
+//    
+//    self.con_history.frame = screenRect;
+//    self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
+//    
+//    self.con_text.frame = screenRect;
+//    self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
+//
+//    self.con_info.frame = screenRect;
+//    self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
+//    
+//    self.con_infoText.frame = screenRect;
+//    self.con_infoText.center = CGPointMake(self.con_infoText.center.x, self.view.center.y + ViewOffset);
+//
+//    
+//    // Add shadows to views that need them
+//    
+//    NSArray *shadowsArray = @[self.con_tutorial,
+//                              self.con_unlock,
+//                              self.con_intro,
+//                              self.con_menu,
+//                              self.con_history,
+//                              self.con_info];
+//    
+//    for (UIView *view in shadowsArray) {
+//        
+//        view.layer.shadowColor = [[UIColor blackColor] CGColor];
+//        view.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
+//        view.layer.shadowOpacity = 0.0f;
+//        view.layer.shadowRadius = 10.0f;
+//        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
+//    }
 }
 
 #pragma mark - Observer Messages
