@@ -667,9 +667,7 @@
 - (NSArray *)assignViews:(UIView *)currentView higherView:(UIView *)higherView lowerView:(UIView *)lowerView {
     
     NSArray *viewsArray;
-    
 
-    
     return viewsArray;
 }
 
@@ -751,6 +749,9 @@
     
     if ([currentPage isEqualToString:@"History"] && [newPage isEqualToString:@"Text"]) {
         
+        self.con_history.hidden = NO;
+        self.con_info.hidden = YES;
+        
         gestureContext = @"Up Arrow Pressed";
         
         currentView = self.con_history;
@@ -783,6 +784,9 @@
     }
     
     if ([currentPage isEqualToString:@"Info"]) {
+        
+        self.con_history.hidden = YES;
+        self.con_info.hidden = NO;
         
         gestureContext = @"Up Arrow Pressed";
         

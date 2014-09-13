@@ -62,8 +62,6 @@
         xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph_6Plus" owner:self options:nil];
     }
     
-
-//    xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
     paragraph = [xib_paragraph objectAtIndex:0];
     
     NSMutableString *text = [_typendiumText objectForKey:key];

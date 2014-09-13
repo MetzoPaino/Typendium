@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gsg-3H-YN1">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -22,56 +23,56 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Fxi-MQ-I6v" kind="embed" id="cdV-iA-zcC"/>
+                                    <segue destination="Fxi-MQ-I6v" kind="embed" identifier="InfoText" id="cdV-iA-zcC"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRy-87-cCb" userLabel="con_historyText">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="A3L-dk-IrD" kind="embed" id="XtI-tT-hJA"/>
-                                </connections>
-                            </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvn-Z4-RrV" userLabel="con_history">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="U4x-WW-qFD" kind="embed" id="OyX-2t-rAN"/>
+                                    <segue destination="A3L-dk-IrD" kind="embed" identifier="Text" id="XtI-tT-hJA"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3K-B0-AbO" userLabel="con_info">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="FuL-fu-j1t" kind="embed" id="WrA-xH-Jq9"/>
+                                    <segue destination="FuL-fu-j1t" kind="embed" identifier="Info" id="WrA-xH-Jq9"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvn-Z4-RrV" userLabel="con_history">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="U4x-WW-qFD" kind="embed" identifier="History" id="OyX-2t-rAN"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJo-ec-Axo" userLabel="con_menu">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="qdg-kr-pMh" kind="embed" id="Rvx-DD-wLB"/>
+                                    <segue destination="qdg-kr-pMh" kind="embed" identifier="Menu" id="Rvx-DD-wLB"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3E-IP-H97" userLabel="con_intro">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="MMm-o5-rVT" kind="embed" id="Eqg-o0-a2j"/>
+                                    <segue destination="MMm-o5-rVT" kind="embed" identifier="Intro" id="Eqg-o0-a2j"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66t-wx-g2w" userLabel="con_unlock">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="qcI-pP-pfx" kind="embed" id="LEE-gl-hYU"/>
+                                    <segue destination="qcI-pP-pfx" kind="embed" identifier="Unlock" id="LEE-gl-hYU"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVF-uq-OOZ" userLabel="con_tutorial">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="GST-q8-e3k" kind="embed" id="WKW-Xx-PRn"/>
+                                    <segue destination="GST-q8-e3k" kind="embed" identifier="Tutorial" id="WKW-Xx-PRn"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -227,6 +228,7 @@
                         <outlet property="btn_unlock" destination="HAG-fn-8yV" id="09w-cZ-klJ"/>
                         <outlet property="btn_upArrow" destination="ZfD-Df-9fo" id="JJu-oP-lwM"/>
                         <outlet property="image_background" destination="kBc-7n-Hdm" id="Nf9-Fk-4au"/>
+                        <outlet property="image_backgroundColor" destination="RCD-CT-DU5" id="Kvk-dh-PvJ"/>
                         <outlet property="img_title" destination="vsL-Ec-ybH" id="4aL-dZ-zNw"/>
                         <outlet property="lbl_swipe" destination="IEn-ut-ahB" id="UUL-d7-VYe"/>
                     </connections>
