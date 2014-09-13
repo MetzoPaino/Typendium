@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gsg-3H-YN1">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -8,7 +9,6 @@
         <!--Main View Controller-->
         <scene sceneID="5LF-y8-IkA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GAZ-RO-tMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Gsg-3H-YN1" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2S9-2l-bJj"/>
@@ -121,6 +121,7 @@
                         <outlet property="con_unlock" destination="66t-wx-g2w" id="8x5-Fi-cgt"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAZ-RO-tMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="359" y="516"/>
         </scene>
@@ -561,7 +562,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKn-I9-8Ha">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.88019871709999997" green="0.01983759739" blue="0.1051318198" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="Fxi-MQ-I6v" id="Rxl-xD-ygp"/>
                                 </connections>

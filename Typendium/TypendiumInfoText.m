@@ -43,25 +43,26 @@
 
 - (Title *)configureTitle :(Title *)title : (NSString *)name {
     
-    NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    NSArray *xib_title;
+    
+    if (screenWidth <= 320) {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+        
+    } else if (screenWidth <= 375) {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6" owner:self options:nil];
+        
+    } else {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6Plus" owner:self options:nil];
+    }
     
     title = [xib_title objectAtIndex:0];
     title.shareButton.hidden = YES;
     title.img_title.image = [UIImage imageNamed:name];
-    title.backgroundColor = [UIColor orangeColor];
-    
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    title.frame = CGRectMake(0, 0, screenWidth, title.frame.size.height);
-    
-    if ([name isEqualToString:@"ReferencesHeader"]) {
-        title.backgroundColor = [UIColor referencesColor];
-    } else if ([name isEqualToString:@"AboutUsHeader"]) {
-        title.backgroundColor = [UIColor aboutUsColor];
-    } else if ([name isEqualToString:@"SpecialThanksHeader"]) {
-        title.backgroundColor = [UIColor specialThanksColor];
-    }
-    
     
     return title;
 }
@@ -116,7 +117,22 @@
 }
 - (Section *)configureSection :(Section *)section :(NSString *)key {
     
-    NSArray *xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section" owner:self options:nil];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    NSArray *xib_quote;
+    
+    if (screenWidth <= 320) {
+        
+        xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section" owner:self options:nil];
+        
+    } else if (screenWidth <= 375) {
+        
+        xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section_6" owner:self options:nil];
+        
+    } else {
+        
+        xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section_6Plus" owner:self options:nil];
+    }
     
     section = [xib_quote objectAtIndex:0];
     NSDictionary *sectionText = [NSDictionary dictionaryWithDictionary:[_typendiumInfoText objectForKey:@"Section"]];

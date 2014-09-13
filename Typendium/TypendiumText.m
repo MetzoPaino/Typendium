@@ -35,7 +35,22 @@
 
 - (Title *)configureTitle :(Title *)title : (NSString *)name {
     
-    NSArray *xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    NSArray *xib_title;
+    
+    if (screenWidth <= 320) {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title" owner:self options:nil];
+        
+    } else if (screenWidth <= 375) {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6" owner:self options:nil];
+        
+    } else {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6Plus" owner:self options:nil];
+    }
     
     title = [xib_title objectAtIndex:0];
     title.img_title.image = [UIImage imageNamed:name];
