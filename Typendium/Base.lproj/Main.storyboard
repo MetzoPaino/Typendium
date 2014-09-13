@@ -112,11 +112,11 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="con_history" destination="vpj-vf-ca5" id="wX7-ry-jsf"/>
+                        <outlet property="con_historyText" destination="acM-XM-oxq" id="E7g-s9-e0x"/>
                         <outlet property="con_info" destination="nId-Tk-7Np" id="uRT-6J-V7N"/>
                         <outlet property="con_infoText" destination="Awx-SO-tLe" id="PSQ-Nz-2ky"/>
                         <outlet property="con_intro" destination="lne-tg-qZL" id="VnS-x0-FXy"/>
                         <outlet property="con_menu" destination="Hhe-HR-b8j" id="9ap-L3-N4U"/>
-                        <outlet property="con_text" destination="acM-XM-oxq" id="HOD-F3-leu"/>
                         <outlet property="con_tutorial" destination="t3w-Zs-OwB" id="1s6-4L-a90"/>
                         <outlet property="con_unlock" destination="WF7-ns-ufW" id="ATx-CW-pZw"/>
                     </connections>

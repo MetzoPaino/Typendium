@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *con_menu;
 
 @property (weak, nonatomic) IBOutlet UIView *con_history;
-@property (weak, nonatomic) IBOutlet UIView *con_text;
+@property (weak, nonatomic) IBOutlet UIView *con_historyText;
 
 @property (weak, nonatomic) IBOutlet UIView *con_info;
 @property (weak, nonatomic) IBOutlet UIView *con_infoText;
@@ -69,30 +69,28 @@
 {
     [super viewDidLoad];
     
-//    _string_currentSection = @"Intro";
-//	_string_currentPage = @"Intro";
-//    
-//    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-//    [self.view addGestureRecognizer:self.panGesture];
-//    self.panGesture.delegate = self;
-//
-//    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-//    [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
-//    
-//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
-//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfText" object:nil];
-//    
-//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfInfoText" object:nil];
-//    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfInfoText" object:nil];
-//
-//    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"EnableInteraction" object:nil];
-//    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"DisableInteraction" object:nil];
-//    
-//    [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
-//    
-//    }];
+    _string_currentSection = @"Intro";
+	_string_currentPage = @"Intro";
+    
+    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    [self.view addGestureRecognizer:self.panGesture];
+    self.panGesture.delegate = self;
 
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(assignThisPage:) name:@"ThisPage" object:nil];
+    
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfText" object:nil];
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfText" object:nil];
+    
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"AtTopOfInfoText" object:nil];
+    [notificationCenter addObserver:self selector:@selector(atTopOfText:) name:@"NotAtTopOfInfoText" object:nil];
 
+    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"EnableInteraction" object:nil];
+    [notificationCenter addObserver:self selector:@selector(toggleInteraction:) name:@"DisableInteraction" object:nil];
+    
+    [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+    
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -105,35 +103,35 @@
     
     // Place views
     
-//    CGRect screenRect = [[UIScreen mainScreen] bounds];
-//    
-//    self.con_intro.frame = screenRect;
-//    self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
-//    
-//    self.con_tutorial.frame = screenRect;
-//    self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
-//    
-//    self.con_unlock.frame = screenRect;
-//    self.con_unlock.center = CGPointMake(self.con_unlock.center.x, -self.view.frame.size.height/2);
-//    
-//    self.con_menu.frame = screenRect;
-//    self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
-//    
-//    self.con_history.frame = screenRect;
-//    self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
-//    
-//    self.con_text.frame = screenRect;
-//    self.con_text.center = CGPointMake(self.con_text.center.x, self.view.center.y + ViewOffset);
-//
-//    self.con_info.frame = screenRect;
-//    self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
-//    
-//    self.con_infoText.frame = screenRect;
-//    self.con_infoText.center = CGPointMake(self.con_infoText.center.x, self.view.center.y + ViewOffset);
-//
-//    
-//    // Add shadows to views that need them
-//    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    self.con_intro.frame = screenRect;
+    self.con_intro.center = CGPointMake(self.con_intro.center.x, self.view.center.y);
+    
+    self.con_tutorial.frame = screenRect;
+    self.con_tutorial.center = CGPointMake(self.con_tutorial.center.x, -self.view.frame.size.height/2);
+    
+    self.con_unlock.frame = screenRect;
+    self.con_unlock.center = CGPointMake(self.con_unlock.center.x, -self.view.frame.size.height/2);
+    
+    self.con_menu.frame = screenRect;
+    self.con_menu.center = CGPointMake(self.con_intro.center.x, self.view.center.y + ViewOffset);
+    
+    self.con_history.frame = screenRect;
+    self.con_history.center = CGPointMake(self.con_history.center.x, self.view.center.y + ViewOffset);
+    
+    self.con_historyText.frame = screenRect;
+    self.con_historyText.center = CGPointMake(self.con_historyText.center.x, self.view.center.y + ViewOffset);
+
+    self.con_info.frame = screenRect;
+    self.con_info.center = CGPointMake(self.con_info.center.x, self.view.center.y + ViewOffset);
+    
+    self.con_infoText.frame = screenRect;
+    self.con_infoText.center = CGPointMake(self.con_infoText.center.x, self.view.center.y + ViewOffset);
+
+    
+    // Add shadows to views that need them
+    
 //    NSArray *shadowsArray = @[self.con_tutorial,
 //                              self.con_unlock,
 //                              self.con_intro,
@@ -233,7 +231,7 @@
                 if ([_string_currentPage isEqualToString:@"History"]) {
                     
                     self.con_history.hidden = NO;
-                    self.con_text.hidden = NO;
+                    self.con_historyText.hidden = NO;
                     
                     self.con_info.hidden = YES;
                     self.con_infoText.hidden = YES;
@@ -243,7 +241,7 @@
                 } else {
                     
                     self.con_history.hidden = YES;
-                    self.con_text.hidden = YES;
+                    self.con_historyText.hidden = YES;
                     
                     self.con_info.hidden = NO;
                     self.con_infoText.hidden = NO;
@@ -271,13 +269,13 @@
                 
                 _currentView = self.con_history;
                 _higherView = self.con_menu;
-                _lowerView = self.con_text;
+                _lowerView = self.con_historyText;
                 
             }
             
             if  ([_string_currentSection isEqualToString:@"Text"]){
                 
-                _currentView = self.con_text;
+                _currentView = self.con_historyText;
                 _higherView = self.con_history;
                 _lowerView = nil;
                 
@@ -343,7 +341,7 @@
             
             gestureContext = @"Moving Current View Up";
             
-            if (![_currentView isEqual: self.con_text] &&
+            if (![_currentView isEqual: self.con_historyText] &&
                 ![_currentView isEqual: self.con_infoText] &&
                 ![_string_currentPage isEqualToString:@"ComingSoon"] &&
                 ![_string_currentPage isEqualToString:@"ContactUs"] &&
@@ -388,7 +386,7 @@
                 ![_currentView isEqual: self.con_tutorial] &&
                 ![_currentView isEqual: self.con_unlock]) {
                 
-                if ([_currentView isEqual: self.con_text]) {
+                if ([_currentView isEqual: self.con_historyText]) {
                     
                     if (_isTextContainerAtTop) {
                         
@@ -434,7 +432,7 @@
         
         if (panGestureRecognizer.state == UIGestureRecognizerStateEnded) {
             
-            if ([_currentView isEqual:self.con_text]) {
+            if ([_currentView isEqual:self.con_historyText]) {
                 
                 if (_isTextContainerAtTop) {
                     [self parallaxToLocation :  _currentView : _higherView : _lowerView : gestureContext];
@@ -742,7 +740,7 @@
         
         currentView = self.con_history;
         higherView = self.con_menu;
-        lowerView = self.con_text;
+        lowerView = self.con_historyText;
 
         if (!_hasConstructedText) {
             
@@ -762,7 +760,7 @@
     if ([currentPage isEqualToString:@"Text"] && [newPage isEqualToString:@"History"]) {
         
         gestureContext = @"Text Arrow Pressed";
-        currentView = self.con_text;
+        currentView = self.con_historyText;
         higherView = self.con_history;
         lowerView = nil;
         
