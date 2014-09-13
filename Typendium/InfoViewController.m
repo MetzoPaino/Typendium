@@ -26,7 +26,11 @@
 @implementation InfoViewController {
     
     NSString *_string_currentPage;
+    BOOL _configuredScrollView;
+
 }
+
+#define upArrowButtonGap 20
 
 - (void)viewDidLoad {
     
@@ -43,6 +47,16 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
+    if (_configuredScrollView == NO) {
+        _configuredScrollView = YES;
+        [self configureScrollView];
+    }
+}
+
+- (void)configureScrollView {
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.infoPageNames.count,
                                              self.scrollView.frame.size.height);
@@ -71,7 +85,7 @@
             
             UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
             upArrow.center = CGPointMake(self.view.center.x,
-                                         545);
+                                         self.view.frame.size.height - upArrowButtonGap);
             if (self.view.bounds.size.height < 568) {
                 upArrow.center = CGPointMake(upArrow.center.x, upArrow.center.y - 88);
             }
@@ -98,7 +112,7 @@
             [contactUs addTarget:self action:@selector(contactUs:) forControlEvents:UIControlEventTouchUpInside];
             
             [infoPage addSubview:contactUs];
-
+            
         } else if (i == 4) {
             
             float y =  self.pageControl.center.y - self.view.center.y;
@@ -109,7 +123,7 @@
             review.titleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
             [review setTitle:@"Review Typendium" forState:UIControlStateNormal];
             
-    
+            
             [review setTitleColor:[UIColor reviewColor] forState:UIControlStateNormal];
             
             review.layer.borderWidth = 1.0f;
@@ -120,22 +134,6 @@
             
             [infoPage addSubview:review];
         }
-        
-
-        
-//        UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
-//        upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
-//        [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
-//        
-//        if (i == 0) {
-//            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-References"] forState:UIControlStateNormal];
-//            
-//        } else {
-//            [upArrow setBackgroundImage:[UIImage imageNamed:@"UpArrow-AboutUs"] forState:UIControlStateNormal];
-//            
-//        }
-//        [infoPage addSubview:upArrow];
-        
         
         [self.scrollView addSubview:infoPage];
         
@@ -151,19 +149,7 @@
                                                       self.image_backgroundColor.frame.size.width,
                                                       screenRect.size.height / 2);
         self.pageControl.center = CGPointMake(self.pageControl.center.x, self.pageControl.center.y - 88);
-
-        
-        
-        //        - (void)viewDidLayoutSubviews {
-        //
-        //            [super viewDidLayoutSubviews];
-        //            if (self.view.bounds.size.height < 568) {
-        //                self.btn_upArrow.center = CGPointMake(self.btn_upArrow.center.x, self.btn_upArrow.center.y - 88);
-        //            }
-        //        }
-        
     }
-
 }
 
 - (NSString *)assignCurrentPage {
