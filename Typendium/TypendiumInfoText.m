@@ -48,6 +48,20 @@
     title = [xib_title objectAtIndex:0];
     title.shareButton.hidden = YES;
     title.img_title.image = [UIImage imageNamed:name];
+    title.backgroundColor = [UIColor orangeColor];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    title.frame = CGRectMake(0, 0, screenWidth, title.frame.size.height);
+    
+    if ([name isEqualToString:@"ReferencesHeader"]) {
+        title.backgroundColor = [UIColor referencesColor];
+    } else if ([name isEqualToString:@"AboutUsHeader"]) {
+        title.backgroundColor = [UIColor aboutUsColor];
+    } else if ([name isEqualToString:@"SpecialThanksHeader"]) {
+        title.backgroundColor = [UIColor specialThanksColor];
+    }
+    
     
     return title;
 }
@@ -138,11 +152,11 @@
     specialThanks = [xib_paragraph objectAtIndex:0];
     NSDictionary *specialThanksText = [NSDictionary dictionaryWithDictionary:[_typendiumInfoText objectForKey:key]];
     specialThanks.name.text = [specialThanksText objectForKey:@"Name"];
-    specialThanks.description.text = [specialThanksText objectForKey:@"Description"];
+    specialThanks.thanks.text = [specialThanksText objectForKey:@"Description"];
     
-    [specialThanks.description sizeToFit];
+    [specialThanks.thanks sizeToFit];
     
-    specialThanks.frame = CGRectMake(0, 0, specialThanks.frame.size.width, specialThanks.name.frame.size.height + 6 + specialThanks.description.frame.size.height);
+    specialThanks.frame = CGRectMake(0, 0, specialThanks.frame.size.width, specialThanks.name.frame.size.height + 6 + specialThanks.thanks.frame.size.height);
     
     return specialThanks;
 }

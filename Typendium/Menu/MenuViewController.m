@@ -106,13 +106,6 @@
         
         [menuPage addSubview:background];
         
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        title.center = CGPointMake(self.view.center.x, self.view.frame.size.height - title.frame.size.height * 2);
-        title.text = [self.menuPageNames objectAtIndex:i];
-        title.textAlignment = NSTextAlignmentCenter;
-        title.font = [UIFont systemFontOfSize:28];
-        [menuPage addSubview:title];
-        
         UIButton *upArrow = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 15)];
         upArrow.center = CGPointMake(self.view.center.x, self.view.frame.size.height - upArrow.frame.size.height * 1.5);
         [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
@@ -157,23 +150,6 @@
     [self.detectCurrentPageDelegate assignCurrentPage:self
                                        currentSection:@"Menu"
                                           currentPage:[self assignCurrentPage]];
-    
-//    if (page == 0) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor historyColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"Menu"
-//											  currentPage:@"History"];
-//
-//    }
-//    
-//    if (page == 1) {
-//        
-//        self.pageControl.currentPageIndicatorTintColor = [UIColor infoColor];
-//		[self.detectCurrentPageDelegate assignCurrentPage:self
-//										   currentSection:@"Menu"
-//											  currentPage:@"Info"];
-//    }
     
     self.image.alpha = (scrollView.contentOffset.x / scrollView.contentSize.width) * 2;
     

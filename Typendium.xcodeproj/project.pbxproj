@@ -14,6 +14,7 @@
 		4331ECE11923988A002C1D50 /* MadeIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4331ECE01923988A002C1D50 /* MadeIn.m */; };
 		4331ECE3192398A3002C1D50 /* MadeIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4331ECE2192398A3002C1D50 /* MadeIn.xib */; };
 		433B0EF219C4618400581F1F /* Typendium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433B0EF119C4618400581F1F /* Typendium.storyboard */; };
+		433B0EF619C4A5A600581F1F /* Paragraph_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433B0EF519C4A5A600581F1F /* Paragraph_6Plus.xib */; };
 		433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D8666191F681F007EE3F9 /* AboutUs.xib */; };
 		433D866A191F7225007EE3F9 /* AboutUs.m in Sources */ = {isa = PBXBuildFile; fileRef = 433D8669191F7224007EE3F9 /* AboutUs.m */; };
 		433D866C191FB009007EE3F9 /* Section.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D866B191FB009007EE3F9 /* Section.xib */; };
@@ -88,6 +89,7 @@
 		4331ECE01923988A002C1D50 /* MadeIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MadeIn.m; sourceTree = "<group>"; };
 		4331ECE2192398A3002C1D50 /* MadeIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MadeIn.xib; sourceTree = "<group>"; };
 		433B0EF119C4618400581F1F /* Typendium.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Typendium.storyboard; path = Storyboards/Typendium.storyboard; sourceTree = "<group>"; };
+		433B0EF519C4A5A600581F1F /* Paragraph_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Paragraph_6Plus.xib; path = XIBs/Paragraph_6Plus.xib; sourceTree = "<group>"; };
 		433D8666191F681F007EE3F9 /* AboutUs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUs.xib; sourceTree = "<group>"; };
 		433D8668191F7224007EE3F9 /* AboutUs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUs.h; sourceTree = "<group>"; };
 		433D8669191F7224007EE3F9 /* AboutUs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUs.m; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				43DD1A4718E8304700B43DE3 /* Paragraph.h */,
 				43DD1A4818E8304700B43DE3 /* Paragraph.m */,
 				43DD1A4318E82B2000B43DE3 /* Paragraph.xib */,
+				433B0EF519C4A5A600581F1F /* Paragraph_6Plus.xib */,
 				437CD7E318E8C38A00AAD7F6 /* Caption.h */,
 				437CD7E418E8C38A00AAD7F6 /* Caption.m */,
 				437CD7E118E8C37E00AAD7F6 /* Caption.xib */,
@@ -491,6 +494,7 @@
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
 				435F84471927807C00D6AAEA /* SpecialThanks.xib in Resources */,
 				43D83B611997B25400358FBD /* TypendiumTutorial.mp4 in Resources */,
+				433B0EF619C4A5A600581F1F /* Paragraph_6Plus.xib in Resources */,
 				435BB028191E98B100B762CE /* Reference.xib in Resources */,
 				433D866C191FB009007EE3F9 /* Section.xib in Resources */,
 				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,

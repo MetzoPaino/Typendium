@@ -46,8 +46,24 @@
 - (Paragraph *)configureParagraph :(Paragraph *)paragraph :(NSString *)key {
     
     CGRect frame;
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    CGFloat screenWidth = screenRect.size.width;
 
-    NSArray *xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+    NSArray *xib_paragraph;
+    
+    if (screenWidth <= 320) {
+        
+        xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+
+    } else {
+        
+        xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph_6Plus" owner:self options:nil];
+    }
+    
+
+//    xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
     paragraph = [xib_paragraph objectAtIndex:0];
     
     NSMutableString *text = [_typendiumText objectForKey:key];

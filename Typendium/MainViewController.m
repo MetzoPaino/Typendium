@@ -91,6 +91,15 @@
     [[TYPEIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
     
     }];
+    
+    [self.view bringSubviewToFront:self.con_infoText];
+    [self.view bringSubviewToFront:self.con_historyText];
+    [self.view bringSubviewToFront:self.con_info];
+    [self.view bringSubviewToFront:self.con_history];
+    [self.view bringSubviewToFront:self.con_menu];
+    [self.view bringSubviewToFront:self.con_intro];
+    [self.view bringSubviewToFront:self.con_unlock];
+    [self.view bringSubviewToFront:self.con_tutorial];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -132,26 +141,26 @@
     
     // Add shadows to views that need them
     
-//    NSArray *shadowsArray = @[self.con_tutorial,
-//                              self.con_unlock,
-//                              self.con_intro,
-//                              self.con_menu,
-//                              self.con_history,
-//                              self.con_info];
-//    
-//    for (UIView *view in shadowsArray) {
-//        
-//        view.layer.shadowColor = [[UIColor blackColor] CGColor];
-//        view.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
-//        view.layer.shadowOpacity = 0.0f;
-//        view.layer.shadowRadius = 10.0f;
-//        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
-//    }
+    NSArray *shadowsArray = @[self.con_tutorial,
+                              self.con_unlock,
+                              self.con_intro,
+                              self.con_menu,
+                              self.con_history,
+                              self.con_info];
+    
+    for (UIView *view in shadowsArray) {
+        
+        view.layer.shadowColor = [[UIColor blackColor] CGColor];
+        view.layer.shadowOffset = CGSizeMake(1.0f,1.0f);
+        view.layer.shadowOpacity = 0.0f;
+        view.layer.shadowRadius = 10.0f;
+        view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;
+    }
 }
 
 #pragma mark - Observer Messages
 
-- (void) assignThisPage:(NSNotification *) notification {
+- (void)assignThisPage:(NSNotification *) notification {
     
     NSDictionary* userInfo = notification.userInfo;
     
@@ -159,7 +168,7 @@
     
 }
 
-- (void) atTopOfText:(NSNotification *) notification {
+- (void)atTopOfText:(NSNotification *) notification {
     
     if ([notification.name isEqualToString:@"AtTopOfText"]) {
         
@@ -221,12 +230,18 @@
                 _currentView = self.con_intro;
                 _higherView = nil;
                 _lowerView = self.con_menu;
+                
+                self.con_historyText.hidden = YES;
+                self.con_infoText.hidden = YES;
+
             }
             
             if ([_string_currentSection isEqualToString:@"Menu"]) {
                 
                 _currentView = self.con_menu;
                 _higherView = self.con_intro;
+                
+                
                 
                 if ([_string_currentPage isEqualToString:@"History"]) {
                     
