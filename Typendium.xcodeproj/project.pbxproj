@@ -20,6 +20,8 @@
 		433B0EFC19C4CC8600581F1F /* Title_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433B0EFB19C4CC8600581F1F /* Title_6.xib */; };
 		433B0EFE19C4CE0900581F1F /* Section_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433B0EFD19C4CE0900581F1F /* Section_6.xib */; };
 		433B0F0019C4CE6600581F1F /* Section_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433B0EFF19C4CE6600581F1F /* Section_6Plus.xib */; };
+		433B0F0219C4E5DC00581F1F /* Caption_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433B0F0119C4E5DC00581F1F /* Caption_6.xib */; };
+		433B0F0419C4E5F800581F1F /* Caption_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433B0F0319C4E5F800581F1F /* Caption_6Plus.xib */; };
 		433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D8666191F681F007EE3F9 /* AboutUs.xib */; };
 		433D866A191F7225007EE3F9 /* AboutUs.m in Sources */ = {isa = PBXBuildFile; fileRef = 433D8669191F7224007EE3F9 /* AboutUs.m */; };
 		433D866C191FB009007EE3F9 /* Section.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433D866B191FB009007EE3F9 /* Section.xib */; };
@@ -100,6 +102,8 @@
 		433B0EFB19C4CC8600581F1F /* Title_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Title_6.xib; path = XIBs/Title_6.xib; sourceTree = "<group>"; };
 		433B0EFD19C4CE0900581F1F /* Section_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Section_6.xib; path = XIBs/Section_6.xib; sourceTree = "<group>"; };
 		433B0EFF19C4CE6600581F1F /* Section_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Section_6Plus.xib; path = XIBs/Section_6Plus.xib; sourceTree = "<group>"; };
+		433B0F0119C4E5DC00581F1F /* Caption_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption_6.xib; path = XIBs/Caption_6.xib; sourceTree = "<group>"; };
+		433B0F0319C4E5F800581F1F /* Caption_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption_6Plus.xib; path = XIBs/Caption_6Plus.xib; sourceTree = "<group>"; };
 		433D8666191F681F007EE3F9 /* AboutUs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUs.xib; sourceTree = "<group>"; };
 		433D8668191F7224007EE3F9 /* AboutUs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUs.h; sourceTree = "<group>"; };
 		433D8669191F7224007EE3F9 /* AboutUs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUs.m; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 				437CD7E318E8C38A00AAD7F6 /* Caption.h */,
 				437CD7E418E8C38A00AAD7F6 /* Caption.m */,
 				437CD7E118E8C37E00AAD7F6 /* Caption.xib */,
+				433B0F0119C4E5DC00581F1F /* Caption_6.xib */,
+				433B0F0319C4E5F800581F1F /* Caption_6Plus.xib */,
 				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
 				433B0EF719C4B68800581F1F /* Quote_6Plus.xib */,
 				43DD1A5418E8485C00B43DE3 /* Quote.h */,
@@ -508,6 +514,7 @@
 				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
+				433B0F0419C4E5F800581F1F /* Caption_6Plus.xib in Resources */,
 				433B0EFC19C4CC8600581F1F /* Title_6.xib in Resources */,
 				433B0EFA19C4BAE100581F1F /* Title_6Plus.xib in Resources */,
 				435F84471927807C00D6AAEA /* SpecialThanks.xib in Resources */,
@@ -517,6 +524,7 @@
 				433B0EF819C4B68800581F1F /* Quote_6Plus.xib in Resources */,
 				433D866C191FB009007EE3F9 /* Section.xib in Resources */,
 				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,
+				433B0F0219C4E5DC00581F1F /* Caption_6.xib in Resources */,
 				433B0F0019C4CE6600581F1F /* Section_6Plus.xib in Resources */,
 				437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */,
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,

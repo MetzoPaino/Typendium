@@ -192,6 +192,9 @@
     
     if (!_arr_baskerville) {
         
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        
         [self typendiumText:@"Baskerville"];
         
         Title *title;
@@ -266,7 +269,21 @@
         Paragraph *paragraph12;
         paragraph12 = [self configureParagraph:paragraph12 :@"Paragraph12"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
+        UIView *specimen;
+        
+        if (screenWidth <= 320) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else if (screenWidth <= 375) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
+
+        }
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BaskervilleSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -305,6 +322,9 @@
 - (NSArray *)arr_futura {
     
     if (!_arr_futura) {
+        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
         
         [self typendiumText:@"Futura"];
         
@@ -363,7 +383,21 @@
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
+        UIView *specimen;
+        
+        if (screenWidth <= 320) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else if (screenWidth <= 375) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
+            
+        }
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -396,6 +430,9 @@
 - (NSArray *)arr_gillSans {
     
     if (!_arr_gillSans) {
+        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
         
         [self typendiumText:@"Gill Sans"];
         
@@ -460,7 +497,21 @@
         Paragraph *paragraph7;
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
+        UIView *specimen;
+        
+        if (screenWidth <= 320) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else if (screenWidth <= 375) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
+            
+        }
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -495,6 +546,9 @@
 - (NSArray *)arr_palatino {
     
     if (!_arr_palatino) {
+        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
         
         [self typendiumText:@"Palatino"];
         
@@ -551,7 +605,21 @@
         Paragraph *paragraph8;
         paragraph8 = [self configureParagraph:paragraph7 :@"Paragraph8"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
+        UIView *specimen;
+        
+        if (screenWidth <= 320) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else if (screenWidth <= 375) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
+            
+        }
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -584,6 +652,9 @@
 - (NSArray *)arr_timesNewRoman {
     
     if (!_arr_timesNewRoman) {
+        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
         
         [self typendiumText:@"TimesNewRoman"];
         
@@ -650,7 +721,21 @@
         Paragraph *paragraph11;
         paragraph11 = [self configureParagraph:paragraph11 :@"Paragraph11"];
         
-        UIView *specimen = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 497)];
+        UIView *specimen;
+        
+        if (screenWidth <= 320) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else if (screenWidth <= 375) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            
+        } else {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
+            
+        }
         UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";

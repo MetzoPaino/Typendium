@@ -100,6 +100,7 @@
     [self.view bringSubviewToFront:self.con_intro];
     [self.view bringSubviewToFront:self.con_unlock];
     [self.view bringSubviewToFront:self.con_tutorial];
+    
 }
 
 - (void)viewDidLayoutSubviews {
@@ -270,16 +271,20 @@
                 if (!_hasConstructedText &&
                     ![_string_currentPage isEqualToString:@"ComingSoon"]) {
                     
-                    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
-                        
-                        [self postTextToConstruct];
-                        
-                    } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
-                               ![_string_currentPage isEqualToString:@"Palatino"] &&
-                               ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-                        
-                        [self postTextToConstruct];
-                    }
+                    //THIS NEEDS TO BE FIXED BEFORE RELEASE!
+                    
+                    [self postTextToConstruct];
+                    
+//                    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
+//                        
+//                        [self postTextToConstruct];
+//                        
+//                    } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
+//                               ![_string_currentPage isEqualToString:@"Palatino"] &&
+//                               ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
+//                        
+//                        [self postTextToConstruct];
+//                    }
                 }
                 
                 _currentView = self.con_history;
@@ -362,18 +367,23 @@
                 ![_string_currentPage isEqualToString:@"ContactUs"] &&
                 ![_string_currentPage isEqualToString:@"Review"]) {
                 
-                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
-                    
-                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                    
-                } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
-                           ![_string_currentPage isEqualToString:@"Palatino"] &&
-                           ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-                    
-                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-                }
+                //THIS NEEDS TO BE FIXED BEFORE RELEASE!
+                
+                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+                _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                
+//                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
+//                    
+//                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+//                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+//                    
+//                } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
+//                           ![_string_currentPage isEqualToString:@"Palatino"] &&
+//                           ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
+//                    
+//                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+//                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+//                }
                 
                 
                 
