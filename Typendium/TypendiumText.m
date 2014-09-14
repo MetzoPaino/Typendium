@@ -230,8 +230,26 @@
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 169)];
-        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Q & G"]];
+        UIView *image2;
+        UIImageView *imageView2;
+        
+        if (screenWidth <= 320) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 169)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Q & G"]];
+
+        } else if (screenWidth <= 375) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 169)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Q & G_iPhone6"]];
+
+        } else {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 169)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Q & G"]];
+
+        }
+        
         [image2 addSubview:imageView2];
         
         Caption *caption2;
@@ -246,8 +264,26 @@
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 208)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Baskerville Photo"]];
+        UIView *image3;
+        UIImageView *imageView3;
+        
+        if (screenWidth <= 320) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 208)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Baskerville Photo"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 208)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Baskerville Photo_iPhone6"]];
+            
+        } else {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 208)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Baskerville Photo"]];
+            
+        }
+        
         [image3 addSubview:imageView3];
         
         Caption *caption3;
@@ -268,8 +304,26 @@
         Paragraph *paragraph10;
         paragraph10 = [self configureParagraph:paragraph10 :@"Paragraph10"];
         
-        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 310)];
-        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Press"]];
+        UIView *image4;
+        UIImageView *imageView4;
+        
+        if (screenWidth <= 320) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 310)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Press"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 310)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Press_iPhone6"]];
+            
+        } else {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 310)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Press"]];
+            
+        }
+        
         [image4 addSubview:imageView4];
         
         Caption *caption4;
@@ -376,8 +430,25 @@
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 187)];
-        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
+        UIView *image2;
+        UIImageView *imageView2;
+        
+        if (screenWidth <= 320) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 187)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 187)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison_iPhone6"]];
+            
+        } else {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 187)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
+        }
+
         [image2 addSubview:imageView2];
         
         Caption *caption2;
@@ -386,8 +457,25 @@
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 64)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
+        UIView *image3;
+        UIImageView *imageView3;
+        
+        if (screenWidth <= 320) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 64)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 64)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal_iPhone6"]];
+            
+        } else {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 64)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
+        }
+        
         [image3 addSubview:imageView3];
         
         Caption *caption3;
@@ -396,8 +484,25 @@
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
-        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 89)];
-        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
+        UIView *image4;
+        UIImageView *imageView4;
+        
+        if (screenWidth <= 320) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 89)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 89)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison_iPhone6"]];
+            
+        } else {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 89)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
+        }
+        
         [image4 addSubview:imageView4];
         
         Caption *caption4;
@@ -496,8 +601,25 @@
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 266)];
-        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel"]];
+        UIView *image2;
+        UIImageView *imageView2;
+        
+        if (screenWidth <= 320) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 266)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 266)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel_iPhone6"]];
+            
+        } else {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 266)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel"]];
+        }
+        
         [image2 addSubview:imageView2];
         
         Caption *caption2;
@@ -506,8 +628,25 @@
         Paragraph *paragraph4;
         paragraph4 = [self configureParagraph:paragraph4 :@"Paragraph4"];
         
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 214)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold"]];
+        UIView *image3;
+        UIImageView *imageView3;
+        
+        if (screenWidth <= 320) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 214)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 214)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold_iPhone6"]];
+            
+        } else {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 214)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold"]];
+        }
+        
         [image3 addSubview:imageView3];
         
         Caption *caption3;
@@ -516,8 +655,25 @@
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
-        UIView *image4 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 218)];
-        UIImageView *imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
+        UIView *image4;
+        UIImageView *imageView4;
+        
+        if (screenWidth <= 320) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 218)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 218)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles_iPhone6"]];
+            
+        } else {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 218)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
+        }
+        
         [image4 addSubview:imageView4];
         
         Caption *caption4;
@@ -526,8 +682,25 @@
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
-        UIView *image5 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 195)];
-        UIImageView *imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
+        UIView *image5;
+        UIImageView *imageView5;
+        
+        if (screenWidth <= 320) {
+            
+            image5 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 195)];
+            imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image5 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 195)];
+            imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold_iPhone6"]];
+            
+        } else {
+            
+            image5 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 195)];
+            imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
+        }
+        
         [image5 addSubview:imageView5];
 
         Caption *caption5;
@@ -635,8 +808,25 @@
         Paragraph *paragraph5;
         paragraph5 = [self configureParagraph:paragraph5 :@"Paragraph5"];
         
-        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 180)];
-        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter"]];
+        UIView *image2;
+        UIImageView *imageView2;
+        
+        if (screenWidth <= 320) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 180)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 180)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter_iPhone6"]];
+            
+        } else {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 180)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter"]];
+        }
+
         [image2 addSubview:imageView2];
         
         Caption *caption2;
@@ -645,8 +835,25 @@
         Paragraph *paragraph6;
         paragraph6 = [self configureParagraph:paragraph6 :@"Paragraph6"];
         
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 88)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang"]];
+        UIView *image3;
+        UIImageView *imageView3;
+        
+        if (screenWidth <= 320) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 88)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 88)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang_iPhone6"]];
+            
+        } else {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 88)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang"]];
+        }
+        
         [image3 addSubview:imageView3];
         
         Caption *caption3;
@@ -743,8 +950,25 @@
         Paragraph *paragraph3;
         paragraph3 = [self configureParagraph:paragraph3 :@"Paragraph3"];
         
-        UIView *image2 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 240)];
-        UIImageView *imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press"]];
+        UIView *image2;
+        UIImageView *imageView2;
+        
+        if (screenWidth <= 320) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press_iPhone6"]];
+            
+        } else {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press"]];
+        }
+        
         [image2 addSubview:imageView2];
         
         Caption *caption2;
@@ -775,8 +999,25 @@
         Paragraph *paragraph9;
         paragraph9 = [self configureParagraph:paragraph9 :@"Paragraph9"];
         
-        UIView *image3 = [[UIView alloc] initWithFrame:CGRectMake(180, 0, 320, 240)];
-        UIImageView *imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes"]];
+        UIView *image3;
+        UIImageView *imageView3;
+        
+        if (screenWidth <= 320) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes_iPhone6"]];
+            
+        } else {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes"]];
+        }
+        
         [image3 addSubview:imageView3];
         
         Caption *caption3;

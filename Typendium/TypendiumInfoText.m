@@ -183,10 +183,23 @@
     
     if (!_arr_references) {
         
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
         [self typendiumInfoText:@"References"];
         
         Title *title;
-        title = [self configureTitle:title :@"ReferencesHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"ReferencesHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"ReferencesHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"ReferencesHeader"];
+        }
         
         Section *section1;
         section1 = [self configureSection:section1 :@"Book"];
@@ -496,11 +509,23 @@
 - (NSArray *)arr_aboutUs {
     
     if (!_arr_aboutUs) {
-        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
         [self typendiumInfoText:@"AboutUs"];
         
         Title *title;
-        title = [self configureTitle:title :@"AboutUsHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"AboutUsHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"AboutUsHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"AboutUsHeader"];
+        }
         
         AboutUs *aboutUs1;
         aboutUs1 = [self configureAboutUs:aboutUs1 :@"William"];
@@ -526,11 +551,23 @@
 - (NSArray *)arr_specialThanks {
     
     if (!_arr_specialThanks) {
-        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
         [self typendiumInfoText:@"SpecialThanks"];
         
         Title *title;
-        title = [self configureTitle:title :@"SpecialThanksHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"SpecialThanksHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"SpecialThanksHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"SpecialThanksHeader"];
+        }
         
         SpecialThanks *specialThanks1;
         specialThanks1 = [self configureSpecialThanks:specialThanks1 :@"MariusIbanez"];
