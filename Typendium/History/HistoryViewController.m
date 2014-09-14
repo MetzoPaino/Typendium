@@ -256,7 +256,7 @@
                                        currentSection:@"History"
                                           currentPage:[self assignCurrentPage]];
     
-   // _string_currentPage = [self assignCurrentPage];
+    _string_currentPage = [self assignCurrentPage];
     
     [self whatPageIsThis];
     

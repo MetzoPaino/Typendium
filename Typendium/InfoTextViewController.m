@@ -158,21 +158,56 @@
 - (NSArray *)arr_pageLayout {
     
     TypendiumInfoText *typendiumInfoText = [TypendiumInfoText new];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
     
     if ([_string_currentPage isEqualToString:@"References"]) {
         
         _arr_pageLayout = typendiumInfoText.arr_references;
-        _string_upArrow = @"UpArrow-ReferencesText";
+        if (screenWidth <= 320) {
+            
+            _string_upArrow = @"UpArrow-ReferencesText";
+            
+        } else if (screenWidth <= 375) {
+            
+            _string_upArrow = @"UpArrow-ReferencesText_iPhone6";
+            
+        } else {
+            
+            _string_upArrow = @"UpArrow-ReferencesText";
+        }
         
     } else if ([_string_currentPage isEqualToString:@"AboutUs"]) {
         
         _arr_pageLayout = typendiumInfoText.arr_aboutUs;
-        _string_upArrow = @"UpArrow-AboutUsText";
+        if (screenWidth <= 320) {
+            
+            _string_upArrow = @"UpArrow-AboutUsText";
+            
+        } else if (screenWidth <= 375) {
+            
+            _string_upArrow = @"UpArrow-AboutUsText_iPhone6";
+            
+        } else {
+            
+            _string_upArrow = @"UpArrow-AboutUsText";
+        }
         
     } else if ([_string_currentPage isEqualToString:@"SpecialThanks"]) {
 
         _arr_pageLayout = typendiumInfoText.arr_specialThanks;
-        _string_upArrow = @"UpArrow-SpecialThanksText";
+        if (screenWidth <= 320) {
+            
+            _string_upArrow = @"UpArrow-SpecialThanksText";
+            
+        } else if (screenWidth <= 375) {
+            
+            _string_upArrow = @"UpArrow-SpecialThanksText_iPhone6";
+            
+        } else {
+            
+            _string_upArrow = @"UpArrow-SpecialThanksText";
+        }
         
     }
     

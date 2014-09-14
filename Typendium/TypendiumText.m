@@ -199,7 +199,18 @@
         [self typendiumText:@"Baskerville"];
         
         Title *title;
-        title = [self configureTitle:title :@"BaskervilleHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"BaskervilleHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"BaskervilleHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"BaskervilleHeader"];
+        }
         
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
@@ -271,21 +282,24 @@
         paragraph12 = [self configureParagraph:paragraph12 :@"Paragraph12"];
         
         UIView *specimen;
+        UIImageView *image;
         
         if (screenWidth <= 320) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BaskervilleSpecimen"]];
+
         } else if (screenWidth <= 375) {
             
-            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BaskervilleSpecimen_iPhone6"]];
+
         } else {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BaskervilleSpecimen"]];
 
         }
-        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BaskervilleSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
 
@@ -330,7 +344,18 @@
         [self typendiumText:@"Futura"];
         
         Title *title;
-        title = [self configureTitle:title :@"FuturaHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"FuturaHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"FuturaHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"FuturaHeader"];
+        }
 
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
@@ -385,21 +410,23 @@
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
         UIView *specimen;
+        UIImageView *image;
         
         if (screenWidth <= 320) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
             
         } else if (screenWidth <= 375) {
             
-            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen_iPhone6"]];
             
         } else {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
         }
-        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
 
@@ -438,7 +465,18 @@
         [self typendiumText:@"Gill Sans"];
         
         Title *title;
-        title = [self configureTitle:title :@"GillSansHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"GillSansHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"GillSansHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"GillSansHeader"];
+        }
         
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
@@ -499,21 +537,24 @@
         paragraph7 = [self configureParagraph:paragraph7 :@"Paragraph7"];
         
         UIView *specimen;
+        UIImageView *image;
         
         if (screenWidth <= 320) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
+
         } else if (screenWidth <= 375) {
             
-            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen_iPhone6"]];
+
         } else {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
+
         }
-        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
 
@@ -554,7 +595,18 @@
         [self typendiumText:@"Palatino"];
         
         Title *title;
-        title = [self configureTitle:title :@"PalatinoHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"PalatinoHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"PalatinoHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"PalatinoHeader"];
+        }
         
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
@@ -607,21 +659,24 @@
         paragraph8 = [self configureParagraph:paragraph7 :@"Paragraph8"];
         
         UIView *specimen;
+        UIImageView *image;
         
         if (screenWidth <= 320) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
+
         } else if (screenWidth <= 375) {
             
-            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen_iPhone6"]];
+
         } else {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
+
         }
-        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
 
@@ -660,7 +715,18 @@
         [self typendiumText:@"TimesNewRoman"];
         
         Title *title;
-        title = [self configureTitle:title :@"TimesNewRomanHeader"];
+        if (screenWidth <= 320) {
+            
+            title = [self configureTitle:title :@"TimesNewRomanHeader"];
+            
+        } else if (screenWidth <= 375) {
+            
+            title = [self configureTitle:title :@"TimesNewRomanHeader_iPhone6"];
+            
+        } else {
+            
+            title = [self configureTitle:title :@"TimesNewRomanHeader"];
+        }
         
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
@@ -723,21 +789,24 @@
         paragraph11 = [self configureParagraph:paragraph11 :@"Paragraph11"];
         
         UIView *specimen;
+        UIImageView *image;
         
         if (screenWidth <= 320) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
+
         } else if (screenWidth <= 375) {
             
-            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 497)];
-            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen_iPhone6"]];
+
         } else {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
-            
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
+
         }
-        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
         _arr_timesNewRoman = @[title,

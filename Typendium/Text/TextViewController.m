@@ -148,52 +148,106 @@
     
     
     self.scrollView.showsVerticalScrollIndicator = NO;
-    
 }
 
 #pragma mark - Lazy Loading
 
 - (NSArray *)arr_pageLayout {
     
-  //  if (!_arr_pageLayout) {
-        
         TypendiumText *typendiumText = [TypendiumText new];
-
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        
         if ([_string_currentPage isEqualToString:@"Baskerville"]) {
             
             _arr_pageLayout = typendiumText.arr_baskerville;
             _string_shareText = [NSString baskervilleShareText];
-            _string_upArrow = @"UpArrow-BaskervilleText";
+            
+            if (screenWidth <= 320) {
+                
+                _string_upArrow = @"UpArrow-BaskervilleText";
+                
+            } else if (screenWidth <= 375) {
+                
+                _string_upArrow = @"UpArrow-BaskervilleText_iPhone6";
+                
+            } else {
+                
+                _string_upArrow = @"UpArrow-BaskervilleText";
+            }
             
         } else if ([_string_currentPage isEqualToString:@"Futura"]) {
             
             _arr_pageLayout = typendiumText.arr_futura;
             _string_shareText = [NSString futuraShareText];
-            _string_upArrow = @"UpArrow-FuturaText";
+            if (screenWidth <= 320) {
+                
+                _string_upArrow = @"UpArrow-FuturaText";
+                
+            } else if (screenWidth <= 375) {
+                
+                _string_upArrow = @"UpArrow-FuturaText_iPhone6";
+                
+            } else {
+                
+                _string_upArrow = @"UpArrow-FuturaText";
+            }
 
         } else if ([_string_currentPage isEqualToString:@"GillSans"]) {
             
             _arr_pageLayout = typendiumText.arr_gillSans;
             _string_shareText = [NSString gillSansShareText];
-            _string_upArrow = @"UpArrow-GillSansText";
+            if (screenWidth <= 320) {
+                
+                _string_upArrow = @"UpArrow-GillSansText";
+                
+            } else if (screenWidth <= 375) {
+                
+                _string_upArrow = @"UpArrow-GillSansText_iPhone6";
+                
+            } else {
+                
+                _string_upArrow = @"UpArrow-GillSansText";
+            }
             
         } else if ([_string_currentPage isEqualToString:@"Palatino"]) {
             
             _arr_pageLayout = typendiumText.arr_palatino;
             _string_shareText = [NSString palatinoShareText];
-            _string_upArrow = @"UpArrow-PalatinoText";
+            if (screenWidth <= 320) {
+                
+                _string_upArrow = @"UpArrow-PalatinoText";
+                
+            } else if (screenWidth <= 375) {
+                
+                _string_upArrow = @"UpArrow-PalatinoText_iPhone6";
+                
+            } else {
+                
+                _string_upArrow = @"UpArrow-PalatinoText";
+            }
             
         } else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
             
             _arr_pageLayout = typendiumText.arr_timesNewRoman;
             _string_shareText = [NSString timesNewRomanShareText];
-            _string_upArrow = @"UpArrow-TimesNewRomanText";
-            
-   //     }
-    }
+            if (screenWidth <= 320) {
+                
+                _string_upArrow = @"UpArrow-TimesNewRomanText";
+                
+            } else if (screenWidth <= 375) {
+                
+                _string_upArrow = @"UpArrow-TimesNewRomanText_iPhone6";
+                
+            } else {
+                
+                _string_upArrow = @"UpArrow-TimesNewRomanText";
+            }
+        }
     
     return _arr_pageLayout;
 }
+
 
 - (IBAction)upArrow:(id)sender {
     

@@ -273,18 +273,18 @@
                     
                     //THIS NEEDS TO BE FIXED BEFORE RELEASE!
                     
-                    [self postTextToConstruct];
+//                    [self postTextToConstruct];
                     
-//                    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
-//                        
-//                        [self postTextToConstruct];
-//                        
-//                    } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
-//                               ![_string_currentPage isEqualToString:@"Palatino"] &&
-//                               ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-//                        
-//                        [self postTextToConstruct];
-//                    }
+                    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
+                        
+                        [self postTextToConstruct];
+                        
+                    } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
+                               ![_string_currentPage isEqualToString:@"Palatino"] &&
+                               ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
+                        
+                        [self postTextToConstruct];
+                    }
                 }
                 
                 _currentView = self.con_history;
@@ -369,21 +369,21 @@
                 
                 //THIS NEEDS TO BE FIXED BEFORE RELEASE!
                 
-                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-                _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+//                _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+//                _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
                 
-//                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
-//                    
-//                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-//                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-//                    
-//                } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
-//                           ![_string_currentPage isEqualToString:@"Palatino"] &&
-//                           ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-//                    
-//                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
-//                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
-//                }
+                if ([[NSUserDefaults standardUserDefaults] boolForKey:@"com.Robinson.Typendium.Unlock"]) {
+                    
+                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                    
+                } else if (![_string_currentPage isEqualToString:@"GillSans"] &&
+                           ![_string_currentPage isEqualToString:@"Palatino"] &&
+                           ![_string_currentPage isEqualToString:@"TimesNewRoman"]) {
+                    
+                    _currentView.center = CGPointMake(_currentView.center.x, _currentViewYPosition + panGestureTranslation.y);
+                    _lowerView.center = CGPointMake(_lowerView.center.x, _lowerViewYPosition + (panGestureTranslation.y * parallaxCoefficient));
+                }
                 
                 
                 

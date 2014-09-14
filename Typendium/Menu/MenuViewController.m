@@ -101,7 +101,22 @@
         
         [menuPage setTag:i];
         
-        UIImageView *background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.menuPageNames objectAtIndex:i]]];
+        
+        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        UIImageView *background;
+        
+        if (screenWidth == 375) {
+            
+            NSString *iPhone6 = [NSString stringWithFormat:@"%@_iPhone6", [self.menuPageNames objectAtIndex:i]];
+            background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:iPhone6]];
+            
+        } else {
+            background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.menuPageNames objectAtIndex:i]]];
+        }
+        
+        
         background.center = CGPointMake(self.view.center.x, self.view.center.y);
         
         [menuPage addSubview:background];
@@ -159,6 +174,7 @@
 - (NSArray *)menuPageNames {
     
     if (!_menuPageNames) {
+        
         _menuPageNames = [[NSArray alloc] initWithObjects: @"History", @"Info", nil];
     }
     

@@ -44,6 +44,12 @@
     self.btn_tutorial.alpha = 0;
     self.lbl_swipe.alpha = 0;
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    if (screenWidth == 375) {
+        self.image_background.image = [UIImage imageNamed:@"Intro-Logo_iPhone6"];
+        self.img_title.image = [UIImage imageNamed:@"Intro-Title_iPhone6"];
+    }
 }
 
 - (void) viewDidLayoutSubviews {
