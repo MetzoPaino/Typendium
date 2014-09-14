@@ -152,9 +152,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfD-Df-9fo" userLabel="btn_upArrow">
-                                <rect key="frame" x="278" y="562" width="44" height="18"/>
+                                <rect key="frame" x="278" y="565" width="44" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="AFA-sn-bph"/>
+                                    <constraint firstAttribute="height" constant="15" id="AFA-sn-bph"/>
                                     <constraint firstAttribute="width" constant="44" id="vYf-8a-GZE"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="UpArrow-Black"/>
@@ -163,7 +163,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEn-ut-ahB" userLabel="lbl_swipe">
-                                <rect key="frame" x="0.0" y="512" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="515" width="600" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="R8b-dF-Fxj"/>
                                 </constraints>
@@ -253,9 +253,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCI-Og-1iB" userLabel="btn_upArrow">
-                                <rect key="frame" x="278" y="562" width="44" height="18"/>
+                                <rect key="frame" x="278" y="565" width="44" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="bTe-Fe-cF5"/>
+                                    <constraint firstAttribute="height" constant="15" id="bTe-Fe-cF5"/>
                                     <constraint firstAttribute="width" constant="44" id="cAB-1v-fFo"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="UpArrow-White"/>
@@ -411,10 +411,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-UP-BF0" userLabel="btn_upArrow">
-                                <rect key="frame" x="278" y="562" width="44" height="18"/>
+                                <rect key="frame" x="278" y="565" width="44" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="3GJ-PM-ANL"/>
-                                    <constraint firstAttribute="height" constant="18" id="lWm-AR-eFO"/>
+                                    <constraint firstAttribute="height" constant="15" id="lWm-AR-eFO"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="UpArrow-White"/>
                                 <connections>

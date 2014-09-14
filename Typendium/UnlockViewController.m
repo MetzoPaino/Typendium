@@ -64,7 +64,7 @@
     
     [super viewDidLayoutSubviews];
     if (self.view.bounds.size.height < 568) {
-        self.upArrow.center = CGPointMake(self.upArrow.center.x, self.upArrow.center.y - 88);
+        self.upArrow.center = CGPointMake(self.upArrow.center.x, self.upArrow.center.y);
     }
 }
 

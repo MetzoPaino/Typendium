@@ -99,7 +99,7 @@
             upArrow.center = CGPointMake(self.view.center.x,
                                          self.view.frame.size.height - upArrowButtonGap);
             if (self.view.bounds.size.height < 568) {
-                upArrow.center = CGPointMake(upArrow.center.x, upArrow.center.y - 88);
+                upArrow.center = CGPointMake(upArrow.center.x, upArrow.center.y);
             }
             [upArrow setBackgroundImage:[UIImage imageNamed:[upArrowsArray objectAtIndex:i]] forState:UIControlStateNormal];
             [upArrow addTarget:self action:@selector(upArrow:) forControlEvents:UIControlEventTouchUpInside];
