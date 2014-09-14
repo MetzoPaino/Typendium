@@ -21,7 +21,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="title" destination="49M-ha-6Au" id="8IA-o2-lHh"/>
+                <outlet property="title" destination="49M-ha-6Au" id="bEu-vw-3Oy"/>
             </connections>
         </view>
     </objects>

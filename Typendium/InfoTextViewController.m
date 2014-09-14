@@ -162,35 +162,19 @@
     if ([_string_currentPage isEqualToString:@"References"]) {
         
         _arr_pageLayout = typendiumInfoText.arr_references;
-//        _string_shareText = [NSString baskervilleShareText];
         _string_upArrow = @"UpArrow-ReferencesText";
         
     } else if ([_string_currentPage isEqualToString:@"AboutUs"]) {
         
         _arr_pageLayout = typendiumInfoText.arr_aboutUs;
-        //_string_shareText = [NSString futuraShareText];
         _string_upArrow = @"UpArrow-AboutUsText";
         
     } else if ([_string_currentPage isEqualToString:@"SpecialThanks"]) {
 
         _arr_pageLayout = typendiumInfoText.arr_specialThanks;
-        //_string_shareText = [NSString gillSansShareText];
         _string_upArrow = @"UpArrow-SpecialThanksText";
         
-    } //else if ([_string_currentPage isEqualToString:@"Palatino"]) {
-//
-//        _arr_pageLayout = typendiumText.arr_palatino;
-//        _string_shareText = [NSString palatinoShareText];
-//        _string_upArrow = @"UpArrow-PalatinoText";
-//        
-//    } else if ([_string_currentPage isEqualToString:@"TimesNewRoman"]) {
-//        
-//        _arr_pageLayout = typendiumText.arr_timesNewRoman;
-//        _string_shareText = [NSString timesNewRomanShareText];
-//        _string_upArrow = @"UpArrow-TimesNewRomanText";
-//        
-//        //     }
-//    }
+    }
     
     return _arr_pageLayout;
 }

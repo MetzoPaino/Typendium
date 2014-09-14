@@ -47,7 +47,6 @@
 		43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43BF124818E74BB9009A1C84 /* InfoPlist.strings */; };
 		43BF124C18E74BB9009A1C84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF124B18E74BB9009A1C84 /* main.m */; };
 		43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF124F18E74BB9009A1C84 /* AppDelegate.m */; };
-		43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BF125118E74BB9009A1C84 /* Main.storyboard */; };
 		43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BF125518E74BB9009A1C84 /* MainViewController.m */; };
 		43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BF125718E74BB9009A1C84 /* Images.xcassets */; };
 		43BF125F18E74BB9009A1C84 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BF125E18E74BB9009A1C84 /* XCTest.framework */; };
@@ -146,7 +145,6 @@
 		43BF124D18E74BB9009A1C84 /* Typendium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Typendium-Prefix.pch"; sourceTree = "<group>"; };
 		43BF124E18E74BB9009A1C84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43BF124F18E74BB9009A1C84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		43BF125218E74BB9009A1C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43BF125418E74BB9009A1C84 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		43BF125518E74BB9009A1C84 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		43BF125718E74BB9009A1C84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -273,21 +271,7 @@
 				433B0EF719C4B68800581F1F /* Quote_6Plus.xib */,
 				43DD1A5418E8485C00B43DE3 /* Quote.h */,
 				43DD1A5518E8485C00B43DE3 /* Quote.m */,
-				43079BF91996A28400E2F5AC /* Website.h */,
-				43079BFA1996A28400E2F5AC /* Website.m */,
-				43079BFC1996A77600E2F5AC /* Website.xib */,
-				435BB029191E9D9A00B762CE /* Reference.h */,
-				435BB02A191E9D9A00B762CE /* Reference.m */,
-				435BB027191E98B100B762CE /* Reference.xib */,
-				433D8666191F681F007EE3F9 /* AboutUs.xib */,
-				433D8668191F7224007EE3F9 /* AboutUs.h */,
-				433D8669191F7224007EE3F9 /* AboutUs.m */,
-				4331ECDF1923988A002C1D50 /* MadeIn.h */,
-				4331ECE01923988A002C1D50 /* MadeIn.m */,
-				4331ECE2192398A3002C1D50 /* MadeIn.xib */,
-				435F84431927803B00D6AAEA /* SpecialThanks.h */,
-				435F84441927803B00D6AAEA /* SpecialThanks.m */,
-				435F84461927807C00D6AAEA /* SpecialThanks.xib */,
+				43696D7319C593A2001EF52E /* Info */,
 				433D8670191FB045007EE3F9 /* Section */,
 			);
 			name = "Page Maker";
@@ -304,6 +288,28 @@
 				4360D3AD1928DAF7003902F3 /* IAPProduct.m */,
 			);
 			name = "In-App Purchases";
+			sourceTree = "<group>";
+		};
+		43696D7319C593A2001EF52E /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				43079BF91996A28400E2F5AC /* Website.h */,
+				43079BFA1996A28400E2F5AC /* Website.m */,
+				43079BFC1996A77600E2F5AC /* Website.xib */,
+				435BB029191E9D9A00B762CE /* Reference.h */,
+				435BB02A191E9D9A00B762CE /* Reference.m */,
+				435BB027191E98B100B762CE /* Reference.xib */,
+				433D8666191F681F007EE3F9 /* AboutUs.xib */,
+				433D8668191F7224007EE3F9 /* AboutUs.h */,
+				433D8669191F7224007EE3F9 /* AboutUs.m */,
+				4331ECDF1923988A002C1D50 /* MadeIn.h */,
+				4331ECE01923988A002C1D50 /* MadeIn.m */,
+				4331ECE2192398A3002C1D50 /* MadeIn.xib */,
+				435F84431927803B00D6AAEA /* SpecialThanks.h */,
+				435F84441927803B00D6AAEA /* SpecialThanks.m */,
+				435F84461927807C00D6AAEA /* SpecialThanks.xib */,
+			);
+			name = Info;
 			sourceTree = "<group>";
 		};
 		439580B71912D6440066C44D /* Info */ = {
@@ -371,7 +377,6 @@
 			children = (
 				43BF124E18E74BB9009A1C84 /* AppDelegate.h */,
 				43BF124F18E74BB9009A1C84 /* AppDelegate.m */,
-				43BF125118E74BB9009A1C84 /* Main.storyboard */,
 				433B0EF119C4618400581F1F /* Typendium.storyboard */,
 				43F1FB21190556F80046A934 /* MoveViewsDelegate.h */,
 				4360D3A51928CE15003902F3 /* In-App Purchases */,
@@ -529,7 +534,6 @@
 				437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */,
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
 				433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */,
-				43BF125318E74BB9009A1C84 /* Main.storyboard in Resources */,
 				43079BFD1996A77600E2F5AC /* Website.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,14 +611,6 @@
 				43BF124918E74BB9009A1C84 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		43BF125118E74BB9009A1C84 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43BF125218E74BB9009A1C84 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		43BF126718E74BB9009A1C84 /* InfoPlist.strings */ = {

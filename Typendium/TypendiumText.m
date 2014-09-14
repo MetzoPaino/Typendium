@@ -87,9 +87,10 @@
 
     NSRange range1 = [text rangeOfString:italicStart];
     
-    // If range is 0 then there is no need for italics
+//     If range is 0 then there is no need for italics
     if (range1.length) {
-        
+        NSLog(@"Line 92");
+
         [self addItalicsTo:attributedText withInitialRange:range1 usingGenericText:text];
 
     }
@@ -130,7 +131,7 @@
     range1 = [text rangeOfString:italicStart];
     
     if (range1.length) {
-        
+        NSLog(@"Line 133");
         [self addItalicsTo:attributedText withInitialRange:range1 usingGenericText:text];
 
     }
