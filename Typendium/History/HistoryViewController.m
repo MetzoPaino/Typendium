@@ -91,7 +91,18 @@
         
         [historyPage setTag:i];
         
-        UIImageView *background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.historyPageNames objectAtIndex:i]]];
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        UIImageView *background;
+        if (screenWidth == 375) {
+            
+            NSString *iPhone6 = [NSString stringWithFormat:@"%@_iPhone6", [self.historyPageNames objectAtIndex:i]];
+            background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:iPhone6]];
+            
+        } else {
+            background = [[UIImageView alloc]initWithImage:[UIImage imageNamed:[self.historyPageNames objectAtIndex:i]]];
+        }
+        
         background.center = CGPointMake(self.view.center.x, self.view.center.y);
         [historyPage addSubview:background];
         

@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *upArrow;
 @property (weak, nonatomic) IBOutlet UILabel *infoText;
 @property (weak, nonatomic) IBOutlet UIButton *redeemButton;
+@property (weak, nonatomic) IBOutlet UIImageView *img_background;
 
 @end
 
@@ -50,6 +51,12 @@
         [self.unlockButton setTitle:@"Redeem Typendium" forState:UIControlStateNormal];
         self.redeemButton.hidden = YES;
 
+    }
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    if (screenWidth == 375) {
+        self.img_background.image = [UIImage imageNamed:@"Unlock_iPhone6"];
     }
 }
 
