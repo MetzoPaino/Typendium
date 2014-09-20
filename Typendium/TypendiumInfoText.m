@@ -564,11 +564,15 @@
             
             title = [self configureTitle:title :@"SpecialThanksHeader_iPhone6"];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             title = [self configureTitle:title :@"SpecialThanksHeader"];
+            
+        } else if (screenWidth >= 768) {
+            
+            title = [self configureTitle:title :@"SpecialThanksHeader_iPad"];
         }
-        
+    
         SpecialThanks *specialThanks1;
         specialThanks1 = [self configureSpecialThanks:specialThanks1 :@"MariusIbanez"];
         

@@ -10,6 +10,11 @@
 		43079BFB1996A28400E2F5AC /* Website.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079BFA1996A28400E2F5AC /* Website.m */; };
 		43079BFD1996A77600E2F5AC /* Website.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43079BFC1996A77600E2F5AC /* Website.xib */; };
 		430BA1CD1915449200DCF3C4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430BA1CC1915449200DCF3C4 /* MessageUI.framework */; };
+		4319E5AE19CE01FA00A61D92 /* Title_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4319E5AD19CE01FA00A61D92 /* Title_iPad.xib */; };
+		4319E5B119CE04C900A61D92 /* Paragraph_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4319E5B019CE04C900A61D92 /* Paragraph_iPad.xib */; };
+		4319E5B419CE058800A61D92 /* Caption_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4319E5B319CE058700A61D92 /* Caption_iPad.xib */; };
+		4319E5B719CE05E000A61D92 /* Quote_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4319E5B619CE05E000A61D92 /* Quote_iPad.xib */; };
+		4319E5BA19CE067600A61D92 /* Section_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4319E5B919CE067600A61D92 /* Section_iPad.xib */; };
 		432C3FD21917EA6C00C18287 /* TypendiumInfoText.m in Sources */ = {isa = PBXBuildFile; fileRef = 432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */; };
 		4331ECE11923988A002C1D50 /* MadeIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4331ECE01923988A002C1D50 /* MadeIn.m */; };
 		4331ECE3192398A3002C1D50 /* MadeIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4331ECE2192398A3002C1D50 /* MadeIn.xib */; };
@@ -89,6 +94,11 @@
 		43079BFA1996A28400E2F5AC /* Website.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Website.m; sourceTree = "<group>"; };
 		43079BFC1996A77600E2F5AC /* Website.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Website.xib; sourceTree = "<group>"; };
 		430BA1CC1915449200DCF3C4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4319E5AD19CE01FA00A61D92 /* Title_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Title_iPad.xib; path = XIBs/Title_iPad.xib; sourceTree = "<group>"; };
+		4319E5B019CE04C900A61D92 /* Paragraph_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Paragraph_iPad.xib; path = XIBs/Paragraph_iPad.xib; sourceTree = "<group>"; };
+		4319E5B319CE058700A61D92 /* Caption_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Caption_iPad.xib; path = XIBs/Caption_iPad.xib; sourceTree = "<group>"; };
+		4319E5B619CE05E000A61D92 /* Quote_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Quote_iPad.xib; path = XIBs/Quote_iPad.xib; sourceTree = "<group>"; };
+		4319E5B919CE067600A61D92 /* Section_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Section_iPad.xib; path = XIBs/Section_iPad.xib; sourceTree = "<group>"; };
 		432C3FD01917EA6C00C18287 /* TypendiumInfoText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypendiumInfoText.h; sourceTree = "<group>"; };
 		432C3FD11917EA6C00C18287 /* TypendiumInfoText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypendiumInfoText.m; sourceTree = "<group>"; };
 		4331ECDF1923988A002C1D50 /* MadeIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadeIn.h; sourceTree = "<group>"; };
@@ -214,6 +224,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4319E5AF19CE01FF00A61D92 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				43DD1A4A18E834AC00B43DE3 /* Title.h */,
+				43DD1A4B18E834AC00B43DE3 /* Title.m */,
+				43DD1A5018E8375700B43DE3 /* Title.xib */,
+				433B0EFB19C4CC8600581F1F /* Title_6.xib */,
+				433B0EF919C4BAE100581F1F /* Title_6Plus.xib */,
+				4319E5AD19CE01FA00A61D92 /* Title_iPad.xib */,
+			);
+			name = Title;
+			sourceTree = "<group>";
+		};
+		4319E5B219CE056400A61D92 /* Paragraph */ = {
+			isa = PBXGroup;
+			children = (
+				43DD1A4718E8304700B43DE3 /* Paragraph.h */,
+				43DD1A4818E8304700B43DE3 /* Paragraph.m */,
+				43DD1A4318E82B2000B43DE3 /* Paragraph.xib */,
+				433B0EF519C4A5A600581F1F /* Paragraph_6Plus.xib */,
+				4319E5B019CE04C900A61D92 /* Paragraph_iPad.xib */,
+			);
+			name = Paragraph;
+			sourceTree = "<group>";
+		};
+		4319E5B519CE05C500A61D92 /* Caption */ = {
+			isa = PBXGroup;
+			children = (
+				437CD7E318E8C38A00AAD7F6 /* Caption.h */,
+				437CD7E418E8C38A00AAD7F6 /* Caption.m */,
+				437CD7E118E8C37E00AAD7F6 /* Caption.xib */,
+				433B0F0119C4E5DC00581F1F /* Caption_6.xib */,
+				433B0F0319C4E5F800581F1F /* Caption_6Plus.xib */,
+				4319E5B319CE058700A61D92 /* Caption_iPad.xib */,
+			);
+			name = Caption;
+			sourceTree = "<group>";
+		};
+		4319E5B819CE061700A61D92 /* Quote */ = {
+			isa = PBXGroup;
+			children = (
+				43DD1A5418E8485C00B43DE3 /* Quote.h */,
+				43DD1A5518E8485C00B43DE3 /* Quote.m */,
+				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
+				433B0EF719C4B68800581F1F /* Quote_6Plus.xib */,
+				4319E5B619CE05E000A61D92 /* Quote_iPad.xib */,
+			);
+			name = Quote;
+			sourceTree = "<group>";
+		};
 		432C3FCE1917DEDA00C18287 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,11 +298,12 @@
 		433D8670191FB045007EE3F9 /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				433D866D191FB041007EE3F9 /* Section.h */,
+				433D866E191FB041007EE3F9 /* Section.m */,
 				433D866B191FB009007EE3F9 /* Section.xib */,
 				433B0EFD19C4CE0900581F1F /* Section_6.xib */,
 				433B0EFF19C4CE6600581F1F /* Section_6Plus.xib */,
-				433D866D191FB041007EE3F9 /* Section.h */,
-				433D866E191FB041007EE3F9 /* Section.m */,
+				4319E5B919CE067600A61D92 /* Section_iPad.xib */,
 			);
 			name = Section;
 			sourceTree = "<group>";
@@ -253,24 +314,10 @@
 				43DD1A4D18E836EF00B43DE3 /* Image.h */,
 				43DD1A4E18E836EF00B43DE3 /* Image.m */,
 				43DD1A4518E82EBD00B43DE3 /* Image.xib */,
-				43DD1A4A18E834AC00B43DE3 /* Title.h */,
-				43DD1A4B18E834AC00B43DE3 /* Title.m */,
-				43DD1A5018E8375700B43DE3 /* Title.xib */,
-				433B0EFB19C4CC8600581F1F /* Title_6.xib */,
-				433B0EF919C4BAE100581F1F /* Title_6Plus.xib */,
-				43DD1A4718E8304700B43DE3 /* Paragraph.h */,
-				43DD1A4818E8304700B43DE3 /* Paragraph.m */,
-				43DD1A4318E82B2000B43DE3 /* Paragraph.xib */,
-				433B0EF519C4A5A600581F1F /* Paragraph_6Plus.xib */,
-				437CD7E318E8C38A00AAD7F6 /* Caption.h */,
-				437CD7E418E8C38A00AAD7F6 /* Caption.m */,
-				437CD7E118E8C37E00AAD7F6 /* Caption.xib */,
-				433B0F0119C4E5DC00581F1F /* Caption_6.xib */,
-				433B0F0319C4E5F800581F1F /* Caption_6Plus.xib */,
-				43DD1A5218E8472D00B43DE3 /* Quote.xib */,
-				433B0EF719C4B68800581F1F /* Quote_6Plus.xib */,
-				43DD1A5418E8485C00B43DE3 /* Quote.h */,
-				43DD1A5518E8485C00B43DE3 /* Quote.m */,
+				4319E5AF19CE01FF00A61D92 /* Title */,
+				4319E5B219CE056400A61D92 /* Paragraph */,
+				4319E5B519CE05C500A61D92 /* Caption */,
+				4319E5B819CE061700A61D92 /* Quote */,
 				43696D7319C593A2001EF52E /* Info */,
 				433D8670191FB045007EE3F9 /* Section */,
 			);
@@ -515,7 +562,9 @@
 				43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */,
 				433B0EFE19C4CE0900581F1F /* Section_6.xib in Resources */,
 				4331ECE3192398A3002C1D50 /* MadeIn.xib in Resources */,
+				4319E5B119CE04C900A61D92 /* Paragraph_iPad.xib in Resources */,
 				433B0EF219C4618400581F1F /* Typendium.storyboard in Resources */,
+				4319E5B719CE05E000A61D92 /* Quote_iPad.xib in Resources */,
 				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
@@ -525,14 +574,17 @@
 				435F84471927807C00D6AAEA /* SpecialThanks.xib in Resources */,
 				43D83B611997B25400358FBD /* TypendiumTutorial.mp4 in Resources */,
 				433B0EF619C4A5A600581F1F /* Paragraph_6Plus.xib in Resources */,
+				4319E5BA19CE067600A61D92 /* Section_iPad.xib in Resources */,
 				435BB028191E98B100B762CE /* Reference.xib in Resources */,
 				433B0EF819C4B68800581F1F /* Quote_6Plus.xib in Resources */,
 				433D866C191FB009007EE3F9 /* Section.xib in Resources */,
 				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,
 				433B0F0219C4E5DC00581F1F /* Caption_6.xib in Resources */,
+				4319E5AE19CE01FA00A61D92 /* Title_iPad.xib in Resources */,
 				433B0F0019C4CE6600581F1F /* Section_6Plus.xib in Resources */,
 				437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */,
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
+				4319E5B419CE058800A61D92 /* Caption_iPad.xib in Resources */,
 				433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */,
 				43079BFD1996A77600E2F5AC /* Website.xib in Resources */,
 			);
@@ -706,7 +758,7 @@
 				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -723,7 +775,7 @@
 				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

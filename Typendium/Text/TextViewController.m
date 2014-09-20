@@ -113,13 +113,25 @@
     
     for (UIView *viewSection in self.arr_pageLayout) {
         
-        if (viewSection.tag == 1) {
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        
+        if (screenWidth >= 768) {
+            
+            if (viewSection.tag == 1) {
+                
+            } else {
+                
+                yPosition += 40;
+                
+            }
             
         } else {
-        
-            yPosition += 20;
+            
             
         }
+        
+
         
         
         viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);

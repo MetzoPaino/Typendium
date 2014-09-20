@@ -47,9 +47,14 @@
         
         xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6" owner:self options:nil];
         
-    } else {
+    } else if (screenWidth <= 414) {
         
         xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6Plus" owner:self options:nil];
+        
+    } else if (screenWidth >= 768) {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_iPad" owner:self options:nil];
+
     }
     
     title = [xib_title objectAtIndex:0];
@@ -71,9 +76,18 @@
         
         xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
 
-    } else {
+    } else if (screenWidth <= 375) {
+        
+        xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph" owner:self options:nil];
+
+    } else if (screenWidth <= 414) {
         
         xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph_6Plus" owner:self options:nil];
+        
+    } else if (screenWidth >= 768) {
+        
+        xib_paragraph = [[NSBundle mainBundle] loadNibNamed:@"Paragraph_iPad" owner:self options:nil];
+
     }
     
     paragraph = [xib_paragraph objectAtIndex:0];

@@ -19,6 +19,15 @@
       "idiom" : "iphone",
       "scale" : "3x",
       "filename" : "SplashScreenLogo.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "IntroductionLogo.png"
     }
   ],
   "info" : {
