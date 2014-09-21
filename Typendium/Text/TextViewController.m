@@ -131,9 +131,6 @@
             
         }
         
-
-        
-        
         viewSection.center = CGPointMake(self.view.center.x, yPosition + viewSection.frame.size.height / 2);
         
 

@@ -474,12 +474,34 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Image *image1;
-        image1 = [self configureImage:image1 :@"PaulRenner"];
+        UIView *image1;
+        UIImageView *imageView1;
+        
+        if (screenWidth <= 320) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner"]];
+            
+        } else if (screenWidth <= 414) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 534)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner"]];
+        }
+        
+        [image1 addSubview:imageView1];
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
-
         
         Paragraph *paragraph2;
         paragraph2 = [self configureParagraph:paragraph2 :@"Paragraph2"];
@@ -503,9 +525,14 @@
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 187)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 187)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 282)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Blackletter comparison"]];
         }
 
@@ -530,9 +557,14 @@
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 64)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 64)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 96)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaOriginal"]];
         }
         
@@ -557,9 +589,14 @@
             image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 89)];
             imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 89)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 134)];
             imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"O comparison"]];
         }
         
@@ -587,9 +624,14 @@
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 953)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FuturaSpecimen"]];
         }
         [specimen addSubview:image];
@@ -646,8 +688,31 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Image *image1;
-        image1 = [self configureImage:image1 :@"EricGill"];
+        UIView *image1;
+        UIImageView *imageView1;
+        
+        if (screenWidth <= 320) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill"]];
+            
+        } else if (screenWidth <= 414) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 534)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill"]];
+        }
+        
+        [image1 addSubview:imageView1];
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
@@ -674,9 +739,14 @@
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 266)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 266)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 399)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Prospero & Ariel"]];
         }
         
@@ -701,9 +771,14 @@
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 214)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 214)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 321)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AllIsGold"]];
         }
         
@@ -728,9 +803,14 @@
             image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 218)];
             imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 218)];
+            imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image4 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 327)];
             imageView4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Gill Sans Spectacles"]];
         }
         
@@ -755,9 +835,14 @@
             image5 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 195)];
             imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image5 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 195)];
+            imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image5 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 293)];
             imageView5 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Thin to bold"]];
         }
         
@@ -782,11 +867,15 @@
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen_iPhone6"]];
 
-        } else {
+        } else if (screenWidth <= 414) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
 
+        } else if (screenWidth >= 768) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 953)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"GillSansSpecimen"]];
         }
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -844,8 +933,31 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Image *image1;
-        image1 = [self configureImage:image1 :@"HermannZapf"];
+        UIView *image1;
+        UIImageView *imageView1;
+        
+        if (screenWidth <= 320) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf"]];
+            
+        } else if (screenWidth <= 414) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 534)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf"]];
+        }
+        
+        [image1 addSubview:imageView1];
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
@@ -881,9 +993,14 @@
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 180)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 180)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 270)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Open Counter"]];
         }
 
@@ -908,9 +1025,14 @@
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 88)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 88)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 132)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Interrorbang"]];
         }
         
@@ -938,11 +1060,15 @@
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen_iPhone6"]];
 
-        } else {
+        } else if (screenWidth <= 414) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
 
+        } else if (screenWidth >= 768) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 953)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PalatinoSpecimen"]];
         }
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
@@ -998,8 +1124,31 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-        Image *image1;
-        image1 = [self configureImage:image1 :@"StanleyMorison"];
+        UIView *image1;
+        UIImageView *imageView1;
+        
+        if (screenWidth <= 320) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison"]];
+            
+        } else if (screenWidth <= 375) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison"]];
+            
+        } else if (screenWidth <= 414) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 534)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison"]];
+        }
+        
+        [image1 addSubview:imageView1];
         
         Caption *caption1;
         caption1 = [self configureCaption:caption1 :@"Caption1"];
@@ -1023,9 +1172,14 @@
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image2 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 360)];
             imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Pelican Press"]];
         }
         
@@ -1072,9 +1226,14 @@
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes_iPhone6"]];
             
-        } else {
+        } else if (screenWidth <= 414) {
             
             image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
+            imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes"]];
+            
+        } else if (screenWidth >= 768) {
+            
+            image3 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 360)];
             imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TheTimes"]];
         }
         
@@ -1102,11 +1261,15 @@
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 596)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen_iPhone6"]];
 
-        } else {
+        } else if (screenWidth <= 414) {
             
             specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 665)];
             image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
 
+        } else if (screenWidth >= 768) {
+            
+            specimen = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 953)];
+            image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimesNewRomanSpecimen"]];
         }
         [specimen addSubview:image];
         specimen.restorationIdentifier = @"Specimen";
