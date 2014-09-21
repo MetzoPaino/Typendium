@@ -55,9 +55,14 @@
         
         xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6" owner:self options:nil];
         
-    } else {
+    } else if (screenWidth <= 414) {
         
         xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_6Plus" owner:self options:nil];
+        
+    } else if (screenWidth >= 768) {
+        
+        xib_title = [[NSBundle mainBundle] loadNibNamed:@"Title_iPad" owner:self options:nil];
+
     }
     
     title = [xib_title objectAtIndex:0];
@@ -129,9 +134,14 @@
         
         xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section_6" owner:self options:nil];
         
-    } else {
+    } else if (screenWidth <= 414) {
         
         xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section_6Plus" owner:self options:nil];
+        
+    } else if (screenWidth >= 768) {
+        
+        xib_quote = [[NSBundle mainBundle] loadNibNamed:@"Section_iPad" owner:self options:nil];
+
     }
     
     section = [xib_quote objectAtIndex:0];
@@ -564,13 +574,10 @@
             
             title = [self configureTitle:title :@"SpecialThanksHeader_iPhone6"];
             
-        } else if (screenWidth <= 414) {
+        } else {
             
             title = [self configureTitle:title :@"SpecialThanksHeader"];
             
-        } else if (screenWidth >= 768) {
-            
-            title = [self configureTitle:title :@"SpecialThanksHeader_iPad"];
         }
     
         SpecialThanks *specialThanks1;

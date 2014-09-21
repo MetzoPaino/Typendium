@@ -229,25 +229,22 @@
         Paragraph *paragraph1;
         paragraph1 = [self configureParagraph:paragraph1 :@"Paragraph1"];
         
-//        Image *image1;
-//        image1 = [self configureImage:image1 :@"JohnBaskerville"];
-        
         UIView *image1;
         UIImageView *imageView1;
         
         if (screenWidth <= 320) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"JohnBaskerville"]];
             
         } else if (screenWidth <= 375) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
-            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"JohnBaskerville"]];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 285)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"JohnBaskerville_iPhone6"]];
             
         } else if (screenWidth <= 414) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 326)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"JohnBaskerville"]];
             
         } else if (screenWidth >= 768) {
@@ -479,17 +476,17 @@
         
         if (screenWidth <= 320) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner"]];
             
         } else if (screenWidth <= 375) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
-            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner"]];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 285)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner_iPhone6"]];
             
         } else if (screenWidth <= 414) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 326)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PaulRenner"]];
             
         } else if (screenWidth >= 768) {
@@ -693,17 +690,17 @@
         
         if (screenWidth <= 320) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill"]];
             
         } else if (screenWidth <= 375) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
-            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill"]];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 285)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill_iPhone6"]];
             
         } else if (screenWidth <= 414) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 326)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EricGill"]];
             
         } else if (screenWidth >= 768) {
@@ -938,17 +935,17 @@
         
         if (screenWidth <= 320) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf"]];
             
         } else if (screenWidth <= 375) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
-            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf"]];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 285)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf_iPhone6"]];
             
         } else if (screenWidth <= 414) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 326)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HermannZapf"]];
             
         } else if (screenWidth >= 768) {
@@ -1129,17 +1126,17 @@
         
         if (screenWidth <= 320) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 240)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison"]];
             
         } else if (screenWidth <= 375) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
-            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison"]];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 285)];
+            imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison_iPhone6"]];
             
         } else if (screenWidth <= 414) {
             
-            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 320)];
+            image1 = [[UIView alloc] initWithFrame:CGRectMake(screenWidth / 2, 0, screenWidth, 326)];
             imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StanleyMorison"]];
             
         } else if (screenWidth >= 768) {

@@ -73,7 +73,7 @@
 
 - (void)constructPage:(NSNotification *) notification {
     
-    for(UIView *subview in [self.scrollView subviews]) {
+    for (UIView *subview in [self.scrollView subviews]) {
         
         [subview removeFromSuperview];
     }
@@ -134,14 +134,33 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     
-    if (screenWidth >= 375) {
-        yPosition += upArrow.frame.size.height * 2 ;
-
+    if (screenWidth <= 320) {
         
-    } else {
         yPosition += upArrow.frame.size.height * 1.5;
 
+    } else if (screenWidth <= 375) {
+        
+        yPosition += upArrow.frame.size.height * 2 ;
+        
+    } else if (screenWidth <= 414) {
+        
+        yPosition += upArrow.frame.size.height * 2 ;
+        
+    } else if (screenWidth >= 768) {
+        
+        yPosition += upArrow.frame.size.height * 5.575;
+        
     }
+    
+//    if (screenWidth >= 375) {
+//        yPosition += upArrow.frame.size.height * 2 ;
+//
+//        
+//    } else {
+//        
+//        yPosition += upArrow.frame.size.height * 1.5;
+//
+//    }
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width,
                                              yPosition);
