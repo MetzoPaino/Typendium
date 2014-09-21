@@ -20,7 +20,8 @@
     },
     {
       "idiom" : "ipad",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "GillSans-2.png"
     }
   ],
   "info" : {
