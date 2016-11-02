@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AF0E0F51DCA3CF7008E6016 /* Typendium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF0E0F31DCA3CF7008E6016 /* Typendium.storyboard */; };
+		0AF0E0F91DCA3DC4008E6016 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF0E0F81DCA3DC4008E6016 /* MasterViewController.swift */; };
 		43079BFB1996A28400E2F5AC /* Website.m in Sources */ = {isa = PBXBuildFile; fileRef = 43079BFA1996A28400E2F5AC /* Website.m */; };
 		43079BFD1996A77600E2F5AC /* Website.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43079BFC1996A77600E2F5AC /* Website.xib */; };
 		430BA1CD1915449200DCF3C4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430BA1CC1915449200DCF3C4 /* MessageUI.framework */; };
@@ -77,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AF0E0F41DCA3CF7008E6016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Typendium.storyboard; sourceTree = "<group>"; };
+		0AF0E0F81DCA3DC4008E6016 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = Master/MasterViewController.swift; sourceTree = "<group>"; };
 		43079BF91996A28400E2F5AC /* Website.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Website.h; sourceTree = "<group>"; };
 		43079BFA1996A28400E2F5AC /* Website.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Website.m; sourceTree = "<group>"; };
 		43079BFC1996A77600E2F5AC /* Website.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Website.xib; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 				43BF124E18E74BB9009A1C84 /* AppDelegate.h */,
 				43BF124F18E74BB9009A1C84 /* AppDelegate.m */,
 				43BF125118E74BB9009A1C84 /* Main.storyboard */,
+				0AF0E0F31DCA3CF7008E6016 /* Typendium.storyboard */,
+				0AF0E0F81DCA3DC4008E6016 /* MasterViewController.swift */,
 				43F1FB21190556F80046A934 /* MoveViewsDelegate.h */,
 				4360D3A51928CE15003902F3 /* In-App Purchases */,
 				43F1FB221905634C0046A934 /* DetectCurrentPageDelegate.h */,
@@ -449,6 +455,7 @@
 				TargetAttributes = {
 					43BF123B18E74BB9009A1C84 = {
 						DevelopmentTeam = XEN7DUD59Z;
+						LastSwiftMigration = 0810;
 					};
 					43BF125C18E74BB9009A1C84 = {
 						TestTargetID = 43BF123B18E74BB9009A1C84;
@@ -482,6 +489,7 @@
 				43DD1A5818E852C800B43DE3 /* Typendium.plist in Resources */,
 				43DD1A5318E8472D00B43DE3 /* Quote.xib in Resources */,
 				4331ECE3192398A3002C1D50 /* MadeIn.xib in Resources */,
+				0AF0E0F51DCA3CF7008E6016 /* Typendium.storyboard in Resources */,
 				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
@@ -520,6 +528,7 @@
 				433D866F191FB041007EE3F9 /* Section.m in Sources */,
 				43BF125018E74BB9009A1C84 /* AppDelegate.m in Sources */,
 				439275FB18F09B8D00353437 /* TypendiumText.m in Sources */,
+				0AF0E0F91DCA3DC4008E6016 /* MasterViewController.swift in Sources */,
 				437CD7E518E8C38A00AAD7F6 /* Caption.m in Sources */,
 				435F84451927803B00D6AAEA /* SpecialThanks.m in Sources */,
 				43CF7E7C190D64DA0059EFA0 /* NSString+ShareText.m in Sources */,
@@ -565,6 +574,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0AF0E0F31DCA3CF7008E6016 /* Typendium.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AF0E0F41DCA3CF7008E6016 /* Base */,
+			);
+			name = Typendium.storyboard;
+			sourceTree = "<group>";
+		};
 		43BF124818E74BB9009A1C84 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -667,13 +684,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
 				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -684,13 +705,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
 				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -699,6 +723,7 @@
 		43BF127218E74BBA009A1C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Typendium.app/Typendium";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -721,6 +746,7 @@
 		43BF127318E74BBA009A1C84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Typendium.app/Typendium";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
