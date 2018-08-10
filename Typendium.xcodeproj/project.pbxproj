@@ -64,6 +64,12 @@
 		43DD1A5818E852C800B43DE3 /* Typendium.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43DD1A5718E852C800B43DE3 /* Typendium.plist */; };
 		43FB18F7191279FC00E5DDF8 /* InfoTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FB18F6191279FC00E5DDF8 /* InfoTextViewController.m */; };
 		4F64EAD218FAC9CF000B0210 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */; };
+		74762DFA2119EFF00051A358 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74762DF92119EFF00051A358 /* Storyboard.storyboard */; };
+		74762DFC2119F6050051A358 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74762DFB2119F6050051A358 /* ListViewController.swift */; };
+		74DFFC56211DBAEF00333386 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFFC55211DBAEF00333386 /* ListCollectionViewController.swift */; };
+		74DFFC58211DBC8700333386 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFFC57211DBC8700333386 /* ListCollectionViewCell.swift */; };
+		74DFFC5A211DC72A00333386 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DFFC59211DC72A00333386 /* Launch Screen.storyboard */; };
+		74DFFC5C211DD55D00333386 /* HistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DFFC5B211DD55D00333386 /* HistoryListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +175,12 @@
 		43FB18F6191279FC00E5DDF8 /* InfoTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTextViewController.m; sourceTree = "<group>"; };
 		4F64EAD018FAC9CF000B0210 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		4F64EAD118FAC9CF000B0210 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		74762DF92119EFF00051A358 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = Storyboards/Storyboard.storyboard; sourceTree = "<group>"; };
+		74762DFB2119F6050051A358 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = Typendium/ViewControllers/ListViewController.swift; sourceTree = "<group>"; };
+		74DFFC55211DBAEF00333386 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCollectionViewController.swift; path = Typendium/ViewControllers/ListCollectionViewController.swift; sourceTree = "<group>"; };
+		74DFFC57211DBC8700333386 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCollectionViewCell.swift; path = Typendium/ViewControllers/ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		74DFFC59211DC72A00333386 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Storyboards/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		74DFFC5B211DD55D00333386 /* HistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryListViewController.swift; path = Typendium/ViewControllers/HistoryListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +321,12 @@
 		43BF123318E74BB9009A1C84 = {
 			isa = PBXGroup;
 			children = (
+				74DFFC59211DC72A00333386 /* Launch Screen.storyboard */,
+				74762DF92119EFF00051A358 /* Storyboard.storyboard */,
+				74762DFB2119F6050051A358 /* ListViewController.swift */,
+				74DFFC55211DBAEF00333386 /* ListCollectionViewController.swift */,
+				74DFFC57211DBC8700333386 /* ListCollectionViewCell.swift */,
+				74DFFC5B211DD55D00333386 /* HistoryListViewController.swift */,
 				43BF124518E74BB9009A1C84 /* Typendium */,
 				43BF126418E74BB9009A1C84 /* TypendiumTests */,
 				43BF123E18E74BB9009A1C84 /* Frameworks */,
@@ -449,6 +467,7 @@
 				TargetAttributes = {
 					43BF123B18E74BB9009A1C84 = {
 						DevelopmentTeam = XEN7DUD59Z;
+						LastSwiftMigration = 0940;
 					};
 					43BF125C18E74BB9009A1C84 = {
 						TestTargetID = 43BF123B18E74BB9009A1C84;
@@ -485,11 +504,13 @@
 				43DD1A5118E8375700B43DE3 /* Title.xib in Resources */,
 				43DD1A4418E82B2000B43DE3 /* Paragraph.xib in Resources */,
 				43BF125818E74BB9009A1C84 /* Images.xcassets in Resources */,
+				74762DFA2119EFF00051A358 /* Storyboard.storyboard in Resources */,
 				435F84471927807C00D6AAEA /* SpecialThanks.xib in Resources */,
 				43D83B611997B25400358FBD /* TypendiumTutorial.mp4 in Resources */,
 				435BB028191E98B100B762CE /* Reference.xib in Resources */,
 				433D866C191FB009007EE3F9 /* Section.xib in Resources */,
 				43DD1A4618E82EBD00B43DE3 /* Image.xib in Resources */,
+				74DFFC5A211DC72A00333386 /* Launch Screen.storyboard in Resources */,
 				437CD7E218E8C37E00AAD7F6 /* Caption.xib in Resources */,
 				43BF124A18E74BB9009A1C84 /* InfoPlist.strings in Resources */,
 				433D8667191F681F007EE3F9 /* AboutUs.xib in Resources */,
@@ -513,8 +534,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DFFC58211DBC8700333386 /* ListCollectionViewCell.swift in Sources */,
 				43BF125618E74BB9009A1C84 /* MainViewController.m in Sources */,
 				4331ECE11923988A002C1D50 /* MadeIn.m in Sources */,
+				74762DFC2119F6050051A358 /* ListViewController.swift in Sources */,
 				434DB2DA18E9F31200DC8E42 /* InfoViewController.m in Sources */,
 				43961CE918FDC269009E399A /* TutorialViewController.m in Sources */,
 				433D866F191FB041007EE3F9 /* Section.m in Sources */,
@@ -526,12 +549,14 @@
 				43FB18F7191279FC00E5DDF8 /* InfoTextViewController.m in Sources */,
 				43DD1A4218E82A0600B43DE3 /* TextViewController.m in Sources */,
 				433D866A191F7225007EE3F9 /* AboutUs.m in Sources */,
+				74DFFC5C211DD55D00333386 /* HistoryListViewController.swift in Sources */,
 				4F64EAD218FAC9CF000B0210 /* UIColor+CustomColors.m in Sources */,
 				4360D3A81928CE3A003902F3 /* IAPHelper.m in Sources */,
 				43DD1A4C18E834AC00B43DE3 /* Title.m in Sources */,
 				43BF124C18E74BB9009A1C84 /* main.m in Sources */,
 				43DD1A4918E8304700B43DE3 /* Paragraph.m in Sources */,
 				4360D3B919293A06003902F3 /* UnlockViewController.m in Sources */,
+				74DFFC56211DBAEF00333386 /* ListCollectionViewController.swift in Sources */,
 				43BF127618E74F46009A1C84 /* IntroViewController.m in Sources */,
 				4360D3AB1928D1C9003902F3 /* TYPEIAPHelper.m in Sources */,
 				43079BFB1996A28400E2F5AC /* Website.m in Sources */,
@@ -693,15 +718,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
 				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.metzopaino.typendium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -711,15 +740,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Typendium/Typendium-Prefix.pch";
 				INFOPLIST_FILE = "Typendium/Typendium-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.metzopaino.typendium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -728,6 +760,7 @@
 		43BF127218E74BBA009A1C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Typendium.app/Typendium";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -751,6 +784,7 @@
 		43BF127318E74BBA009A1C84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Typendium.app/Typendium";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
